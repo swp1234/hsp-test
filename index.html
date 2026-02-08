@@ -53,18 +53,31 @@
 </head>
 <body>
 
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button id="lang-toggle" class="lang-btn">🌐</button>
+        <div id="lang-menu" class="lang-menu hidden">
+            <button class="lang-option" data-lang="ko">한국어</button>
+            <button class="lang-option" data-lang="en">English</button>
+            <button class="lang-option" data-lang="zh">简体中文</button>
+            <button class="lang-option" data-lang="hi">हिन्दी</button>
+            <button class="lang-option" data-lang="ru">Русский</button>
+        </div>
+    </div>
+
     <!-- Intro Screen -->
     <div id="intro-screen" class="screen intro-screen active">
-        <div class="ad-banner ad-top">광고 영역</div>
+        <div class="ad-banner ad-top" data-i18n="ads.banner"></div>
         <div class="intro-icon">🧠</div>
-        <h1 class="intro-title">HSP 민감성 테스트</h1>
-        <p class="intro-subtitle">당신은 고감수성자(HSP)일까요?<br>20가지 질문으로 나의 민감도를 알아보세요</p>
+        <h1 class="intro-title" data-i18n="intro.title"></h1>
+        <p class="intro-subtitle" data-i18n="intro.sub"></p>
+        <p class="intro-desc" data-i18n="intro.desc"></p>
         <div class="intro-meta">
-            <span>📝 20문항</span>
-            <span>⏱️ 약 3분</span>
-            <span>🎯 5가지 유형</span>
+            <span data-i18n="intro.meta1"></span>
+            <span data-i18n="intro.meta2"></span>
+            <span data-i18n="intro.meta3"></span>
         </div>
-        <button id="btn-start" class="btn-start">테스트 시작하기</button>
+        <button id="btn-start" class="btn-start" data-i18n="intro.start"></button>
         <p class="test-count" id="test-count"></p>
     </div>
 
@@ -84,7 +97,7 @@
     <div id="loading-screen" class="screen loading-screen">
         <div class="loading-icon">🧠</div>
         <div class="loading-bar"><div class="loading-fill" id="loading-fill"></div></div>
-        <p class="loading-text" id="loading-text">감각 민감도 분석 중...</p>
+        <p class="loading-text" id="loading-text" data-i18n="loading.text"></p>
     </div>
 
     <!-- Result Screen -->
@@ -106,33 +119,33 @@
             <p class="result-desc" id="result-desc"></p>
 
             <div class="detail-section">
-                <h3>🌸 핵심 특징</h3>
+                <h3 data-i18n="result.traits"></h3>
                 <ul id="result-traits"></ul>
             </div>
             <div class="detail-section">
-                <h3>💡 추천 활동</h3>
+                <h3 data-i18n="result.tips"></h3>
                 <ul id="result-activities"></ul>
             </div>
             <div class="detail-section">
-                <h3>⚠️ 주의사항</h3>
+                <h3 data-i18n="result.warnings"></h3>
                 <ul id="result-warnings"></ul>
             </div>
             <div class="compat-section">
-                <h3>💕 나와 잘 맞는 타입</h3>
+                <h3 data-i18n="result.compat"></h3>
                 <p id="result-compat"></p>
             </div>
 
-            <button id="btn-premium" class="btn-premium">🔓 AI 심층 HSP 분석 보기</button>
+            <button id="btn-premium" class="btn-premium" data-i18n="premium.button"></button>
             <div id="premium-content"></div>
 
             <div class="action-buttons">
-                <button id="btn-share" class="btn-share">📤 공유</button>
-                <button id="btn-save-image" class="btn-save-image">📷 저장</button>
-                <button id="btn-retry" class="btn-retry">🔄 다시</button>
+                <button id="btn-share" class="btn-share" data-i18n="actions.share"></button>
+                <button id="btn-save-image" class="btn-save-image" data-i18n="actions.saveImage"></button>
+                <button id="btn-retry" class="btn-retry" data-i18n="actions.retry"></button>
             </div>
 
             <div class="recommendations-section">
-                <div class="rec-title">이것도 해보세요</div>
+                <div class="rec-title" data-i18n="rec.title"></div>
                 <div class="rec-grid">
                     <a href="https://dopabrain.com/emotion-temp/" class="rec-card" target="_blank">
                         <span class="rec-icon">🌡️</span>
@@ -165,14 +178,14 @@
                 </div>
             </div>
 
-            <div class="ad-banner ad-bottom">광고 영역</div>
+            <div class="ad-banner ad-bottom" data-i18n="ads.banner"></div>
         </div>
     </div>
 
     <!-- Ad Overlay -->
     <div id="ad-overlay" class="ad-overlay">
         <div class="ad-modal">
-            <p>잠시 후 AI 심층 분석 결과를 확인할 수 있습니다</p>
+            <p data-i18n="premium.ad_text"></p>
             <div class="ad-placeholder">광고 영역 (300x250)</div>
             <div id="ad-countdown">5</div>
             <button id="ad-close">결과 보기</button>
@@ -181,6 +194,7 @@
 
     <canvas id="share-canvas" width="1080" height="1080" style="display:none;"></canvas>
 
+    <script src="js/i18n.js"></script>
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
 </body>

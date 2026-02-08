@@ -1,0 +1,13 @@
+{
+  "app": { "title": "HSP Sensitivity Test - Am I Highly Sensitive? | DopaBrain", "description": "20-question HSP self-assessment. Discover if you're a Highly Sensitive Person with personalized guide." },
+  "intro": { "title": "HSP Sensitivity Test", "sub": "Are you a Highly Sensitive Person?", "desc": "Answer 20 questions and\ndiscover your sensitivity level", "start": "Start Test", "meta1": "📝 20 Questions", "meta2": "⏱️ ~3 Minutes", "meta3": "🎯 5 Types" },
+  "progress": { "of": "/" },
+  "loading": { "text": "Analyzing sensitivity..." },
+  "result": { "score": "Sensitivity", "traits": "🌸 Key Traits", "tips": "💡 Recommended Activities", "warnings": "⚠️ Watch Out For", "compat": "💕 Compatible Types", "analysis": "📊 Sense-by-Sense Analysis", "recovery": "🧘 Overstimulation Recovery Routine", "career": "💼 Recommended Careers for HSP", "routine": "📅 This Week's Emotion Management" },
+  "premium": { "button": "🔓 View AI Deep HSP Analysis", "badge": "PREMIUM", "title": "🧠 AI Deep HSP Analysis", "ad_text": "You can check the AI deep analysis results shortly" },
+  "actions": { "share": "📤 Share", "saveImage": "📷 Save", "retry": "🔄 Retry" },
+  "answers": { "strongAgree": "Strongly Agree", "agree": "Agree", "neutral": "Neutral", "disagree": "Disagree", "strongDisagree": "Strongly Disagree" },
+  "ads": { "banner": "Advertisement" },
+  "rec": { "title": "Try these too" },
+  "testCount": "people participated!"
+}

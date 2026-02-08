@@ -1,0 +1,13 @@
+{
+  "app": { "title": "HSP敏感性测试 - 我是高敏感人群吗？| DopaBrain", "description": "20题HSP自我评估测试。了解您是否是高敏感人群，获取个性化指南。" },
+  "intro": { "title": "HSP敏感性测试", "sub": "我是高敏感人群吗？", "desc": "回答20个问题\n了解你的敏感程度", "start": "开始测试", "meta1": "📝 20题", "meta2": "⏱️ 约3分钟", "meta3": "🎯 5种类型" },
+  "progress": { "of": "/" },
+  "loading": { "text": "正在分析敏感性..." },
+  "result": { "score": "敏感性评分", "traits": "🌸 核心特征", "tips": "💡 推荐活动", "warnings": "⚠️ 注意事项", "compat": "💕 合拍类型", "analysis": "📊 感觉敏感度分析", "recovery": "🧘 过度刺激恢复常规", "career": "💼 HSP推荐职业", "routine": "📅 本周情绪管理计划" },
+  "premium": { "button": "🔓 查看AI深度敏感性分析", "badge": "高级", "title": "🧠 AI深度HSP分析", "ad_text": "稍后可以查看AI深度分析结果" },
+  "actions": { "share": "📤 分享", "saveImage": "📷 保存", "retry": "🔄 重新测试" },
+  "answers": { "strongAgree": "非常同意", "agree": "同意", "neutral": "一般", "disagree": "不同意", "strongDisagree": "非常不同意" },
+  "ads": { "banner": "广告区域" },
+  "rec": { "title": "还可以试试这些" },
+  "testCount": "人已参与！"
+}
