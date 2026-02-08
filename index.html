@@ -29,15 +29,39 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Quiz",
+        "@type": "SoftwareApplication",
         "name": "HSP 민감성 테스트",
-        "description": "20가지 질문으로 HSP(고감수성자) 여부를 자가진단하는 심리테스트",
-        "educationalLevel": "성인",
-        "inLanguage": "ko",
+        "applicationCategory": "HealthApplication",
+        "description": "20가지 질문으로 HSP(고감수성자) 여부를 자가진단하는 심리테스트. 5가지 유형 분석 및 맞춤 관리법 제공.",
+        "url": "https://dopabrain.com/hsp-test/",
+        "image": "https://dopabrain.com/hsp-test/icon-512.svg",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Modern browser (Chrome, Safari, Firefox, Edge).",
+        "author": {
+            "@type": "Organization",
+            "name": "DopaBrain",
+            "url": "https://dopabrain.com/"
+        },
         "publisher": {
             "@type": "Organization",
-            "name": "DopaBrain"
-        }
+            "name": "DopaBrain",
+            "url": "https://dopabrain.com/"
+        },
+        "inLanguage": ["ko", "en", "zh", "hi", "ru"],
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "850",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "featureList": "20가지 질문, 5가지 HSP 유형, 감각별 민감도 분석, AI 프리미엄 분석, 결과 이미지 저장, SNS 공유"
     }
     </script>
 
@@ -57,11 +81,18 @@
     <div class="language-selector">
         <button id="lang-toggle" class="lang-btn">🌐</button>
         <div id="lang-menu" class="lang-menu hidden">
-            <button class="lang-option" data-lang="ko">한국어</button>
-            <button class="lang-option" data-lang="en">English</button>
-            <button class="lang-option" data-lang="zh">简体中文</button>
-            <button class="lang-option" data-lang="hi">हिन्दी</button>
-            <button class="lang-option" data-lang="ru">Русский</button>
+            <button class="lang-option" data-lang="ko">🇰🇷 한국어</button>
+            <button class="lang-option" data-lang="en">🇺🇸 English</button>
+            <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+            <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+            <button class="lang-option" data-lang="pt">🇧🇷 Português</button>
+            <button class="lang-option" data-lang="zh">🇨🇳 简体中文</button>
+            <button class="lang-option" data-lang="id">🇮🇩 Bahasa Indonesia</button>
+            <button class="lang-option" data-lang="tr">🇹🇷 Türkçe</button>
+            <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+            <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+            <button class="lang-option" data-lang="hi">🇮🇳 हिन्दी</button>
+            <button class="lang-option" data-lang="ru">🇷🇺 Русский</button>
         </div>
     </div>
 

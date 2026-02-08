@@ -1,0 +1,13 @@
+{
+  "app": { "title": "Tes Sensitivitas HSP - Apakah Saya Sangat Sensitif? | DopaBrain", "description": "Penilaian diri HSP 20 pertanyaan. Temukan apakah Anda adalah Orang yang Sangat Sensitif dengan panduan yang dipersonalisasi." },
+  "intro": { "title": "Tes Sensitivitas HSP", "sub": "Apakah Anda Orang yang Sangat Sensitif?", "desc": "Jawab 20 pertanyaan dan\ntemukan tingkat sensitivitas Anda", "start": "Mulai Tes", "meta1": "📝 20 Pertanyaan", "meta2": "⏱️ ~3 Menit", "meta3": "🎯 5 Jenis" },
+  "progress": { "of": "/" },
+  "loading": { "text": "Menganalisis sensitivitas..." },
+  "result": { "score": "Sensitivitas", "traits": "🌸 Ciri Utama", "tips": "💡 Aktivitas yang Direkomendasikan", "warnings": "⚠️ Perhatikan", "compat": "💕 Jenis yang Kompatibel", "analysis": "📊 Analisis Indera demi Indera", "recovery": "🧘 Rutinitas Pemulihan Overstimulasi", "career": "💼 Karir yang Direkomendasikan untuk HSP", "routine": "📅 Manajemen Emosi Minggu Ini" },
+  "premium": { "button": "🔓 Lihat Analisis Mendalam HSP AI", "badge": "PREMIUM", "title": "🧠 Analisis Mendalam HSP AI", "ad_text": "Anda dapat melihat hasil analisis mendalam AI segera" },
+  "actions": { "share": "📤 Bagikan", "saveImage": "📷 Simpan", "retry": "🔄 Coba Lagi" },
+  "answers": { "strongAgree": "Sangat Setuju", "agree": "Setuju", "neutral": "Netral", "disagree": "Tidak Setuju", "strongDisagree": "Sangat Tidak Setuju" },
+  "ads": { "banner": "Iklan" },
+  "rec": { "title": "Coba juga" },
+  "testCount": "orang telah berpartisipasi!"
+}

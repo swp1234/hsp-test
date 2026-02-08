@@ -1,0 +1,13 @@
+{
+  "app": { "title": "Test de Sensibilité HSP - Suis-je Très Sensible? | DopaBrain", "description": "Auto-évaluation HSP de 20 questions. Découvre si tu es une Personne Très Sensible avec un guide personnalisé." },
+  "intro": { "title": "Test de Sensibilité HSP", "sub": "Es-tu une Personne Très Sensible?", "desc": "Réponds à 20 questions et\ndécouvre ton niveau de sensibilité", "start": "Commencer le Test", "meta1": "📝 20 Questions", "meta2": "⏱️ ~3 Minutes", "meta3": "🎯 5 Types" },
+  "progress": { "of": "/" },
+  "loading": { "text": "Analyse de la sensibilité..." },
+  "result": { "score": "Sensibilité", "traits": "🌸 Traits Clés", "tips": "💡 Activités Recommandées", "warnings": "⚠️ Attention à", "compat": "💕 Types Compatibles", "analysis": "📊 Analyse par Sens", "recovery": "🧘 Routine de Récupération de Surcharge Sensorielle", "career": "💼 Carrières Recommandées pour HSP", "routine": "📅 Gestion Émotionnelle de Cette Semaine" },
+  "premium": { "button": "🔓 Voir l'Analyse Profonde HSP IA", "badge": "PREMIUM", "title": "🧠 Analyse Profonde HSP IA", "ad_text": "Tu pourras bientôt consulter les résultats de l'analyse profonde IA" },
+  "actions": { "share": "📤 Partager", "saveImage": "📷 Enregistrer", "retry": "🔄 Réessayer" },
+  "answers": { "strongAgree": "Fortement D'Accord", "agree": "D'Accord", "neutral": "Neutre", "disagree": "Pas D'Accord", "strongDisagree": "Fortement Pas D'Accord" },
+  "ads": { "banner": "Publicité" },
+  "rec": { "title": "Essaie aussi" },
+  "testCount": "personnes ont participé!"
+}

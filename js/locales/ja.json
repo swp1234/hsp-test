@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "HSP敏感性テスト - 私は敏感人間？ | DopaBrain",
+    "description": "20問のHSP自己評価。敏感人間（HSP）かどうかを発見し、パーソナライズされたガイドを受け取ります。"
+  },
+  "intro": {
+    "title": "HSP敏感性テスト",
+    "sub": "あなたは敏感人間（HSP）ですか？",
+    "desc": "20個の質問に答えて\nあなたの敏感性レベルを発見しましょう",
+    "start": "テストを開始",
+    "meta1": "📝 20問",
+    "meta2": "⏱️ 約3分",
+    "meta3": "🎯 5タイプ"
+  },
+  "progress": {
+    "of": "/"
+  },
+  "loading": {
+    "text": "敏感性を分析中..."
+  },
+  "result": {
+    "score": "敏感性",
+    "traits": "🌸 主な特性",
+    "tips": "💡 おすすめの活動",
+    "warnings": "⚠️ 注意すべきこと",
+    "compat": "💕 相性の良いタイプ",
+    "analysis": "📊 感覚別分析",
+    "recovery": "🧘 過刺激からの回復ルーティン",
+    "career": "💼 HSPにおすすめのキャリア",
+    "routine": "📅 今週の感情管理"
+  },
+  "premium": {
+    "button": "🔓 AI深いHSP分析を表示",
+    "badge": "プレミアム",
+    "title": "🧠 AI深いHSP分析",
+    "ad_text": "AI深い分析結果をまもなく確認できます"
+  },
+  "actions": {
+    "share": "📤 共有する",
+    "saveImage": "📷 保存",
+    "retry": "🔄 もう一度試す"
+  },
+  "answers": {
+    "strongAgree": "強く同意",
+    "agree": "同意",
+    "neutral": "どちらでもない",
+    "disagree": "同意しない",
+    "strongDisagree": "強く同意しない"
+  },
+  "ads": {
+    "banner": "広告"
+  },
+  "rec": {
+    "title": "こちらも試してみてください"
+  },
+  "testCount": "人が参加しました！"
+}

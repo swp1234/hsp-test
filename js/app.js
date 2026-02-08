@@ -337,41 +337,70 @@ function generateShareImage() {
     const ctx = canvas.getContext('2d');
     const w = 1080, h = 1080;
 
+    canvas.width = w;
+    canvas.height = h;
+
     // Background gradient
     const grad = ctx.createLinearGradient(0, 0, w, h);
     grad.addColorStop(0, resultData.color);
-    grad.addColorStop(1, resultData.colorEnd);
+    grad.addColorStop(1, resultData.colorEnd || '#0a0a1e');
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, w, h);
 
-    // Subtle pattern
-    ctx.globalAlpha = 0.05;
-    for (let i = 0; i < 8; i++) {
+    // Decorative pattern - soft circles
+    ctx.globalAlpha = 0.06;
+    for (let i = 0; i < 12; i++) {
         ctx.beginPath();
-        ctx.arc(w * Math.random(), h * Math.random(), 150 + Math.random() * 200, 0, Math.PI * 2);
+        ctx.arc(w * Math.random(), h * Math.random(), 150 + Math.random() * 250, 0, Math.PI * 2);
         ctx.fillStyle = '#fff';
         ctx.fill();
     }
     ctx.globalAlpha = 1;
 
+    // Gauge circle visual (left side)
+    const gaugeX = w * 0.15;
+    const gaugeY = h * 0.35;
+    const gaugeRadius = 60;
+    const gaugeFill = (percentValue / 100) * 360;
+
+    // Background circle
+    ctx.fillStyle = 'rgba(255,255,255,0.1)';
+    ctx.beginPath();
+    ctx.arc(gaugeX, gaugeY, gaugeRadius, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Fill arc
+    ctx.fillStyle = resultData.color;
+    ctx.beginPath();
+    ctx.arc(gaugeX, gaugeY, gaugeRadius, -Math.PI/2, -Math.PI/2 + (gaugeFill * Math.PI / 180), false);
+    ctx.lineTo(gaugeX, gaugeY);
+    ctx.fill();
+
+    // Outline
+    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(gaugeX, gaugeY, gaugeRadius, 0, Math.PI * 2);
+    ctx.stroke();
+
     // Top text
     ctx.fillStyle = 'rgba(255,255,255,0.8)';
     ctx.font = '600 36px -apple-system, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('나의 HSP 민감도는', w / 2, 180);
+    ctx.fillText('나의 HSP 민감도는', w / 2, 150);
 
-    // Percentage
+    // Percentage (large)
     ctx.fillStyle = '#fff';
-    ctx.font = '900 160px -apple-system, sans-serif';
-    ctx.fillText(percentValue + '%', w / 2, 380);
+    ctx.font = '900 180px -apple-system, sans-serif';
+    ctx.fillText(percentValue + '%', w / 2, 400);
 
     // Emoji
-    ctx.font = '120px sans-serif';
-    ctx.fillText(resultData.emoji, w / 2, 530);
+    ctx.font = '130px sans-serif';
+    ctx.fillText(resultData.emoji, w / 2, 550);
 
     // Title
     ctx.fillStyle = '#fff';
-    ctx.font = '700 52px -apple-system, sans-serif';
+    ctx.font = '700 56px -apple-system, sans-serif';
     ctx.fillText(resultData.title, w / 2, 650);
 
     // Subtitle
@@ -379,14 +408,25 @@ function generateShareImage() {
     ctx.font = '400 32px -apple-system, sans-serif';
     ctx.fillText(resultData.subtitle, w / 2, 710);
 
+    // Divider
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(w * 0.15, 760);
+    ctx.lineTo(w * 0.85, 760);
+    ctx.stroke();
+
     // CTA
     ctx.fillStyle = 'rgba(255,255,255,0.6)';
     ctx.font = '400 28px -apple-system, sans-serif';
-    ctx.fillText('당신도 HSP일까? 👉 HSP 민감성 테스트', w / 2, 900);
+    ctx.fillText('당신도 HSP일까? 👇', w / 2, 840);
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.font = '400 24px -apple-system, sans-serif';
+    ctx.fillText('HSP 민감성 테스트', w / 2, 890);
 
     // Branding
-    ctx.fillStyle = 'rgba(255,255,255,0.4)';
-    ctx.font = '400 24px -apple-system, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';
+    ctx.font = '400 22px -apple-system, sans-serif';
     ctx.fillText('🔥 DopaBrain', w / 2, 1020);
 
     // Download
