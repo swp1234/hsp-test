@@ -298,9 +298,9 @@ function getCareerSuggestions() {
 // Share
 document.getElementById('btn-share').addEventListener('click', shareResult);
 function shareResult() {
-    const text = `🧠 나의 HSP 민감도: ${percentValue}%\n${resultData.emoji} ${resultData.title}\n${resultData.subtitle}\n\n당신도 HSP일까?\n👉 https://swp1234.github.io/hsp-test/\n\n#HSP테스트 #민감성테스트 #메타센싱`;
+    const text = `🧠 나의 HSP 민감도: ${percentValue}%\n${resultData.emoji} ${resultData.title}\n${resultData.subtitle}\n\n당신도 HSP일까?\n👉 https://dopabrain.com/hsp-test/\n\n#HSP테스트 #민감성테스트 #메타센싱`;
     if (navigator.share) {
-        navigator.share({ title: 'HSP 민감성 테스트', text: text, url: 'https://swp1234.github.io/hsp-test/' }).catch(() => {});
+        navigator.share({ title: 'HSP 민감성 테스트', text: text, url: 'https://dopabrain.com/hsp-test/' }).catch(() => {});
     } else {
         navigator.clipboard.writeText(text).then(() => alert('결과가 복사되었습니다!'));
     }
@@ -364,7 +364,7 @@ function generateShareImage() {
     // Branding
     ctx.fillStyle = 'rgba(255,255,255,0.4)';
     ctx.font = '400 24px -apple-system, sans-serif';
-    ctx.fillText('🔥 FireTools', w / 2, 1020);
+    ctx.fillText('🔥 DopaBrain', w / 2, 1020);
 
     // Download
     const link = document.createElement('a');
