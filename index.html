@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSP 민감성 테스트 - 나는 고감수성자일까? 🧠</title>
+    <meta name="description" content="20가지 질문으로 알아보는 HSP(Highly Sensitive Person) 민감도! 5가지 유형 중 당신은? 감각별 민감도 분석과 맞춤 관리법 제공.">
+    <meta name="keywords" content="HSP 테스트, 민감성 테스트, 고감수성자, 예민한 사람 테스트, 감정 민감도, 메타센싱, 심리테스트, HSP 자가진단">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="canonical" href="https://swp1234.github.io/hsp-test/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HSP 민감성 테스트 🧠 나는 고감수성자일까?">
+    <meta property="og:description" content="20가지 질문으로 알아보는 나의 HSP 민감도! 감각별 분석과 맞춤 관리법까지.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swp1234.github.io/hsp-test/">
+    <meta property="og:image" content="https://swp1234.github.io/hsp-test/icon-512.svg">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HSP 민감성 테스트 🧠">
+    <meta name="twitter:description" content="나는 고감수성자(HSP)일까? 20문항 자가진단!">
+    <meta name="twitter:image" content="https://swp1234.github.io/hsp-test/icon-512.svg">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "HSP 민감성 테스트",
+        "description": "20가지 질문으로 HSP(고감수성자) 여부를 자가진단하는 심리테스트",
+        "educationalLevel": "성인",
+        "inLanguage": "ko",
+        "publisher": {
+            "@type": "Organization",
+            "name": "FireTools"
+        }
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8GSWM40TV"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-J8GSWM40TV');</script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Intro Screen -->
+    <div id="intro-screen" class="screen intro-screen active">
+        <div class="ad-banner ad-top">광고 영역</div>
+        <div class="intro-icon">🧠</div>
+        <h1 class="intro-title">HSP 민감성 테스트</h1>
+        <p class="intro-subtitle">당신은 고감수성자(HSP)일까요?<br>20가지 질문으로 나의 민감도를 알아보세요</p>
+        <div class="intro-meta">
+            <span>📝 20문항</span>
+            <span>⏱️ 약 3분</span>
+            <span>🎯 5가지 유형</span>
+        </div>
+        <button id="btn-start" class="btn-start">테스트 시작하기</button>
+        <p class="test-count" id="test-count"></p>
+    </div>
+
+    <!-- Question Screen -->
+    <div id="question-screen" class="screen question-screen">
+        <div class="progress-area">
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            <p class="progress-text" id="progress-text">1 / 20</p>
+        </div>
+        <div class="question-card">
+            <p class="q-text" id="q-text"></p>
+            <div class="q-options" id="q-options"></div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="screen loading-screen">
+        <div class="loading-icon">🧠</div>
+        <div class="loading-bar"><div class="loading-fill" id="loading-fill"></div></div>
+        <p class="loading-text" id="loading-text">감각 민감도 분석 중...</p>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="screen result-screen">
+        <div class="result-card">
+            <div class="gauge-area">
+                <div class="gauge-ring">
+                    <div id="gauge-fill">
+                        <div class="gauge-inner">
+                            <span class="gauge-percent" id="gauge-percent">0%</span>
+                            <span class="gauge-label">민감도</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result-emoji" id="result-emoji"></div>
+            <h2 class="result-title" id="result-title"></h2>
+            <p class="result-subtitle" id="result-subtitle"></p>
+            <p class="result-desc" id="result-desc"></p>
+
+            <div class="detail-section">
+                <h3>🌸 핵심 특징</h3>
+                <ul id="result-traits"></ul>
+            </div>
+            <div class="detail-section">
+                <h3>💡 추천 활동</h3>
+                <ul id="result-activities"></ul>
+            </div>
+            <div class="detail-section">
+                <h3>⚠️ 주의사항</h3>
+                <ul id="result-warnings"></ul>
+            </div>
+            <div class="compat-section">
+                <h3>💕 나와 잘 맞는 타입</h3>
+                <p id="result-compat"></p>
+            </div>
+
+            <button id="btn-premium" class="btn-premium">🔓 AI 심층 HSP 분석 보기</button>
+            <div id="premium-content"></div>
+
+            <div class="action-buttons">
+                <button id="btn-share" class="btn-share">📤 공유</button>
+                <button id="btn-save-image" class="btn-save-image">📷 저장</button>
+                <button id="btn-retry" class="btn-retry">🔄 다시</button>
+            </div>
+            <div class="ad-banner ad-bottom">광고 영역</div>
+        </div>
+    </div>
+
+    <!-- Ad Overlay -->
+    <div id="ad-overlay" class="ad-overlay">
+        <div class="ad-modal">
+            <p>잠시 후 AI 심층 분석 결과를 확인할 수 있습니다</p>
+            <div class="ad-placeholder">광고 영역 (300x250)</div>
+            <div id="ad-countdown">5</div>
+            <button id="ad-close">결과 보기</button>
+        </div>
+    </div>
+
+    <canvas id="share-canvas" width="1080" height="1080" style="display:none;"></canvas>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
