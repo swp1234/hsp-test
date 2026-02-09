@@ -526,3 +526,13 @@ body {
 .lang-option { width: 100%; padding: 10px 14px; background: transparent; border: none; text-align: left; cursor: pointer; border-radius: 8px; font-size: 14px; color: #e0d8f8; transition: background 0.2s; }
 .lang-option:hover { background: rgba(124,58,237,0.2); }
 .lang-option.active { background: rgba(124,58,237,0.3); font-weight: 600; color: #fff; }
+
+/* === Accessibility Improvements === */
+button:focus-visible,a:focus-visible,input:focus-visible,[role="button"]:focus-visible{outline:3px solid #7c3aed;outline-offset:2px;}
+button,a[href],input[type="button"],input[type="submit"],[role="button"]{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+.skip-link{position:absolute;top:-40px;left:0;background:#7c3aed;color:white;padding:8px;text-decoration:none;z-index:100;}
+.skip-link:focus{top:0;}
+[role="dialog"]{z-index:1000;}
+@media (prefers-reduced-motion: reduce){*{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}}
+@media (prefers-contrast: more){button{border:2px solid #7c3aed;}}
+.rec-card:focus-visible,.option-card:focus-visible{outline:3px solid #7c3aed;outline-offset:4px;}
