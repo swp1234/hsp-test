@@ -44,14 +44,14 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: slideInDown 0.4s ease-out 0.05s both;
+    animation: slideInDown 0.4s ease-out 0s both;
 }
 .intro-subtitle {
     color: var(--text-sec);
     font-size: 16px;
     line-height: 1.6;
     max-width: 360px;
-    animation: slideInUp 0.4s ease-out 0.1s both;
+    animation: slideInUp 0.4s ease-out 0.05s both;
 }
 .intro-desc {
     color: var(--text-sec);
@@ -59,7 +59,7 @@ body {
     line-height: 1.6;
     max-width: 360px;
     white-space: pre-line;
-    animation: slideInUp 0.4s ease-out 0.12s both;
+    animation: slideInUp 0.4s ease-out 0.1s both;
 }
 .intro-meta {
     display: flex;
@@ -68,7 +68,7 @@ body {
     font-size: 13px;
     justify-content: center;
     flex-wrap: wrap;
-    animation: slideInUp 0.4s ease-out 0.14s both;
+    animation: slideInUp 0.4s ease-out 0.12s both;
 }
 .intro-meta span {
     background: rgba(124,58,237,0.12);
@@ -87,7 +87,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     min-height: 52px;
-    animation: scaleInUp 0.4s ease-out 0.15s both;
+    animation: scaleInUp 0.4s ease-out 0s both;
     position: relative;
     overflow: hidden;
 }
@@ -111,10 +111,10 @@ body {
 .test-count {
     color: var(--text-dim);
     font-size: 13px;
-    animation: slideInUp 0.4s ease-out 0.2s both;
+    animation: slideInUp 0.4s ease-out 0.15s both;
 }
 .social-proof {
-    animation: slideInUp 0.4s ease-out 0.25s both;
+    animation: slideInUp 0.4s ease-out 0.2s both;
     font-size: 13px;
     color: var(--text-sec);
     margin-top: 4px;
@@ -124,7 +124,7 @@ body {
     font-weight: 700;
 }
 .time-estimate {
-    animation: slideInUp 0.4s ease-out 0.28s both;
+    animation: slideInUp 0.4s ease-out 0.22s both;
     font-size: 14px;
     color: var(--text-sec);
     background: rgba(124,58,237,0.08);
@@ -418,8 +418,8 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 380px) {
-    .intro-title { font-size: 26px; }
+@media (max-width: 360px) {
+    .intro-title { font-size: 28px; }
     .q-text { font-size: 17px; }
     .gauge-percent { font-size: 36px; }
     .result-title { font-size: 22px; }
