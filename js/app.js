@@ -61,7 +61,14 @@ document.getElementById('btn-start').addEventListener('click', () => {
     scores = [];
     show(questionScreen);
     showQuestion();
-    if (typeof gtag === 'function') gtag('event', 'test_start', { event_category: 'hsp_test' });
+    // GA4: 테스트 시작
+    if (typeof gtag === 'function') {
+        gtag('event', 'test_start', {
+            app_name: 'hsp-test',
+            content_type: 'test',
+            event_category: 'hsp_test'
+        });
+    }
 });
 
 function showQuestion() {
@@ -188,7 +195,17 @@ function showResult() {
     document.getElementById('result-compat').innerHTML = compatHTML;
 
     incrementTestCount();
-    if (typeof gtag === 'function') gtag('event', 'test_complete', { event_category: 'hsp_test', event_label: resultData.title, value: percentValue });
+    // GA4: 테스트 완료
+    if (typeof gtag === 'function') {
+        gtag('event', 'test_complete', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            result_type: resultData.title,
+            result_value: percentValue,
+            event_label: resultData.title,
+            value: percentValue
+        });
+    }
 }
 
 function getResult(percent) {
@@ -341,12 +358,21 @@ function getCareerSuggestions() {
 document.getElementById('btn-share').addEventListener('click', shareResult);
 function shareResult() {
     const text = `🧠 나의 HSP 민감도: ${percentValue}%\n${resultData.emoji} ${resultData.title}\n${resultData.subtitle}\n\n당신도 HSP일까?\n👉 https://dopabrain.com/hsp-test/\n\n#HSP테스트 #민감성테스트 #메타센싱`;
+    // GA4: 결과 공유
+    const method = navigator.share ? 'native' : 'clipboard';
+    if (typeof gtag === 'function') {
+        gtag('event', 'share', {
+            method: method,
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            content_type: 'test_result'
+        });
+    }
     if (navigator.share) {
         navigator.share({ title: 'HSP 민감성 테스트', text: text, url: 'https://dopabrain.com/hsp-test/' }).catch(() => {});
     } else {
         navigator.clipboard.writeText(text).then(() => alert('결과가 복사되었습니다!'));
     }
-    if (typeof gtag === 'function') gtag('event', 'share', { event_category: 'hsp_test' });
 }
 
 // Save image
@@ -454,7 +480,14 @@ function generateShareImage() {
     link.href = canvas.toDataURL('image/png');
     link.click();
 
-    if (typeof gtag === 'function') gtag('event', 'save_image', { event_category: 'hsp_test' });
+    // GA4: 이미지 저장
+    if (typeof gtag === 'function') {
+        gtag('event', 'save_image', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            content_type: 'test_result'
+        });
+    }
 }
 
 // Retry
