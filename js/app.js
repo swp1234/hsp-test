@@ -168,7 +168,24 @@ function showResult() {
     const warningsEl = document.getElementById('result-warnings');
     warningsEl.innerHTML = resultData.warnings.map(w => `<li>${w}</li>`).join('');
 
-    document.getElementById('result-compat').textContent = resultData.compat;
+    // Enriched compat section with career and stats
+    let compatHTML = resultData.compat;
+    if (resultData.career_desc) {
+        compatHTML += `<br><hr style="opacity:0.3;margin:1em 0;"><h4 style="margin:0.5em 0;">💼 추천 직업</h4><p>${resultData.career_desc}</p><ul style="margin:0.5em 0;">`;
+        if (resultData.career) {
+            compatHTML += resultData.career.map(c => `<li>${c}</li>`).join('');
+        }
+        compatHTML += `</ul>`;
+    }
+    if (resultData.survive_tips) {
+        compatHTML += `<h4 style="margin:0.5em 0;">🛡️ HSP 생존 전략</h4><ul style="margin:0.5em 0;">`;
+        compatHTML += resultData.survive_tips.map(t => `<li>${t}</li>`).join('');
+        compatHTML += `</ul>`;
+    }
+    if (resultData.similar_users) {
+        compatHTML += `<br><small style="opacity:0.7;">👥 ${resultData.similar_users}</small>`;
+    }
+    document.getElementById('result-compat').innerHTML = compatHTML;
 
     incrementTestCount();
     if (typeof gtag === 'function') gtag('event', 'test_complete', { event_category: 'hsp_test', event_label: resultData.title, value: percentValue });
