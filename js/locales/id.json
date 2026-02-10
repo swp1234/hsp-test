@@ -25,5 +25,18 @@
     "cta": "Apakah Anda HSP? 👇",
     "testName": "Tes Sensitivitas HSP",
     "downloadName": "HSP_sensitivitas"
+  },
+  "premium": {
+    "careerTitle": "💼 Karir yang Direkomendasikan",
+    "surviveTitle": "🛡️ Strategi Bertahan HSP"
+  },
+  "routine": {
+    "monday": "Senin: 🌅 Mulai dengan meditasi pagi 10 menit",
+    "tuesday": "Selasa: 📝 Tulis jurnal emosi 3 baris",
+    "wednesday": "Rabu: 🚶 Jalan sendirian 15 menit saat makan siang",
+    "thursday": "Kamis: 🎵 Reset emosi dengan musik favorit",
+    "friday": "Jumat: 🛁 Waktu perawatan diri di malam hari",
+    "saturday": "Sabtu: 🌳 Detoks digital di alam",
+    "sunday": "Minggu: 📖 Waktu sendiri untuk mengisi ulang energi"
   }
 }

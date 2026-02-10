@@ -25,5 +25,18 @@
     "cta": "Siz HSP misiniz? 👇",
     "testName": "HSP Hassasiyet Testi",
     "downloadName": "HSP_hassasiyet"
+  },
+  "premium": {
+    "careerTitle": "💼 Önerilen Kariyerler",
+    "surviveTitle": "🛡️ HSP Yaşam Stratejisi"
+  },
+  "routine": {
+    "monday": "Pazartesi: 🌅 10 dakikalık sabah meditasyonu ile başla",
+    "tuesday": "Salı: 📝 Duygu günlüğü 3 satır yaz",
+    "wednesday": "Çarşamba: 🚶 Öğle saatinde 15 dakika yalnız yürüyüş",
+    "thursday": "Perşembe: 🎵 Favorin müzik ile duygularını resetle",
+    "friday": "Cuma: 🛁 Akşam öz-bakım zamanı",
+    "saturday": "Cumartesi: 🌳 Doğada dijital detoks",
+    "sunday": "Pazar: 📖 Enerji yüklemek için yalnız zaman"
   }
 }

@@ -179,14 +179,16 @@ function showResult() {
     // Enriched compat section with career and stats
     let compatHTML = resultData.compat;
     if (resultData.career_desc) {
-        compatHTML += `<br><hr style="opacity:0.3;margin:1em 0;"><h4 style="margin:0.5em 0;">💼 추천 직업</h4><p>${resultData.career_desc}</p><ul style="margin:0.5em 0;">`;
+        const careerTitle = i18n?.t('premium.careerTitle') || '💼 Recommended Careers';
+        compatHTML += `<br><hr style="opacity:0.3;margin:1em 0;"><h4 style="margin:0.5em 0;">${careerTitle}</h4><p>${resultData.career_desc}</p><ul style="margin:0.5em 0;">`;
         if (resultData.career) {
             compatHTML += resultData.career.map(c => `<li>${c}</li>`).join('');
         }
         compatHTML += `</ul>`;
     }
     if (resultData.survive_tips) {
-        compatHTML += `<h4 style="margin:0.5em 0;">🛡️ HSP 생존 전략</h4><ul style="margin:0.5em 0;">`;
+        const surviveTitle = i18n?.t('premium.surviveTitle') || '🛡️ HSP Survival Tips';
+        compatHTML += `<h4 style="margin:0.5em 0;">${surviveTitle}</h4><ul style="margin:0.5em 0;">`;
         compatHTML += resultData.survive_tips.map(t => `<li>${t}</li>`).join('');
         compatHTML += `</ul>`;
     }
@@ -270,16 +272,16 @@ function displayPremiumContent() {
     careerHTML += '</ul></div>';
 
     // Weekly routine
-    const routineLabel = i18n?.t('result.routine') || '📅 이번 주 감정 관리 루틴';
+    const routineLabel = i18n?.t('result.routine') || '📅 This Week\'s Routine';
     let routineHTML = `<div class="detail-section"><h3>${routineLabel}</h3><ul>`;
     const routines = [
-        '월: 🌅 아침 10분 명상으로 시작',
-        '화: 📝 감정 일기 3줄 쓰기',
-        '수: 🚶 점심시간 혼자 산책 15분',
-        '목: 🎵 좋아하는 음악으로 감정 리셋',
-        '금: 🛁 저녁 셀프케어 타임',
-        '토: 🌳 자연 속에서 디지털 디톡스',
-        '일: 📖 혼자만의 시간으로 에너지 충전'
+        i18n?.t('routine.monday') || 'Monday: 🌅 Start with 10-min morning meditation',
+        i18n?.t('routine.tuesday') || 'Tuesday: 📝 Write 3-line emotion journal',
+        i18n?.t('routine.wednesday') || 'Wednesday: 🚶 Solo lunch walk for 15 minutes',
+        i18n?.t('routine.thursday') || 'Thursday: 🎵 Reset emotions with favorite music',
+        i18n?.t('routine.friday') || 'Friday: 🛁 Evening self-care time',
+        i18n?.t('routine.saturday') || 'Saturday: 🌳 Digital detox in nature',
+        i18n?.t('routine.sunday') || 'Sunday: 📖 Alone time to recharge energy'
     ];
     routines.forEach(r => { routineHTML += `<li>${r}</li>`; });
     routineHTML += '</ul></div>';

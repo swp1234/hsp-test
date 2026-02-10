@@ -69,5 +69,18 @@
     "cta": "あなたはHSPですか？👇",
     "testName": "HSP敏感性テスト",
     "downloadName": "HSP_敏感性"
+  },
+  "premium": {
+    "careerTitle": "💼 おすすめのキャリア",
+    "surviveTitle": "🛡️ HSP生存戦略"
+  },
+  "routine": {
+    "monday": "月：🌅 朝の10分間瞑想でスタート",
+    "tuesday": "火：📝 感情日記3行を書く",
+    "wednesday": "水：🚶 昼間に一人で15分散歩",
+    "thursday": "木：🎵 好きな音楽で感情をリセット",
+    "friday": "金：🛁 夜のセルフケアタイム",
+    "saturday": "土：🌳 自然の中でデジタルデトックス",
+    "sunday": "日：📖 一人の時間でエネルギー充電"
   }
 }

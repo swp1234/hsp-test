@@ -25,5 +25,18 @@
     "cta": "¿Eres HSP? 👇",
     "testName": "Prueba de Sensibilidad HSP",
     "downloadName": "HSP_sensibilidad"
+  },
+  "premium": {
+    "careerTitle": "💼 Carreras Recomendadas",
+    "surviveTitle": "🛡️ Estrategia de Supervivencia HSP"
+  },
+  "routine": {
+    "monday": "Lunes: 🌅 Comienza con 10 minutos de meditación matinal",
+    "tuesday": "Martes: 📝 Escribe 3 líneas en tu diario emocional",
+    "wednesday": "Miércoles: 🚶 Camina solo 15 minutos a la hora de almuerzo",
+    "thursday": "Jueves: 🎵 Reinicia emociones con tu música favorita",
+    "friday": "Viernes: 🛁 Tiempo de autocuidado por la noche",
+    "saturday": "Sábado: 🌳 Desintoxicación digital en la naturaleza",
+    "sunday": "Domingo: 📖 Tiempo a solas para recargar energía"
   }
 }

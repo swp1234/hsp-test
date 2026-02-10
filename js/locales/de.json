@@ -25,5 +25,18 @@
     "cta": "Bist du HSP? 👇",
     "testName": "HSP Empfindlichkeits-Test",
     "downloadName": "HSP_Empfindlichkeit"
+  },
+  "premium": {
+    "careerTitle": "💼 Empfehlenswerte Karrieren",
+    "surviveTitle": "🛡️ HSP Überlebensstrategie"
+  },
+  "routine": {
+    "monday": "Montag: 🌅 Starten Sie mit 10 Minuten Morgenmeditation",
+    "tuesday": "Dienstag: 📝 Schreiben Sie ein 3-zeiliges Emotionstagebuch",
+    "wednesday": "Mittwoch: 🚶 Mittags 15 Minuten Einsamkeit spazieren",
+    "thursday": "Donnerstag: 🎵 Emotionen mit Lieblingsmusik zurücksetzen",
+    "friday": "Freitag: 🛁 Abendliche Selbstpflege",
+    "saturday": "Samstag: 🌳 Digitale Entgiftung in der Natur",
+    "sunday": "Sonntag: 📖 Allein Zeit zur Energieaufladung"
   }
 }

@@ -25,5 +25,18 @@
     "cta": "당신도 HSP일까? 👇",
     "testName": "HSP 민감성 테스트",
     "downloadName": "HSP_민감도"
+  },
+  "premium": {
+    "careerTitle": "💼 추천 직업",
+    "surviveTitle": "🛡️ HSP 생존 전략"
+  },
+  "routine": {
+    "monday": "월: 🌅 아침 10분 명상으로 시작",
+    "tuesday": "화: 📝 감정 일기 3줄 쓰기",
+    "wednesday": "수: 🚶 점심시간 혼자 산책 15분",
+    "thursday": "목: 🎵 좋아하는 음악으로 감정 리셋",
+    "friday": "금: 🛁 저녁 셀프케어 타임",
+    "saturday": "토: 🌳 자연 속에서 디지털 디톡스",
+    "sunday": "일: 📖 혼자만의 시간으로 에너지 충전"
   }
 }

@@ -25,5 +25,18 @@
     "cta": "你是HSP吗？👇",
     "testName": "HSP敏感性测试",
     "downloadName": "HSP_敏感性"
+  },
+  "premium": {
+    "careerTitle": "💼 推荐职业",
+    "surviveTitle": "🛡️ HSP生存策略"
+  },
+  "routine": {
+    "monday": "周一：🌅 早上10分钟冥想开始",
+    "tuesday": "周二：📝 写3行情感日记",
+    "wednesday": "周三：🚶 午餐时间独自散步15分钟",
+    "thursday": "周四：🎵 用最喜欢的音乐重置情绪",
+    "friday": "周五：🛁 傍晚自我护理时间",
+    "saturday": "周六：🌳 在大自然中数字排毒",
+    "sunday": "周日：📖 独处时间充充电"
   }
 }
