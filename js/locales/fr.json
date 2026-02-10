@@ -1,22 +1,15 @@
 {
   "app": { "title": "Test de Sensibilité HSP - Suis-je Très Sensible? | DopaBrain", "description": "Auto-évaluation HSP de 20 questions. Découvre si tu es une Personne Très Sensible avec un guide personnalisé." },
-  "intro": { "title": "Test de Sensibilité HSP", "sub": "Es-tu une Personne Très Sensible?", "desc": "Réponds à 20 questions et\ndécouvre ton niveau de sensibilité", "start": "Commencer le Test", "meta1": "📝 20 Questions", "meta2": "⏱️ ~3 Minutes", "meta3": "🎯 5 Types" },
+  "intro": { "title": "Test de Sensibilité HSP", "sub": "Es-tu une Personne Très Sensible?", "desc": "Réponds à 20 questions et\ndécouvre ton niveau de sensibilité", "start": "Commencer le Test", "meta1": "📝 20 Questions", "meta2": "⏱️ ~3 Minutes", "meta3": "🎯 5 Types", "userCount": "38 000+ personnes ont fait ce test", "discoverTitle": "Ce que tu vas découvrir", "discover1": "Ton score de sensibilité HSP (0-100%)", "discover2": "Auquel des 5 types HSP tu appartiens", "discover3": "Analyse détaillée sens par sens", "discover4": "Stratégies d'adaptation personnalisées" },
   "progress": { "of": "/" },
-  "loading": { "text": "Analyse de la sensibilité..." },
+  "loading": { "text": "Analyse de la sensibilité...", "msg1": "Analyse de la sensibilité...", "msg2": "Analyse des schémas émotionnels...", "msg3": "Mesure de l'empathie...", "msg4": "Analyse de la surcharge sensorielle...", "msg5": "Calcul de l'indice HSP..." },
   "result": { "score": "Sensibilité", "traits": "🌸 Traits Clés", "tips": "💡 Activités Recommandées", "warnings": "⚠️ Attention à", "compat": "💕 Types Compatibles", "analysis": "📊 Analyse par Sens", "recovery": "🧘 Routine de Récupération de Surcharge Sensorielle", "career": "💼 Carrières Recommandées pour HSP", "routine": "📅 Gestion Émotionnelle de Cette Semaine" },
-  "premium": { "button": "🔓 Voir l'Analyse Profonde HSP IA", "badge": "PREMIUM", "title": "🧠 Analyse Profonde HSP IA", "ad_text": "Tu pourras bientôt consulter les résultats de l'analyse profonde IA" },
+  "premium": { "button": "🔓 Voir l'Analyse Profonde HSP IA", "badge": "PREMIUM", "title": "🧠 Analyse Profonde HSP IA", "ad_text": "Tu pourras bientôt consulter les résultats de l'analyse profonde IA", "careerTitle": "💼 Carrières Recommandées", "surviveTitle": "🛡️ Stratégie de Survie HSP" },
   "actions": { "share": "📤 Partager", "saveImage": "📷 Enregistrer", "retry": "🔄 Réessayer" },
   "answers": { "strongAgree": "Fortement D'Accord", "agree": "D'Accord", "neutral": "Neutre", "disagree": "Pas D'Accord", "strongDisagree": "Fortement Pas D'Accord" },
   "ads": { "banner": "Publicité" },
   "rec": { "title": "Essaie aussi" },
   "testCount": "personnes ont déjà participé!",
-  "loading": {
-    "msg1": "Analyse de la sensibilité...",
-    "msg2": "Analyse des schémas émotionnels...",
-    "msg3": "Mesure de l'empathie...",
-    "msg4": "Analyse de la surcharge sensorielle...",
-    "msg5": "Calcul de l'indice HSP..."
-  },
   "share": {
     "copied": "Résultat copié!"
   },
@@ -25,10 +18,6 @@
     "cta": "Es-tu HSP? 👇",
     "testName": "Test de Sensibilité HSP",
     "downloadName": "HSP_sensibilite"
-  },
-  "premium": {
-    "careerTitle": "💼 Carrières Recommandées",
-    "surviveTitle": "🛡️ Stratégie de Survie HSP"
   },
   "routine": {
     "monday": "Lundi: 🌅 Commencez par 10 min de méditation matinale",

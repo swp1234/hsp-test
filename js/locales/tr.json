@@ -1,22 +1,15 @@
 {
   "app": { "title": "HSP Hassasiyet Testi - Yüksek Hassas Bir Kişi miyim? | DopaBrain", "description": "20 soruluk HSP öz-değerlendirme. Kişiselleştirilmiş rehber ile Yüksek Hassas Bir Kişi olup olmadığını keşfet." },
-  "intro": { "title": "HSP Hassasiyet Testi", "sub": "Yüksek Hassas Bir Kişi misin?", "desc": "20 soruya cevap ver ve\nhasassiyetini keşfet", "start": "Testi Başlat", "meta1": "📝 20 Soru", "meta2": "⏱️ ~3 Dakika", "meta3": "🎯 5 Tip" },
+  "intro": { "title": "HSP Hassasiyet Testi", "sub": "Yüksek Hassas Bir Kişi misin?", "desc": "20 soruya cevap ver ve\nhasassiyetini keşfet", "start": "Testi Başlat", "meta1": "📝 20 Soru", "meta2": "⏱️ ~3 Dakika", "meta3": "🎯 5 Tip", "userCount": "38.000+ kişi bu testi tamamladı", "discoverTitle": "Neler keşfedeceksin", "discover1": "HSP hassasiyet puanın (0-100%)", "discover2": "5 HSP tipinden hangisine aitsin", "discover3": "Duyu bazlı detaylı hassasiyet analizi", "discover4": "Kişiselleştirilmiş başa çıkma stratejileri" },
   "progress": { "of": "/" },
-  "loading": { "text": "Hassasiyet analiz ediliyor..." },
+  "loading": { "text": "Hassasiyet analiz ediliyor...", "msg1": "Hassasiyet analiz ediliyor...", "msg2": "Duygusal örüntüler analiz ediliyor...", "msg3": "Empati ölçülüyor...", "msg4": "Aşırı uyarılma analiz ediliyor...", "msg5": "HSP indeksi hesaplanıyor..." },
   "result": { "score": "Hassasiyet", "traits": "🌸 Temel Özellikler", "tips": "💡 Önerilen Aktiviteler", "warnings": "⚠️ Dikkat Et", "compat": "💕 Uyumlu Tipler", "analysis": "📊 Duyu Bazlı Analiz", "recovery": "🧘 Aşırı Uyarılma Iyileşme Rutini", "career": "💼 HSP için Önerilen Kariyerler", "routine": "📅 Bu Haftanın Duygu Yönetimi" },
-  "premium": { "button": "🔓 YZ Derinlemesine HSP Analizini Gör", "badge": "PREMIUM", "title": "🧠 YZ Derinlemesine HSP Analizi", "ad_text": "YZ derinlemesine analiz sonuçlarını kısa sürede görebileceksin" },
+  "premium": { "button": "🔓 YZ Derinlemesine HSP Analizini Gör", "badge": "PREMIUM", "title": "🧠 YZ Derinlemesine HSP Analizi", "ad_text": "YZ derinlemesine analiz sonuçlarını kısa sürede görebileceksin", "careerTitle": "💼 Önerilen Kariyerler", "surviveTitle": "🛡️ HSP Yaşam Stratejisi" },
   "actions": { "share": "📤 Paylaş", "saveImage": "📷 Kaydet", "retry": "🔄 Tekrar Dene" },
   "answers": { "strongAgree": "Kesin Katılıyorum", "agree": "Katılıyorum", "neutral": "Tarafsız", "disagree": "Katılmıyorum", "strongDisagree": "Kesinlikle Katılmıyorum" },
   "ads": { "banner": "Reklam" },
   "rec": { "title": "Bunları da dene" },
   "testCount": "kişi katılmıştır!",
-  "loading": {
-    "msg1": "Hassasiyet analiz ediliyor...",
-    "msg2": "Duygusal örüntüler analiz ediliyor...",
-    "msg3": "Empati ölçülüyor...",
-    "msg4": "Aşırı uyarılma analiz ediliyor...",
-    "msg5": "HSP indeksi hesaplanıyor..."
-  },
   "share": {
     "copied": "Sonuç kopyalandı!"
   },
@@ -25,10 +18,6 @@
     "cta": "Siz HSP misiniz? 👇",
     "testName": "HSP Hassasiyet Testi",
     "downloadName": "HSP_hassasiyet"
-  },
-  "premium": {
-    "careerTitle": "💼 Önerilen Kariyerler",
-    "surviveTitle": "🛡️ HSP Yaşam Stratejisi"
   },
   "routine": {
     "monday": "Pazartesi: 🌅 10 dakikalık sabah meditasyonu ile başla",

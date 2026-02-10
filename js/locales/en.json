@@ -1,22 +1,15 @@
 {
   "app": { "title": "HSP Sensitivity Test - Am I Highly Sensitive? | DopaBrain", "description": "20-question HSP self-assessment. Discover if you're a Highly Sensitive Person with personalized guide." },
-  "intro": { "title": "HSP Sensitivity Test", "sub": "Are you a Highly Sensitive Person?", "desc": "Answer 20 questions and\ndiscover your sensitivity level", "start": "Start Test", "meta1": "📝 20 Questions", "meta2": "⏱️ ~3 Minutes", "meta3": "🎯 5 Types" },
+  "intro": { "title": "HSP Sensitivity Test", "sub": "Are you a Highly Sensitive Person?", "desc": "Answer 20 questions and\ndiscover your sensitivity level", "start": "Start Test", "meta1": "📝 20 Questions", "meta2": "⏱️ ~3 Minutes", "meta3": "🎯 5 Types", "userCount": "38,000+ people have taken this test", "discoverTitle": "What you'll discover", "discover1": "Your HSP sensitivity score (0-100%)", "discover2": "Which of 5 HSP types you belong to", "discover3": "Sense-by-sense sensitivity breakdown", "discover4": "Personalized coping strategies" },
   "progress": { "of": "/" },
-  "loading": { "text": "Analyzing sensitivity..." },
+  "loading": { "text": "Analyzing sensitivity...", "msg1": "Analyzing sensitivity...", "msg2": "Analyzing emotional patterns...", "msg3": "Measuring empathy...", "msg4": "Analyzing overstimulation...", "msg5": "Calculating HSP index..." },
   "result": { "score": "Sensitivity", "traits": "🌸 Key Traits", "tips": "💡 Recommended Activities", "warnings": "⚠️ Watch Out For", "compat": "💕 Compatible Types", "analysis": "📊 Sense-by-Sense Analysis", "recovery": "🧘 Overstimulation Recovery Routine", "career": "💼 Recommended Careers for HSP", "routine": "📅 This Week's Emotion Management" },
-  "premium": { "button": "🔓 View AI Deep HSP Analysis", "badge": "PREMIUM", "title": "🧠 AI Deep HSP Analysis", "ad_text": "You can check the AI deep analysis results shortly" },
+  "premium": { "button": "🔓 View AI Deep HSP Analysis", "badge": "PREMIUM", "title": "🧠 AI Deep HSP Analysis", "ad_text": "You can check the AI deep analysis results shortly", "careerTitle": "💼 Recommended Careers", "surviveTitle": "🛡️ HSP Survival Tips" },
   "actions": { "share": "📤 Share", "saveImage": "📷 Save", "retry": "🔄 Retry" },
   "answers": { "strongAgree": "Strongly Agree", "agree": "Agree", "neutral": "Neutral", "disagree": "Disagree", "strongDisagree": "Strongly Disagree" },
   "ads": { "banner": "Advertisement" },
   "rec": { "title": "Try these too" },
   "testCount": "people already participated!",
-  "loading": {
-    "msg1": "Analyzing sensitivity...",
-    "msg2": "Analyzing emotional patterns...",
-    "msg3": "Measuring empathy...",
-    "msg4": "Analyzing overstimulation...",
-    "msg5": "Calculating HSP index..."
-  },
   "share": {
     "copied": "Result copied!"
   },
@@ -25,10 +18,6 @@
     "cta": "Are you HSP? 👇",
     "testName": "HSP Sensitivity Test",
     "downloadName": "HSP_sensitivity"
-  },
-  "premium": {
-    "careerTitle": "💼 Recommended Careers",
-    "surviveTitle": "🛡️ HSP Survival Tips"
   },
   "routine": {
     "monday": "Mon: 🌅 Start with 10-min morning meditation",

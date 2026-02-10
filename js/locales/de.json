@@ -1,22 +1,15 @@
 {
   "app": { "title": "HSP Empfindlichkeits-Test - Bin ich hochempfindlich? | DopaBrain", "description": "20-Fragen-HSP-Selbstbewertung. Entdecke, ob du eine hochempfindliche Person bist, mit personalisiertem Leitfaden." },
-  "intro": { "title": "HSP Empfindlichkeits-Test", "sub": "Bist du eine hochempfindliche Person?", "desc": "Beantworte 20 Fragen und\nentdecke dein Empfindlichkeitsniveau", "start": "Test starten", "meta1": "📝 20 Fragen", "meta2": "⏱️ ~3 Minuten", "meta3": "🎯 5 Typen" },
+  "intro": { "title": "HSP Empfindlichkeits-Test", "sub": "Bist du eine hochempfindliche Person?", "desc": "Beantworte 20 Fragen und\nentdecke dein Empfindlichkeitsniveau", "start": "Test starten", "meta1": "📝 20 Fragen", "meta2": "⏱️ ~3 Minuten", "meta3": "🎯 5 Typen", "userCount": "38.000+ Menschen haben diesen Test gemacht", "discoverTitle": "Was du erfahren wirst", "discover1": "Dein HSP-Empfindlichkeitswert (0-100%)", "discover2": "Zu welchem der 5 HSP-Typen du gehörst", "discover3": "Detaillierte Sinnes-für-Sinnes-Analyse", "discover4": "Personalisierte Bewältigungsstrategien" },
   "progress": { "of": "/" },
-  "loading": { "text": "Analysiere Empfindlichkeit..." },
+  "loading": { "text": "Analysiere Empfindlichkeit...", "msg1": "Analysiere Empfindlichkeit...", "msg2": "Analysiere emotionale Muster...", "msg3": "Messe Empathie...", "msg4": "Analysiere Überreizung...", "msg5": "Berechne HSP-Index..." },
   "result": { "score": "Empfindlichkeit", "traits": "🌸 Wichtige Merkmale", "tips": "💡 Empfehlenswerte Aktivitäten", "warnings": "⚠️ Achte auf", "compat": "💕 Kompatible Typen", "analysis": "📊 Sinnes-für-Sinnes-Analyse", "recovery": "🧘 Überreizungs-Wiederherstellungsroutine", "career": "💼 Empfehlenswerte Karrieren für HSP", "routine": "📅 Emotions-Management dieser Woche" },
-  "premium": { "button": "🔓 Tiefe KI-HSP-Analyse anzeigen", "badge": "PREMIUM", "title": "🧠 Tiefe KI-HSP-Analyse", "ad_text": "Du kannst die Ergebnisse der tiefenKI-Analyse in Kürze sehen" },
+  "premium": { "button": "🔓 Tiefe KI-HSP-Analyse anzeigen", "badge": "PREMIUM", "title": "🧠 Tiefe KI-HSP-Analyse", "ad_text": "Du kannst die Ergebnisse der tiefenKI-Analyse in Kürze sehen", "careerTitle": "💼 Empfehlenswerte Karrieren", "surviveTitle": "🛡️ HSP Überlebensstrategie" },
   "actions": { "share": "📤 Teilen", "saveImage": "📷 Speichern", "retry": "🔄 Nochmal versuchen" },
   "answers": { "strongAgree": "Stimme stark zu", "agree": "Stimme zu", "neutral": "Neutral", "disagree": "Stimme nicht zu", "strongDisagree": "Stimme stark nicht zu" },
   "ads": { "banner": "Werbung" },
   "rec": { "title": "Probiere auch diese" },
   "testCount": "Menschen haben bereits teilgenommen!",
-  "loading": {
-    "msg1": "Analysiere Empfindlichkeit...",
-    "msg2": "Analysiere emotionale Muster...",
-    "msg3": "Messe Empathie...",
-    "msg4": "Analysiere Überreizung...",
-    "msg5": "Berechne HSP-Index..."
-  },
   "share": {
     "copied": "Ergebnis kopiert!"
   },
@@ -25,10 +18,6 @@
     "cta": "Bist du HSP? 👇",
     "testName": "HSP Empfindlichkeits-Test",
     "downloadName": "HSP_Empfindlichkeit"
-  },
-  "premium": {
-    "careerTitle": "💼 Empfehlenswerte Karrieren",
-    "surviveTitle": "🛡️ HSP Überlebensstrategie"
   },
   "routine": {
     "monday": "Montag: 🌅 Starten Sie mit 10 Minuten Morgenmeditation",

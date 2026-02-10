@@ -1,22 +1,15 @@
 {
   "app": { "title": "Tes Sensitivitas HSP - Apakah Saya Sangat Sensitif? | DopaBrain", "description": "Penilaian diri HSP 20 pertanyaan. Temukan apakah Anda adalah Orang yang Sangat Sensitif dengan panduan yang dipersonalisasi." },
-  "intro": { "title": "Tes Sensitivitas HSP", "sub": "Apakah Anda Orang yang Sangat Sensitif?", "desc": "Jawab 20 pertanyaan dan\ntemukan tingkat sensitivitas Anda", "start": "Mulai Tes", "meta1": "📝 20 Pertanyaan", "meta2": "⏱️ ~3 Menit", "meta3": "🎯 5 Jenis" },
+  "intro": { "title": "Tes Sensitivitas HSP", "sub": "Apakah Anda Orang yang Sangat Sensitif?", "desc": "Jawab 20 pertanyaan dan\ntemukan tingkat sensitivitas Anda", "start": "Mulai Tes", "meta1": "📝 20 Pertanyaan", "meta2": "⏱️ ~3 Menit", "meta3": "🎯 5 Jenis", "userCount": "38.000+ orang telah mengikuti tes ini", "discoverTitle": "Yang akan Anda temukan", "discover1": "Skor sensitivitas HSP Anda (0-100%)", "discover2": "Anda termasuk tipe HSP yang mana dari 5 tipe", "discover3": "Analisis sensitivitas per indera", "discover4": "Strategi penanganan yang dipersonalisasi" },
   "progress": { "of": "/" },
-  "loading": { "text": "Menganalisis sensitivitas..." },
+  "loading": { "text": "Menganalisis sensitivitas...", "msg1": "Menganalisis sensitivitas...", "msg2": "Menganalisis pola emosi...", "msg3": "Mengukur empati...", "msg4": "Menganalisis overstimulasi...", "msg5": "Menghitung indeks HSP..." },
   "result": { "score": "Sensitivitas", "traits": "🌸 Ciri Utama", "tips": "💡 Aktivitas yang Direkomendasikan", "warnings": "⚠️ Perhatikan", "compat": "💕 Jenis yang Kompatibel", "analysis": "📊 Analisis Indera demi Indera", "recovery": "🧘 Rutinitas Pemulihan Overstimulasi", "career": "💼 Karir yang Direkomendasikan untuk HSP", "routine": "📅 Manajemen Emosi Minggu Ini" },
-  "premium": { "button": "🔓 Lihat Analisis Mendalam HSP AI", "badge": "PREMIUM", "title": "🧠 Analisis Mendalam HSP AI", "ad_text": "Anda dapat melihat hasil analisis mendalam AI segera" },
+  "premium": { "button": "🔓 Lihat Analisis Mendalam HSP AI", "badge": "PREMIUM", "title": "🧠 Analisis Mendalam HSP AI", "ad_text": "Anda dapat melihat hasil analisis mendalam AI segera", "careerTitle": "💼 Karir yang Direkomendasikan", "surviveTitle": "🛡️ Strategi Bertahan HSP" },
   "actions": { "share": "📤 Bagikan", "saveImage": "📷 Simpan", "retry": "🔄 Coba Lagi" },
   "answers": { "strongAgree": "Sangat Setuju", "agree": "Setuju", "neutral": "Netral", "disagree": "Tidak Setuju", "strongDisagree": "Sangat Tidak Setuju" },
   "ads": { "banner": "Iklan" },
   "rec": { "title": "Coba juga" },
   "testCount": "orang telah berpartisipasi!",
-  "loading": {
-    "msg1": "Menganalisis sensitivitas...",
-    "msg2": "Menganalisis pola emosi...",
-    "msg3": "Mengukur empati...",
-    "msg4": "Menganalisis overstimulasi...",
-    "msg5": "Menghitung indeks HSP..."
-  },
   "share": {
     "copied": "Hasil disalin!"
   },
@@ -25,10 +18,6 @@
     "cta": "Apakah Anda HSP? 👇",
     "testName": "Tes Sensitivitas HSP",
     "downloadName": "HSP_sensitivitas"
-  },
-  "premium": {
-    "careerTitle": "💼 Karir yang Direkomendasikan",
-    "surviveTitle": "🛡️ Strategi Bertahan HSP"
   },
   "routine": {
     "monday": "Senin: 🌅 Mulai dengan meditasi pagi 10 menit",
