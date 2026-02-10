@@ -9,5 +9,21 @@
   "answers": { "strongAgree": "Kesin Katılıyorum", "agree": "Katılıyorum", "neutral": "Tarafsız", "disagree": "Katılmıyorum", "strongDisagree": "Kesinlikle Katılmıyorum" },
   "ads": { "banner": "Reklam" },
   "rec": { "title": "Bunları da dene" },
-  "testCount": "kişi katılmış!"
+  "testCount": "kişi katılmıştır!",
+  "loading": {
+    "msg1": "Hassasiyet analiz ediliyor...",
+    "msg2": "Duygusal örüntüler analiz ediliyor...",
+    "msg3": "Empati ölçülüyor...",
+    "msg4": "Aşırı uyarılma analiz ediliyor...",
+    "msg5": "HSP indeksi hesaplanıyor..."
+  },
+  "share": {
+    "copied": "Sonuç kopyalandı!"
+  },
+  "canvas": {
+    "topLabel": "Benim HSP hassasiyetim",
+    "cta": "Siz HSP misiniz? 👇",
+    "testName": "HSP Hassasiyet Testi",
+    "downloadName": "HSP_hassasiyet"
+  }
 }

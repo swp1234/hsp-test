@@ -50,7 +50,8 @@ function updateTestCount() {
     const el = document.getElementById('test-count');
     const c = getTestCount();
     if (c > 0) {
-        el.innerHTML = `<span class="count">${c.toLocaleString()}명</span>이 이미 참여했어요! 👥`;
+        const testCountText = i18n?.t('testCount') || '명이 이미 참여했어요!';
+        el.innerHTML = `<span class="count">${c.toLocaleString()}</span>${testCountText} 👥`;
     }
 }
 updateTestCount();
@@ -119,11 +120,11 @@ function showLoading() {
     let progress = 0;
 
     const messages = [
-        '감각 민감도 분석 중...',
-        '감정 처리 패턴 분석 중...',
-        '공감 능력 측정 중...',
-        '과자극 반응 분석 중...',
-        'HSP 지수 계산 중...'
+        i18n?.t('loading.msg1') || '감각 민감도 분석 중...',
+        i18n?.t('loading.msg2') || '감정 처리 패턴 분석 중...',
+        i18n?.t('loading.msg3') || '공감 능력 측정 중...',
+        i18n?.t('loading.msg4') || '과자극 반응 분석 중...',
+        i18n?.t('loading.msg5') || 'HSP 지수 계산 중...'
     ];
 
     const interval = setInterval(() => {
@@ -247,7 +248,8 @@ function displayPremiumContent() {
 
     // Sensitivity radar
     const senseData = getSensitivityAnalysis();
-    let radarHTML = '<div class="detail-section"><h3>📊 감각별 민감도 분석</h3><div class="radar-list">';
+    const radarLabel = i18n?.t('result.analysis') || '📊 감각별 민감도 분석';
+    let radarHTML = `<div class="detail-section"><h3>${radarLabel}</h3><div class="radar-list">`;
     senseData.forEach(s => {
         radarHTML += `<div class="radar-item"><span class="radar-label">${s.label}</span><div class="radar-bar-bg"><div class="radar-bar" style="width:${s.value}%;background:${s.color}"></div></div><span class="radar-value">${s.value}%</span></div>`;
     });
@@ -255,18 +257,21 @@ function displayPremiumContent() {
 
     // Recovery tips
     const tips = getRecoveryTips();
-    let tipsHTML = '<div class="detail-section"><h3>🧘 과자극 회복 루틴</h3><ul>';
+    const recoveryLabel = i18n?.t('result.recovery') || '🧘 과자극 회복 루틴';
+    let tipsHTML = `<div class="detail-section"><h3>${recoveryLabel}</h3><ul>`;
     tips.forEach(t => { tipsHTML += `<li>${t}</li>`; });
     tipsHTML += '</ul></div>';
 
     // Career suggestions
     const careers = getCareerSuggestions();
-    let careerHTML = '<div class="detail-section"><h3>💼 HSP 추천 직업군</h3><ul>';
+    const careerLabel = i18n?.t('result.career') || '💼 HSP 추천 직업군';
+    let careerHTML = `<div class="detail-section"><h3>${careerLabel}</h3><ul>`;
     careers.forEach(c => { careerHTML += `<li>${c}</li>`; });
     careerHTML += '</ul></div>';
 
     // Weekly routine
-    let routineHTML = '<div class="detail-section"><h3>📅 이번 주 감정 관리 루틴</h3><ul>';
+    const routineLabel = i18n?.t('result.routine') || '📅 이번 주 감정 관리 루틴';
+    let routineHTML = `<div class="detail-section"><h3>${routineLabel}</h3><ul>`;
     const routines = [
         '월: 🌅 아침 10분 명상으로 시작',
         '화: 📝 감정 일기 3줄 쓰기',
@@ -371,7 +376,8 @@ function shareResult() {
     if (navigator.share) {
         navigator.share({ title: 'HSP 민감성 테스트', text: text, url: 'https://dopabrain.com/hsp-test/' }).catch(() => {});
     } else {
-        navigator.clipboard.writeText(text).then(() => alert('결과가 복사되었습니다!'));
+        const copyMessage = i18n?.t('share.copied') || '결과가 복사되었습니다!';
+        navigator.clipboard.writeText(text).then(() => alert(copyMessage));
     }
 }
 
@@ -432,7 +438,8 @@ function generateShareImage() {
     ctx.fillStyle = 'rgba(255,255,255,0.8)';
     ctx.font = '600 36px -apple-system, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('나의 HSP 민감도는', w / 2, 150);
+    const topText = i18n?.t('canvas.topLabel') || '나의 HSP 민감도는';
+    ctx.fillText(topText, w / 2, 150);
 
     // Percentage (large)
     ctx.fillStyle = '#fff';
@@ -464,10 +471,12 @@ function generateShareImage() {
     // CTA
     ctx.fillStyle = 'rgba(255,255,255,0.6)';
     ctx.font = '400 28px -apple-system, sans-serif';
-    ctx.fillText('당신도 HSP일까? 👇', w / 2, 840);
+    const ctaText = i18n?.t('canvas.cta') || '당신도 HSP일까? 👇';
+    ctx.fillText(ctaText, w / 2, 840);
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '400 24px -apple-system, sans-serif';
-    ctx.fillText('HSP 민감성 테스트', w / 2, 890);
+    const testName = i18n?.t('canvas.testName') || 'HSP 민감성 테스트';
+    ctx.fillText(testName, w / 2, 890);
 
     // Branding
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
@@ -476,7 +485,8 @@ function generateShareImage() {
 
     // Download
     const link = document.createElement('a');
-    link.download = `HSP_${percentValue}%.png`;
+    const downloadName = i18n?.t('canvas.downloadName') || 'HSP';
+    link.download = `${downloadName}_${percentValue}%.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
 

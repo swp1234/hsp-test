@@ -9,5 +9,21 @@
   "answers": { "strongAgree": "Sangat Setuju", "agree": "Setuju", "neutral": "Netral", "disagree": "Tidak Setuju", "strongDisagree": "Sangat Tidak Setuju" },
   "ads": { "banner": "Iklan" },
   "rec": { "title": "Coba juga" },
-  "testCount": "orang telah berpartisipasi!"
+  "testCount": "orang telah berpartisipasi!",
+  "loading": {
+    "msg1": "Menganalisis sensitivitas...",
+    "msg2": "Menganalisis pola emosi...",
+    "msg3": "Mengukur empati...",
+    "msg4": "Menganalisis overstimulasi...",
+    "msg5": "Menghitung indeks HSP..."
+  },
+  "share": {
+    "copied": "Hasil disalin!"
+  },
+  "canvas": {
+    "topLabel": "Sensitivitas HSP saya adalah",
+    "cta": "Apakah Anda HSP? 👇",
+    "testName": "Tes Sensitivitas HSP",
+    "downloadName": "HSP_sensitivitas"
+  }
 }

@@ -9,5 +9,21 @@
   "answers": { "strongAgree": "Totalmente de Acuerdo", "agree": "De Acuerdo", "neutral": "Neutral", "disagree": "En Desacuerdo", "strongDisagree": "Totalmente en Desacuerdo" },
   "ads": { "banner": "Publicidad" },
   "rec": { "title": "Prueba estos también" },
-  "testCount": "¡personas participaron!"
+  "testCount": "¡personas ya participaron!",
+  "loading": {
+    "msg1": "Analizando sensibilidad...",
+    "msg2": "Analizando patrones emocionales...",
+    "msg3": "Midiendo empatía...",
+    "msg4": "Analizando sobreestimulación...",
+    "msg5": "Calculando índice HSP..."
+  },
+  "share": {
+    "copied": "¡Resultado copiado!"
+  },
+  "canvas": {
+    "topLabel": "Mi sensibilidad HSP es",
+    "cta": "¿Eres HSP? 👇",
+    "testName": "Prueba de Sensibilidad HSP",
+    "downloadName": "HSP_sensibilidad"
+  }
 }

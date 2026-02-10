@@ -9,5 +9,21 @@
   "answers": { "strongAgree": "매우 그렇다", "agree": "그렇다", "neutral": "보통이다", "disagree": "아니다", "strongDisagree": "전혀 아니다" },
   "ads": { "banner": "광고 영역" },
   "rec": { "title": "이것도 해보세요" },
-  "testCount": "명이 참여했어요!"
+  "testCount": "명이 이미 참여했어요!",
+  "loading": {
+    "msg1": "감각 민감도 분석 중...",
+    "msg2": "감정 처리 패턴 분석 중...",
+    "msg3": "공감 능력 측정 중...",
+    "msg4": "과자극 반응 분석 중...",
+    "msg5": "HSP 지수 계산 중..."
+  },
+  "share": {
+    "copied": "결과가 복사되었습니다!"
+  },
+  "canvas": {
+    "topLabel": "나의 HSP 민감도는",
+    "cta": "당신도 HSP일까? 👇",
+    "testName": "HSP 민감성 테스트",
+    "downloadName": "HSP_민감도"
+  }
 }

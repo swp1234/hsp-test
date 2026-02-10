@@ -9,5 +9,21 @@
   "answers": { "strongAgree": "非常同意", "agree": "同意", "neutral": "一般", "disagree": "不同意", "strongDisagree": "非常不同意" },
   "ads": { "banner": "广告区域" },
   "rec": { "title": "还可以试试这些" },
-  "testCount": "人已参与！"
+  "testCount": "人已参与！",
+  "loading": {
+    "msg1": "正在分析感觉敏感度...",
+    "msg2": "正在分析情感处理模式...",
+    "msg3": "正在测量同理心...",
+    "msg4": "正在分析过度刺激反应...",
+    "msg5": "正在计算HSP指数..."
+  },
+  "share": {
+    "copied": "结果已复制！"
+  },
+  "canvas": {
+    "topLabel": "我的HSP敏感性是",
+    "cta": "你是HSP吗？👇",
+    "testName": "HSP敏感性测试",
+    "downloadName": "HSP_敏感性"
+  }
 }

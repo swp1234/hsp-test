@@ -9,5 +9,21 @@
   "answers": { "strongAgree": "Stimme stark zu", "agree": "Stimme zu", "neutral": "Neutral", "disagree": "Stimme nicht zu", "strongDisagree": "Stimme stark nicht zu" },
   "ads": { "banner": "Werbung" },
   "rec": { "title": "Probiere auch diese" },
-  "testCount": "Menschen haben teilgenommen!"
+  "testCount": "Menschen haben bereits teilgenommen!",
+  "loading": {
+    "msg1": "Analysiere Empfindlichkeit...",
+    "msg2": "Analysiere emotionale Muster...",
+    "msg3": "Messe Empathie...",
+    "msg4": "Analysiere Überreizung...",
+    "msg5": "Berechne HSP-Index..."
+  },
+  "share": {
+    "copied": "Ergebnis kopiert!"
+  },
+  "canvas": {
+    "topLabel": "Meine HSP-Empfindlichkeit ist",
+    "cta": "Bist du HSP? 👇",
+    "testName": "HSP Empfindlichkeits-Test",
+    "downloadName": "HSP_Empfindlichkeit"
+  }
 }
