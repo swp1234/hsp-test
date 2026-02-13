@@ -81,8 +81,19 @@ function updateTestCount() {
 }
 updateTestCount();
 
+// GA4 engagement tracking
+let _engagementFired = false;
+function fireEngagement() {
+    if (_engagementFired) return;
+    _engagementFired = true;
+    if (typeof gtag === 'function') {
+        gtag('event', 'engagement', { event_category: 'hsp_test', event_label: 'first_interaction' });
+    }
+}
+
 // Start
 document.getElementById('btn-start').addEventListener('click', () => {
+    fireEngagement();
     currentQ = 0;
     scores = [];
     show(questionScreen);

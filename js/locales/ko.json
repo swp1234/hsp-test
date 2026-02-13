@@ -1,6 +1,6 @@
 {
   "app": { "title": "HSP 민감성 테스트 - 나는 고감수성자일까? | DopaBrain", "description": "27문항 HSP 자가진단 테스트. 높은 감수성(Highly Sensitive Person) 진단 및 맞춤 가이드." },
-  "intro": { "title": "HSP 민감성 테스트", "sub": "당신은 고감수성자(HSP)일까요?", "desc": "20가지 질문에 답하고\n나의 민감도를 확인하세요", "start": "테스트 시작하기", "meta1": "📝 20문항", "meta2": "⏱️ 약 3분", "meta3": "🎯 5가지 유형", "userCount": "38,000+명이 이 테스트를 완료했어요", "discoverTitle": "이런 결과를 알 수 있어요", "discover1": "나의 HSP 민감도 점수 (0~100%)", "discover2": "5가지 HSP 유형 중 나의 유형", "discover3": "감각별 민감도 상세 분석", "discover4": "맞춤형 관리법과 대처 전략" },
+  "intro": { "title": "HSP 민감성 테스트", "sub": "당신은 고감수성자(HSP)일까요?", "desc": "20가지 질문에 답하고\n나의 민감도를 확인하세요", "start": "테스트 시작하기", "meta1": "📝 20문항", "meta2": "⏱️ 약 3분", "meta3": "🎯 5가지 유형", "userCount": "38,000+명이 이 테스트를 완료했어요", "discoverTitle": "이런 결과를 알 수 있어요", "discover1": "나의 HSP 민감도 점수 (0~100%)", "discover2": "5가지 HSP 유형 중 나의 유형", "discover3": "감각별 민감도 상세 분석", "discover4": "맞춤형 관리법과 대처 전략", "previewLabel": "1 / 20 문항 미리보기", "previewQ": "카페에서 옆 테이블 대화가 또렷하게 들리면?" },
   "progress": { "of": "/" },
   "loading": { "text": "민감도 분석 중...", "msg1": "감각 민감도 분석 중...", "msg2": "감정 처리 패턴 분석 중...", "msg3": "공감 능력 측정 중...", "msg4": "과자극 반응 분석 중...", "msg5": "HSP 지수 계산 중..." },
   "result": { "score": "민감도", "traits": "🌸 핵심 특징", "tips": "💡 추천 활동", "warnings": "⚠️ 주의사항", "compat": "💕 나와 잘 맞는 타입", "analysis": "📊 감각별 민감도 분석", "recovery": "🧘 과자극 회복 루틴", "career": "💼 HSP 추천 직업군", "routine": "📅 이번 주 감정 관리 루틴" },
