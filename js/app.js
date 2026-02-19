@@ -337,36 +337,36 @@ function getSensitivityAnalysis() {
     const social = Math.round(((scores[6] + scores[19]) / 8) * 100);
 
     return [
-        { label: '🔊 청각 민감도', value: sound, color: '#e74c3c' },
-        { label: '💡 시각 민감도', value: visual, color: '#f39c12' },
-        { label: '✋ 촉각 민감도', value: touch, color: '#2ecc71' },
-        { label: '💕 감정 민감도', value: emotion, color: '#9b59b6' },
-        { label: '👥 사회적 민감도', value: social, color: '#3498db' }
+        { label: i18n?.t('sense.sound') || '🔊 청각 민감도', value: sound, color: '#e74c3c' },
+        { label: i18n?.t('sense.visual') || '💡 시각 민감도', value: visual, color: '#f39c12' },
+        { label: i18n?.t('sense.touch') || '✋ 촉각 민감도', value: touch, color: '#2ecc71' },
+        { label: i18n?.t('sense.emotion') || '💕 감정 민감도', value: emotion, color: '#9b59b6' },
+        { label: i18n?.t('sense.social') || '👥 사회적 민감도', value: social, color: '#3498db' }
     ];
 }
 
 function getRecoveryTips() {
     if (percentValue <= 40) {
         return [
-            '가끔 조용한 시간을 가져보세요 - 내면의 목소리에 귀 기울이기',
-            '감정 일기를 써보면 자기 이해가 깊어집니다',
-            '민감한 사람을 이해하는 연습을 해보세요'
+            i18n?.t('recovery.low1') || '가끔 조용한 시간을 가져보세요 - 내면의 목소리에 귀 기울이기',
+            i18n?.t('recovery.low2') || '감정 일기를 써보면 자기 이해가 깊어집니다',
+            i18n?.t('recovery.low3') || '민감한 사람을 이해하는 연습을 해보세요'
         ];
     } else if (percentValue <= 60) {
         return [
-            '하루 중 30분은 혼자만의 조용한 시간을 확보하세요',
-            '과자극 신호 (두통, 피로) 감지 시 바로 쉬기',
-            '주말에 자연 속에서 감각을 리셋하세요',
-            '카페인과 자극적 음식 줄이기'
+            i18n?.t('recovery.mid1') || '하루 중 30분은 혼자만의 조용한 시간을 확보하세요',
+            i18n?.t('recovery.mid2') || '과자극 신호 (두통, 피로) 감지 시 바로 쉬기',
+            i18n?.t('recovery.mid3') || '주말에 자연 속에서 감각을 리셋하세요',
+            i18n?.t('recovery.mid4') || '카페인과 자극적 음식 줄이기'
         ];
     } else {
         return [
-            '매일 1시간 이상 혼자만의 시간 확보 (필수!)',
-            '소음 차단 이어폰 or 귀마개 항상 소지',
-            '과자극 시 5-4-3-2-1 그라운딩 기법 사용',
-            '밤 10시 이후 스마트폰 차단 (블루라이트 민감)',
-            '주 2회 이상 명상 또는 호흡 운동',
-            '"아니오"라고 말하는 연습 - 자기 보호가 최우선'
+            i18n?.t('recovery.high1') || '매일 1시간 이상 혼자만의 시간 확보 (필수!)',
+            i18n?.t('recovery.high2') || '소음 차단 이어폰 or 귀마개 항상 소지',
+            i18n?.t('recovery.high3') || '과자극 시 5-4-3-2-1 그라운딩 기법 사용',
+            i18n?.t('recovery.high4') || '밤 10시 이후 스마트폰 차단 (블루라이트 민감)',
+            i18n?.t('recovery.high5') || '주 2회 이상 명상 또는 호흡 운동',
+            i18n?.t('recovery.high6') || '"아니오"라고 말하는 연습 - 자기 보호가 최우선'
         ];
     }
 }
@@ -374,25 +374,25 @@ function getRecoveryTips() {
 function getCareerSuggestions() {
     if (percentValue <= 40) {
         return [
-            '🏢 경영/관리직 - 스트레스 상황에서 안정적 리더십',
-            '🚀 영업/마케팅 - 사교적 환경에서 에너지 발휘',
-            '⚡ 스타트업/창업 - 빠른 변화에 유연한 대처',
-            '🎤 프레젠테이션/교육 - 사람 앞에 서는 것이 편안'
+            i18n?.t('career.low1') || '🏢 경영/관리직 - 스트레스 상황에서 안정적 리더십',
+            i18n?.t('career.low2') || '🚀 영업/마케팅 - 사교적 환경에서 에너지 발휘',
+            i18n?.t('career.low3') || '⚡ 스타트업/창업 - 빠른 변화에 유연한 대처',
+            i18n?.t('career.low4') || '🎤 프레젠테이션/교육 - 사람 앞에 서는 것이 편안'
         ];
     } else if (percentValue <= 60) {
         return [
-            '💻 프리랜서/재택근무 - 환경 조절 가능',
-            '🎨 디자인/크리에이티브 - 감수성 활용',
-            '📊 기획/전략 - 깊은 분석과 직관의 균형',
-            '🤝 상담/코칭 - 공감 능력 활용'
+            i18n?.t('career.mid1') || '💻 프리랜서/재택근무 - 환경 조절 가능',
+            i18n?.t('career.mid2') || '🎨 디자인/크리에이티브 - 감수성 활용',
+            i18n?.t('career.mid3') || '📊 기획/전략 - 깊은 분석과 직관의 균형',
+            i18n?.t('career.mid4') || '🤝 상담/코칭 - 공감 능력 활용'
         ];
     } else {
         return [
-            '✍️ 작가/에디터 - 혼자 깊이 몰입하는 작업',
-            '🎨 예술가/음악가 - 풍부한 감수성을 작품으로',
-            '🔬 연구원/학자 - 세밀한 관찰과 분석',
-            '🌿 치료사/상담사 - 깊은 공감과 치유 능력',
-            '📚 사서/큐레이터 - 조용한 환경에서의 전문성'
+            i18n?.t('career.high1') || '✍️ 작가/에디터 - 혼자 깊이 몰입하는 작업',
+            i18n?.t('career.high2') || '🎨 예술가/음악가 - 풍부한 감수성을 작품으로',
+            i18n?.t('career.high3') || '🔬 연구원/학자 - 세밀한 관찰과 분석',
+            i18n?.t('career.high4') || '🌿 치료사/상담사 - 깊은 공감과 치유 능력',
+            i18n?.t('career.high5') || '📚 사서/큐레이터 - 조용한 환경에서의 전문성'
         ];
     }
 }
@@ -400,7 +400,9 @@ function getCareerSuggestions() {
 // Share
 document.getElementById('btn-share').addEventListener('click', shareResult);
 function shareResult() {
-    const text = `🧠 나의 HSP 민감도: ${percentValue}%\n${resultData.emoji} ${resultData.title}\n${resultData.subtitle}\n\n당신도 HSP일까?\n👉 https://dopabrain.com/hsp-test/\n\n#HSP테스트 #민감성테스트 #메타센싱`;
+    const shareLabel = i18n?.t('canvas.topLabel') || '나의 HSP 민감도';
+    const shareCta = i18n?.t('canvas.cta') || '당신도 HSP일까? 👇';
+    const text = `🧠 ${shareLabel}: ${percentValue}%\n${resultData.emoji} ${resultData.title}\n${resultData.subtitle}\n\n${shareCta}\n👉 https://dopabrain.com/hsp-test/`;
     // GA4: 결과 공유
     const method = navigator.share ? 'native' : 'clipboard';
     if (typeof gtag === 'function') {
@@ -412,7 +414,8 @@ function shareResult() {
         });
     }
     if (navigator.share) {
-        navigator.share({ title: 'HSP 민감성 테스트', text: text, url: 'https://dopabrain.com/hsp-test/' }).catch(() => {});
+        const shareTitle = i18n?.t('canvas.testName') || 'HSP 민감성 테스트';
+        navigator.share({ title: shareTitle, text: text, url: 'https://dopabrain.com/hsp-test/' }).catch(() => {});
     } else {
         const copyMessage = i18n?.t('share.copied') || '결과가 복사되었습니다!';
         navigator.clipboard.writeText(text).then(() => alert(copyMessage));

@@ -1,14 +1,74 @@
 {
-  "app": { "title": "HSP Empfindlichkeits-Test - Bin ich hochempfindlich? | DopaBrain", "description": "20-Fragen-HSP-Selbstbewertung. Entdecke, ob du eine hochempfindliche Person bist, mit personalisiertem Leitfaden." },
-  "intro": { "title": "HSP Empfindlichkeits-Test", "sub": "Bist du eine hochempfindliche Person?", "desc": "Beantworte 20 Fragen und\nentdecke dein Empfindlichkeitsniveau", "start": "Test starten", "meta1": "📝 20 Fragen", "meta2": "⏱️ ~3 Minuten", "meta3": "🎯 5 Typen", "userCount": "38.000+ Menschen haben diesen Test gemacht", "discoverTitle": "Was du erfahren wirst", "discover1": "Dein HSP-Empfindlichkeitswert (0-100%)", "discover2": "Zu welchem der 5 HSP-Typen du gehörst", "discover3": "Detaillierte Sinnes-für-Sinnes-Analyse", "discover4": "Personalisierte Bewältigungsstrategien" },
-  "progress": { "of": "/" },
-  "loading": { "text": "Analysiere Empfindlichkeit...", "msg1": "Analysiere Empfindlichkeit...", "msg2": "Analysiere emotionale Muster...", "msg3": "Messe Empathie...", "msg4": "Analysiere Überreizung...", "msg5": "Berechne HSP-Index..." },
-  "result": { "score": "Empfindlichkeit", "traits": "🌸 Wichtige Merkmale", "tips": "💡 Empfehlenswerte Aktivitäten", "warnings": "⚠️ Achte auf", "compat": "💕 Kompatible Typen", "analysis": "📊 Sinnes-für-Sinnes-Analyse", "recovery": "🧘 Überreizungs-Wiederherstellungsroutine", "career": "💼 Empfehlenswerte Karrieren für HSP", "routine": "📅 Emotions-Management dieser Woche" },
-  "premium": { "button": "🔓 Tiefe KI-HSP-Analyse anzeigen", "badge": "PREMIUM", "title": "🧠 Tiefe KI-HSP-Analyse", "ad_text": "Du kannst die Ergebnisse der tiefenKI-Analyse in Kürze sehen", "careerTitle": "💼 Empfehlenswerte Karrieren", "surviveTitle": "🛡️ HSP Überlebensstrategie" },
-  "actions": { "share": "📤 Teilen", "saveImage": "📷 Speichern", "retry": "🔄 Nochmal versuchen" },
-  "answers": { "strongAgree": "Stimme stark zu", "agree": "Stimme zu", "neutral": "Neutral", "disagree": "Stimme nicht zu", "strongDisagree": "Stimme stark nicht zu" },
-  "ads": { "banner": "Werbung" },
-  "rec": { "title": "Probiere auch diese" },
+  "app": {
+    "title": "HSP Empfindlichkeits-Test - Bin ich hochempfindlich? | DopaBrain",
+    "description": "20-Fragen-HSP-Selbstbewertung. Entdecke, ob du eine hochempfindliche Person bist, mit personalisiertem Leitfaden.",
+    "testStats": "⏱ ~3 Min | 📊 5 Analysen | 💡 Persönliche Tipps"
+  },
+  "intro": {
+    "title": "HSP Empfindlichkeits-Test",
+    "sub": "Bist du eine hochempfindliche Person?",
+    "desc": "Beantworte 20 Fragen und\nentdecke dein Empfindlichkeitsniveau",
+    "start": "Test starten",
+    "meta1": "📝 20 Fragen",
+    "meta2": "⏱️ ~3 Minuten",
+    "meta3": "🎯 5 Typen",
+    "userCount": "38.000+ Menschen haben diesen Test gemacht",
+    "discoverTitle": "Was du erfahren wirst",
+    "discover1": "Dein HSP-Empfindlichkeitswert (0-100%)",
+    "discover2": "Zu welchem der 5 HSP-Typen du gehörst",
+    "discover3": "Detaillierte Sinnes-für-Sinnes-Analyse",
+    "discover4": "Personalisierte Bewältigungsstrategien"
+  },
+  "progress": {
+    "of": "/"
+  },
+  "loading": {
+    "text": "Analysiere Empfindlichkeit...",
+    "msg1": "Analysiere Empfindlichkeit...",
+    "msg2": "Analysiere emotionale Muster...",
+    "msg3": "Messe Empathie...",
+    "msg4": "Analysiere Überreizung...",
+    "msg5": "Berechne HSP-Index..."
+  },
+  "result": {
+    "score": "Empfindlichkeit",
+    "traits": "🌸 Wichtige Merkmale",
+    "tips": "💡 Empfehlenswerte Aktivitäten",
+    "warnings": "⚠️ Achte auf",
+    "compat": "💕 Kompatible Typen",
+    "analysis": "📊 Sinnes-für-Sinnes-Analyse",
+    "recovery": "🧘 Überreizungs-Wiederherstellungsroutine",
+    "career": "💼 Empfehlenswerte Karrieren für HSP",
+    "routine": "📅 Emotions-Management dieser Woche",
+    "viewResult": "Ergebnisse ansehen",
+    "sensitivity": "Empfindlichkeit"
+  },
+  "premium": {
+    "button": "🔓 Tiefe KI-HSP-Analyse anzeigen",
+    "badge": "PREMIUM",
+    "title": "🧠 Tiefe KI-HSP-Analyse",
+    "ad_text": "Du kannst die Ergebnisse der tiefenKI-Analyse in Kürze sehen",
+    "careerTitle": "💼 Empfehlenswerte Karrieren",
+    "surviveTitle": "🛡️ HSP Überlebensstrategie"
+  },
+  "actions": {
+    "share": "📤 Teilen",
+    "saveImage": "📷 Speichern",
+    "retry": "🔄 Nochmal versuchen"
+  },
+  "answers": {
+    "strongAgree": "Stimme stark zu",
+    "agree": "Stimme zu",
+    "neutral": "Neutral",
+    "disagree": "Stimme nicht zu",
+    "strongDisagree": "Stimme stark nicht zu"
+  },
+  "ads": {
+    "banner": "Werbung"
+  },
+  "rec": {
+    "title": "Probiere auch diese"
+  },
   "testCount": "Menschen haben bereits teilgenommen!",
   "share": {
     "copied": "Ergebnis kopiert!"
@@ -27,5 +87,42 @@
     "friday": "Freitag: 🛁 Abendliche Selbstpflege",
     "saturday": "Samstag: 🌳 Digitale Entgiftung in der Natur",
     "sunday": "Sonntag: 📖 Allein Zeit zur Energieaufladung"
+  },
+  "sense": {
+    "sound": "🔊 Auditive Empfindlichkeit",
+    "visual": "💡 Visuelle Empfindlichkeit",
+    "touch": "✋ Taktile Empfindlichkeit",
+    "emotion": "💕 Emotionale Empfindlichkeit",
+    "social": "👥 Soziale Empfindlichkeit"
+  },
+  "recovery": {
+    "low1": "Nehmen Sie sich gelegentlich ruhige Zeit - hören Sie auf Ihre innere Stimme",
+    "low2": "Ein Emotionstagebuch vertieft das Selbstverständnis",
+    "low3": "Üben Sie, sensible Menschen zu verstehen",
+    "mid1": "Reservieren Sie täglich 30 Minuten ruhige Alleinzeit",
+    "mid2": "Ruhen Sie sich sofort bei Überstimulationssignalen (Kopfschmerzen, Müdigkeit) aus",
+    "mid3": "Setzen Sie Ihre Sinne am Wochenende in der Natur zurück",
+    "mid4": "Reduzieren Sie Koffein und stimulierende Lebensmittel",
+    "high1": "Sichern Sie sich täglich mindestens 1 Stunde Alleinzeit (unverzichtbar!)",
+    "high2": "Tragen Sie immer geräuschunterdrückende Kopfhörer oder Ohrstöpsel",
+    "high3": "Verwenden Sie die 5-4-3-2-1-Erdungstechnik bei Überstimulation",
+    "high4": "Blockieren Sie das Smartphone nach 22 Uhr (Blaulichtempfindlichkeit)",
+    "high5": "Meditieren oder machen Sie mindestens zweimal pro Woche Atemübungen",
+    "high6": "Üben Sie \"Nein\" zu sagen - Selbstschutz geht vor"
+  },
+  "career": {
+    "low1": "🏢 Management - Stabile Führung unter Stress",
+    "low2": "🚀 Vertrieb/Marketing - Energie in sozialen Umgebungen",
+    "low3": "⚡ Startup/Unternehmertum - Flexibilität bei schnellen Änderungen",
+    "low4": "🎤 Präsentationen/Lehre - Wohl vor Menschen",
+    "mid1": "💻 Freiberuflich/Fernarbeit - Kontrollieren Sie Ihre Umgebung",
+    "mid2": "🎨 Design/Kreativ - Nutzen Sie Ihre Empfindlichkeit",
+    "mid3": "📊 Planung/Strategie - Balance zwischen Tiefenanalyse und Intuition",
+    "mid4": "🤝 Beratung/Coaching - Nutzen Sie Empathiefähigkeiten",
+    "high1": "✍️ Schriftsteller/Redakteur - Tiefe Solo-Arbeit",
+    "high2": "🎨 Künstler/Musiker - Reiche Empfindlichkeit in Kunst kanalisieren",
+    "high3": "🔬 Forscher/Gelehrter - Detaillierte Beobachtung und Analyse",
+    "high4": "🌿 Therapeut/Berater - Tiefe Empathie und Heilungsfähigkeit",
+    "high5": "📚 Bibliothekar/Kurator - Expertise in ruhiger Umgebung"
   }
 }

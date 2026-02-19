@@ -1,14 +1,74 @@
 {
-  "app": { "title": "HSP Hassasiyet Testi - Yüksek Hassas Bir Kişi miyim? | DopaBrain", "description": "20 soruluk HSP öz-değerlendirme. Kişiselleştirilmiş rehber ile Yüksek Hassas Bir Kişi olup olmadığını keşfet." },
-  "intro": { "title": "HSP Hassasiyet Testi", "sub": "Yüksek Hassas Bir Kişi misin?", "desc": "20 soruya cevap ver ve\nhasassiyetini keşfet", "start": "Testi Başlat", "meta1": "📝 20 Soru", "meta2": "⏱️ ~3 Dakika", "meta3": "🎯 5 Tip", "userCount": "38.000+ kişi bu testi tamamladı", "discoverTitle": "Neler keşfedeceksin", "discover1": "HSP hassasiyet puanın (0-100%)", "discover2": "5 HSP tipinden hangisine aitsin", "discover3": "Duyu bazlı detaylı hassasiyet analizi", "discover4": "Kişiselleştirilmiş başa çıkma stratejileri" },
-  "progress": { "of": "/" },
-  "loading": { "text": "Hassasiyet analiz ediliyor...", "msg1": "Hassasiyet analiz ediliyor...", "msg2": "Duygusal örüntüler analiz ediliyor...", "msg3": "Empati ölçülüyor...", "msg4": "Aşırı uyarılma analiz ediliyor...", "msg5": "HSP indeksi hesaplanıyor..." },
-  "result": { "score": "Hassasiyet", "traits": "🌸 Temel Özellikler", "tips": "💡 Önerilen Aktiviteler", "warnings": "⚠️ Dikkat Et", "compat": "💕 Uyumlu Tipler", "analysis": "📊 Duyu Bazlı Analiz", "recovery": "🧘 Aşırı Uyarılma Iyileşme Rutini", "career": "💼 HSP için Önerilen Kariyerler", "routine": "📅 Bu Haftanın Duygu Yönetimi" },
-  "premium": { "button": "🔓 YZ Derinlemesine HSP Analizini Gör", "badge": "PREMIUM", "title": "🧠 YZ Derinlemesine HSP Analizi", "ad_text": "YZ derinlemesine analiz sonuçlarını kısa sürede görebileceksin", "careerTitle": "💼 Önerilen Kariyerler", "surviveTitle": "🛡️ HSP Yaşam Stratejisi" },
-  "actions": { "share": "📤 Paylaş", "saveImage": "📷 Kaydet", "retry": "🔄 Tekrar Dene" },
-  "answers": { "strongAgree": "Kesin Katılıyorum", "agree": "Katılıyorum", "neutral": "Tarafsız", "disagree": "Katılmıyorum", "strongDisagree": "Kesinlikle Katılmıyorum" },
-  "ads": { "banner": "Reklam" },
-  "rec": { "title": "Bunları da dene" },
+  "app": {
+    "title": "HSP Hassasiyet Testi - Yüksek Hassas Bir Kişi miyim? | DopaBrain",
+    "description": "20 soruluk HSP öz-değerlendirme. Kişiselleştirilmiş rehber ile Yüksek Hassas Bir Kişi olup olmadığını keşfet.",
+    "testStats": "⏱ ~3 dk | 📊 5 analiz | 💡 Kişisel ipuçları"
+  },
+  "intro": {
+    "title": "HSP Hassasiyet Testi",
+    "sub": "Yüksek Hassas Bir Kişi misin?",
+    "desc": "20 soruya cevap ver ve\nhasassiyetini keşfet",
+    "start": "Testi Başlat",
+    "meta1": "📝 20 Soru",
+    "meta2": "⏱️ ~3 Dakika",
+    "meta3": "🎯 5 Tip",
+    "userCount": "38.000+ kişi bu testi tamamladı",
+    "discoverTitle": "Neler keşfedeceksin",
+    "discover1": "HSP hassasiyet puanın (0-100%)",
+    "discover2": "5 HSP tipinden hangisine aitsin",
+    "discover3": "Duyu bazlı detaylı hassasiyet analizi",
+    "discover4": "Kişiselleştirilmiş başa çıkma stratejileri"
+  },
+  "progress": {
+    "of": "/"
+  },
+  "loading": {
+    "text": "Hassasiyet analiz ediliyor...",
+    "msg1": "Hassasiyet analiz ediliyor...",
+    "msg2": "Duygusal örüntüler analiz ediliyor...",
+    "msg3": "Empati ölçülüyor...",
+    "msg4": "Aşırı uyarılma analiz ediliyor...",
+    "msg5": "HSP indeksi hesaplanıyor..."
+  },
+  "result": {
+    "score": "Hassasiyet",
+    "traits": "🌸 Temel Özellikler",
+    "tips": "💡 Önerilen Aktiviteler",
+    "warnings": "⚠️ Dikkat Et",
+    "compat": "💕 Uyumlu Tipler",
+    "analysis": "📊 Duyu Bazlı Analiz",
+    "recovery": "🧘 Aşırı Uyarılma Iyileşme Rutini",
+    "career": "💼 HSP için Önerilen Kariyerler",
+    "routine": "📅 Bu Haftanın Duygu Yönetimi",
+    "viewResult": "Sonuçları gör",
+    "sensitivity": "Duyarlılık"
+  },
+  "premium": {
+    "button": "🔓 YZ Derinlemesine HSP Analizini Gör",
+    "badge": "PREMIUM",
+    "title": "🧠 YZ Derinlemesine HSP Analizi",
+    "ad_text": "YZ derinlemesine analiz sonuçlarını kısa sürede görebileceksin",
+    "careerTitle": "💼 Önerilen Kariyerler",
+    "surviveTitle": "🛡️ HSP Yaşam Stratejisi"
+  },
+  "actions": {
+    "share": "📤 Paylaş",
+    "saveImage": "📷 Kaydet",
+    "retry": "🔄 Tekrar Dene"
+  },
+  "answers": {
+    "strongAgree": "Kesin Katılıyorum",
+    "agree": "Katılıyorum",
+    "neutral": "Tarafsız",
+    "disagree": "Katılmıyorum",
+    "strongDisagree": "Kesinlikle Katılmıyorum"
+  },
+  "ads": {
+    "banner": "Reklam"
+  },
+  "rec": {
+    "title": "Bunları da dene"
+  },
   "testCount": "kişi katılmıştır!",
   "share": {
     "copied": "Sonuç kopyalandı!"
@@ -27,5 +87,42 @@
     "friday": "Cuma: 🛁 Akşam öz-bakım zamanı",
     "saturday": "Cumartesi: 🌳 Doğada dijital detoks",
     "sunday": "Pazar: 📖 Enerji yüklemek için yalnız zaman"
+  },
+  "sense": {
+    "sound": "🔊 İşitsel Hassasiyet",
+    "visual": "💡 Görsel Hassasiyet",
+    "touch": "✋ Dokunsal Hassasiyet",
+    "emotion": "💕 Duygusal Hassasiyet",
+    "social": "👥 Sosyal Hassasiyet"
+  },
+  "recovery": {
+    "low1": "Ara sıra sessiz zaman ayırın - iç sesinizi dinleyin",
+    "low2": "Duygu günlüğü yazmak öz anlayışı derinleştirir",
+    "low3": "Hassas insanları anlamayı pratik edin",
+    "mid1": "Her gün 30 dakika sessiz yalnız zaman ayırın",
+    "mid2": "Aşırı uyarım sinyallerinde (baş ağrısı, yorgunluk) hemen dinlenin",
+    "mid3": "Hafta sonları doğada duyularınızı sıfırlayın",
+    "mid4": "Kafein ve uyarıcı yiyecekleri azaltın",
+    "high1": "Her gün en az 1 saat yalnız zaman ayırın (zorunlu!)",
+    "high2": "Her zaman gürültü önleyici kulaklık veya kulak tıkacı taşıyın",
+    "high3": "Aşırı uyarılma anında 5-4-3-2-1 topraklama tekniğini kullanın",
+    "high4": "Gece 10'dan sonra akıllı telefonu engelleyin (mavi ışık hassasiyeti)",
+    "high5": "Haftada en az iki kez meditasyon veya nefes egzersizi yapın",
+    "high6": "\"Hayır\" demeyi pratik edin - kendini koruma önce gelir"
+  },
+  "career": {
+    "low1": "🏢 Yönetim - Stres altında istikrarlı liderlik",
+    "low2": "🚀 Satış/Pazarlama - Sosyal ortamlarda enerjik",
+    "low3": "⚡ Startup/Girişimcilik - Hızlı değişimlere esneklik",
+    "low4": "🎤 Sunum/Eğitim - İnsanların önünde rahat",
+    "mid1": "💻 Freelance/Uzaktan Çalışma - Ortamınızı kontrol edin",
+    "mid2": "🎨 Tasarım/Yaratıcı - Hassasiyetinizi değerlendirin",
+    "mid3": "📊 Planlama/Strateji - Derin analiz ve sezgi dengesi",
+    "mid4": "🤝 Danışmanlık/Koçluk - Empati becerilerini kullanın",
+    "high1": "✍️ Yazar/Editör - Derin solo immersif çalışma",
+    "high2": "🎨 Sanatçı/Müzisyen - Zengin hassasiyeti sanata yönlendirin",
+    "high3": "🔬 Araştırmacı/Akademisyen - Detaylı gözlem ve analiz",
+    "high4": "🌿 Terapist/Danışman - Derin empati ve şifa yeteneği",
+    "high5": "📚 Kütüphaneci/Küratör - Sessiz ortamlarda uzmanlık"
   }
 }

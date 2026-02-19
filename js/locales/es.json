@@ -1,14 +1,74 @@
 {
-  "app": { "title": "Prueba de Sensibilidad HSP - ¿Soy Altamente Sensible? | DopaBrain", "description": "Autoevaluación HSP de 20 preguntas. Descubre si eres una Persona Altamente Sensible con guía personalizada." },
-  "intro": { "title": "Prueba de Sensibilidad HSP", "sub": "¿Eres una Persona Altamente Sensible?", "desc": "Responde 20 preguntas y\ndescubre tu nivel de sensibilidad", "start": "Iniciar Prueba", "meta1": "📝 20 Preguntas", "meta2": "⏱️ ~3 Minutos", "meta3": "🎯 5 Tipos", "userCount": "38.000+ personas han realizado esta prueba", "discoverTitle": "Lo que descubrirás", "discover1": "Tu puntuación de sensibilidad HSP (0-100%)", "discover2": "A cuál de los 5 tipos HSP perteneces", "discover3": "Análisis detallado sentido por sentido", "discover4": "Estrategias de afrontamiento personalizadas" },
-  "progress": { "of": "/" },
-  "loading": { "text": "Analizando sensibilidad...", "msg1": "Analizando sensibilidad...", "msg2": "Analizando patrones emocionales...", "msg3": "Midiendo empatía...", "msg4": "Analizando sobreestimulación...", "msg5": "Calculando índice HSP..." },
-  "result": { "score": "Sensibilidad", "traits": "🌸 Características Clave", "tips": "💡 Actividades Recomendadas", "warnings": "⚠️ Ten Cuidado Con", "compat": "💕 Tipos Compatibles", "analysis": "📊 Análisis Sentido por Sentido", "recovery": "🧘 Rutina de Recuperación de Sobreestimulación", "career": "💼 Carreras Recomendadas para HSP", "routine": "📅 Gestión de Emociones de Esta Semana" },
-  "premium": { "button": "🔓 Ver Análisis Profundo HSP de IA", "badge": "PREMIUM", "title": "🧠 Análisis Profundo HSP de IA", "ad_text": "Puedes verificar los resultados del análisis profundo de IA en breve", "careerTitle": "💼 Carreras Recomendadas", "surviveTitle": "🛡️ Estrategia de Supervivencia HSP" },
-  "actions": { "share": "📤 Compartir", "saveImage": "📷 Guardar", "retry": "🔄 Reintentar" },
-  "answers": { "strongAgree": "Totalmente de Acuerdo", "agree": "De Acuerdo", "neutral": "Neutral", "disagree": "En Desacuerdo", "strongDisagree": "Totalmente en Desacuerdo" },
-  "ads": { "banner": "Publicidad" },
-  "rec": { "title": "Prueba estos también" },
+  "app": {
+    "title": "Prueba de Sensibilidad HSP - ¿Soy Altamente Sensible? | DopaBrain",
+    "description": "Autoevaluación HSP de 20 preguntas. Descubre si eres una Persona Altamente Sensible con guía personalizada.",
+    "testStats": "⏱ ~3 min | 📊 5 análisis | 💡 Consejos personalizados"
+  },
+  "intro": {
+    "title": "Prueba de Sensibilidad HSP",
+    "sub": "¿Eres una Persona Altamente Sensible?",
+    "desc": "Responde 20 preguntas y\ndescubre tu nivel de sensibilidad",
+    "start": "Iniciar Prueba",
+    "meta1": "📝 20 Preguntas",
+    "meta2": "⏱️ ~3 Minutos",
+    "meta3": "🎯 5 Tipos",
+    "userCount": "38.000+ personas han realizado esta prueba",
+    "discoverTitle": "Lo que descubrirás",
+    "discover1": "Tu puntuación de sensibilidad HSP (0-100%)",
+    "discover2": "A cuál de los 5 tipos HSP perteneces",
+    "discover3": "Análisis detallado sentido por sentido",
+    "discover4": "Estrategias de afrontamiento personalizadas"
+  },
+  "progress": {
+    "of": "/"
+  },
+  "loading": {
+    "text": "Analizando sensibilidad...",
+    "msg1": "Analizando sensibilidad...",
+    "msg2": "Analizando patrones emocionales...",
+    "msg3": "Midiendo empatía...",
+    "msg4": "Analizando sobreestimulación...",
+    "msg5": "Calculando índice HSP..."
+  },
+  "result": {
+    "score": "Sensibilidad",
+    "traits": "🌸 Características Clave",
+    "tips": "💡 Actividades Recomendadas",
+    "warnings": "⚠️ Ten Cuidado Con",
+    "compat": "💕 Tipos Compatibles",
+    "analysis": "📊 Análisis Sentido por Sentido",
+    "recovery": "🧘 Rutina de Recuperación de Sobreestimulación",
+    "career": "💼 Carreras Recomendadas para HSP",
+    "routine": "📅 Gestión de Emociones de Esta Semana",
+    "viewResult": "Ver resultados",
+    "sensitivity": "Sensibilidad"
+  },
+  "premium": {
+    "button": "🔓 Ver Análisis Profundo HSP de IA",
+    "badge": "PREMIUM",
+    "title": "🧠 Análisis Profundo HSP de IA",
+    "ad_text": "Puedes verificar los resultados del análisis profundo de IA en breve",
+    "careerTitle": "💼 Carreras Recomendadas",
+    "surviveTitle": "🛡️ Estrategia de Supervivencia HSP"
+  },
+  "actions": {
+    "share": "📤 Compartir",
+    "saveImage": "📷 Guardar",
+    "retry": "🔄 Reintentar"
+  },
+  "answers": {
+    "strongAgree": "Totalmente de Acuerdo",
+    "agree": "De Acuerdo",
+    "neutral": "Neutral",
+    "disagree": "En Desacuerdo",
+    "strongDisagree": "Totalmente en Desacuerdo"
+  },
+  "ads": {
+    "banner": "Publicidad"
+  },
+  "rec": {
+    "title": "Prueba estos también"
+  },
   "testCount": "¡personas ya participaron!",
   "share": {
     "copied": "¡Resultado copiado!"
@@ -27,5 +87,42 @@
     "friday": "Viernes: 🛁 Tiempo de autocuidado por la noche",
     "saturday": "Sábado: 🌳 Desintoxicación digital en la naturaleza",
     "sunday": "Domingo: 📖 Tiempo a solas para recargar energía"
+  },
+  "sense": {
+    "sound": "🔊 Sensibilidad Auditiva",
+    "visual": "💡 Sensibilidad Visual",
+    "touch": "✋ Sensibilidad Táctil",
+    "emotion": "💕 Sensibilidad Emocional",
+    "social": "👥 Sensibilidad Social"
+  },
+  "recovery": {
+    "low1": "Tómate tiempo tranquilo de vez en cuando - escucha tu voz interior",
+    "low2": "Escribir un diario emocional profundiza la autocomprensión",
+    "low3": "Practica entender a las personas sensibles",
+    "mid1": "Reserva 30 minutos diarios de tiempo tranquilo a solas",
+    "mid2": "Descansa inmediatamente al detectar señales de sobreestimulación (dolor de cabeza, fatiga)",
+    "mid3": "Resetea tus sentidos en la naturaleza los fines de semana",
+    "mid4": "Reduce la cafeína y los alimentos estimulantes",
+    "high1": "Asegura al menos 1 hora de tiempo a solas diariamente (¡esencial!)",
+    "high2": "Lleva siempre auriculares con cancelación de ruido o tapones",
+    "high3": "Usa la técnica de anclaje 5-4-3-2-1 cuando estés sobreestimulado",
+    "high4": "Bloquea el móvil después de las 10 PM (sensibilidad a luz azul)",
+    "high5": "Medita o haz ejercicios de respiración al menos dos veces por semana",
+    "high6": "Practica decir \"no\" - la autoprotección es lo primero"
+  },
+  "career": {
+    "low1": "🏢 Gestión - Liderazgo estable bajo estrés",
+    "low2": "🚀 Ventas/Marketing - Energía en entornos sociales",
+    "low3": "⚡ Startup/Emprendimiento - Flexibilidad ante cambios rápidos",
+    "low4": "🎤 Presentaciones/Enseñanza - Cómodo frente a la gente",
+    "mid1": "💻 Freelance/Trabajo remoto - Controla tu entorno",
+    "mid2": "🎨 Diseño/Creativo - Aprovecha tu sensibilidad",
+    "mid3": "📊 Planificación/Estrategia - Equilibrio entre análisis profundo e intuición",
+    "mid4": "🤝 Asesoramiento/Coaching - Utiliza habilidades de empatía",
+    "high1": "✍️ Escritor/Editor - Trabajo profundo en solitario",
+    "high2": "🎨 Artista/Músico - Canaliza la rica sensibilidad en arte",
+    "high3": "🔬 Investigador/Académico - Observación y análisis detallados",
+    "high4": "🌿 Terapeuta/Consejero - Empatía profunda y capacidad de sanación",
+    "high5": "📚 Bibliotecario/Curador - Especialización en entornos tranquilos"
   }
 }

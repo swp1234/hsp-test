@@ -1,14 +1,74 @@
 {
-  "app": { "title": "Tes Sensitivitas HSP - Apakah Saya Sangat Sensitif? | DopaBrain", "description": "Penilaian diri HSP 20 pertanyaan. Temukan apakah Anda adalah Orang yang Sangat Sensitif dengan panduan yang dipersonalisasi." },
-  "intro": { "title": "Tes Sensitivitas HSP", "sub": "Apakah Anda Orang yang Sangat Sensitif?", "desc": "Jawab 20 pertanyaan dan\ntemukan tingkat sensitivitas Anda", "start": "Mulai Tes", "meta1": "📝 20 Pertanyaan", "meta2": "⏱️ ~3 Menit", "meta3": "🎯 5 Jenis", "userCount": "38.000+ orang telah mengikuti tes ini", "discoverTitle": "Yang akan Anda temukan", "discover1": "Skor sensitivitas HSP Anda (0-100%)", "discover2": "Anda termasuk tipe HSP yang mana dari 5 tipe", "discover3": "Analisis sensitivitas per indera", "discover4": "Strategi penanganan yang dipersonalisasi" },
-  "progress": { "of": "/" },
-  "loading": { "text": "Menganalisis sensitivitas...", "msg1": "Menganalisis sensitivitas...", "msg2": "Menganalisis pola emosi...", "msg3": "Mengukur empati...", "msg4": "Menganalisis overstimulasi...", "msg5": "Menghitung indeks HSP..." },
-  "result": { "score": "Sensitivitas", "traits": "🌸 Ciri Utama", "tips": "💡 Aktivitas yang Direkomendasikan", "warnings": "⚠️ Perhatikan", "compat": "💕 Jenis yang Kompatibel", "analysis": "📊 Analisis Indera demi Indera", "recovery": "🧘 Rutinitas Pemulihan Overstimulasi", "career": "💼 Karir yang Direkomendasikan untuk HSP", "routine": "📅 Manajemen Emosi Minggu Ini" },
-  "premium": { "button": "🔓 Lihat Analisis Mendalam HSP AI", "badge": "PREMIUM", "title": "🧠 Analisis Mendalam HSP AI", "ad_text": "Anda dapat melihat hasil analisis mendalam AI segera", "careerTitle": "💼 Karir yang Direkomendasikan", "surviveTitle": "🛡️ Strategi Bertahan HSP" },
-  "actions": { "share": "📤 Bagikan", "saveImage": "📷 Simpan", "retry": "🔄 Coba Lagi" },
-  "answers": { "strongAgree": "Sangat Setuju", "agree": "Setuju", "neutral": "Netral", "disagree": "Tidak Setuju", "strongDisagree": "Sangat Tidak Setuju" },
-  "ads": { "banner": "Iklan" },
-  "rec": { "title": "Coba juga" },
+  "app": {
+    "title": "Tes Sensitivitas HSP - Apakah Saya Sangat Sensitif? | DopaBrain",
+    "description": "Penilaian diri HSP 20 pertanyaan. Temukan apakah Anda adalah Orang yang Sangat Sensitif dengan panduan yang dipersonalisasi.",
+    "testStats": "⏱ ~3 mnt | 📊 5 analisis | 💡 Tips personal"
+  },
+  "intro": {
+    "title": "Tes Sensitivitas HSP",
+    "sub": "Apakah Anda Orang yang Sangat Sensitif?",
+    "desc": "Jawab 20 pertanyaan dan\ntemukan tingkat sensitivitas Anda",
+    "start": "Mulai Tes",
+    "meta1": "📝 20 Pertanyaan",
+    "meta2": "⏱️ ~3 Menit",
+    "meta3": "🎯 5 Jenis",
+    "userCount": "38.000+ orang telah mengikuti tes ini",
+    "discoverTitle": "Yang akan Anda temukan",
+    "discover1": "Skor sensitivitas HSP Anda (0-100%)",
+    "discover2": "Anda termasuk tipe HSP yang mana dari 5 tipe",
+    "discover3": "Analisis sensitivitas per indera",
+    "discover4": "Strategi penanganan yang dipersonalisasi"
+  },
+  "progress": {
+    "of": "/"
+  },
+  "loading": {
+    "text": "Menganalisis sensitivitas...",
+    "msg1": "Menganalisis sensitivitas...",
+    "msg2": "Menganalisis pola emosi...",
+    "msg3": "Mengukur empati...",
+    "msg4": "Menganalisis overstimulasi...",
+    "msg5": "Menghitung indeks HSP..."
+  },
+  "result": {
+    "score": "Sensitivitas",
+    "traits": "🌸 Ciri Utama",
+    "tips": "💡 Aktivitas yang Direkomendasikan",
+    "warnings": "⚠️ Perhatikan",
+    "compat": "💕 Jenis yang Kompatibel",
+    "analysis": "📊 Analisis Indera demi Indera",
+    "recovery": "🧘 Rutinitas Pemulihan Overstimulasi",
+    "career": "💼 Karir yang Direkomendasikan untuk HSP",
+    "routine": "📅 Manajemen Emosi Minggu Ini",
+    "viewResult": "Lihat hasil",
+    "sensitivity": "Sensitivitas"
+  },
+  "premium": {
+    "button": "🔓 Lihat Analisis Mendalam HSP AI",
+    "badge": "PREMIUM",
+    "title": "🧠 Analisis Mendalam HSP AI",
+    "ad_text": "Anda dapat melihat hasil analisis mendalam AI segera",
+    "careerTitle": "💼 Karir yang Direkomendasikan",
+    "surviveTitle": "🛡️ Strategi Bertahan HSP"
+  },
+  "actions": {
+    "share": "📤 Bagikan",
+    "saveImage": "📷 Simpan",
+    "retry": "🔄 Coba Lagi"
+  },
+  "answers": {
+    "strongAgree": "Sangat Setuju",
+    "agree": "Setuju",
+    "neutral": "Netral",
+    "disagree": "Tidak Setuju",
+    "strongDisagree": "Sangat Tidak Setuju"
+  },
+  "ads": {
+    "banner": "Iklan"
+  },
+  "rec": {
+    "title": "Coba juga"
+  },
   "testCount": "orang telah berpartisipasi!",
   "share": {
     "copied": "Hasil disalin!"
@@ -27,5 +87,42 @@
     "friday": "Jumat: 🛁 Waktu perawatan diri di malam hari",
     "saturday": "Sabtu: 🌳 Detoks digital di alam",
     "sunday": "Minggu: 📖 Waktu sendiri untuk mengisi ulang energi"
+  },
+  "sense": {
+    "sound": "🔊 Sensitivitas Pendengaran",
+    "visual": "💡 Sensitivitas Visual",
+    "touch": "✋ Sensitivitas Sentuhan",
+    "emotion": "💕 Sensitivitas Emosional",
+    "social": "👥 Sensitivitas Sosial"
+  },
+  "recovery": {
+    "low1": "Sesekali luangkan waktu tenang - dengarkan suara batinmu",
+    "low2": "Menulis jurnal emosi memperdalam pemahaman diri",
+    "low3": "Berlatih memahami orang-orang sensitif",
+    "mid1": "Sisihkan 30 menit waktu tenang sendirian setiap hari",
+    "mid2": "Segera istirahat saat mendeteksi sinyal overstimulasi (sakit kepala, kelelahan)",
+    "mid3": "Reset indra di alam pada akhir pekan",
+    "mid4": "Kurangi kafein dan makanan merangsang",
+    "high1": "Pastikan minimal 1 jam waktu sendiri setiap hari (wajib!)",
+    "high2": "Selalu bawa earphone peredam bising atau penutup telinga",
+    "high3": "Gunakan teknik grounding 5-4-3-2-1 saat overstimulasi",
+    "high4": "Blokir smartphone setelah jam 10 malam (sensitivitas cahaya biru)",
+    "high5": "Meditasi atau latihan pernapasan minimal dua kali seminggu",
+    "high6": "Berlatih berkata \"tidak\" - perlindungan diri yang utama"
+  },
+  "career": {
+    "low1": "🏢 Manajemen - Kepemimpinan stabil di bawah tekanan",
+    "low2": "🚀 Penjualan/Pemasaran - Energik di lingkungan sosial",
+    "low3": "⚡ Startup/Kewirausahaan - Fleksibel dengan perubahan cepat",
+    "low4": "🎤 Presentasi/Pengajaran - Nyaman di depan orang",
+    "mid1": "💻 Freelance/Kerja Remote - Kontrol lingkunganmu",
+    "mid2": "🎨 Desain/Kreatif - Manfaatkan sensitivitasmu",
+    "mid3": "📊 Perencanaan/Strategi - Keseimbangan analisis mendalam dan intuisi",
+    "mid4": "🤝 Konseling/Coaching - Manfaatkan kemampuan empati",
+    "high1": "✍️ Penulis/Editor - Pekerjaan solo yang mendalam",
+    "high2": "🎨 Seniman/Musisi - Salurkan sensitivitas kaya ke seni",
+    "high3": "🔬 Peneliti/Cendekiawan - Pengamatan dan analisis detail",
+    "high4": "🌿 Terapis/Konselor - Empati mendalam dan kemampuan penyembuhan",
+    "high5": "📚 Pustakawan/Kurator - Keahlian di lingkungan tenang"
   }
 }
