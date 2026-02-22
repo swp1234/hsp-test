@@ -1,128 +1,137 @@
 {
+  "meta": {
+    "title": "HSP Sensibilitätstest | Reizüberflutungs-Simulator - DopaBrain",
+    "description": "Durchlaufe 5 sensorische Intensitätsstufen und entdecke deinen Sensibilitätstyp! Ein Echtzeit-Überlastungsmesser enthüllt dein HSP-Profil."
+  },
+  "a11y": {
+    "skip": "Zum Hauptinhalt springen"
+  },
   "app": {
-    "title": "HSP Empfindlichkeits-Test - Bin ich hochempfindlich? | DopaBrain",
-    "description": "20-Fragen-HSP-Selbstbewertung. Entdecke, ob du eine hochempfindliche Person bist, mit personalisiertem Leitfaden.",
-    "testStats": "⏱ ~3 Min | 📊 5 Analysen | 💡 Persönliche Tipps"
+    "title": "HSP Sensibilitätstest",
+    "subtitle": "Reizüberflutungs-Simulator",
+    "heroTitle": "Wie viel halten deine Sinne aus?",
+    "heroDesc": "Durchlaufe 5 Sinneskategorien mit steigender Intensität. Gib auf, wenn du deine Grenze erreichst — deine Schwelle verrät deinen Typ.",
+    "badge": "Überlastungstest",
+    "info1": "5 Sinne",
+    "info2": "~3 Min",
+    "info3": "Echtzeit",
+    "disclaimer": "Nur zur Unterhaltung. Keine klinische Diagnose.",
+    "start": "🧠 Sensibilitätstest starten",
+    "loading": "Wird geladen..."
   },
   "intro": {
-    "title": "HSP Empfindlichkeits-Test",
-    "sub": "Bist du eine hochempfindliche Person?",
-    "desc": "Beantworte 20 Fragen und\nentdecke dein Empfindlichkeitsniveau",
-    "start": "Test starten",
-    "meta1": "📝 20 Fragen",
-    "meta2": "⏱️ ~3 Minuten",
-    "meta3": "🎯 5 Typen",
-    "userCount": "38.000+ Menschen haben diesen Test gemacht",
-    "discoverTitle": "Was du erfahren wirst",
-    "discover1": "Dein HSP-Empfindlichkeitswert (0-100%)",
-    "discover2": "Zu welchem der 5 HSP-Typen du gehörst",
-    "discover3": "Detaillierte Sinnes-für-Sinnes-Analyse",
-    "discover4": "Personalisierte Bewältigungsstrategien"
+    "typesTitle": "5 Sensibilitätstypen",
+    "typeRock": "Fels in der Brandung",
+    "typeBreeze": "Sanfte Brise",
+    "typeWave": "Fließende Welle",
+    "typeButterfly": "Zarter Schmetterling",
+    "typeAntenna": "Ultra-Antenne"
   },
-  "progress": {
-    "of": "/"
+  "test": {
+    "sense": "Sinn",
+    "intensity": "Intensität",
+    "canHandle": "✓ Das halte ich aus",
+    "myLimit": "✗ Das ist meine Grenze",
+    "levels": ["Mild", "Mäßig", "Intensiv", "Extrem"]
   },
-  "loading": {
-    "text": "Analysiere Empfindlichkeit...",
-    "msg1": "Analysiere Empfindlichkeit...",
-    "msg2": "Analysiere emotionale Muster...",
-    "msg3": "Messe Empathie...",
-    "msg4": "Analysiere Überreizung...",
-    "msg5": "Berechne HSP-Index..."
+  "categories": {
+    "sound": {
+      "emoji": "🔊",
+      "name": "Geräusche",
+      "l1": { "title": "Café-Atmosphäre", "desc": "Sanfte Hintergrundmusik und leises Geplauder in einem gemütlichen Café." },
+      "l2": { "title": "Geschäftiges Büro", "desc": "Mehrere Telefongespräche, Tastaturklappern und redende Kollegen — alles gleichzeitig um dich herum." },
+      "l3": { "title": "Baustelle", "desc": "Bohren, Hämmern und schwere Maschinen direkt vor deinem Fenster." },
+      "l4": { "title": "Volles Konzert", "desc": "Bass, der den Boden vibrieren lässt, schreiende Menge, Lautsprecher auf Maximum — pure Reizüberflutung." }
+    },
+    "visual": {
+      "emoji": "💡",
+      "name": "Licht & Visuelles",
+      "l1": { "title": "Natürliches Sonnenlicht", "desc": "Arbeiten am Fenster mit warmem, natürlichem Tageslicht." },
+      "l2": { "title": "Neonröhren-Büro", "desc": "Grelle Neonröhren summen in einem weiß gestrichenen Großraumbüro." },
+      "l3": { "title": "Neon-Großstadtnacht", "desc": "Durch den Times Square laufen — blinkende Neonreklamen und bewegliche Werbetafeln überall." },
+      "l4": { "title": "Stroboskoplichter", "desc": "Schnelle Stroboskope, Laserstrahlen und intensive Projektionen in einem vollen Nachtclub." }
+    },
+    "touch": {
+      "emoji": "✋",
+      "name": "Berührung & Textur",
+      "l1": { "title": "Weiche Baumwolle", "desc": "Dein liebstes, eingetragenes Baumwoll-T-Shirt — perfekt weichgewaschen." },
+      "l2": { "title": "Kratzendes Etikett", "desc": "Ein brandneues Hemd mit einem steifen Etikett, das ständig am Nacken reibt." },
+      "l3": { "title": "Wolle auf der Haut", "desc": "Ein grober Wollpullover direkt auf der nackten Haut an einem warmen Tag." },
+      "l4": { "title": "Reizüberflutung", "desc": "Sand in den Schuhen, klebrige Sonnencreme, Salzwasser trocknet auf dem Gesicht, Wind peitscht die Haare." }
+    },
+    "emotion": {
+      "emoji": "💕",
+      "name": "Emotionen",
+      "l1": { "title": "Filmabschied", "desc": "Eine bittersüße Abschiedsszene in einem Film — die Figuren trennen sich mit einem Lächeln." },
+      "l2": { "title": "Schlechter Tag eines Freundes", "desc": "Dein enger Freund ruft mit brüchiger Stimme an und erzählt von seinem schrecklichen Tag." },
+      "l3": { "title": "Tränen eines Fremden", "desc": "Ein Fremder sitzt allein auf einer Parkbank und weint leise. Niemand bleibt stehen, um zu helfen." },
+      "l4": { "title": "Herzzerreißende Geschichte", "desc": "Berichte über Familien, die durch Katastrophen getrennt wurden — Kinder, die nach ihren Eltern rufen." }
+    },
+    "social": {
+      "emoji": "👥",
+      "name": "Soziales",
+      "l1": { "title": "Kaffee mit einem Freund", "desc": "Ein entspannter Kaffeeplausch zu zweit mit deinem besten Freund." },
+      "l2": { "title": "Dinner-Party", "desc": "Abendessen mit 8 Bekannten. Smalltalk wird erwartet, die Hälfte kennst du kaum." },
+      "l3": { "title": "Netzwerk-Veranstaltung", "desc": "Ein professioneller Mixer mit 40+ Fremden, alle tauschen Visitenkarten aus." },
+      "l4": { "title": "Im Rampenlicht", "desc": "Eine Rede vor 200+ Menschen. Alle Blicke auf dich gerichtet, Kameras zeichnen alles auf." }
+    }
+  },
+  "types": {
+    "rock": {
+      "name": "🪨 Fels in der Brandung",
+      "desc": "Dich bringt kaum etwas aus der Ruhe! Du hast ein bemerkenswert belastbares Nervensystem, das unter Stimulation aufblüht.",
+      "ratio": "Stimulation 80% : Ruhe 20%",
+      "traits": ["Unerschütterlich unter Druck", "Blüht in energiegeladenen Umgebungen auf", "Starke emotionale Grenzen", "Multitasking-Champion"],
+      "tips": ["Übe Empathie für sensible Menschen", "Versuche Achtsamkeit, um Feinheiten wahrzunehmen", "Weise die Überforderung anderer nicht ab"],
+      "compatible": ["Fließende Welle", "Zarter Schmetterling"]
+    },
+    "breeze": {
+      "name": "🌿 Sanfte Brise",
+      "desc": "Du balancierst Belastbarkeit und Wahrnehmung wunderbar. Du bemerkst die Details, ohne überwältigt zu werden.",
+      "ratio": "Stimulation 60% : Ruhe 40%",
+      "traits": ["Anpassungsfähig an jede Umgebung", "Gute Emotionsregulation", "Bemerkt subtile Signale natürlich", "Flexible Stressreaktion"],
+      "tips": ["Plane gelegentlich ruhige Zeiten ein", "Nutze deine Wahrnehmung als soziale Superkraft", "Vertraue deiner wachsenden Intuition"],
+      "compatible": ["Fels in der Brandung", "Fließende Welle"]
+    },
+    "wave": {
+      "name": "🌊 Fließende Welle",
+      "desc": "Deine Sensibilität ist deine Superkraft! Du liest Räume, fühlst Musik tief und verbindest dich auf einer tiefgreifenden Ebene mit anderen.",
+      "ratio": "Stimulation 40% : Ruhe 60%",
+      "traits": ["Hohe emotionale Intelligenz", "Tiefe Wertschätzung für Kunst & Schönheit", "Ausgezeichnete Intuition", "Reiche Innenwelt"],
+      "tips": ["Plane tägliche Alleinzeit ein", "Lerne Erdungstechniken", "Kanalisiere Sensibilität in Kreativität"],
+      "compatible": ["Sanfte Brise", "Zarter Schmetterling"]
+    },
+    "butterfly": {
+      "name": "🦋 Zarter Schmetterling",
+      "desc": "Du erlebst die Welt in 4K! Deine feinfühligen Sinne erkennen, was andere übersehen — das ist eine Gabe, kein Makel.",
+      "ratio": "Stimulation 25% : Ruhe 75%",
+      "traits": ["Erkennt Mikroausdrücke", "Tiefe emotionale Verarbeitung", "Hochkreativ & fantasievoll", "Braucht bewusstes Aufladen"],
+      "tips": ["Trage geräuschunterdrückende Kopfhörer bei dir", "Schaffe eine ruhige Zuflucht zu Hause", "Nutze die 5-4-3-2-1-Erdungstechnik"],
+      "compatible": ["Fließende Welle", "Ultra-Antenne"]
+    },
+    "antenna": {
+      "name": "🧠 Ultra-Antenne",
+      "desc": "Du bist ein echter HSP — du empfängst jedes Signal. Dein Gehirn verarbeitet ALLE Reize gründlich und verleiht dir außergewöhnliche Wahrnehmung.",
+      "ratio": "Stimulation 15% : Ruhe 85%",
+      "traits": ["Ultrasensibel für alle Sinne", "Absorbiert Emotionen anderer tief", "Braucht viel Alleinzeit", "Außergewöhnliche Gedankentiefe"],
+      "tips": ["Täglich 2+ Stunden Alleinzeit (unverzichtbar!)", "Schaffe reizfreie Zonen", "Übe, 'Nein' zu sagen — Selbstschutz geht vor"],
+      "compatible": ["Zarter Schmetterling", "Ultra-Antenne"]
+    }
   },
   "result": {
-    "score": "Empfindlichkeit",
-    "traits": "🌸 Wichtige Merkmale",
-    "tips": "💡 Empfehlenswerte Aktivitäten",
-    "warnings": "⚠️ Achte auf",
-    "compat": "💕 Kompatible Typen",
-    "analysis": "📊 Sinnes-für-Sinnes-Analyse",
-    "recovery": "🧘 Überreizungs-Wiederherstellungsroutine",
-    "career": "💼 Empfehlenswerte Karrieren für HSP",
-    "routine": "📅 Emotions-Management dieser Woche",
-    "viewResult": "Ergebnisse ansehen",
-    "sensitivity": "Empfindlichkeit"
+    "profileTitle": "Dein Sensibilitätsprofil",
+    "radarTitle": "Aufschlüsselung nach Sinnen",
+    "overallLevel": "Gesamte Sensibilität",
+    "stimRatio": "Ideales Stimulationsverhältnis",
+    "traits": "Wichtige Eigenschaften",
+    "tips": "Empfohlene Maßnahmen",
+    "compatible": "Am besten passende Typen",
+    "retake": "🧠 Test wiederholen"
   },
-  "premium": {
-    "button": "🔓 Tiefe KI-HSP-Analyse anzeigen",
-    "badge": "PREMIUM",
-    "title": "🧠 Tiefe KI-HSP-Analyse",
-    "ad_text": "Du kannst die Ergebnisse der tiefenKI-Analyse in Kürze sehen",
-    "careerTitle": "💼 Empfehlenswerte Karrieren",
-    "surviveTitle": "🛡️ HSP Überlebensstrategie"
-  },
-  "actions": {
-    "share": "📤 Teilen",
-    "saveImage": "📷 Speichern",
-    "retry": "🔄 Nochmal versuchen"
-  },
-  "answers": {
-    "strongAgree": "Stimme stark zu",
-    "agree": "Stimme zu",
-    "neutral": "Neutral",
-    "disagree": "Stimme nicht zu",
-    "strongDisagree": "Stimme stark nicht zu"
-  },
-  "ads": {
-    "banner": "Werbung"
-  },
-  "rec": {
-    "title": "Probiere auch diese"
-  },
-  "testCount": "Menschen haben bereits teilgenommen!",
   "share": {
-    "copied": "Ergebnis kopiert!"
-  },
-  "canvas": {
-    "topLabel": "Meine HSP-Empfindlichkeit ist",
-    "cta": "Bist du HSP? 👇",
-    "testName": "HSP Empfindlichkeits-Test",
-    "downloadName": "HSP_Empfindlichkeit"
-  },
-  "routine": {
-    "monday": "Montag: 🌅 Starten Sie mit 10 Minuten Morgenmeditation",
-    "tuesday": "Dienstag: 📝 Schreiben Sie ein 3-zeiliges Emotionstagebuch",
-    "wednesday": "Mittwoch: 🚶 Mittags 15 Minuten Einsamkeit spazieren",
-    "thursday": "Donnerstag: 🎵 Emotionen mit Lieblingsmusik zurücksetzen",
-    "friday": "Freitag: 🛁 Abendliche Selbstpflege",
-    "saturday": "Samstag: 🌳 Digitale Entgiftung in der Natur",
-    "sunday": "Sonntag: 📖 Allein Zeit zur Energieaufladung"
-  },
-  "sense": {
-    "sound": "🔊 Auditive Empfindlichkeit",
-    "visual": "💡 Visuelle Empfindlichkeit",
-    "touch": "✋ Taktile Empfindlichkeit",
-    "emotion": "💕 Emotionale Empfindlichkeit",
-    "social": "👥 Soziale Empfindlichkeit"
-  },
-  "recovery": {
-    "low1": "Nehmen Sie sich gelegentlich ruhige Zeit - hören Sie auf Ihre innere Stimme",
-    "low2": "Ein Emotionstagebuch vertieft das Selbstverständnis",
-    "low3": "Üben Sie, sensible Menschen zu verstehen",
-    "mid1": "Reservieren Sie täglich 30 Minuten ruhige Alleinzeit",
-    "mid2": "Ruhen Sie sich sofort bei Überstimulationssignalen (Kopfschmerzen, Müdigkeit) aus",
-    "mid3": "Setzen Sie Ihre Sinne am Wochenende in der Natur zurück",
-    "mid4": "Reduzieren Sie Koffein und stimulierende Lebensmittel",
-    "high1": "Sichern Sie sich täglich mindestens 1 Stunde Alleinzeit (unverzichtbar!)",
-    "high2": "Tragen Sie immer geräuschunterdrückende Kopfhörer oder Ohrstöpsel",
-    "high3": "Verwenden Sie die 5-4-3-2-1-Erdungstechnik bei Überstimulation",
-    "high4": "Blockieren Sie das Smartphone nach 22 Uhr (Blaulichtempfindlichkeit)",
-    "high5": "Meditieren oder machen Sie mindestens zweimal pro Woche Atemübungen",
-    "high6": "Üben Sie \"Nein\" zu sagen - Selbstschutz geht vor"
-  },
-  "career": {
-    "low1": "🏢 Management - Stabile Führung unter Stress",
-    "low2": "🚀 Vertrieb/Marketing - Energie in sozialen Umgebungen",
-    "low3": "⚡ Startup/Unternehmertum - Flexibilität bei schnellen Änderungen",
-    "low4": "🎤 Präsentationen/Lehre - Wohl vor Menschen",
-    "mid1": "💻 Freiberuflich/Fernarbeit - Kontrollieren Sie Ihre Umgebung",
-    "mid2": "🎨 Design/Kreativ - Nutzen Sie Ihre Empfindlichkeit",
-    "mid3": "📊 Planung/Strategie - Balance zwischen Tiefenanalyse und Intuition",
-    "mid4": "🤝 Beratung/Coaching - Nutzen Sie Empathiefähigkeiten",
-    "high1": "✍️ Schriftsteller/Redakteur - Tiefe Solo-Arbeit",
-    "high2": "🎨 Künstler/Musiker - Reiche Empfindlichkeit in Kunst kanalisieren",
-    "high3": "🔬 Forscher/Gelehrter - Detaillierte Beobachtung und Analyse",
-    "high4": "🌿 Therapeut/Berater - Tiefe Empathie und Heilungsfähigkeit",
-    "high5": "📚 Bibliothekar/Kurator - Expertise in ruhiger Umgebung"
+    "twitter": "𝕏 Teilen",
+    "copyUrl": "📋 Link kopieren",
+    "copied": "Kopiert!",
+    "twitterText": "Meine HSP-Sensibilität: {percent}%! Typ: {type} 🧠 Wie sensibel bist du?"
   }
 }

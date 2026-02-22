@@ -1,4 +1,6 @@
-// Initialize i18n
+// HSP Sensory Overload Simulator
+
+// i18n init
 (async function initI18n() {
     try {
         await i18n.loadTranslations(i18n.getCurrentLanguage());
@@ -17,17 +19,13 @@
                 langOptions.forEach(o => o.classList.remove('active'));
                 opt.classList.add('active');
                 langMenu.classList.add('hidden');
-                updateTestCount();
             });
         });
     } catch (e) {
         console.warn('i18n init failed:', e);
     } finally {
         const loader = document.getElementById('app-loader');
-        if (loader) {
-            loader.classList.add('hidden');
-            setTimeout(() => loader.remove(), 300);
-        }
+        if (loader) { loader.classList.add('hidden'); setTimeout(() => loader.remove(), 300); }
     }
 })();
 
@@ -36,521 +34,301 @@ const themeToggle = document.getElementById('theme-toggle');
 if (themeToggle) {
     const savedTheme = localStorage.getItem('app-theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
-    themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+    themeToggle.textContent = savedTheme === 'light' ? '\u{1F319}' : '\u{2600}\u{FE0F}';
     themeToggle.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme') || 'dark';
-        const next = current === 'dark' ? 'light' : 'dark';
+        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = cur === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('app-theme', next);
-        themeToggle.textContent = next === 'light' ? '🌙' : '☀️';
+        themeToggle.textContent = next === 'light' ? '\u{1F319}' : '\u{2600}\u{FE0F}';
     });
 }
 
-let currentQ = 0;
-let scores = [];
-let resultData = null;
-let percentValue = 0;
+// Constants
+const CATEGORIES = ['sound', 'visual', 'touch', 'emotion', 'social'];
+const LEVELS_PER_CAT = 4;
+const RESULT_CONFIG = [
+    { key: 'rock', min: 0, max: 20, color: '#4a90d9' },
+    { key: 'breeze', min: 21, max: 40, color: '#2ecc71' },
+    { key: 'wave', min: 41, max: 60, color: '#3498db' },
+    { key: 'butterfly', min: 61, max: 80, color: '#9b59b6' },
+    { key: 'antenna', min: 81, max: 100, color: '#e74c3c' }
+];
 
-const introScreen = document.getElementById('intro-screen');
-const questionScreen = document.getElementById('question-screen');
-const loadingScreen = document.getElementById('loading-screen');
-const resultScreen = document.getElementById('result-screen');
-const adOverlay = document.getElementById('ad-overlay');
+// State
+let currentCat = 0;
+let currentLevel = 0;
+let catScores = [0, 0, 0, 0, 0];
+let isAnimating = false;
 
-function show(screen) {
-    [introScreen, questionScreen, loadingScreen, resultScreen].forEach(s => s.classList.remove('active'));
-    screen.classList.add('active');
+// DOM
+const screens = {
+    intro: document.getElementById('screen-intro'),
+    test: document.getElementById('screen-test'),
+    result: document.getElementById('screen-result')
+};
+
+function showScreen(name) {
+    Object.values(screens).forEach(s => s.classList.remove('active'));
+    screens[name].classList.add('active');
+    window.scrollTo(0, 0);
 }
 
-// Test count
-function getTestCount() {
-    return parseInt(localStorage.getItem('hsp_test_count') || '0');
-}
-function incrementTestCount() {
-    const c = getTestCount() + 1;
-    localStorage.setItem('hsp_test_count', c.toString());
-    updateTestCount();
-}
-function updateTestCount() {
-    const el = document.getElementById('test-count');
-    const c = getTestCount();
-    if (c > 0) {
-        const testCountText = i18n?.t('testCount') || '명이 이미 참여했어요!';
-        el.innerHTML = `<span class="count">${c.toLocaleString()}</span>${testCountText} 👥`;
-    }
-}
-updateTestCount();
-
-// GA4 engagement tracking
-let _engagementFired = false;
-function fireEngagement() {
-    if (_engagementFired) return;
-    _engagementFired = true;
-    if (typeof gtag === 'function') {
-        gtag('event', 'engagement', { event_category: 'hsp_test', event_label: 'first_interaction' });
-    }
-}
-
-// Start
+// Start test
 document.getElementById('btn-start').addEventListener('click', () => {
-    fireEngagement();
-    currentQ = 0;
-    scores = [];
-    show(questionScreen);
-    showQuestion();
-    // GA4: 테스트 시작
+    currentCat = 0;
+    currentLevel = 0;
+    catScores = [0, 0, 0, 0, 0];
+    showScreen('test');
+    renderCategory();
     if (typeof gtag === 'function') {
-        gtag('event', 'test_start', {
-            app_name: 'hsp-test',
-            content_type: 'test',
-            event_category: 'hsp_test'
-        });
+        gtag('event', 'test_start', { app_name: 'hsp-test', content_type: 'overload_simulator' });
     }
 });
 
-function showQuestion() {
-    const q = QUESTIONS[currentQ];
-    const progress = ((currentQ) / QUESTIONS.length) * 100;
-    document.getElementById('progress-fill').style.width = progress + '%';
-    document.getElementById('progress-text').textContent = `${currentQ + 1} / ${QUESTIONS.length}`;
-    document.getElementById('q-text').textContent = q.text;
+function renderCategory() {
+    const cat = CATEGORIES[currentCat];
+    const catEmoji = i18n?.t(`categories.${cat}.emoji`) || '';
+    const catName = i18n?.t(`categories.${cat}.name`) || cat;
 
-    const optionsEl = document.getElementById('q-options');
-    optionsEl.innerHTML = '';
+    document.getElementById('cat-emoji').textContent = catEmoji;
+    document.getElementById('cat-name').textContent = catName;
+    document.getElementById('cat-progress').textContent = `${currentCat + 1} / ${CATEGORIES.length}`;
 
-    const shuffled = [...q.options].sort(() => Math.random() - 0.5);
-    shuffled.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerHTML = `<span class="opt-emoji">${opt.emoji}</span><span class="opt-text">${opt.text}</span>`;
-        btn.dataset.score = opt.score;
-        btn.addEventListener('click', () => selectOption(btn));
-        optionsEl.appendChild(btn);
+    // Category enter animation
+    const testScreen = screens.test;
+    testScreen.classList.remove('category-enter');
+    void testScreen.offsetHeight;
+    testScreen.classList.add('category-enter');
+
+    renderLevel();
+}
+
+function renderLevel() {
+    if (isAnimating) return;
+
+    const cat = CATEGORIES[currentCat];
+    const levelKey = `l${currentLevel + 1}`;
+    const levelTitle = i18n?.t(`categories.${cat}.${levelKey}.title`) || '';
+    const levelDesc = i18n?.t(`categories.${cat}.${levelKey}.desc`) || '';
+    const levelLabels = i18n?.t('test.levels');
+    const levelLabel = Array.isArray(levelLabels) ? levelLabels[currentLevel] : `Level ${currentLevel + 1}`;
+
+    // Stimulus card
+    document.getElementById('stim-title').textContent = levelTitle;
+    document.getElementById('stim-desc').textContent = levelDesc;
+
+    // Meter
+    document.getElementById('meter-level').textContent = currentLevel + 1;
+    document.getElementById('meter-label').textContent = levelLabel;
+
+    const fillDeg = ((currentLevel + 1) / LEVELS_PER_CAT) * 360;
+    const meterFill = document.getElementById('meter-fill');
+    // Color shifts from primary to red as intensity increases
+    const colors = ['var(--primary)', 'var(--primary)', '#f59e0b', '#ef4444'];
+    const fillColor = colors[currentLevel] || 'var(--primary)';
+    meterFill.style.background = `conic-gradient(${fillColor} 0deg, ${fillColor} ${fillDeg}deg, rgba(255,255,255,0.08) ${fillDeg}deg)`;
+
+    // Level dots
+    const dots = document.querySelectorAll('#level-dots .dot');
+    dots.forEach((d, i) => {
+        d.classList.toggle('active', i <= currentLevel);
+        d.classList.toggle('current', i === currentLevel);
     });
 
-    const card = document.querySelector('.question-card');
+    // Intensity class for visual effects
+    screens.test.className = `screen active intensity-${currentLevel + 1}`;
+
+    // Card animation
+    const card = document.getElementById('stimulus-card');
     card.style.animation = 'none';
-    card.offsetHeight;
-    card.style.animation = 'slideIn 0.4s ease';
+    void card.offsetHeight;
+    card.style.animation = 'cardSlideIn 0.4s ease';
 }
 
-function selectOption(btn) {
-    document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
-    btn.classList.add('selected');
-    scores.push(parseInt(btn.dataset.score));
+function handleChoice(canHandle) {
+    if (isAnimating) return;
+    isAnimating = true;
 
-    setTimeout(() => {
-        currentQ++;
-        if (currentQ < QUESTIONS.length) {
-            showQuestion();
+    // Visual feedback
+    const btnId = canHandle ? 'btn-handle' : 'btn-limit';
+    const btn = document.getElementById(btnId);
+    btn.classList.add('pressed');
+    setTimeout(() => btn.classList.remove('pressed'), 200);
+
+    if (canHandle) {
+        if (currentLevel < LEVELS_PER_CAT - 1) {
+            // Next intensity level
+            currentLevel++;
+            setTimeout(() => {
+                isAnimating = false;
+                renderLevel();
+            }, 350);
         } else {
-            showLoading();
+            // Handled all 4 levels — not sensitive (score 0)
+            catScores[currentCat] = 0;
+            setTimeout(() => {
+                isAnimating = false;
+                advanceCategory();
+            }, 350);
         }
-    }, 400);
+    } else {
+        // Hit limit — sensitivity = 4 - currentLevel
+        catScores[currentCat] = LEVELS_PER_CAT - currentLevel;
+        setTimeout(() => {
+            isAnimating = false;
+            advanceCategory();
+        }, 350);
+    }
 }
 
-function showLoading() {
-    show(loadingScreen);
-    const bar = document.getElementById('loading-fill');
-    const text = document.getElementById('loading-text');
-    let progress = 0;
-
-    const messages = [
-        i18n?.t('loading.msg1') || '감각 민감도 분석 중...',
-        i18n?.t('loading.msg2') || '감정 처리 패턴 분석 중...',
-        i18n?.t('loading.msg3') || '공감 능력 측정 중...',
-        i18n?.t('loading.msg4') || '과자극 반응 분석 중...',
-        i18n?.t('loading.msg5') || 'HSP 지수 계산 중...'
-    ];
-
-    const interval = setInterval(() => {
-        progress += Math.random() * 15 + 5;
-        if (progress >= 100) {
-            progress = 100;
-            bar.style.width = '100%';
-            clearInterval(interval);
-            setTimeout(() => showResult(), 500);
-        } else {
-            bar.style.width = progress + '%';
-        }
-        const msgIdx = Math.min(Math.floor(progress / 20), messages.length - 1);
-        text.textContent = messages[msgIdx];
-    }, 400);
+function advanceCategory() {
+    currentCat++;
+    if (currentCat < CATEGORIES.length) {
+        currentLevel = 0;
+        renderCategory();
+    } else {
+        showResult();
+    }
 }
+
+// Button listeners
+document.getElementById('btn-handle').addEventListener('click', () => handleChoice(true));
+document.getElementById('btn-limit').addEventListener('click', () => handleChoice(false));
 
 function showResult() {
-    const totalScore = scores.reduce((a, b) => a + b, 0);
-    const maxScore = QUESTIONS.length * 4;
-    percentValue = Math.round((totalScore / maxScore) * 100);
+    const total = catScores.reduce((a, b) => a + b, 0);
+    const percent = Math.round((total / (CATEGORIES.length * LEVELS_PER_CAT)) * 100);
 
-    resultData = getResult(percentValue);
-    show(resultScreen);
+    // Find result type
+    let resultCfg = RESULT_CONFIG[RESULT_CONFIG.length - 1];
+    for (const cfg of RESULT_CONFIG) {
+        if (percent >= cfg.min && percent <= cfg.max) { resultCfg = cfg; break; }
+    }
+
+    const typeData = i18n?.t(`types.${resultCfg.key}`) || {};
 
     // Gauge animation
-    const gauge = document.getElementById('gauge-fill');
-    const gaugeText = document.getElementById('gauge-percent');
-    gauge.style.background = `conic-gradient(${resultData.color} 0deg, ${resultData.color} 0deg, rgba(255,255,255,0.08) 0deg)`;
+    const gauge = document.getElementById('result-gauge-fill');
+    const gaugeText = document.getElementById('result-percent');
+    gauge.style.background = `conic-gradient(${resultCfg.color} 0deg, ${resultCfg.color} 0deg, rgba(255,255,255,0.08) 0deg)`;
+    gaugeText.textContent = '0%';
 
     setTimeout(() => {
-        const deg = (percentValue / 100) * 360;
-        gauge.style.background = `conic-gradient(${resultData.color} 0deg, ${resultData.color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
-        gaugeText.textContent = percentValue + '%';
-    }, 300);
+        const deg = (percent / 100) * 360;
+        gauge.style.background = `conic-gradient(${resultCfg.color} 0deg, ${resultCfg.color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
+        gaugeText.textContent = percent + '%';
+    }, 400);
 
-    // Result content
-    document.getElementById('result-emoji').textContent = resultData.emoji;
-    document.getElementById('result-title').textContent = resultData.title;
-    document.getElementById('result-subtitle').textContent = resultData.subtitle;
-    document.getElementById('result-desc').textContent = resultData.desc;
+    // Type info
+    document.getElementById('result-name').textContent = typeData.name || resultCfg.key;
+    document.getElementById('result-desc').textContent = typeData.desc || '';
+    document.getElementById('result-ratio').textContent = typeData.ratio || '';
 
-    const traitsEl = document.getElementById('result-traits');
-    traitsEl.innerHTML = resultData.traits.map(t => `<li>${t}</li>`).join('');
+    // Traits
+    const traitsList = document.getElementById('result-traits');
+    traitsList.innerHTML = (typeData.traits || []).map(t => `<li>${t}</li>`).join('');
 
-    const activitiesEl = document.getElementById('result-activities');
-    activitiesEl.innerHTML = resultData.activities.map(a => `<li>${a}</li>`).join('');
+    // Tips
+    const tipsList = document.getElementById('result-tips');
+    tipsList.innerHTML = (typeData.tips || []).map(t => `<li>${t}</li>`).join('');
 
-    const warningsEl = document.getElementById('result-warnings');
-    warningsEl.innerHTML = resultData.warnings.map(w => `<li>${w}</li>`).join('');
+    // Compatible
+    document.getElementById('result-compatible').textContent = (typeData.compatible || []).join(' & ');
 
-    // Enriched compat section with career and stats
-    let compatHTML = resultData.compat;
-    if (resultData.career_desc) {
-        const careerTitle = i18n?.t('premium.careerTitle') || '💼 Recommended Careers';
-        compatHTML += `<br><hr style="opacity:0.3;margin:1em 0;"><h4 style="margin:0.5em 0;">${careerTitle}</h4><p>${resultData.career_desc}</p><ul style="margin:0.5em 0;">`;
-        if (resultData.career) {
-            compatHTML += resultData.career.map(c => `<li>${c}</li>`).join('');
-        }
-        compatHTML += `</ul>`;
-    }
-    if (resultData.survive_tips) {
-        const surviveTitle = i18n?.t('premium.surviveTitle') || '🛡️ HSP Survival Tips';
-        compatHTML += `<h4 style="margin:0.5em 0;">${surviveTitle}</h4><ul style="margin:0.5em 0;">`;
-        compatHTML += resultData.survive_tips.map(t => `<li>${t}</li>`).join('');
-        compatHTML += `</ul>`;
-    }
-    if (resultData.similar_users) {
-        compatHTML += `<br><small style="opacity:0.7;">👥 ${resultData.similar_users}</small>`;
-    }
-    document.getElementById('result-compat').innerHTML = compatHTML;
+    // Radar chart
+    drawRadar();
 
-    incrementTestCount();
-    // GA4: 테스트 완료
+    showScreen('result');
+
     if (typeof gtag === 'function') {
         gtag('event', 'test_complete', {
             app_name: 'hsp-test',
             event_category: 'hsp_test',
-            result_type: resultData.title,
-            result_value: percentValue,
-            event_label: resultData.title,
-            value: percentValue
+            result_type: resultCfg.key,
+            result_value: percent
         });
     }
 }
 
-function getResult(percent) {
-    for (const r of RESULTS) {
-        if (percent >= r.min && percent <= r.max) return r;
+function drawRadar() {
+    const svg = document.getElementById('radar-chart');
+    const cx = 150, cy = 150, maxR = 110;
+    const angleStep = (2 * Math.PI) / CATEGORIES.length;
+    const offset = -Math.PI / 2;
+
+    // Sensitivity percent per category (score 0-4 → 0-100%)
+    const values = catScores.map(s => (s / LEVELS_PER_CAT) * 100);
+
+    function getPoint(index, radius) {
+        const angle = offset + index * angleStep;
+        return { x: cx + radius * Math.cos(angle), y: cy + radius * Math.sin(angle) };
     }
-    return RESULTS[RESULTS.length - 1];
-}
 
-// Premium
-document.getElementById('btn-premium').addEventListener('click', () => {
-    adOverlay.classList.add('active');
-    let countdown = 5;
-    const countEl = document.getElementById('ad-countdown');
-    const closeBtn = document.getElementById('ad-close');
-    countEl.textContent = countdown;
-    closeBtn.style.display = 'none';
+    let html = '';
 
-    const timer = setInterval(() => {
-        countdown--;
-        countEl.textContent = countdown;
-        if (countdown <= 0) {
-            clearInterval(timer);
-            closeBtn.style.display = 'block';
-        }
-    }, 1000);
+    // Background rings
+    for (let r = 0.25; r <= 1; r += 0.25) {
+        const pts = CATEGORIES.map((_, i) => getPoint(i, maxR * r));
+        html += `<polygon points="${pts.map(p => `${p.x},${p.y}`).join(' ')}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>`;
+    }
 
-    if (typeof gtag === 'function') gtag('event', 'premium_click', { event_category: 'hsp_test' });
-});
-
-document.getElementById('ad-close').addEventListener('click', () => {
-    adOverlay.classList.remove('active');
-    displayPremiumContent();
-});
-
-function displayPremiumContent() {
-    const premiumCard = document.getElementById('premium-content');
-    premiumCard.style.display = 'block';
-
-    // Sensitivity radar
-    const senseData = getSensitivityAnalysis();
-    const radarLabel = i18n?.t('result.analysis') || '📊 감각별 민감도 분석';
-    let radarHTML = `<div class="detail-section"><h3>${radarLabel}</h3><div class="radar-list">`;
-    senseData.forEach(s => {
-        radarHTML += `<div class="radar-item"><span class="radar-label">${s.label}</span><div class="radar-bar-bg"><div class="radar-bar" style="width:${s.value}%;background:${s.color}"></div></div><span class="radar-value">${s.value}%</span></div>`;
+    // Axis lines
+    CATEGORIES.forEach((_, i) => {
+        const p = getPoint(i, maxR);
+        html += `<line x1="${cx}" y1="${cy}" x2="${p.x}" y2="${p.y}" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>`;
     });
-    radarHTML += '</div></div>';
 
-    // Recovery tips
-    const tips = getRecoveryTips();
-    const recoveryLabel = i18n?.t('result.recovery') || '🧘 과자극 회복 루틴';
-    let tipsHTML = `<div class="detail-section"><h3>${recoveryLabel}</h3><ul>`;
-    tips.forEach(t => { tipsHTML += `<li>${t}</li>`; });
-    tipsHTML += '</ul></div>';
+    // Data polygon
+    const dataPts = values.map((v, i) => getPoint(i, maxR * Math.max(v, 5) / 100));
+    html += `<polygon points="${dataPts.map(p => `${p.x},${p.y}`).join(' ')}" fill="rgba(124,58,237,0.2)" stroke="var(--primary)" stroke-width="2.5" class="radar-data"/>`;
 
-    // Career suggestions
-    const careers = getCareerSuggestions();
-    const careerLabel = i18n?.t('result.career') || '💼 HSP 추천 직업군';
-    let careerHTML = `<div class="detail-section"><h3>${careerLabel}</h3><ul>`;
-    careers.forEach(c => { careerHTML += `<li>${c}</li>`; });
-    careerHTML += '</ul></div>';
+    // Data points
+    dataPts.forEach(p => {
+        html += `<circle cx="${p.x}" cy="${p.y}" r="5" fill="var(--primary)" stroke="var(--bg)" stroke-width="2"/>`;
+    });
 
-    // Weekly routine
-    const routineLabel = i18n?.t('result.routine') || '📅 This Week\'s Routine';
-    let routineHTML = `<div class="detail-section"><h3>${routineLabel}</h3><ul>`;
-    const routines = [
-        i18n?.t('routine.monday') || 'Monday: 🌅 Start with 10-min morning meditation',
-        i18n?.t('routine.tuesday') || 'Tuesday: 📝 Write 3-line emotion journal',
-        i18n?.t('routine.wednesday') || 'Wednesday: 🚶 Solo lunch walk for 15 minutes',
-        i18n?.t('routine.thursday') || 'Thursday: 🎵 Reset emotions with favorite music',
-        i18n?.t('routine.friday') || 'Friday: 🛁 Evening self-care time',
-        i18n?.t('routine.saturday') || 'Saturday: 🌳 Digital detox in nature',
-        i18n?.t('routine.sunday') || 'Sunday: 📖 Alone time to recharge energy'
-    ];
-    routines.forEach(r => { routineHTML += `<li>${r}</li>`; });
-    routineHTML += '</ul></div>';
+    // Labels
+    CATEGORIES.forEach((cat, i) => {
+        const p = getPoint(i, maxR + 30);
+        const emoji = i18n?.t(`categories.${cat}.emoji`) || '';
+        const name = i18n?.t(`categories.${cat}.name`) || cat;
+        const val = Math.round(values[i]);
+        const anchor = p.x < cx - 10 ? 'end' : p.x > cx + 10 ? 'start' : 'middle';
+        html += `<text x="${p.x}" y="${p.y - 6}" text-anchor="${anchor}" font-size="12" font-weight="600" dominant-baseline="middle">${emoji}</text>`;
+        html += `<text x="${p.x}" y="${p.y + 10}" text-anchor="${anchor}" font-size="10" dominant-baseline="middle">${name} ${val}%</text>`;
+    });
 
-    premiumCard.innerHTML = radarHTML + tipsHTML + careerHTML + routineHTML;
-    premiumCard.scrollIntoView({ behavior: 'smooth' });
-
-    if (typeof gtag === 'function') gtag('event', 'premium_view', { event_category: 'hsp_test' });
-}
-
-function getSensitivityAnalysis() {
-    // Calculate from specific question scores
-    const sound = Math.round(((scores[0] + scores[3]) / 8) * 100);
-    const visual = Math.round(((scores[2] + scores[15]) / 8) * 100);
-    const touch = Math.round(((scores[7] + scores[12]) / 8) * 100);
-    const emotion = Math.round(((scores[1] + scores[4] + scores[10]) / 12) * 100);
-    const social = Math.round(((scores[6] + scores[19]) / 8) * 100);
-
-    return [
-        { label: i18n?.t('sense.sound') || '🔊 청각 민감도', value: sound, color: '#e74c3c' },
-        { label: i18n?.t('sense.visual') || '💡 시각 민감도', value: visual, color: '#f39c12' },
-        { label: i18n?.t('sense.touch') || '✋ 촉각 민감도', value: touch, color: '#2ecc71' },
-        { label: i18n?.t('sense.emotion') || '💕 감정 민감도', value: emotion, color: '#9b59b6' },
-        { label: i18n?.t('sense.social') || '👥 사회적 민감도', value: social, color: '#3498db' }
-    ];
-}
-
-function getRecoveryTips() {
-    if (percentValue <= 40) {
-        return [
-            i18n?.t('recovery.low1') || '가끔 조용한 시간을 가져보세요 - 내면의 목소리에 귀 기울이기',
-            i18n?.t('recovery.low2') || '감정 일기를 써보면 자기 이해가 깊어집니다',
-            i18n?.t('recovery.low3') || '민감한 사람을 이해하는 연습을 해보세요'
-        ];
-    } else if (percentValue <= 60) {
-        return [
-            i18n?.t('recovery.mid1') || '하루 중 30분은 혼자만의 조용한 시간을 확보하세요',
-            i18n?.t('recovery.mid2') || '과자극 신호 (두통, 피로) 감지 시 바로 쉬기',
-            i18n?.t('recovery.mid3') || '주말에 자연 속에서 감각을 리셋하세요',
-            i18n?.t('recovery.mid4') || '카페인과 자극적 음식 줄이기'
-        ];
-    } else {
-        return [
-            i18n?.t('recovery.high1') || '매일 1시간 이상 혼자만의 시간 확보 (필수!)',
-            i18n?.t('recovery.high2') || '소음 차단 이어폰 or 귀마개 항상 소지',
-            i18n?.t('recovery.high3') || '과자극 시 5-4-3-2-1 그라운딩 기법 사용',
-            i18n?.t('recovery.high4') || '밤 10시 이후 스마트폰 차단 (블루라이트 민감)',
-            i18n?.t('recovery.high5') || '주 2회 이상 명상 또는 호흡 운동',
-            i18n?.t('recovery.high6') || '"아니오"라고 말하는 연습 - 자기 보호가 최우선'
-        ];
-    }
-}
-
-function getCareerSuggestions() {
-    if (percentValue <= 40) {
-        return [
-            i18n?.t('career.low1') || '🏢 경영/관리직 - 스트레스 상황에서 안정적 리더십',
-            i18n?.t('career.low2') || '🚀 영업/마케팅 - 사교적 환경에서 에너지 발휘',
-            i18n?.t('career.low3') || '⚡ 스타트업/창업 - 빠른 변화에 유연한 대처',
-            i18n?.t('career.low4') || '🎤 프레젠테이션/교육 - 사람 앞에 서는 것이 편안'
-        ];
-    } else if (percentValue <= 60) {
-        return [
-            i18n?.t('career.mid1') || '💻 프리랜서/재택근무 - 환경 조절 가능',
-            i18n?.t('career.mid2') || '🎨 디자인/크리에이티브 - 감수성 활용',
-            i18n?.t('career.mid3') || '📊 기획/전략 - 깊은 분석과 직관의 균형',
-            i18n?.t('career.mid4') || '🤝 상담/코칭 - 공감 능력 활용'
-        ];
-    } else {
-        return [
-            i18n?.t('career.high1') || '✍️ 작가/에디터 - 혼자 깊이 몰입하는 작업',
-            i18n?.t('career.high2') || '🎨 예술가/음악가 - 풍부한 감수성을 작품으로',
-            i18n?.t('career.high3') || '🔬 연구원/학자 - 세밀한 관찰과 분석',
-            i18n?.t('career.high4') || '🌿 치료사/상담사 - 깊은 공감과 치유 능력',
-            i18n?.t('career.high5') || '📚 사서/큐레이터 - 조용한 환경에서의 전문성'
-        ];
-    }
+    svg.innerHTML = html;
 }
 
 // Share
-document.getElementById('btn-share').addEventListener('click', shareResult);
-function shareResult() {
-    const shareLabel = i18n?.t('canvas.topLabel') || '나의 HSP 민감도';
-    const shareCta = i18n?.t('canvas.cta') || '당신도 HSP일까? 👇';
-    const text = `🧠 ${shareLabel}: ${percentValue}%\n${resultData.emoji} ${resultData.title}\n${resultData.subtitle}\n\n${shareCta}\n👉 https://dopabrain.com/hsp-test/`;
-    // GA4: 결과 공유
-    const method = navigator.share ? 'native' : 'clipboard';
-    if (typeof gtag === 'function') {
-        gtag('event', 'share', {
-            method: method,
-            app_name: 'hsp-test',
-            event_category: 'hsp_test',
-            content_type: 'test_result'
-        });
+document.getElementById('btn-twitter')?.addEventListener('click', () => {
+    const total = catScores.reduce((a, b) => a + b, 0);
+    const percent = Math.round((total / (CATEGORIES.length * LEVELS_PER_CAT)) * 100);
+    let resultKey = 'rock';
+    for (const cfg of RESULT_CONFIG) {
+        if (percent >= cfg.min && percent <= cfg.max) { resultKey = cfg.key; break; }
     }
-    if (navigator.share) {
-        const shareTitle = i18n?.t('canvas.testName') || 'HSP 민감성 테스트';
-        navigator.share({ title: shareTitle, text: text, url: 'https://dopabrain.com/hsp-test/' }).catch(() => {});
-    } else {
-        const copyMessage = i18n?.t('share.copied') || '결과가 복사되었습니다!';
-        navigator.clipboard.writeText(text).then(() => alert(copyMessage));
-    }
-}
-
-// Save image
-document.getElementById('btn-save-image').addEventListener('click', generateShareImage);
-function generateShareImage() {
-    const canvas = document.getElementById('share-canvas');
-    const ctx = canvas.getContext('2d');
-    const w = 1080, h = 1080;
-
-    canvas.width = w;
-    canvas.height = h;
-
-    // Background gradient
-    const grad = ctx.createLinearGradient(0, 0, w, h);
-    grad.addColorStop(0, resultData.color);
-    grad.addColorStop(1, resultData.colorEnd || '#0a0a1e');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, w, h);
-
-    // Decorative pattern - soft circles
-    ctx.globalAlpha = 0.06;
-    for (let i = 0; i < 12; i++) {
-        ctx.beginPath();
-        ctx.arc(w * Math.random(), h * Math.random(), 150 + Math.random() * 250, 0, Math.PI * 2);
-        ctx.fillStyle = '#fff';
-        ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-
-    // Gauge circle visual (left side)
-    const gaugeX = w * 0.15;
-    const gaugeY = h * 0.35;
-    const gaugeRadius = 60;
-    const gaugeFill = (percentValue / 100) * 360;
-
-    // Background circle
-    ctx.fillStyle = 'rgba(255,255,255,0.1)';
-    ctx.beginPath();
-    ctx.arc(gaugeX, gaugeY, gaugeRadius, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Fill arc
-    ctx.fillStyle = resultData.color;
-    ctx.beginPath();
-    ctx.arc(gaugeX, gaugeY, gaugeRadius, -Math.PI/2, -Math.PI/2 + (gaugeFill * Math.PI / 180), false);
-    ctx.lineTo(gaugeX, gaugeY);
-    ctx.fill();
-
-    // Outline
-    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(gaugeX, gaugeY, gaugeRadius, 0, Math.PI * 2);
-    ctx.stroke();
-
-    // Top text
-    ctx.fillStyle = 'rgba(255,255,255,0.8)';
-    ctx.font = '600 36px -apple-system, sans-serif';
-    ctx.textAlign = 'center';
-    const topText = i18n?.t('canvas.topLabel') || '나의 HSP 민감도는';
-    ctx.fillText(topText, w / 2, 150);
-
-    // Percentage (large)
-    ctx.fillStyle = '#fff';
-    ctx.font = '900 180px -apple-system, sans-serif';
-    ctx.fillText(percentValue + '%', w / 2, 400);
-
-    // Emoji
-    ctx.font = '130px sans-serif';
-    ctx.fillText(resultData.emoji, w / 2, 550);
-
-    // Title
-    ctx.fillStyle = '#fff';
-    ctx.font = '700 56px -apple-system, sans-serif';
-    ctx.fillText(resultData.title, w / 2, 650);
-
-    // Subtitle
-    ctx.fillStyle = 'rgba(255,255,255,0.8)';
-    ctx.font = '400 32px -apple-system, sans-serif';
-    ctx.fillText(resultData.subtitle, w / 2, 710);
-
-    // Divider
-    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(w * 0.15, 760);
-    ctx.lineTo(w * 0.85, 760);
-    ctx.stroke();
-
-    // CTA
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    ctx.font = '400 28px -apple-system, sans-serif';
-    const ctaText = i18n?.t('canvas.cta') || '당신도 HSP일까? 👇';
-    ctx.fillText(ctaText, w / 2, 840);
-    ctx.fillStyle = 'rgba(255,255,255,0.5)';
-    ctx.font = '400 24px -apple-system, sans-serif';
-    const testName = i18n?.t('canvas.testName') || 'HSP 민감성 테스트';
-    ctx.fillText(testName, w / 2, 890);
-
-    // Branding
-    ctx.fillStyle = 'rgba(255,255,255,0.35)';
-    ctx.font = '400 22px -apple-system, sans-serif';
-    ctx.fillText('🔥 DopaBrain', w / 2, 1020);
-
-    // Download
-    const link = document.createElement('a');
-    const downloadName = i18n?.t('canvas.downloadName') || 'HSP';
-    link.download = `${downloadName}_${percentValue}%.png`;
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-
-    // GA4: 이미지 저장
-    if (typeof gtag === 'function') {
-        gtag('event', 'save_image', {
-            app_name: 'hsp-test',
-            event_category: 'hsp_test',
-            content_type: 'test_result'
-        });
-    }
-}
-
-// Retry
-document.getElementById('btn-retry').addEventListener('click', () => {
-    const premiumContent = document.getElementById('premium-content');
-    premiumContent.style.display = 'none';
-    premiumContent.innerHTML = '';
-    show(introScreen);
-    updateTestCount();
+    const typeName = i18n?.t(`types.${resultKey}.name`) || resultKey;
+    let text = i18n?.t('share.twitterText') || 'My HSP sensitivity: {percent}%! Type: {type}';
+    text = text.replace('{percent}', percent).replace('{type}', typeName);
+    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://dopabrain.com/hsp-test/')}`;
+    window.open(url, '_blank');
+    if (typeof gtag === 'function') gtag('event', 'share', { method: 'twitter', app_name: 'hsp-test' });
 });
 
-// Service Worker
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-}
+document.getElementById('btn-copy')?.addEventListener('click', () => {
+    navigator.clipboard.writeText('https://dopabrain.com/hsp-test/').then(() => {
+        const btn = document.getElementById('btn-copy');
+        const orig = btn.textContent;
+        btn.textContent = i18n?.t('share.copied') || 'Copied!';
+        setTimeout(() => { btn.textContent = orig; }, 2000);
+    });
+    if (typeof gtag === 'function') gtag('event', 'share', { method: 'clipboard', app_name: 'hsp-test' });
+});
+
+// Retake
+document.getElementById('btn-retake')?.addEventListener('click', () => {
+    showScreen('intro');
+});

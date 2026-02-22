@@ -1,128 +1,137 @@
 {
+  "meta": {
+    "title": "Tes Sensitivitas HSP | Simulator Kelebihan Sensorik - DopaBrain",
+    "description": "Lewati 5 level intensitas sensorik untuk menemukan tipe sensitivitasmu! Pengukur kelebihan real-time mengungkap profil HSP-mu."
+  },
+  "a11y": {
+    "skip": "Langsung ke konten utama"
+  },
   "app": {
-    "title": "Tes Sensitivitas HSP - Apakah Saya Sangat Sensitif? | DopaBrain",
-    "description": "Penilaian diri HSP 20 pertanyaan. Temukan apakah Anda adalah Orang yang Sangat Sensitif dengan panduan yang dipersonalisasi.",
-    "testStats": "⏱ ~3 mnt | 📊 5 analisis | 💡 Tips personal"
+    "title": "Tes Sensitivitas HSP",
+    "subtitle": "Simulator Kelebihan Sensorik",
+    "heroTitle": "Seberapa Kuat Inderamu Bertahan?",
+    "heroDesc": "Hadapi 5 kategori sensorik dengan intensitas yang meningkat. Menyerahlah saat mencapai batasmu — ambang batasmu mengungkap tipemu.",
+    "badge": "Tes Kelebihan",
+    "info1": "5 Indera",
+    "info2": "~3 Menit",
+    "info3": "Real-Time",
+    "disclaimer": "Hanya untuk hiburan. Bukan diagnosis klinis.",
+    "start": "🧠 Mulai Tes Sensitivitas",
+    "loading": "Memuat..."
   },
   "intro": {
-    "title": "Tes Sensitivitas HSP",
-    "sub": "Apakah Anda Orang yang Sangat Sensitif?",
-    "desc": "Jawab 20 pertanyaan dan\ntemukan tingkat sensitivitas Anda",
-    "start": "Mulai Tes",
-    "meta1": "📝 20 Pertanyaan",
-    "meta2": "⏱️ ~3 Menit",
-    "meta3": "🎯 5 Jenis",
-    "userCount": "38.000+ orang telah mengikuti tes ini",
-    "discoverTitle": "Yang akan Anda temukan",
-    "discover1": "Skor sensitivitas HSP Anda (0-100%)",
-    "discover2": "Anda termasuk tipe HSP yang mana dari 5 tipe",
-    "discover3": "Analisis sensitivitas per indera",
-    "discover4": "Strategi penanganan yang dipersonalisasi"
+    "typesTitle": "5 Tipe Sensitivitas",
+    "typeRock": "Batu Karang",
+    "typeBreeze": "Angin Sepoi",
+    "typeWave": "Ombak Mengalir",
+    "typeButterfly": "Kupu-Kupu Lembut",
+    "typeAntenna": "Antena Ultra"
   },
-  "progress": {
-    "of": "/"
+  "test": {
+    "sense": "Indera",
+    "intensity": "Intensitas",
+    "canHandle": "✓ Aku Masih Kuat",
+    "myLimit": "✗ Itu Batasku",
+    "levels": ["Ringan", "Sedang", "Intens", "Ekstrem"]
   },
-  "loading": {
-    "text": "Menganalisis sensitivitas...",
-    "msg1": "Menganalisis sensitivitas...",
-    "msg2": "Menganalisis pola emosi...",
-    "msg3": "Mengukur empati...",
-    "msg4": "Menganalisis overstimulasi...",
-    "msg5": "Menghitung indeks HSP..."
+  "categories": {
+    "sound": {
+      "emoji": "🔊",
+      "name": "Suara",
+      "l1": { "title": "Suasana Kafe", "desc": "Musik latar lembut dan obrolan pelan di kafe yang nyaman." },
+      "l2": { "title": "Kantor Sibuk", "desc": "Banyak panggilan telepon, suara ketikan keyboard, dan rekan kerja mengobrol bersamaan di sekitarmu." },
+      "l3": { "title": "Zona Konstruksi", "desc": "Pengeboran, palu, dan mesin berat beroperasi tepat di luar jendelamu." },
+      "l4": { "title": "Konser Penuh Sesak", "desc": "Bass menggetarkan lantai, penonton berteriak, speaker volume maksimal — kelebihan sensorik total." }
+    },
+    "visual": {
+      "emoji": "💡",
+      "name": "Cahaya & Visual",
+      "l1": { "title": "Sinar Matahari Alami", "desc": "Bekerja di dekat jendela dengan cahaya matahari hangat yang masuk." },
+      "l2": { "title": "Kantor Lampu Neon", "desc": "Lampu neon terang berdengung di atas di kantor terbuka berdinding putih." },
+      "l3": { "title": "Malam Kota Neon", "desc": "Berjalan melewati pusat kota — papan neon berkedip, billboard bergerak di mana-mana." },
+      "l4": { "title": "Lampu Strobo", "desc": "Strobo cepat, sinar laser, dan proyeksi intens di klub malam yang penuh sesak." }
+    },
+    "touch": {
+      "emoji": "✋",
+      "name": "Sentuhan & Tekstur",
+      "l1": { "title": "Katun Lembut", "desc": "Memakai kaos katun favorit yang sudah sangat nyaman dipakai." },
+      "l2": { "title": "Label yang Menggaruk", "desc": "Baju baru dengan label kaku yang terus menggosok belakang lehermu." },
+      "l3": { "title": "Wol di Kulit", "desc": "Sweater wol tebal langsung di kulit telanjang pada hari yang panas." },
+      "l4": { "title": "Kelebihan Sensorik", "desc": "Pasir di sepatu, sunscreen lengket, air laut mengering di wajah, angin mengacak rambut." }
+    },
+    "emotion": {
+      "emoji": "💕",
+      "name": "Emosi",
+      "l1": { "title": "Perpisahan di Film", "desc": "Adegan perpisahan manis di film — karakter berpisah dengan senyuman." },
+      "l2": { "title": "Hari Buruk Teman", "desc": "Teman dekatmu menelepon dengan suara bergetar, menceritakan hari yang buruk." },
+      "l3": { "title": "Air Mata Orang Asing", "desc": "Orang asing duduk sendirian di bangku taman, menangis pelan. Tak ada yang berhenti membantu." },
+      "l4": { "title": "Kisah Patah Hati", "desc": "Membaca tentang keluarga yang terpisah oleh bencana — anak-anak memanggil orang tua mereka." }
+    },
+    "social": {
+      "emoji": "👥",
+      "name": "Sosial",
+      "l1": { "title": "Ngopi dengan Teman", "desc": "Ngobrol santai berdua sambil ngopi dengan sahabatmu." },
+      "l2": { "title": "Pesta Makan Malam", "desc": "Makan malam dengan 8 kenalan. Basa-basi diharapkan, kamu hampir tidak kenal setengah dari mereka." },
+      "l3": { "title": "Acara Networking", "desc": "Acara profesional dengan 40+ orang asing, semua saling bertukar kartu nama." },
+      "l4": { "title": "Di Panggung Utama", "desc": "Berpidato di depan 200+ orang. Semua mata tertuju padamu, kamera merekam segalanya." }
+    }
+  },
+  "types": {
+    "rock": {
+      "name": "🪨 Batu Karang",
+      "desc": "Hampir tidak ada yang bisa menggoyahkanmu! Kamu punya sistem saraf yang sangat tangguh dan berkembang di bawah stimulasi.",
+      "ratio": "Stimulasi 80% : Tenang 20%",
+      "traits": ["Tak tergoyahkan di bawah tekanan", "Berkembang di lingkungan energi tinggi", "Batasan emosional yang kuat", "Juara multitasking"],
+      "tips": ["Latih empati terhadap orang yang sensitif", "Coba mindfulness untuk menangkap hal-hal halus", "Jangan remehkan kewalahan orang lain"],
+      "compatible": ["Ombak Mengalir", "Kupu-Kupu Lembut"]
+    },
+    "breeze": {
+      "name": "🌿 Angin Sepoi",
+      "desc": "Kamu menyeimbangkan ketangguhan dan kesadaran dengan indah. Kamu memperhatikan detail tanpa kewalahan.",
+      "ratio": "Stimulasi 60% : Tenang 40%",
+      "traits": ["Mudah beradaptasi di lingkungan apapun", "Regulasi emosi yang baik", "Menangkap isyarat halus secara alami", "Respons stres yang fleksibel"],
+      "tips": ["Sisihkan waktu tenang sesekali", "Gunakan kesadaranmu sebagai kekuatan sosial", "Percayai intuisimu yang berkembang"],
+      "compatible": ["Batu Karang", "Ombak Mengalir"]
+    },
+    "wave": {
+      "name": "🌊 Ombak Mengalir",
+      "desc": "Sensitivitasmu adalah kekuatan supermu! Kamu membaca suasana ruangan, merasakan musik secara mendalam, dan terhubung dengan orang lain di level yang dalam.",
+      "ratio": "Stimulasi 40% : Tenang 60%",
+      "traits": ["Kecerdasan emosional tinggi", "Apresiasi mendalam terhadap seni & keindahan", "Intuisi yang luar biasa", "Dunia batin yang kaya"],
+      "tips": ["Jadwalkan waktu sendirian setiap hari", "Pelajari teknik grounding", "Salurkan sensitivitas ke kreativitas"],
+      "compatible": ["Angin Sepoi", "Kupu-Kupu Lembut"]
+    },
+    "butterfly": {
+      "name": "🦋 Kupu-Kupu Lembut",
+      "desc": "Kamu merasakan dunia dalam resolusi 4K! Inderamu yang tajam menangkap apa yang orang lain lewatkan — ini anugerah, bukan kelemahan.",
+      "ratio": "Stimulasi 25% : Tenang 75%",
+      "traits": ["Mendeteksi ekspresi mikro", "Pemrosesan emosi yang mendalam", "Sangat kreatif & imajinatif", "Butuh pengisian ulang yang disengaja"],
+      "tips": ["Bawa earphone peredam bising", "Ciptakan tempat perlindungan tenang di rumah", "Gunakan teknik grounding 5-4-3-2-1"],
+      "compatible": ["Ombak Mengalir", "Antena Ultra"]
+    },
+    "antenna": {
+      "name": "🧠 Antena Ultra",
+      "desc": "Kamu HSP sejati — menangkap setiap sinyal. Otakmu memproses SEMUA stimuli secara mendalam, memberimu persepsi yang luar biasa.",
+      "ratio": "Stimulasi 15% : Tenang 85%",
+      "traits": ["Ultra-perseptif terhadap semua indera", "Menyerap emosi orang lain secara mendalam", "Membutuhkan waktu sendiri yang signifikan", "Kedalaman pikiran yang luar biasa"],
+      "tips": ["2+ jam waktu sendiri setiap hari (wajib!)", "Ciptakan zona bebas stimulus", "Berlatih berkata 'tidak' — perlindungan diri yang utama"],
+      "compatible": ["Kupu-Kupu Lembut", "Antena Ultra"]
+    }
   },
   "result": {
-    "score": "Sensitivitas",
-    "traits": "🌸 Ciri Utama",
-    "tips": "💡 Aktivitas yang Direkomendasikan",
-    "warnings": "⚠️ Perhatikan",
-    "compat": "💕 Jenis yang Kompatibel",
-    "analysis": "📊 Analisis Indera demi Indera",
-    "recovery": "🧘 Rutinitas Pemulihan Overstimulasi",
-    "career": "💼 Karir yang Direkomendasikan untuk HSP",
-    "routine": "📅 Manajemen Emosi Minggu Ini",
-    "viewResult": "Lihat hasil",
-    "sensitivity": "Sensitivitas"
+    "profileTitle": "Profil Sensitivitasmu",
+    "radarTitle": "Analisis Per Indera",
+    "overallLevel": "Sensitivitas Keseluruhan",
+    "stimRatio": "Rasio Stimulasi Ideal",
+    "traits": "Ciri Utama",
+    "tips": "Aksi yang Disarankan",
+    "compatible": "Tipe Paling Cocok",
+    "retake": "🧠 Ulangi Tes"
   },
-  "premium": {
-    "button": "🔓 Lihat Analisis Mendalam HSP AI",
-    "badge": "PREMIUM",
-    "title": "🧠 Analisis Mendalam HSP AI",
-    "ad_text": "Anda dapat melihat hasil analisis mendalam AI segera",
-    "careerTitle": "💼 Karir yang Direkomendasikan",
-    "surviveTitle": "🛡️ Strategi Bertahan HSP"
-  },
-  "actions": {
-    "share": "📤 Bagikan",
-    "saveImage": "📷 Simpan",
-    "retry": "🔄 Coba Lagi"
-  },
-  "answers": {
-    "strongAgree": "Sangat Setuju",
-    "agree": "Setuju",
-    "neutral": "Netral",
-    "disagree": "Tidak Setuju",
-    "strongDisagree": "Sangat Tidak Setuju"
-  },
-  "ads": {
-    "banner": "Iklan"
-  },
-  "rec": {
-    "title": "Coba juga"
-  },
-  "testCount": "orang telah berpartisipasi!",
   "share": {
-    "copied": "Hasil disalin!"
-  },
-  "canvas": {
-    "topLabel": "Sensitivitas HSP saya adalah",
-    "cta": "Apakah Anda HSP? 👇",
-    "testName": "Tes Sensitivitas HSP",
-    "downloadName": "HSP_sensitivitas"
-  },
-  "routine": {
-    "monday": "Senin: 🌅 Mulai dengan meditasi pagi 10 menit",
-    "tuesday": "Selasa: 📝 Tulis jurnal emosi 3 baris",
-    "wednesday": "Rabu: 🚶 Jalan sendirian 15 menit saat makan siang",
-    "thursday": "Kamis: 🎵 Reset emosi dengan musik favorit",
-    "friday": "Jumat: 🛁 Waktu perawatan diri di malam hari",
-    "saturday": "Sabtu: 🌳 Detoks digital di alam",
-    "sunday": "Minggu: 📖 Waktu sendiri untuk mengisi ulang energi"
-  },
-  "sense": {
-    "sound": "🔊 Sensitivitas Pendengaran",
-    "visual": "💡 Sensitivitas Visual",
-    "touch": "✋ Sensitivitas Sentuhan",
-    "emotion": "💕 Sensitivitas Emosional",
-    "social": "👥 Sensitivitas Sosial"
-  },
-  "recovery": {
-    "low1": "Sesekali luangkan waktu tenang - dengarkan suara batinmu",
-    "low2": "Menulis jurnal emosi memperdalam pemahaman diri",
-    "low3": "Berlatih memahami orang-orang sensitif",
-    "mid1": "Sisihkan 30 menit waktu tenang sendirian setiap hari",
-    "mid2": "Segera istirahat saat mendeteksi sinyal overstimulasi (sakit kepala, kelelahan)",
-    "mid3": "Reset indra di alam pada akhir pekan",
-    "mid4": "Kurangi kafein dan makanan merangsang",
-    "high1": "Pastikan minimal 1 jam waktu sendiri setiap hari (wajib!)",
-    "high2": "Selalu bawa earphone peredam bising atau penutup telinga",
-    "high3": "Gunakan teknik grounding 5-4-3-2-1 saat overstimulasi",
-    "high4": "Blokir smartphone setelah jam 10 malam (sensitivitas cahaya biru)",
-    "high5": "Meditasi atau latihan pernapasan minimal dua kali seminggu",
-    "high6": "Berlatih berkata \"tidak\" - perlindungan diri yang utama"
-  },
-  "career": {
-    "low1": "🏢 Manajemen - Kepemimpinan stabil di bawah tekanan",
-    "low2": "🚀 Penjualan/Pemasaran - Energik di lingkungan sosial",
-    "low3": "⚡ Startup/Kewirausahaan - Fleksibel dengan perubahan cepat",
-    "low4": "🎤 Presentasi/Pengajaran - Nyaman di depan orang",
-    "mid1": "💻 Freelance/Kerja Remote - Kontrol lingkunganmu",
-    "mid2": "🎨 Desain/Kreatif - Manfaatkan sensitivitasmu",
-    "mid3": "📊 Perencanaan/Strategi - Keseimbangan analisis mendalam dan intuisi",
-    "mid4": "🤝 Konseling/Coaching - Manfaatkan kemampuan empati",
-    "high1": "✍️ Penulis/Editor - Pekerjaan solo yang mendalam",
-    "high2": "🎨 Seniman/Musisi - Salurkan sensitivitas kaya ke seni",
-    "high3": "🔬 Peneliti/Cendekiawan - Pengamatan dan analisis detail",
-    "high4": "🌿 Terapis/Konselor - Empati mendalam dan kemampuan penyembuhan",
-    "high5": "📚 Pustakawan/Kurator - Keahlian di lingkungan tenang"
+    "twitter": "𝕏 Bagikan",
+    "copyUrl": "📋 Salin Link",
+    "copied": "Tersalin!",
+    "twitterText": "Sensitivitas HSP-ku: {percent}%! Tipe: {type} 🧠 Seberapa sensitif kamu?"
   }
 }

@@ -1,128 +1,137 @@
 {
+  "meta": {
+    "title": "Test de Sensibilidad HSP | Simulador de Sobrecarga Sensorial - DopaBrain",
+    "description": "Avanza por 5 niveles de intensidad sensorial para descubrir tu tipo de sensibilidad. Un medidor de sobrecarga en tiempo real revela tu perfil HSP."
+  },
+  "a11y": {
+    "skip": "Saltar al contenido principal"
+  },
   "app": {
-    "title": "Prueba de Sensibilidad HSP - ¿Soy Altamente Sensible? | DopaBrain",
-    "description": "Autoevaluación HSP de 20 preguntas. Descubre si eres una Persona Altamente Sensible con guía personalizada.",
-    "testStats": "⏱ ~3 min | 📊 5 análisis | 💡 Consejos personalizados"
+    "title": "Test de Sensibilidad HSP",
+    "subtitle": "Simulador de Sobrecarga Sensorial",
+    "heroTitle": "¿Cuánto pueden soportar tus sentidos?",
+    "heroDesc": "Avanza por 5 categorías sensoriales con intensidad creciente. Renuncia cuando llegues a tu límite — tu umbral revela tu tipo.",
+    "badge": "Test de Sobrecarga",
+    "info1": "5 Sentidos",
+    "info2": "~3 Min",
+    "info3": "Tiempo Real",
+    "disclaimer": "Solo con fines de entretenimiento. No es un diagnóstico clínico.",
+    "start": "🧠 Iniciar Test de Sensibilidad",
+    "loading": "Cargando..."
   },
   "intro": {
-    "title": "Prueba de Sensibilidad HSP",
-    "sub": "¿Eres una Persona Altamente Sensible?",
-    "desc": "Responde 20 preguntas y\ndescubre tu nivel de sensibilidad",
-    "start": "Iniciar Prueba",
-    "meta1": "📝 20 Preguntas",
-    "meta2": "⏱️ ~3 Minutos",
-    "meta3": "🎯 5 Tipos",
-    "userCount": "38.000+ personas han realizado esta prueba",
-    "discoverTitle": "Lo que descubrirás",
-    "discover1": "Tu puntuación de sensibilidad HSP (0-100%)",
-    "discover2": "A cuál de los 5 tipos HSP perteneces",
-    "discover3": "Análisis detallado sentido por sentido",
-    "discover4": "Estrategias de afrontamiento personalizadas"
+    "typesTitle": "5 Tipos de Sensibilidad",
+    "typeRock": "Roca Firme",
+    "typeBreeze": "Brisa Suave",
+    "typeWave": "Ola Fluida",
+    "typeButterfly": "Mariposa Delicada",
+    "typeAntenna": "Ultra Antena"
   },
-  "progress": {
-    "of": "/"
+  "test": {
+    "sense": "Sentido",
+    "intensity": "Intensidad",
+    "canHandle": "✓ Puedo con esto",
+    "myLimit": "✗ Es mi límite",
+    "levels": ["Leve", "Moderado", "Intenso", "Extremo"]
   },
-  "loading": {
-    "text": "Analizando sensibilidad...",
-    "msg1": "Analizando sensibilidad...",
-    "msg2": "Analizando patrones emocionales...",
-    "msg3": "Midiendo empatía...",
-    "msg4": "Analizando sobreestimulación...",
-    "msg5": "Calculando índice HSP..."
+  "categories": {
+    "sound": {
+      "emoji": "🔊",
+      "name": "Sonido",
+      "l1": { "title": "Ambiente de Cafetería", "desc": "Música suave de fondo y conversaciones tranquilas en una cafetería acogedora." },
+      "l2": { "title": "Oficina Concurrida", "desc": "Múltiples llamadas telefónicas, tecleo constante y compañeros hablando todos a la vez a tu alrededor." },
+      "l3": { "title": "Zona de Obras", "desc": "Taladros, martillos y maquinaria pesada funcionando justo al otro lado de tu ventana." },
+      "l4": { "title": "Concierto Lleno", "desc": "Los bajos sacuden el suelo, la multitud grita, altavoces al máximo volumen — pura sobrecarga sensorial." }
+    },
+    "visual": {
+      "emoji": "💡",
+      "name": "Luz y Visual",
+      "l1": { "title": "Luz Natural del Sol", "desc": "Trabajando junto a una ventana con cálida luz natural entrando." },
+      "l2": { "title": "Oficina Fluorescente", "desc": "Luces fluorescentes brillantes zumbando en una oficina abierta de paredes blancas." },
+      "l3": { "title": "Noche de Neón Urbano", "desc": "Caminando por Times Square — carteles de neón parpadeantes, vallas publicitarias en movimiento por todas partes." },
+      "l4": { "title": "Luces Estroboscópicas", "desc": "Estrobos rápidos, rayos láser y proyecciones intensas en una discoteca llena." }
+    },
+    "touch": {
+      "emoji": "✋",
+      "name": "Tacto y Textura",
+      "l1": { "title": "Algodón Suave", "desc": "Llevar puesta tu camiseta de algodón favorita, perfectamente desgastada y cómoda." },
+      "l2": { "title": "Etiqueta que Raspa", "desc": "Una camiseta nueva con una etiqueta rígida rozándote constantemente la nuca." },
+      "l3": { "title": "Lana sobre la Piel", "desc": "Un jersey grueso de lana directamente sobre tu piel desnuda en un día caluroso." },
+      "l4": { "title": "Sobrecarga Sensorial", "desc": "Arena en los zapatos, protector solar pegajoso, agua salada secándose en la cara, viento azotando el pelo." }
+    },
+    "emotion": {
+      "emoji": "💕",
+      "name": "Emoción",
+      "l1": { "title": "Despedida de Película", "desc": "Una escena agridulce de despedida en una película — los personajes se separan con una sonrisa." },
+      "l2": { "title": "Mal Día de un Amigo", "desc": "Tu mejor amigo te llama con la voz quebrada, contándote su día terrible." },
+      "l3": { "title": "Lágrimas de un Desconocido", "desc": "Un desconocido sentado solo en un banco del parque, llorando en silencio. Nadie se detiene a ayudar." },
+      "l4": { "title": "Historia Desgarradora", "desc": "Leer sobre familias separadas por un desastre — niños llamando a gritos a sus padres." }
+    },
+    "social": {
+      "emoji": "👥",
+      "name": "Social",
+      "l1": { "title": "Café con un Amigo", "desc": "Una charla relajada tomando café a solas con tu mejor amigo." },
+      "l2": { "title": "Cena Social", "desc": "Cena con 8 conocidos. Se espera conversación trivial y apenas conoces a la mitad." },
+      "l3": { "title": "Evento de Networking", "desc": "Un cóctel profesional con más de 40 desconocidos, todos intercambiando tarjetas de visita." },
+      "l4": { "title": "Centro del Escenario", "desc": "Dando un discurso ante más de 200 personas. Todas las miradas sobre ti, cámaras grabando todo." }
+    }
+  },
+  "types": {
+    "rock": {
+      "name": "🪨 Roca Firme",
+      "desc": "¡Casi nada te perturba! Tienes un sistema nervioso extraordinariamente resistente que prospera bajo la estimulación.",
+      "ratio": "Estimulación 80% : Calma 20%",
+      "traits": ["Inquebrantable bajo presión", "Prospera en entornos de alta energía", "Fuertes límites emocionales", "Campeón del multitarea"],
+      "tips": ["Practica la empatía con las personas sensibles", "Prueba el mindfulness para captar las sutilezas", "No minimices la saturación de los demás"],
+      "compatible": ["Ola Fluida", "Mariposa Delicada"]
+    },
+    "breeze": {
+      "name": "🌿 Brisa Suave",
+      "desc": "Equilibras resiliencia y conciencia a la perfección. Notas los detalles sin sentirte abrumado.",
+      "ratio": "Estimulación 60% : Calma 40%",
+      "traits": ["Se adapta a cualquier entorno", "Buena regulación emocional", "Capta señales sutiles de forma natural", "Respuesta flexible al estrés"],
+      "tips": ["Reserva momentos de tranquilidad de vez en cuando", "Usa tu percepción como un superpoder social", "Confía en tu intuición creciente"],
+      "compatible": ["Roca Firme", "Ola Fluida"]
+    },
+    "wave": {
+      "name": "🌊 Ola Fluida",
+      "desc": "¡Tu sensibilidad es tu superpoder! Lees ambientes, sientes la música profundamente y conectas con los demás a un nivel profundo.",
+      "ratio": "Estimulación 40% : Calma 60%",
+      "traits": ["Alta inteligencia emocional", "Profunda apreciación del arte y la belleza", "Excelente intuición", "Rico mundo interior"],
+      "tips": ["Reserva tiempo a solas cada día", "Aprende técnicas de anclaje", "Canaliza tu sensibilidad en creatividad"],
+      "compatible": ["Brisa Suave", "Mariposa Delicada"]
+    },
+    "butterfly": {
+      "name": "🦋 Mariposa Delicada",
+      "desc": "¡Experimentas el mundo en 4K! Tus sentidos finamente calibrados detectan lo que otros pasan por alto — esto es un don, no un defecto.",
+      "ratio": "Estimulación 25% : Calma 75%",
+      "traits": ["Detecta microexpresiones", "Procesamiento emocional profundo", "Altamente creativo e imaginativo", "Necesita recarga intencional"],
+      "tips": ["Lleva siempre auriculares con cancelación de ruido", "Crea un refugio de calma en tu hogar", "Usa la técnica de anclaje 5-4-3-2-1"],
+      "compatible": ["Ola Fluida", "Ultra Antena"]
+    },
+    "antenna": {
+      "name": "🧠 Ultra Antena",
+      "desc": "Eres un verdadero HSP — captando cada señal. Tu cerebro procesa TODOS los estímulos profundamente, dándote una percepción extraordinaria.",
+      "ratio": "Estimulación 15% : Calma 85%",
+      "traits": ["Ultra perceptivo a todos los sentidos", "Absorbe las emociones ajenas profundamente", "Requiere mucho tiempo a solas", "Profundidad de pensamiento excepcional"],
+      "tips": ["2+ horas a solas diariamente (¡esencial!)", "Crea zonas libres de estímulos", "Practica decir 'no' — la autoprotección va primero"],
+      "compatible": ["Mariposa Delicada", "Ultra Antena"]
+    }
   },
   "result": {
-    "score": "Sensibilidad",
-    "traits": "🌸 Características Clave",
-    "tips": "💡 Actividades Recomendadas",
-    "warnings": "⚠️ Ten Cuidado Con",
-    "compat": "💕 Tipos Compatibles",
-    "analysis": "📊 Análisis Sentido por Sentido",
-    "recovery": "🧘 Rutina de Recuperación de Sobreestimulación",
-    "career": "💼 Carreras Recomendadas para HSP",
-    "routine": "📅 Gestión de Emociones de Esta Semana",
-    "viewResult": "Ver resultados",
-    "sensitivity": "Sensibilidad"
+    "profileTitle": "Tu Perfil de Sensibilidad",
+    "radarTitle": "Desglose Sentido por Sentido",
+    "overallLevel": "Sensibilidad General",
+    "stimRatio": "Proporción Ideal de Estimulación",
+    "traits": "Rasgos Clave",
+    "tips": "Acciones Recomendadas",
+    "compatible": "Tipos Más Compatibles",
+    "retake": "🧠 Repetir Test"
   },
-  "premium": {
-    "button": "🔓 Ver Análisis Profundo HSP de IA",
-    "badge": "PREMIUM",
-    "title": "🧠 Análisis Profundo HSP de IA",
-    "ad_text": "Puedes verificar los resultados del análisis profundo de IA en breve",
-    "careerTitle": "💼 Carreras Recomendadas",
-    "surviveTitle": "🛡️ Estrategia de Supervivencia HSP"
-  },
-  "actions": {
-    "share": "📤 Compartir",
-    "saveImage": "📷 Guardar",
-    "retry": "🔄 Reintentar"
-  },
-  "answers": {
-    "strongAgree": "Totalmente de Acuerdo",
-    "agree": "De Acuerdo",
-    "neutral": "Neutral",
-    "disagree": "En Desacuerdo",
-    "strongDisagree": "Totalmente en Desacuerdo"
-  },
-  "ads": {
-    "banner": "Publicidad"
-  },
-  "rec": {
-    "title": "Prueba estos también"
-  },
-  "testCount": "¡personas ya participaron!",
   "share": {
-    "copied": "¡Resultado copiado!"
-  },
-  "canvas": {
-    "topLabel": "Mi sensibilidad HSP es",
-    "cta": "¿Eres HSP? 👇",
-    "testName": "Prueba de Sensibilidad HSP",
-    "downloadName": "HSP_sensibilidad"
-  },
-  "routine": {
-    "monday": "Lunes: 🌅 Comienza con 10 minutos de meditación matinal",
-    "tuesday": "Martes: 📝 Escribe 3 líneas en tu diario emocional",
-    "wednesday": "Miércoles: 🚶 Camina solo 15 minutos a la hora de almuerzo",
-    "thursday": "Jueves: 🎵 Reinicia emociones con tu música favorita",
-    "friday": "Viernes: 🛁 Tiempo de autocuidado por la noche",
-    "saturday": "Sábado: 🌳 Desintoxicación digital en la naturaleza",
-    "sunday": "Domingo: 📖 Tiempo a solas para recargar energía"
-  },
-  "sense": {
-    "sound": "🔊 Sensibilidad Auditiva",
-    "visual": "💡 Sensibilidad Visual",
-    "touch": "✋ Sensibilidad Táctil",
-    "emotion": "💕 Sensibilidad Emocional",
-    "social": "👥 Sensibilidad Social"
-  },
-  "recovery": {
-    "low1": "Tómate tiempo tranquilo de vez en cuando - escucha tu voz interior",
-    "low2": "Escribir un diario emocional profundiza la autocomprensión",
-    "low3": "Practica entender a las personas sensibles",
-    "mid1": "Reserva 30 minutos diarios de tiempo tranquilo a solas",
-    "mid2": "Descansa inmediatamente al detectar señales de sobreestimulación (dolor de cabeza, fatiga)",
-    "mid3": "Resetea tus sentidos en la naturaleza los fines de semana",
-    "mid4": "Reduce la cafeína y los alimentos estimulantes",
-    "high1": "Asegura al menos 1 hora de tiempo a solas diariamente (¡esencial!)",
-    "high2": "Lleva siempre auriculares con cancelación de ruido o tapones",
-    "high3": "Usa la técnica de anclaje 5-4-3-2-1 cuando estés sobreestimulado",
-    "high4": "Bloquea el móvil después de las 10 PM (sensibilidad a luz azul)",
-    "high5": "Medita o haz ejercicios de respiración al menos dos veces por semana",
-    "high6": "Practica decir \"no\" - la autoprotección es lo primero"
-  },
-  "career": {
-    "low1": "🏢 Gestión - Liderazgo estable bajo estrés",
-    "low2": "🚀 Ventas/Marketing - Energía en entornos sociales",
-    "low3": "⚡ Startup/Emprendimiento - Flexibilidad ante cambios rápidos",
-    "low4": "🎤 Presentaciones/Enseñanza - Cómodo frente a la gente",
-    "mid1": "💻 Freelance/Trabajo remoto - Controla tu entorno",
-    "mid2": "🎨 Diseño/Creativo - Aprovecha tu sensibilidad",
-    "mid3": "📊 Planificación/Estrategia - Equilibrio entre análisis profundo e intuición",
-    "mid4": "🤝 Asesoramiento/Coaching - Utiliza habilidades de empatía",
-    "high1": "✍️ Escritor/Editor - Trabajo profundo en solitario",
-    "high2": "🎨 Artista/Músico - Canaliza la rica sensibilidad en arte",
-    "high3": "🔬 Investigador/Académico - Observación y análisis detallados",
-    "high4": "🌿 Terapeuta/Consejero - Empatía profunda y capacidad de sanación",
-    "high5": "📚 Bibliotecario/Curador - Especialización en entornos tranquilos"
+    "twitter": "𝕏 Compartir",
+    "copyUrl": "📋 Copiar Enlace",
+    "copied": "¡Copiado!",
+    "twitterText": "Mi sensibilidad HSP: {percent}%! Tipo: {type} 🧠 ¿Qué tan sensible eres tú?"
   }
 }

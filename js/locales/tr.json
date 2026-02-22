@@ -1,128 +1,137 @@
 {
+  "meta": {
+    "title": "HSP Hassasiyet Testi | Duyusal Aşırı Yüklenme Simülatörü - DopaBrain",
+    "description": "5 duyusal yoğunluk seviyesinden geçerek hassasiyet tipini keşfet! Gerçek zamanlı aşırı yüklenme ölçer HSP profilini ortaya çıkarır."
+  },
+  "a11y": {
+    "skip": "Ana içeriğe geç"
+  },
   "app": {
-    "title": "HSP Hassasiyet Testi - Yüksek Hassas Bir Kişi miyim? | DopaBrain",
-    "description": "20 soruluk HSP öz-değerlendirme. Kişiselleştirilmiş rehber ile Yüksek Hassas Bir Kişi olup olmadığını keşfet.",
-    "testStats": "⏱ ~3 dk | 📊 5 analiz | 💡 Kişisel ipuçları"
+    "title": "HSP Hassasiyet Testi",
+    "subtitle": "Duyusal Aşırı Yüklenme Simülatörü",
+    "heroTitle": "Duyuların Ne Kadarını Kaldırabilir?",
+    "heroDesc": "Artan yoğunlukla 5 duyusal kategoriden geç. Sınırına ulaştığında pes et — eşiğin tipini ortaya çıkarır.",
+    "badge": "Aşırı Yüklenme Testi",
+    "info1": "5 Duyu",
+    "info2": "~3 Dk",
+    "info3": "Gerçek Zamanlı",
+    "disclaimer": "Sadece eğlence amaçlıdır. Klinik teşhis değildir.",
+    "start": "🧠 Hassasiyet Testini Başlat",
+    "loading": "Yükleniyor..."
   },
   "intro": {
-    "title": "HSP Hassasiyet Testi",
-    "sub": "Yüksek Hassas Bir Kişi misin?",
-    "desc": "20 soruya cevap ver ve\nhasassiyetini keşfet",
-    "start": "Testi Başlat",
-    "meta1": "📝 20 Soru",
-    "meta2": "⏱️ ~3 Dakika",
-    "meta3": "🎯 5 Tip",
-    "userCount": "38.000+ kişi bu testi tamamladı",
-    "discoverTitle": "Neler keşfedeceksin",
-    "discover1": "HSP hassasiyet puanın (0-100%)",
-    "discover2": "5 HSP tipinden hangisine aitsin",
-    "discover3": "Duyu bazlı detaylı hassasiyet analizi",
-    "discover4": "Kişiselleştirilmiş başa çıkma stratejileri"
+    "typesTitle": "5 Hassasiyet Tipi",
+    "typeRock": "Kaya Gibi Sağlam",
+    "typeBreeze": "Hafif Esinti",
+    "typeWave": "Akan Dalga",
+    "typeButterfly": "Zarif Kelebek",
+    "typeAntenna": "Ultra Anten"
   },
-  "progress": {
-    "of": "/"
+  "test": {
+    "sense": "Duyu",
+    "intensity": "Yoğunluk",
+    "canHandle": "✓ Bunu Kaldırabilirim",
+    "myLimit": "✗ Bu Benim Sınırım",
+    "levels": ["Hafif", "Orta", "Yoğun", "Aşırı"]
   },
-  "loading": {
-    "text": "Hassasiyet analiz ediliyor...",
-    "msg1": "Hassasiyet analiz ediliyor...",
-    "msg2": "Duygusal örüntüler analiz ediliyor...",
-    "msg3": "Empati ölçülüyor...",
-    "msg4": "Aşırı uyarılma analiz ediliyor...",
-    "msg5": "HSP indeksi hesaplanıyor..."
+  "categories": {
+    "sound": {
+      "emoji": "🔊",
+      "name": "Ses",
+      "l1": { "title": "Kafe Ambiyansı", "desc": "Sıcak bir kafede hafif fon müziği ve yumuşak sohbet sesleri." },
+      "l2": { "title": "Kalabalık Ofis", "desc": "Birden fazla telefon görüşmesi, klavye tıkırtıları ve iş arkadaşlarının aynı anda konuşması." },
+      "l3": { "title": "İnşaat Alanı", "desc": "Matkap, çekiç ve ağır makineler pencerenin hemen dışında çalışıyor." },
+      "l4": { "title": "Tıklım Tıklım Konser", "desc": "Bas yeri sarsıyor, kalabalık çığlık atıyor, hoparlörler son ses — tam bir duyusal aşırı yüklenme." }
+    },
+    "visual": {
+      "emoji": "💡",
+      "name": "Işık & Görsel",
+      "l1": { "title": "Doğal Güneş Işığı", "desc": "Sıcak doğal gün ışığının süzüldüğü bir pencerenin yanında çalışmak." },
+      "l2": { "title": "Floresan Ofis", "desc": "Beyaz duvarlı açık ofiste uğuldayan parlak tavan floresan lambaları." },
+      "l3": { "title": "Neon Şehir Gecesi", "desc": "Şehir merkezinde yürümek — yanıp sönen neon tabelalar, her yerde hareketli reklam panoları." },
+      "l4": { "title": "Stroboskop Işıkları", "desc": "Hızlı stroboskoplar, lazer ışınları ve tıklım tıklım bir gece kulübünde yoğun projeksiyonlar." }
+    },
+    "touch": {
+      "emoji": "✋",
+      "name": "Dokunma & Doku",
+      "l1": { "title": "Yumuşak Pamuk", "desc": "En sevdiğin, mükemmel yumuşamış pamuklu tişörtünü giyiyorsun." },
+      "l2": { "title": "Batıran Etiket", "desc": "Sert etiketi sürekli boynunun arkasını kaşıyan yepyeni bir gömlek." },
+      "l3": { "title": "Ciltte Yün", "desc": "Sıcak bir günde kalın yün kazağı doğrudan çıplak cildinde giymek." },
+      "l4": { "title": "Duyusal Aşırı Yüklenme", "desc": "Ayakkabıda kum, yapışkan güneş kremi, yüzünde kuruyan tuzlu su, saçlarını savuran rüzgâr." }
+    },
+    "emotion": {
+      "emoji": "💕",
+      "name": "Duygu",
+      "l1": { "title": "Film Vedası", "desc": "Bir filmde hüzünlü tatlı bir veda sahnesi — karakterler gülümseyerek ayrılıyor." },
+      "l2": { "title": "Arkadaşın Kötü Günü", "desc": "Yakın arkadaşın titreyen sesiyle arayıp berbat gününü anlatıyor." },
+      "l3": { "title": "Yabancının Gözyaşları", "desc": "Parkta bir bankta yalnız oturan yabancı sessizce ağlıyor. Kimse durup yardım etmiyor." },
+      "l4": { "title": "Yürek Burkan Hikâye", "desc": "Felaketlerle parçalanan aileleri okumak — çocuklar anne babalarını çağırıyor." }
+    },
+    "social": {
+      "emoji": "👥",
+      "name": "Sosyal",
+      "l1": { "title": "Arkadaşla Kahve", "desc": "En yakın arkadaşınla rahat bir ikili kahve sohbeti." },
+      "l2": { "title": "Akşam Yemeği Daveti", "desc": "8 tanıdıkla akşam yemeği. Havadan sudan konuşma bekleniyor, yarısını zar zor tanıyorsun." },
+      "l3": { "title": "Networking Etkinliği", "desc": "40+ yabancının olduğu profesyonel bir buluşma, herkes kartvizit dağıtıyor." },
+      "l4": { "title": "Sahnenin Ortası", "desc": "200+ kişiye konuşma yapıyorsun. Tüm gözler sende, kameralar her şeyi kaydediyor." }
+    }
+  },
+  "types": {
+    "rock": {
+      "name": "🪨 Kaya Gibi Sağlam",
+      "desc": "Neredeyse hiçbir şey seni sarsamaz! Uyarılarla gelişen olağanüstü dayanıklı bir sinir sistemine sahipsin.",
+      "ratio": "Uyarım 80% : Sakinlik 20%",
+      "traits": ["Baskı altında sarsılmaz", "Yüksek enerjili ortamlarda gelişir", "Güçlü duygusal sınırlar", "Çoklu görev şampiyonu"],
+      "tips": ["Hassas insanlara karşı empati pratiği yap", "İncelikleri fark etmek için mindfulness dene", "Başkalarının bunalımını küçümseme"],
+      "compatible": ["Akan Dalga", "Zarif Kelebek"]
+    },
+    "breeze": {
+      "name": "🌿 Hafif Esinti",
+      "desc": "Dayanıklılık ve farkındalığı mükemmel dengeliyorsun. Detayları fark edip bunalmadan yaşıyorsun.",
+      "ratio": "Uyarım 60% : Sakinlik 40%",
+      "traits": ["Her ortama uyum sağlar", "İyi duygu düzenlemesi", "İnce ipuçlarını doğal olarak fark eder", "Esnek stres tepkisi"],
+      "tips": ["Ara sıra sessiz vakit ayır", "Farkındalığını sosyal bir süper güç olarak kullan", "Gelişen sezgilerine güven"],
+      "compatible": ["Kaya Gibi Sağlam", "Akan Dalga"]
+    },
+    "wave": {
+      "name": "🌊 Akan Dalga",
+      "desc": "Hassasiyetin senin süper gücün! Ortamı okur, müziği derinden hisseder ve insanlarla derin bir seviyede bağ kurarsın.",
+      "ratio": "Uyarım 40% : Sakinlik 60%",
+      "traits": ["Yüksek duygusal zekâ", "Sanat ve güzelliğe derin takdir", "Mükemmel sezgi", "Zengin iç dünya"],
+      "tips": ["Her gün yalnız vakit planla", "Topraklama teknikleri öğren", "Hassasiyetini yaratıcılığa yönlendir"],
+      "compatible": ["Hafif Esinti", "Zarif Kelebek"]
+    },
+    "butterfly": {
+      "name": "🦋 Zarif Kelebek",
+      "desc": "Dünyayı 4K çözünürlükte deneyimliyorsun! İnce ayarlı duyuların başkalarının kaçırdığını yakalar — bu bir armağan, kusur değil.",
+      "ratio": "Uyarım 25% : Sakinlik 75%",
+      "traits": ["Mikro ifadeleri algılar", "Derin duygusal işleme", "Son derece yaratıcı ve hayal gücü yüksek", "Bilinçli şarj olma ihtiyacı"],
+      "tips": ["Gürültü önleyici kulaklık taşı", "Evde sakin bir sığınak oluştur", "5-4-3-2-1 topraklama tekniğini kullan"],
+      "compatible": ["Akan Dalga", "Ultra Anten"]
+    },
+    "antenna": {
+      "name": "🧠 Ultra Anten",
+      "desc": "Gerçek bir HSP'sin — her sinyali yakalıyorsun. Beynin TÜM uyaranları derinden işler ve sana olağanüstü bir algı verir.",
+      "ratio": "Uyarım 15% : Sakinlik 85%",
+      "traits": ["Tüm duyulara ultra duyarlı", "Başkalarının duygularını derinden emer", "Önemli ölçüde yalnız zaman gerektirir", "Olağanüstü düşünce derinliği"],
+      "tips": ["Günde 2+ saat yalnız vakit (zorunlu!)", "Uyarımsız alanlar oluştur", "'Hayır' demeyi pratik et — önce kendini koru"],
+      "compatible": ["Zarif Kelebek", "Ultra Anten"]
+    }
   },
   "result": {
-    "score": "Hassasiyet",
-    "traits": "🌸 Temel Özellikler",
-    "tips": "💡 Önerilen Aktiviteler",
-    "warnings": "⚠️ Dikkat Et",
-    "compat": "💕 Uyumlu Tipler",
-    "analysis": "📊 Duyu Bazlı Analiz",
-    "recovery": "🧘 Aşırı Uyarılma Iyileşme Rutini",
-    "career": "💼 HSP için Önerilen Kariyerler",
-    "routine": "📅 Bu Haftanın Duygu Yönetimi",
-    "viewResult": "Sonuçları gör",
-    "sensitivity": "Duyarlılık"
+    "profileTitle": "Hassasiyet Profilin",
+    "radarTitle": "Duyu Bazlı Dağılım",
+    "overallLevel": "Genel Hassasiyet",
+    "stimRatio": "İdeal Uyarım Oranı",
+    "traits": "Temel Özellikler",
+    "tips": "Önerilen Adımlar",
+    "compatible": "En Uyumlu Tipler",
+    "retake": "🧠 Testi Tekrarla"
   },
-  "premium": {
-    "button": "🔓 YZ Derinlemesine HSP Analizini Gör",
-    "badge": "PREMIUM",
-    "title": "🧠 YZ Derinlemesine HSP Analizi",
-    "ad_text": "YZ derinlemesine analiz sonuçlarını kısa sürede görebileceksin",
-    "careerTitle": "💼 Önerilen Kariyerler",
-    "surviveTitle": "🛡️ HSP Yaşam Stratejisi"
-  },
-  "actions": {
-    "share": "📤 Paylaş",
-    "saveImage": "📷 Kaydet",
-    "retry": "🔄 Tekrar Dene"
-  },
-  "answers": {
-    "strongAgree": "Kesin Katılıyorum",
-    "agree": "Katılıyorum",
-    "neutral": "Tarafsız",
-    "disagree": "Katılmıyorum",
-    "strongDisagree": "Kesinlikle Katılmıyorum"
-  },
-  "ads": {
-    "banner": "Reklam"
-  },
-  "rec": {
-    "title": "Bunları da dene"
-  },
-  "testCount": "kişi katılmıştır!",
   "share": {
-    "copied": "Sonuç kopyalandı!"
-  },
-  "canvas": {
-    "topLabel": "Benim HSP hassasiyetim",
-    "cta": "Siz HSP misiniz? 👇",
-    "testName": "HSP Hassasiyet Testi",
-    "downloadName": "HSP_hassasiyet"
-  },
-  "routine": {
-    "monday": "Pazartesi: 🌅 10 dakikalık sabah meditasyonu ile başla",
-    "tuesday": "Salı: 📝 Duygu günlüğü 3 satır yaz",
-    "wednesday": "Çarşamba: 🚶 Öğle saatinde 15 dakika yalnız yürüyüş",
-    "thursday": "Perşembe: 🎵 Favorin müzik ile duygularını resetle",
-    "friday": "Cuma: 🛁 Akşam öz-bakım zamanı",
-    "saturday": "Cumartesi: 🌳 Doğada dijital detoks",
-    "sunday": "Pazar: 📖 Enerji yüklemek için yalnız zaman"
-  },
-  "sense": {
-    "sound": "🔊 İşitsel Hassasiyet",
-    "visual": "💡 Görsel Hassasiyet",
-    "touch": "✋ Dokunsal Hassasiyet",
-    "emotion": "💕 Duygusal Hassasiyet",
-    "social": "👥 Sosyal Hassasiyet"
-  },
-  "recovery": {
-    "low1": "Ara sıra sessiz zaman ayırın - iç sesinizi dinleyin",
-    "low2": "Duygu günlüğü yazmak öz anlayışı derinleştirir",
-    "low3": "Hassas insanları anlamayı pratik edin",
-    "mid1": "Her gün 30 dakika sessiz yalnız zaman ayırın",
-    "mid2": "Aşırı uyarım sinyallerinde (baş ağrısı, yorgunluk) hemen dinlenin",
-    "mid3": "Hafta sonları doğada duyularınızı sıfırlayın",
-    "mid4": "Kafein ve uyarıcı yiyecekleri azaltın",
-    "high1": "Her gün en az 1 saat yalnız zaman ayırın (zorunlu!)",
-    "high2": "Her zaman gürültü önleyici kulaklık veya kulak tıkacı taşıyın",
-    "high3": "Aşırı uyarılma anında 5-4-3-2-1 topraklama tekniğini kullanın",
-    "high4": "Gece 10'dan sonra akıllı telefonu engelleyin (mavi ışık hassasiyeti)",
-    "high5": "Haftada en az iki kez meditasyon veya nefes egzersizi yapın",
-    "high6": "\"Hayır\" demeyi pratik edin - kendini koruma önce gelir"
-  },
-  "career": {
-    "low1": "🏢 Yönetim - Stres altında istikrarlı liderlik",
-    "low2": "🚀 Satış/Pazarlama - Sosyal ortamlarda enerjik",
-    "low3": "⚡ Startup/Girişimcilik - Hızlı değişimlere esneklik",
-    "low4": "🎤 Sunum/Eğitim - İnsanların önünde rahat",
-    "mid1": "💻 Freelance/Uzaktan Çalışma - Ortamınızı kontrol edin",
-    "mid2": "🎨 Tasarım/Yaratıcı - Hassasiyetinizi değerlendirin",
-    "mid3": "📊 Planlama/Strateji - Derin analiz ve sezgi dengesi",
-    "mid4": "🤝 Danışmanlık/Koçluk - Empati becerilerini kullanın",
-    "high1": "✍️ Yazar/Editör - Derin solo immersif çalışma",
-    "high2": "🎨 Sanatçı/Müzisyen - Zengin hassasiyeti sanata yönlendirin",
-    "high3": "🔬 Araştırmacı/Akademisyen - Detaylı gözlem ve analiz",
-    "high4": "🌿 Terapist/Danışman - Derin empati ve şifa yeteneği",
-    "high5": "📚 Kütüphaneci/Küratör - Sessiz ortamlarda uzmanlık"
+    "twitter": "𝕏 Paylaş",
+    "copyUrl": "📋 Link Kopyala",
+    "copied": "Kopyalandı!",
+    "twitterText": "HSP hassasiyetim: {percent}%! Tip: {type} 🧠 Sen ne kadar hassassın?"
   }
 }
