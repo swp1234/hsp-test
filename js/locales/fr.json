@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "Test de Sensibilité HSP | Simulateur de Surcharge Sensorielle - DopaBrain",
-    "description": "Traverse 5 niveaux d'intensité sensorielle pour découvrir ton type de sensibilité ! Un indicateur de surcharge en temps réel révèle ton profil HSP."
+    "title": "Test HSP - Êtes-vous Hautement Sensible? Gratuit",
+    "description": "Faites le test HSP gratuit pour savoir si vous êtes une personne hautement sensible. 20 questions sur 5 sens pour découvrir votre profil de sensibilité."
   },
   "a11y": {
     "skip": "Aller au contenu principal"
   },
   "app": {
-    "title": "Test de Sensibilité HSP",
+    "title": "Test HSP",
     "subtitle": "Simulateur de Surcharge Sensorielle",
     "heroTitle": "Combien tes sens peuvent-ils supporter ?",
     "heroDesc": "Traverse 5 catégories sensorielles avec une intensité croissante. Abandonne quand tu atteins ta limite — ton seuil révèle ton type.",

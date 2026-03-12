@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "Test de Sensibilidad HSP | Simulador de Sobrecarga Sensorial - DopaBrain",
-    "description": "Avanza por 5 niveles de intensidad sensorial para descubrir tu tipo de sensibilidad. Un medidor de sobrecarga en tiempo real revela tu perfil HSP."
+    "title": "Test PAS - ¿Eres una Persona Altamente Sensible? Gratis",
+    "description": "Haz el test PAS gratis y descubre si eres una persona altamente sensible. Responde 20 preguntas en 5 sentidos y obtén tu perfil de sensibilidad al instante."
   },
   "a11y": {
     "skip": "Saltar al contenido principal"
   },
   "app": {
-    "title": "Test de Sensibilidad HSP",
+    "title": "Test PAS",
     "subtitle": "Simulador de Sobrecarga Sensorial",
     "heroTitle": "¿Cuánto pueden soportar tus sentidos?",
     "heroDesc": "Avanza por 5 categorías sensoriales con intensidad creciente. Renuncia cuando llegues a tu límite — tu umbral revela tu tipo.",

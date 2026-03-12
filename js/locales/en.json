@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "HSP Sensitivity Test | Sensory Overload Simulator - DopaBrain",
-    "description": "Push through 5 sensory intensity levels to discover your sensitivity type! Real-time overload meter reveals your HSP profile."
+    "title": "HSP Test - Are You a Highly Sensitive Person? Free",
+    "description": "Take the free HSP test to find out if you are a highly sensitive person. Answer 20 questions across 5 senses and get your sensitivity profile instantly."
   },
   "a11y": {
     "skip": "Skip to main content"
   },
   "app": {
-    "title": "HSP Sensitivity Test",
+    "title": "HSP Test",
     "subtitle": "Sensory Overload Simulator",
     "heroTitle": "How Much Can Your Senses Handle?",
     "heroDesc": "Push through 5 sensory categories with escalating intensity. Tap out when you hit your limit \u2014 your threshold reveals your type.",

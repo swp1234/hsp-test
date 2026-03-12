@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "HSP Sensibilitätstest | Reizüberflutungs-Simulator - DopaBrain",
-    "description": "Durchlaufe 5 sensorische Intensitätsstufen und entdecke deinen Sensibilitätstyp! Ein Echtzeit-Überlastungsmesser enthüllt dein HSP-Profil."
+    "title": "HSP Test - Bist du hochsensibel? Kostenloser Test",
+    "description": "Mache den kostenlosen HSP Test und finde heraus, ob du eine hochsensible Person bist. 20 Fragen zu 5 Sinnen ergeben dein Sensibilitätsprofil."
   },
   "a11y": {
     "skip": "Zum Hauptinhalt springen"
   },
   "app": {
-    "title": "HSP Sensibilitätstest",
+    "title": "HSP Test",
     "subtitle": "Reizüberflutungs-Simulator",
     "heroTitle": "Wie viel halten deine Sinne aus?",
     "heroDesc": "Durchlaufe 5 Sinneskategorien mit steigender Intensität. Gib auf, wenn du deine Grenze erreichst — deine Schwelle verrät deinen Typ.",
