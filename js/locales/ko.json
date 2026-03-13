@@ -126,7 +126,15 @@
     "traits": "핵심 특성",
     "tips": "추천 행동",
     "compatible": "최고 궁합 유형",
-    "retake": "🧠 다시 테스트하기"
+    "retake": "🧠 다시 테스트하기",
+    "moreTests": "더 많은 테스트",
+    "percentileStat": "참가자의 <strong>{percent}%</strong>만이 당신과 같은 민감도 유형입니다"
+  },
+  "related": {
+    "stressCheck": "스트레스 체크",
+    "emotionIceberg": "감정 빙산",
+    "emotionTemp": "감정 온도",
+    "socialBattery": "소셜 배터리"
   },
   "share": {
     "twitter": "𝕏 공유하기",

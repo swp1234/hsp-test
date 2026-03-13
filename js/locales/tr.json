@@ -32,48 +32,113 @@
     "intensity": "Yoğunluk",
     "canHandle": "✓ Bunu Kaldırabilirim",
     "myLimit": "✗ Bu Benim Sınırım",
-    "levels": ["Hafif", "Orta", "Yoğun", "Aşırı"]
+    "levels": [
+      "Hafif",
+      "Orta",
+      "Yoğun",
+      "Aşırı"
+    ]
   },
   "categories": {
     "sound": {
       "emoji": "🔊",
       "name": "Ses",
-      "l1": { "title": "Kafe Ambiyansı", "desc": "Sıcak bir kafede hafif fon müziği ve yumuşak sohbet sesleri." },
-      "l2": { "title": "Kalabalık Ofis", "desc": "Birden fazla telefon görüşmesi, klavye tıkırtıları ve iş arkadaşlarının aynı anda konuşması." },
-      "l3": { "title": "İnşaat Alanı", "desc": "Matkap, çekiç ve ağır makineler pencerenin hemen dışında çalışıyor." },
-      "l4": { "title": "Tıklım Tıklım Konser", "desc": "Bas yeri sarsıyor, kalabalık çığlık atıyor, hoparlörler son ses — tam bir duyusal aşırı yüklenme." }
+      "l1": {
+        "title": "Kafe Ambiyansı",
+        "desc": "Sıcak bir kafede hafif fon müziği ve yumuşak sohbet sesleri."
+      },
+      "l2": {
+        "title": "Kalabalık Ofis",
+        "desc": "Birden fazla telefon görüşmesi, klavye tıkırtıları ve iş arkadaşlarının aynı anda konuşması."
+      },
+      "l3": {
+        "title": "İnşaat Alanı",
+        "desc": "Matkap, çekiç ve ağır makineler pencerenin hemen dışında çalışıyor."
+      },
+      "l4": {
+        "title": "Tıklım Tıklım Konser",
+        "desc": "Bas yeri sarsıyor, kalabalık çığlık atıyor, hoparlörler son ses — tam bir duyusal aşırı yüklenme."
+      }
     },
     "visual": {
       "emoji": "💡",
       "name": "Işık & Görsel",
-      "l1": { "title": "Doğal Güneş Işığı", "desc": "Sıcak doğal gün ışığının süzüldüğü bir pencerenin yanında çalışmak." },
-      "l2": { "title": "Floresan Ofis", "desc": "Beyaz duvarlı açık ofiste uğuldayan parlak tavan floresan lambaları." },
-      "l3": { "title": "Neon Şehir Gecesi", "desc": "Şehir merkezinde yürümek — yanıp sönen neon tabelalar, her yerde hareketli reklam panoları." },
-      "l4": { "title": "Stroboskop Işıkları", "desc": "Hızlı stroboskoplar, lazer ışınları ve tıklım tıklım bir gece kulübünde yoğun projeksiyonlar." }
+      "l1": {
+        "title": "Doğal Güneş Işığı",
+        "desc": "Sıcak doğal gün ışığının süzüldüğü bir pencerenin yanında çalışmak."
+      },
+      "l2": {
+        "title": "Floresan Ofis",
+        "desc": "Beyaz duvarlı açık ofiste uğuldayan parlak tavan floresan lambaları."
+      },
+      "l3": {
+        "title": "Neon Şehir Gecesi",
+        "desc": "Şehir merkezinde yürümek — yanıp sönen neon tabelalar, her yerde hareketli reklam panoları."
+      },
+      "l4": {
+        "title": "Stroboskop Işıkları",
+        "desc": "Hızlı stroboskoplar, lazer ışınları ve tıklım tıklım bir gece kulübünde yoğun projeksiyonlar."
+      }
     },
     "touch": {
       "emoji": "✋",
       "name": "Dokunma & Doku",
-      "l1": { "title": "Yumuşak Pamuk", "desc": "En sevdiğin, mükemmel yumuşamış pamuklu tişörtünü giyiyorsun." },
-      "l2": { "title": "Batıran Etiket", "desc": "Sert etiketi sürekli boynunun arkasını kaşıyan yepyeni bir gömlek." },
-      "l3": { "title": "Ciltte Yün", "desc": "Sıcak bir günde kalın yün kazağı doğrudan çıplak cildinde giymek." },
-      "l4": { "title": "Duyusal Aşırı Yüklenme", "desc": "Ayakkabıda kum, yapışkan güneş kremi, yüzünde kuruyan tuzlu su, saçlarını savuran rüzgâr." }
+      "l1": {
+        "title": "Yumuşak Pamuk",
+        "desc": "En sevdiğin, mükemmel yumuşamış pamuklu tişörtünü giyiyorsun."
+      },
+      "l2": {
+        "title": "Batıran Etiket",
+        "desc": "Sert etiketi sürekli boynunun arkasını kaşıyan yepyeni bir gömlek."
+      },
+      "l3": {
+        "title": "Ciltte Yün",
+        "desc": "Sıcak bir günde kalın yün kazağı doğrudan çıplak cildinde giymek."
+      },
+      "l4": {
+        "title": "Duyusal Aşırı Yüklenme",
+        "desc": "Ayakkabıda kum, yapışkan güneş kremi, yüzünde kuruyan tuzlu su, saçlarını savuran rüzgâr."
+      }
     },
     "emotion": {
       "emoji": "💕",
       "name": "Duygu",
-      "l1": { "title": "Film Vedası", "desc": "Bir filmde hüzünlü tatlı bir veda sahnesi — karakterler gülümseyerek ayrılıyor." },
-      "l2": { "title": "Arkadaşın Kötü Günü", "desc": "Yakın arkadaşın titreyen sesiyle arayıp berbat gününü anlatıyor." },
-      "l3": { "title": "Yabancının Gözyaşları", "desc": "Parkta bir bankta yalnız oturan yabancı sessizce ağlıyor. Kimse durup yardım etmiyor." },
-      "l4": { "title": "Yürek Burkan Hikâye", "desc": "Felaketlerle parçalanan aileleri okumak — çocuklar anne babalarını çağırıyor." }
+      "l1": {
+        "title": "Film Vedası",
+        "desc": "Bir filmde hüzünlü tatlı bir veda sahnesi — karakterler gülümseyerek ayrılıyor."
+      },
+      "l2": {
+        "title": "Arkadaşın Kötü Günü",
+        "desc": "Yakın arkadaşın titreyen sesiyle arayıp berbat gününü anlatıyor."
+      },
+      "l3": {
+        "title": "Yabancının Gözyaşları",
+        "desc": "Parkta bir bankta yalnız oturan yabancı sessizce ağlıyor. Kimse durup yardım etmiyor."
+      },
+      "l4": {
+        "title": "Yürek Burkan Hikâye",
+        "desc": "Felaketlerle parçalanan aileleri okumak — çocuklar anne babalarını çağırıyor."
+      }
     },
     "social": {
       "emoji": "👥",
       "name": "Sosyal",
-      "l1": { "title": "Arkadaşla Kahve", "desc": "En yakın arkadaşınla rahat bir ikili kahve sohbeti." },
-      "l2": { "title": "Akşam Yemeği Daveti", "desc": "8 tanıdıkla akşam yemeği. Havadan sudan konuşma bekleniyor, yarısını zar zor tanıyorsun." },
-      "l3": { "title": "Networking Etkinliği", "desc": "40+ yabancının olduğu profesyonel bir buluşma, herkes kartvizit dağıtıyor." },
-      "l4": { "title": "Sahnenin Ortası", "desc": "200+ kişiye konuşma yapıyorsun. Tüm gözler sende, kameralar her şeyi kaydediyor." }
+      "l1": {
+        "title": "Arkadaşla Kahve",
+        "desc": "En yakın arkadaşınla rahat bir ikili kahve sohbeti."
+      },
+      "l2": {
+        "title": "Akşam Yemeği Daveti",
+        "desc": "8 tanıdıkla akşam yemeği. Havadan sudan konuşma bekleniyor, yarısını zar zor tanıyorsun."
+      },
+      "l3": {
+        "title": "Networking Etkinliği",
+        "desc": "40+ yabancının olduğu profesyonel bir buluşma, herkes kartvizit dağıtıyor."
+      },
+      "l4": {
+        "title": "Sahnenin Ortası",
+        "desc": "200+ kişiye konuşma yapıyorsun. Tüm gözler sende, kameralar her şeyi kaydediyor."
+      }
     }
   },
   "types": {
@@ -81,41 +146,101 @@
       "name": "🪨 Kaya Gibi Sağlam",
       "desc": "Neredeyse hiçbir şey seni sarsamaz! Uyarılarla gelişen olağanüstü dayanıklı bir sinir sistemine sahipsin.",
       "ratio": "Uyarım 80% : Sakinlik 20%",
-      "traits": ["Baskı altında sarsılmaz", "Yüksek enerjili ortamlarda gelişir", "Güçlü duygusal sınırlar", "Çoklu görev şampiyonu"],
-      "tips": ["Hassas insanlara karşı empati pratiği yap", "İncelikleri fark etmek için mindfulness dene", "Başkalarının bunalımını küçümseme"],
-      "compatible": ["Akan Dalga", "Zarif Kelebek"]
+      "traits": [
+        "Baskı altında sarsılmaz",
+        "Yüksek enerjili ortamlarda gelişir",
+        "Güçlü duygusal sınırlar",
+        "Çoklu görev şampiyonu"
+      ],
+      "tips": [
+        "Hassas insanlara karşı empati pratiği yap",
+        "İncelikleri fark etmek için mindfulness dene",
+        "Başkalarının bunalımını küçümseme"
+      ],
+      "compatible": [
+        "Akan Dalga",
+        "Zarif Kelebek"
+      ]
     },
     "breeze": {
       "name": "🌿 Hafif Esinti",
       "desc": "Dayanıklılık ve farkındalığı mükemmel dengeliyorsun. Detayları fark edip bunalmadan yaşıyorsun.",
       "ratio": "Uyarım 60% : Sakinlik 40%",
-      "traits": ["Her ortama uyum sağlar", "İyi duygu düzenlemesi", "İnce ipuçlarını doğal olarak fark eder", "Esnek stres tepkisi"],
-      "tips": ["Ara sıra sessiz vakit ayır", "Farkındalığını sosyal bir süper güç olarak kullan", "Gelişen sezgilerine güven"],
-      "compatible": ["Kaya Gibi Sağlam", "Akan Dalga"]
+      "traits": [
+        "Her ortama uyum sağlar",
+        "İyi duygu düzenlemesi",
+        "İnce ipuçlarını doğal olarak fark eder",
+        "Esnek stres tepkisi"
+      ],
+      "tips": [
+        "Ara sıra sessiz vakit ayır",
+        "Farkındalığını sosyal bir süper güç olarak kullan",
+        "Gelişen sezgilerine güven"
+      ],
+      "compatible": [
+        "Kaya Gibi Sağlam",
+        "Akan Dalga"
+      ]
     },
     "wave": {
       "name": "🌊 Akan Dalga",
       "desc": "Hassasiyetin senin süper gücün! Ortamı okur, müziği derinden hisseder ve insanlarla derin bir seviyede bağ kurarsın.",
       "ratio": "Uyarım 40% : Sakinlik 60%",
-      "traits": ["Yüksek duygusal zekâ", "Sanat ve güzelliğe derin takdir", "Mükemmel sezgi", "Zengin iç dünya"],
-      "tips": ["Her gün yalnız vakit planla", "Topraklama teknikleri öğren", "Hassasiyetini yaratıcılığa yönlendir"],
-      "compatible": ["Hafif Esinti", "Zarif Kelebek"]
+      "traits": [
+        "Yüksek duygusal zekâ",
+        "Sanat ve güzelliğe derin takdir",
+        "Mükemmel sezgi",
+        "Zengin iç dünya"
+      ],
+      "tips": [
+        "Her gün yalnız vakit planla",
+        "Topraklama teknikleri öğren",
+        "Hassasiyetini yaratıcılığa yönlendir"
+      ],
+      "compatible": [
+        "Hafif Esinti",
+        "Zarif Kelebek"
+      ]
     },
     "butterfly": {
       "name": "🦋 Zarif Kelebek",
       "desc": "Dünyayı 4K çözünürlükte deneyimliyorsun! İnce ayarlı duyuların başkalarının kaçırdığını yakalar — bu bir armağan, kusur değil.",
       "ratio": "Uyarım 25% : Sakinlik 75%",
-      "traits": ["Mikro ifadeleri algılar", "Derin duygusal işleme", "Son derece yaratıcı ve hayal gücü yüksek", "Bilinçli şarj olma ihtiyacı"],
-      "tips": ["Gürültü önleyici kulaklık taşı", "Evde sakin bir sığınak oluştur", "5-4-3-2-1 topraklama tekniğini kullan"],
-      "compatible": ["Akan Dalga", "Ultra Anten"]
+      "traits": [
+        "Mikro ifadeleri algılar",
+        "Derin duygusal işleme",
+        "Son derece yaratıcı ve hayal gücü yüksek",
+        "Bilinçli şarj olma ihtiyacı"
+      ],
+      "tips": [
+        "Gürültü önleyici kulaklık taşı",
+        "Evde sakin bir sığınak oluştur",
+        "5-4-3-2-1 topraklama tekniğini kullan"
+      ],
+      "compatible": [
+        "Akan Dalga",
+        "Ultra Anten"
+      ]
     },
     "antenna": {
       "name": "🧠 Ultra Anten",
       "desc": "Gerçek bir HSP'sin — her sinyali yakalıyorsun. Beynin TÜM uyaranları derinden işler ve sana olağanüstü bir algı verir.",
       "ratio": "Uyarım 15% : Sakinlik 85%",
-      "traits": ["Tüm duyulara ultra duyarlı", "Başkalarının duygularını derinden emer", "Önemli ölçüde yalnız zaman gerektirir", "Olağanüstü düşünce derinliği"],
-      "tips": ["Günde 2+ saat yalnız vakit (zorunlu!)", "Uyarımsız alanlar oluştur", "'Hayır' demeyi pratik et — önce kendini koru"],
-      "compatible": ["Zarif Kelebek", "Ultra Anten"]
+      "traits": [
+        "Tüm duyulara ultra duyarlı",
+        "Başkalarının duygularını derinden emer",
+        "Önemli ölçüde yalnız zaman gerektirir",
+        "Olağanüstü düşünce derinliği"
+      ],
+      "tips": [
+        "Günde 2+ saat yalnız vakit (zorunlu!)",
+        "Uyarımsız alanlar oluştur",
+        "'Hayır' demeyi pratik et — önce kendini koru"
+      ],
+      "compatible": [
+        "Zarif Kelebek",
+        "Ultra Anten"
+      ]
     }
   },
   "result": {
@@ -126,12 +251,20 @@
     "traits": "Temel Özellikler",
     "tips": "Önerilen Adımlar",
     "compatible": "En Uyumlu Tipler",
-    "retake": "🧠 Testi Tekrarla"
+    "retake": "🧠 Testi Tekrarla",
+    "moreTests": "Daha fazla test keşfet",
+    "percentileStat": "Katılımcıların sadece <strong>{percent}%</strong>'i senin hassasiyet tipine sahip"
   },
   "share": {
     "twitter": "𝕏 Paylaş",
     "copyUrl": "📋 Link Kopyala",
     "copied": "Kopyalandı!",
     "twitterText": "HSP hassasiyetim: {percent}%! Tip: {type} 🧠 Sen ne kadar hassassın?"
+  },
+  "related": {
+    "stressCheck": "Stres Kontrolü",
+    "emotionIceberg": "Duygu Buzdağı",
+    "emotionTemp": "Duygu Sıcaklığı",
+    "socialBattery": "Sosyal Batarya"
   }
 }

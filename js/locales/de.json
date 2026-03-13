@@ -32,48 +32,113 @@
     "intensity": "Intensität",
     "canHandle": "✓ Das halte ich aus",
     "myLimit": "✗ Das ist meine Grenze",
-    "levels": ["Mild", "Mäßig", "Intensiv", "Extrem"]
+    "levels": [
+      "Mild",
+      "Mäßig",
+      "Intensiv",
+      "Extrem"
+    ]
   },
   "categories": {
     "sound": {
       "emoji": "🔊",
       "name": "Geräusche",
-      "l1": { "title": "Café-Atmosphäre", "desc": "Sanfte Hintergrundmusik und leises Geplauder in einem gemütlichen Café." },
-      "l2": { "title": "Geschäftiges Büro", "desc": "Mehrere Telefongespräche, Tastaturklappern und redende Kollegen — alles gleichzeitig um dich herum." },
-      "l3": { "title": "Baustelle", "desc": "Bohren, Hämmern und schwere Maschinen direkt vor deinem Fenster." },
-      "l4": { "title": "Volles Konzert", "desc": "Bass, der den Boden vibrieren lässt, schreiende Menge, Lautsprecher auf Maximum — pure Reizüberflutung." }
+      "l1": {
+        "title": "Café-Atmosphäre",
+        "desc": "Sanfte Hintergrundmusik und leises Geplauder in einem gemütlichen Café."
+      },
+      "l2": {
+        "title": "Geschäftiges Büro",
+        "desc": "Mehrere Telefongespräche, Tastaturklappern und redende Kollegen — alles gleichzeitig um dich herum."
+      },
+      "l3": {
+        "title": "Baustelle",
+        "desc": "Bohren, Hämmern und schwere Maschinen direkt vor deinem Fenster."
+      },
+      "l4": {
+        "title": "Volles Konzert",
+        "desc": "Bass, der den Boden vibrieren lässt, schreiende Menge, Lautsprecher auf Maximum — pure Reizüberflutung."
+      }
     },
     "visual": {
       "emoji": "💡",
       "name": "Licht & Visuelles",
-      "l1": { "title": "Natürliches Sonnenlicht", "desc": "Arbeiten am Fenster mit warmem, natürlichem Tageslicht." },
-      "l2": { "title": "Neonröhren-Büro", "desc": "Grelle Neonröhren summen in einem weiß gestrichenen Großraumbüro." },
-      "l3": { "title": "Neon-Großstadtnacht", "desc": "Durch den Times Square laufen — blinkende Neonreklamen und bewegliche Werbetafeln überall." },
-      "l4": { "title": "Stroboskoplichter", "desc": "Schnelle Stroboskope, Laserstrahlen und intensive Projektionen in einem vollen Nachtclub." }
+      "l1": {
+        "title": "Natürliches Sonnenlicht",
+        "desc": "Arbeiten am Fenster mit warmem, natürlichem Tageslicht."
+      },
+      "l2": {
+        "title": "Neonröhren-Büro",
+        "desc": "Grelle Neonröhren summen in einem weiß gestrichenen Großraumbüro."
+      },
+      "l3": {
+        "title": "Neon-Großstadtnacht",
+        "desc": "Durch den Times Square laufen — blinkende Neonreklamen und bewegliche Werbetafeln überall."
+      },
+      "l4": {
+        "title": "Stroboskoplichter",
+        "desc": "Schnelle Stroboskope, Laserstrahlen und intensive Projektionen in einem vollen Nachtclub."
+      }
     },
     "touch": {
       "emoji": "✋",
       "name": "Berührung & Textur",
-      "l1": { "title": "Weiche Baumwolle", "desc": "Dein liebstes, eingetragenes Baumwoll-T-Shirt — perfekt weichgewaschen." },
-      "l2": { "title": "Kratzendes Etikett", "desc": "Ein brandneues Hemd mit einem steifen Etikett, das ständig am Nacken reibt." },
-      "l3": { "title": "Wolle auf der Haut", "desc": "Ein grober Wollpullover direkt auf der nackten Haut an einem warmen Tag." },
-      "l4": { "title": "Reizüberflutung", "desc": "Sand in den Schuhen, klebrige Sonnencreme, Salzwasser trocknet auf dem Gesicht, Wind peitscht die Haare." }
+      "l1": {
+        "title": "Weiche Baumwolle",
+        "desc": "Dein liebstes, eingetragenes Baumwoll-T-Shirt — perfekt weichgewaschen."
+      },
+      "l2": {
+        "title": "Kratzendes Etikett",
+        "desc": "Ein brandneues Hemd mit einem steifen Etikett, das ständig am Nacken reibt."
+      },
+      "l3": {
+        "title": "Wolle auf der Haut",
+        "desc": "Ein grober Wollpullover direkt auf der nackten Haut an einem warmen Tag."
+      },
+      "l4": {
+        "title": "Reizüberflutung",
+        "desc": "Sand in den Schuhen, klebrige Sonnencreme, Salzwasser trocknet auf dem Gesicht, Wind peitscht die Haare."
+      }
     },
     "emotion": {
       "emoji": "💕",
       "name": "Emotionen",
-      "l1": { "title": "Filmabschied", "desc": "Eine bittersüße Abschiedsszene in einem Film — die Figuren trennen sich mit einem Lächeln." },
-      "l2": { "title": "Schlechter Tag eines Freundes", "desc": "Dein enger Freund ruft mit brüchiger Stimme an und erzählt von seinem schrecklichen Tag." },
-      "l3": { "title": "Tränen eines Fremden", "desc": "Ein Fremder sitzt allein auf einer Parkbank und weint leise. Niemand bleibt stehen, um zu helfen." },
-      "l4": { "title": "Herzzerreißende Geschichte", "desc": "Berichte über Familien, die durch Katastrophen getrennt wurden — Kinder, die nach ihren Eltern rufen." }
+      "l1": {
+        "title": "Filmabschied",
+        "desc": "Eine bittersüße Abschiedsszene in einem Film — die Figuren trennen sich mit einem Lächeln."
+      },
+      "l2": {
+        "title": "Schlechter Tag eines Freundes",
+        "desc": "Dein enger Freund ruft mit brüchiger Stimme an und erzählt von seinem schrecklichen Tag."
+      },
+      "l3": {
+        "title": "Tränen eines Fremden",
+        "desc": "Ein Fremder sitzt allein auf einer Parkbank und weint leise. Niemand bleibt stehen, um zu helfen."
+      },
+      "l4": {
+        "title": "Herzzerreißende Geschichte",
+        "desc": "Berichte über Familien, die durch Katastrophen getrennt wurden — Kinder, die nach ihren Eltern rufen."
+      }
     },
     "social": {
       "emoji": "👥",
       "name": "Soziales",
-      "l1": { "title": "Kaffee mit einem Freund", "desc": "Ein entspannter Kaffeeplausch zu zweit mit deinem besten Freund." },
-      "l2": { "title": "Dinner-Party", "desc": "Abendessen mit 8 Bekannten. Smalltalk wird erwartet, die Hälfte kennst du kaum." },
-      "l3": { "title": "Netzwerk-Veranstaltung", "desc": "Ein professioneller Mixer mit 40+ Fremden, alle tauschen Visitenkarten aus." },
-      "l4": { "title": "Im Rampenlicht", "desc": "Eine Rede vor 200+ Menschen. Alle Blicke auf dich gerichtet, Kameras zeichnen alles auf." }
+      "l1": {
+        "title": "Kaffee mit einem Freund",
+        "desc": "Ein entspannter Kaffeeplausch zu zweit mit deinem besten Freund."
+      },
+      "l2": {
+        "title": "Dinner-Party",
+        "desc": "Abendessen mit 8 Bekannten. Smalltalk wird erwartet, die Hälfte kennst du kaum."
+      },
+      "l3": {
+        "title": "Netzwerk-Veranstaltung",
+        "desc": "Ein professioneller Mixer mit 40+ Fremden, alle tauschen Visitenkarten aus."
+      },
+      "l4": {
+        "title": "Im Rampenlicht",
+        "desc": "Eine Rede vor 200+ Menschen. Alle Blicke auf dich gerichtet, Kameras zeichnen alles auf."
+      }
     }
   },
   "types": {
@@ -81,41 +146,101 @@
       "name": "🪨 Fels in der Brandung",
       "desc": "Dich bringt kaum etwas aus der Ruhe! Du hast ein bemerkenswert belastbares Nervensystem, das unter Stimulation aufblüht.",
       "ratio": "Stimulation 80% : Ruhe 20%",
-      "traits": ["Unerschütterlich unter Druck", "Blüht in energiegeladenen Umgebungen auf", "Starke emotionale Grenzen", "Multitasking-Champion"],
-      "tips": ["Übe Empathie für sensible Menschen", "Versuche Achtsamkeit, um Feinheiten wahrzunehmen", "Weise die Überforderung anderer nicht ab"],
-      "compatible": ["Fließende Welle", "Zarter Schmetterling"]
+      "traits": [
+        "Unerschütterlich unter Druck",
+        "Blüht in energiegeladenen Umgebungen auf",
+        "Starke emotionale Grenzen",
+        "Multitasking-Champion"
+      ],
+      "tips": [
+        "Übe Empathie für sensible Menschen",
+        "Versuche Achtsamkeit, um Feinheiten wahrzunehmen",
+        "Weise die Überforderung anderer nicht ab"
+      ],
+      "compatible": [
+        "Fließende Welle",
+        "Zarter Schmetterling"
+      ]
     },
     "breeze": {
       "name": "🌿 Sanfte Brise",
       "desc": "Du balancierst Belastbarkeit und Wahrnehmung wunderbar. Du bemerkst die Details, ohne überwältigt zu werden.",
       "ratio": "Stimulation 60% : Ruhe 40%",
-      "traits": ["Anpassungsfähig an jede Umgebung", "Gute Emotionsregulation", "Bemerkt subtile Signale natürlich", "Flexible Stressreaktion"],
-      "tips": ["Plane gelegentlich ruhige Zeiten ein", "Nutze deine Wahrnehmung als soziale Superkraft", "Vertraue deiner wachsenden Intuition"],
-      "compatible": ["Fels in der Brandung", "Fließende Welle"]
+      "traits": [
+        "Anpassungsfähig an jede Umgebung",
+        "Gute Emotionsregulation",
+        "Bemerkt subtile Signale natürlich",
+        "Flexible Stressreaktion"
+      ],
+      "tips": [
+        "Plane gelegentlich ruhige Zeiten ein",
+        "Nutze deine Wahrnehmung als soziale Superkraft",
+        "Vertraue deiner wachsenden Intuition"
+      ],
+      "compatible": [
+        "Fels in der Brandung",
+        "Fließende Welle"
+      ]
     },
     "wave": {
       "name": "🌊 Fließende Welle",
       "desc": "Deine Sensibilität ist deine Superkraft! Du liest Räume, fühlst Musik tief und verbindest dich auf einer tiefgreifenden Ebene mit anderen.",
       "ratio": "Stimulation 40% : Ruhe 60%",
-      "traits": ["Hohe emotionale Intelligenz", "Tiefe Wertschätzung für Kunst & Schönheit", "Ausgezeichnete Intuition", "Reiche Innenwelt"],
-      "tips": ["Plane tägliche Alleinzeit ein", "Lerne Erdungstechniken", "Kanalisiere Sensibilität in Kreativität"],
-      "compatible": ["Sanfte Brise", "Zarter Schmetterling"]
+      "traits": [
+        "Hohe emotionale Intelligenz",
+        "Tiefe Wertschätzung für Kunst & Schönheit",
+        "Ausgezeichnete Intuition",
+        "Reiche Innenwelt"
+      ],
+      "tips": [
+        "Plane tägliche Alleinzeit ein",
+        "Lerne Erdungstechniken",
+        "Kanalisiere Sensibilität in Kreativität"
+      ],
+      "compatible": [
+        "Sanfte Brise",
+        "Zarter Schmetterling"
+      ]
     },
     "butterfly": {
       "name": "🦋 Zarter Schmetterling",
       "desc": "Du erlebst die Welt in 4K! Deine feinfühligen Sinne erkennen, was andere übersehen — das ist eine Gabe, kein Makel.",
       "ratio": "Stimulation 25% : Ruhe 75%",
-      "traits": ["Erkennt Mikroausdrücke", "Tiefe emotionale Verarbeitung", "Hochkreativ & fantasievoll", "Braucht bewusstes Aufladen"],
-      "tips": ["Trage geräuschunterdrückende Kopfhörer bei dir", "Schaffe eine ruhige Zuflucht zu Hause", "Nutze die 5-4-3-2-1-Erdungstechnik"],
-      "compatible": ["Fließende Welle", "Ultra-Antenne"]
+      "traits": [
+        "Erkennt Mikroausdrücke",
+        "Tiefe emotionale Verarbeitung",
+        "Hochkreativ & fantasievoll",
+        "Braucht bewusstes Aufladen"
+      ],
+      "tips": [
+        "Trage geräuschunterdrückende Kopfhörer bei dir",
+        "Schaffe eine ruhige Zuflucht zu Hause",
+        "Nutze die 5-4-3-2-1-Erdungstechnik"
+      ],
+      "compatible": [
+        "Fließende Welle",
+        "Ultra-Antenne"
+      ]
     },
     "antenna": {
       "name": "🧠 Ultra-Antenne",
       "desc": "Du bist ein echter HSP — du empfängst jedes Signal. Dein Gehirn verarbeitet ALLE Reize gründlich und verleiht dir außergewöhnliche Wahrnehmung.",
       "ratio": "Stimulation 15% : Ruhe 85%",
-      "traits": ["Ultrasensibel für alle Sinne", "Absorbiert Emotionen anderer tief", "Braucht viel Alleinzeit", "Außergewöhnliche Gedankentiefe"],
-      "tips": ["Täglich 2+ Stunden Alleinzeit (unverzichtbar!)", "Schaffe reizfreie Zonen", "Übe, 'Nein' zu sagen — Selbstschutz geht vor"],
-      "compatible": ["Zarter Schmetterling", "Ultra-Antenne"]
+      "traits": [
+        "Ultrasensibel für alle Sinne",
+        "Absorbiert Emotionen anderer tief",
+        "Braucht viel Alleinzeit",
+        "Außergewöhnliche Gedankentiefe"
+      ],
+      "tips": [
+        "Täglich 2+ Stunden Alleinzeit (unverzichtbar!)",
+        "Schaffe reizfreie Zonen",
+        "Übe, 'Nein' zu sagen — Selbstschutz geht vor"
+      ],
+      "compatible": [
+        "Zarter Schmetterling",
+        "Ultra-Antenne"
+      ]
     }
   },
   "result": {
@@ -126,12 +251,20 @@
     "traits": "Wichtige Eigenschaften",
     "tips": "Empfohlene Maßnahmen",
     "compatible": "Am besten passende Typen",
-    "retake": "🧠 Test wiederholen"
+    "retake": "🧠 Test wiederholen",
+    "moreTests": "Mehr Tests entdecken",
+    "percentileStat": "Nur <strong>{percent}%</strong> der Teilnehmer teilen deinen Sensibilitätstyp"
   },
   "share": {
     "twitter": "𝕏 Teilen",
     "copyUrl": "📋 Link kopieren",
     "copied": "Kopiert!",
     "twitterText": "Meine HSP-Sensibilität: {percent}%! Typ: {type} 🧠 Wie sensibel bist du?"
+  },
+  "related": {
+    "stressCheck": "Stress-Check",
+    "emotionIceberg": "Emotions-Eisberg",
+    "emotionTemp": "Emotionstemperatur",
+    "socialBattery": "Soziale Batterie"
   }
 }

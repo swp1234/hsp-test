@@ -126,7 +126,15 @@
     "traits": "Key Traits",
     "tips": "Recommended Actions",
     "compatible": "Best Match Types",
-    "retake": "\ud83e\udde0 Retake Test"
+    "retake": "\ud83e\udde0 Retake Test",
+    "moreTests": "Explore More Tests",
+    "percentileStat": "Only <strong>{percent}%</strong> of participants share your sensitivity type"
+  },
+  "related": {
+    "stressCheck": "Stress Check",
+    "emotionIceberg": "Emotion Iceberg",
+    "emotionTemp": "Emotion Temperature",
+    "socialBattery": "Social Battery"
   },
   "share": {
     "twitter": "\ud835\udd4f Share",

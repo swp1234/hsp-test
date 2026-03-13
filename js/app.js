@@ -236,6 +236,15 @@ function showResult() {
     // Compatible
     document.getElementById('result-compatible').textContent = (typeData.compatible || []).join(' & ');
 
+    // Percentile stat
+    const pStat = document.getElementById('percentile-stat');
+    if (pStat) {
+        const pctPool = { rock: 8, breeze: 22, wave: 35, butterfly: 25, antenna: 10 };
+        const pctVal = pctPool[resultCfg.key] || 15;
+        const template = i18n?.t('result.percentileStat') || 'Only <strong>{percent}%</strong> of participants share your sensitivity type';
+        pStat.innerHTML = template.replace('{percent}', pctVal);
+    }
+
     // Radar chart
     drawRadar();
 

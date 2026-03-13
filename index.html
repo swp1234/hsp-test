@@ -226,6 +226,30 @@
             </div>
             <button id="btn-retake" class="btn-retake" data-i18n="result.retake">🧠 Retake Test</button>
 
+            <p class="percentile-stat" id="percentile-stat"></p>
+
+            <div class="related-tests">
+              <h3 data-i18n="result.moreTests">Explore More Tests</h3>
+              <div class="related-grid">
+                <a href="/stress-check/" class="related-card" style="--card-color: #3498db">
+                  <span class="related-emoji">💆</span>
+                  <span class="related-name" data-i18n="related.stressCheck">Stress Check</span>
+                </a>
+                <a href="/emotion-iceberg/" class="related-card" style="--card-color: #2E86AB">
+                  <span class="related-emoji">🧊</span>
+                  <span class="related-name" data-i18n="related.emotionIceberg">Emotion Iceberg</span>
+                </a>
+                <a href="/emotion-temp/" class="related-card" style="--card-color: #e74c3c">
+                  <span class="related-emoji">🌡️</span>
+                  <span class="related-name" data-i18n="related.emotionTemp">Emotion Temperature</span>
+                </a>
+                <a href="/social-battery/" class="related-card" style="--card-color: #2ecc71">
+                  <span class="related-emoji">🔋</span>
+                  <span class="related-name" data-i18n="related.socialBattery">Social Battery</span>
+                </a>
+              </div>
+            </div>
+
             <footer class="game-footer">
                 <a href="https://dopabrain.com/portal/" class="back-link">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m15 18-6-6 6-6"></path></svg>
@@ -245,17 +269,6 @@
             });
         }
     </script>
-    <section class="related-games" style="margin:20px auto;padding:16px;max-width:480px;background:rgba(255,255,255,0.05);border-radius:12px;">
-      <p style="font-size:13px;color:#aaa;margin:0 0 8px 0;font-weight:600;">More Free Tests</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <a href="/stress-type/" style="padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:8px;text-decoration:none;color:inherit;font-size:13px;">😰 Stress Type</a>
-        <a href="/social-battery/" style="padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:8px;text-decoration:none;color:inherit;font-size:13px;">🔋 Social Battery</a>
-        <a href="/eq-test/" style="padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:8px;text-decoration:none;color:inherit;font-size:13px;">🧠 EQ Test</a>
-        <a href="/emotional-age/" style="padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:8px;text-decoration:none;color:inherit;font-size:13px;">💭 Emotional Age</a>
-        <a href="/sleep-animal/" style="padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:8px;text-decoration:none;color:inherit;font-size:13px;">😴 Sleep Animal</a>
-      </div>
-    </section>
-
     <script src="/portal/js/cross-promo.js" defer></script>
 </body>
 </html>
