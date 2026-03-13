@@ -1,13 +1,14 @@
 {
   "meta": {
-    "title": "HSP Test - Are You a Highly Sensitive Person? Free",
-    "description": "Take the free HSP test to find out if you are a highly sensitive person. Answer 20 questions across 5 senses and get your sensitivity profile instantly."
+    "title": "HSP Test - Free Highly Sensitive Person Self-Assessment Online",
+    "description": "Take the free online HSP test to discover if you are a highly sensitive person. Answer 20 questions across 5 senses and get your sensitivity profile instantly."
   },
   "a11y": {
     "skip": "Skip to main content"
   },
   "app": {
     "title": "HSP Test",
+    "h1": "HSP Test - Highly Sensitive Person Self-Assessment",
     "subtitle": "Sensory Overload Simulator",
     "heroTitle": "How Much Can Your Senses Handle?",
     "heroDesc": "Push through 5 sensory categories with escalating intensity. Tap out when you hit your limit \u2014 your threshold reveals your type.",
@@ -135,6 +136,19 @@
     "emotionIceberg": "Emotion Iceberg",
     "emotionTemp": "Emotion Temperature",
     "socialBattery": "Social Battery"
+  },
+  "about": {
+    "toggle": "Learn More About HSP",
+    "whatIsTitle": "What is a Highly Sensitive Person?",
+    "whatIsDesc": "A Highly Sensitive Person (HSP) has a heightened central nervous system sensitivity to stimuli. Coined by Dr. Elaine Aron in the 1990s, this trait affects 15-20% of the population and is found in over 100 species.",
+    "whatIs1": "HSPs process information more deeply than others",
+    "whatIs2": "Sensitivity is an innate trait, not a disorder",
+    "whatIs3": "It is equally common in men and women",
+    "signsTitle": "Signs You Might Be an HSP",
+    "sign1": "You feel overwhelmed by loud noises, bright lights, or strong smells",
+    "sign2": "You need alone time to recharge after social events",
+    "sign3": "You are deeply moved by art, music, or nature",
+    "sign4": "You notice subtle changes that others miss"
   },
   "share": {
     "twitter": "\ud835\udd4f Share",

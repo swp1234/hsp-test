@@ -254,6 +254,67 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   font-size: 15px;
 }
 
+/* About HSP Section */
+.about-hsp {
+  width: 100%;
+  max-width: 420px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+}
+.about-details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.about-toggle {
+  padding: 16px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-light);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+}
+.about-toggle::-webkit-details-marker { display: none; }
+.about-toggle::before { content: '\25B6'; font-size: 10px; transition: transform 0.3s; }
+details[open] .about-toggle::before { transform: rotate(90deg); }
+.about-content {
+  padding: 0 20px 20px;
+}
+.about-content h2 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 16px 0 8px;
+  color: var(--text);
+}
+.about-content h2:first-child { margin-top: 0; }
+.about-content p {
+  font-size: 14px;
+  color: var(--text-sec);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.about-content ul {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+.about-content li {
+  font-size: 14px;
+  color: var(--text-sec);
+  line-height: 1.6;
+  padding: 4px 0;
+}
+.about-content li::before {
+  content: '\2022';
+  color: var(--primary-light);
+  margin-right: 8px;
+}
+
 /* Accessibility */
 .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: white; padding: 8px; text-decoration: none; z-index: 10001; }
 .skip-link:focus { top: 0; }

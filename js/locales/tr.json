@@ -8,6 +8,7 @@
   },
   "app": {
     "title": "HSP Testi",
+    "h1": "HSP Testi - Yüksek Hassasiyetli Kişi Öz Değerlendirme",
     "subtitle": "Duyusal Aşırı Yüklenme Simülatörü",
     "heroTitle": "Duyuların Ne Kadarını Kaldırabilir?",
     "heroDesc": "Artan yoğunlukla 5 duyusal kategoriden geç. Sınırına ulaştığında pes et — eşiğin tipini ortaya çıkarır.",
@@ -266,5 +267,18 @@
     "emotionIceberg": "Duygu Buzdağı",
     "emotionTemp": "Duygu Sıcaklığı",
     "socialBattery": "Sosyal Batarya"
+  },
+  "about": {
+    "toggle": "HSP hakkında daha fazla bilgi",
+    "whatIsTitle": "Yüksek Hassasiyetli Kişi nedir?",
+    "whatIsDesc": "Yüksek Hassasiyetli Kişi (HSP), uyaranlara karşı yüksek merkezi sinir sistemi duyarlılığına sahip kişidir. 1990'larda Dr. Elaine Aron tarafından tanımlanan bu özellik nüfusun %15-20'sini etkiler ve 100'den fazla türde gözlemlenmiştir.",
+    "whatIs1": "HSP'ler bilgiyi diğerlerinden daha derin işler",
+    "whatIs2": "Hassasiyet doğuştan gelen bir özelliktir, bir bozukluk değildir",
+    "whatIs3": "Erkek ve kadınlarda eşit oranda görülür",
+    "signsTitle": "HSP olabileceğinin işaretleri",
+    "sign1": "Yüksek sesler, parlak ışıklar veya güçlü kokular seni bunaltır",
+    "sign2": "Sosyal etkinliklerden sonra yalnız kalma zamanına ihtiyaç duyarsın",
+    "sign3": "Sanat, müzik veya doğa seni derinden etkiler",
+    "sign4": "Başkalarının kaçırdığı ince değişiklikleri fark edersin"
   }
 }

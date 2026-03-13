@@ -8,6 +8,7 @@
   },
   "app": {
     "title": "HSP Test",
+    "h1": "HSP Test - Selbsteinschätzung für Hochsensible",
     "subtitle": "Reizüberflutungs-Simulator",
     "heroTitle": "Wie viel halten deine Sinne aus?",
     "heroDesc": "Durchlaufe 5 Sinneskategorien mit steigender Intensität. Gib auf, wenn du deine Grenze erreichst — deine Schwelle verrät deinen Typ.",
@@ -266,5 +267,18 @@
     "emotionIceberg": "Emotions-Eisberg",
     "emotionTemp": "Emotionstemperatur",
     "socialBattery": "Soziale Batterie"
+  },
+  "about": {
+    "toggle": "Mehr über HSP erfahren",
+    "whatIsTitle": "Was ist eine hochsensible Person?",
+    "whatIsDesc": "Eine hochsensible Person (HSP) besitzt eine erhöhte Empfindlichkeit des zentralen Nervensystems gegenüber Reizen. Der Begriff wurde in den 1990er Jahren von Dr. Elaine Aron geprägt. Diese Eigenschaft betrifft 15-20% der Bevölkerung und wurde bei über 100 Tierarten beobachtet.",
+    "whatIs1": "HSPs verarbeiten Informationen tiefer als andere",
+    "whatIs2": "Sensibilität ist eine angeborene Eigenschaft, keine Störung",
+    "whatIs3": "Sie kommt bei Männern und Frauen gleich häufig vor",
+    "signsTitle": "Anzeichen, dass du hochsensibel sein könntest",
+    "sign1": "Du fühlst dich von lauten Geräuschen, hellem Licht oder starken Gerüchen überwältigt",
+    "sign2": "Du brauchst Alleinzeit, um dich nach sozialen Veranstaltungen zu erholen",
+    "sign3": "Du wirst von Kunst, Musik oder Natur tief berührt",
+    "sign4": "Du bemerkst subtile Veränderungen, die andere übersehen"
   }
 }

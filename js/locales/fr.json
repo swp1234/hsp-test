@@ -8,6 +8,7 @@
   },
   "app": {
     "title": "Test HSP",
+    "h1": "Test HSP - Auto-évaluation Personne Hautement Sensible",
     "subtitle": "Simulateur de Surcharge Sensorielle",
     "heroTitle": "Combien tes sens peuvent-ils supporter ?",
     "heroDesc": "Traverse 5 catégories sensorielles avec une intensité croissante. Abandonne quand tu atteins ta limite — ton seuil révèle ton type.",
@@ -266,5 +267,18 @@
     "emotionIceberg": "Iceberg Émotionnel",
     "emotionTemp": "Température Émotionnelle",
     "socialBattery": "Batterie Sociale"
+  },
+  "about": {
+    "toggle": "En savoir plus sur les HSP",
+    "whatIsTitle": "Qu'est-ce qu'une Personne Hautement Sensible ?",
+    "whatIsDesc": "Une Personne Hautement Sensible (PHS/HSP) possède une sensibilité accrue du système nerveux central aux stimuli. Conceptualisé par la Dre Elaine Aron dans les années 90, ce trait touche 15-20% de la population et se retrouve chez plus de 100 espèces.",
+    "whatIs1": "Les HSP traitent les informations plus en profondeur",
+    "whatIs2": "La sensibilité est un trait inné, pas un trouble",
+    "whatIs3": "Elle est aussi fréquente chez les hommes que chez les femmes",
+    "signsTitle": "Signes que vous pourriez être HSP",
+    "sign1": "Vous vous sentez submergé(e) par les bruits forts, les lumières vives ou les odeurs fortes",
+    "sign2": "Vous avez besoin de temps seul(e) pour vous ressourcer après des événements sociaux",
+    "sign3": "Vous êtes profondément touché(e) par l'art, la musique ou la nature",
+    "sign4": "Vous remarquez des changements subtils que les autres manquent"
   }
 }

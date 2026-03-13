@@ -8,6 +8,7 @@
   },
   "app": {
     "title": "Teste HSP",
+    "h1": "Teste HSP - Autoavaliação de Pessoa Altamente Sensível",
     "subtitle": "Simulador de Sobrecarga Sensorial",
     "heroTitle": "Quanto seus sentidos conseguem aguentar?",
     "heroDesc": "Avance por 5 categorias sensoriais com intensidade crescente. Desista quando chegar ao seu limite — seu limiar revela seu tipo.",
@@ -266,5 +267,18 @@
     "emotionIceberg": "Iceberg Emocional",
     "emotionTemp": "Temperatura Emocional",
     "socialBattery": "Bateria Social"
+  },
+  "about": {
+    "toggle": "Saiba mais sobre HSP",
+    "whatIsTitle": "O que é uma Pessoa Altamente Sensível?",
+    "whatIsDesc": "Uma Pessoa Altamente Sensível (PAS/HSP) possui uma sensibilidade elevada do sistema nervoso central a estímulos. Cunhado pela Dra. Elaine Aron nos anos 90, esse traço afeta 15-20% da população e é encontrado em mais de 100 espécies.",
+    "whatIs1": "HSPs processam informações com mais profundidade",
+    "whatIs2": "A sensibilidade é um traço inato, não um transtorno",
+    "whatIs3": "É igualmente comum em homens e mulheres",
+    "signsTitle": "Sinais de que você pode ser HSP",
+    "sign1": "Você se sente sobrecarregado por barulhos altos, luzes fortes ou cheiros intensos",
+    "sign2": "Você precisa de tempo sozinho para recarregar após eventos sociais",
+    "sign3": "Você é profundamente tocado pela arte, música ou natureza",
+    "sign4": "Você nota mudanças sutis que outros não percebem"
   }
 }

@@ -8,6 +8,7 @@
   },
   "app": {
     "title": "Tes HSP",
+    "h1": "Tes HSP - Penilaian Diri Orang Sangat Sensitif",
     "subtitle": "Simulator Kelebihan Sensorik",
     "heroTitle": "Seberapa Kuat Inderamu Bertahan?",
     "heroDesc": "Hadapi 5 kategori sensorik dengan intensitas yang meningkat. Menyerahlah saat mencapai batasmu — ambang batasmu mengungkap tipemu.",
@@ -266,5 +267,18 @@
     "emotionIceberg": "Gunung Es Emosi",
     "emotionTemp": "Suhu Emosi",
     "socialBattery": "Baterai Sosial"
+  },
+  "about": {
+    "toggle": "Pelajari lebih lanjut tentang HSP",
+    "whatIsTitle": "Apa itu Orang Sangat Sensitif?",
+    "whatIsDesc": "Orang Sangat Sensitif (HSP) memiliki sensitivitas sistem saraf pusat yang meningkat terhadap rangsangan. Dicetuskan oleh Dr. Elaine Aron pada 1990-an, sifat ini memengaruhi 15-20% populasi dan ditemukan pada lebih dari 100 spesies.",
+    "whatIs1": "HSP memproses informasi lebih dalam daripada orang lain",
+    "whatIs2": "Sensitivitas adalah sifat bawaan, bukan gangguan",
+    "whatIs3": "Sama umumnya pada pria dan wanita",
+    "signsTitle": "Tanda-tanda kamu mungkin HSP",
+    "sign1": "Kamu mudah kewalahan oleh suara keras, cahaya terang, atau bau menyengat",
+    "sign2": "Kamu butuh waktu sendiri untuk mengisi ulang setelah acara sosial",
+    "sign3": "Kamu sangat tersentuh oleh seni, musik, atau alam",
+    "sign4": "Kamu memperhatikan perubahan halus yang orang lain lewatkan"
   }
 }
