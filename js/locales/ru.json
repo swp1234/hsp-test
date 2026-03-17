@@ -267,7 +267,8 @@
     "emotionIceberg": "Айсберг эмоций",
     "emotionTemp": "Температура эмоций",
     "socialBattery": "Социальная батарея",
-    "burnoutTest": "Тест на выгорание"
+    "burnoutTest": "Тест на выгорание",
+    "stressResponse": "Стресс-реакция"
   },
   "about": {
     "toggle": "Узнать больше о HSP",
