@@ -268,7 +268,8 @@
     "emotionTemp": "Температура эмоций",
     "socialBattery": "Социальная батарея",
     "burnoutTest": "Тест на выгорание",
-    "stressResponse": "Стресс-реакция"
+    "stressResponse": "Стресс-реакция",
+    "anxietyType": "Тип тревожности"
   },
   "about": {
     "toggle": "Узнать больше о HSP",

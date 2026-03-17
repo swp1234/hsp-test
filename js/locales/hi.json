@@ -268,7 +268,8 @@
     "emotionTemp": "भावना तापमान",
     "socialBattery": "सामाजिक बैटरी",
     "burnoutTest": "बर्नआउट टेस्ट",
-    "stressResponse": "तनाव प्रतिक्रिया"
+    "stressResponse": "तनाव प्रतिक्रिया",
+    "anxietyType": "चिंता प्रकार"
   },
   "about": {
     "toggle": "HSP के बारे में और जानें",

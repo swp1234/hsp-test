@@ -268,7 +268,8 @@
     "emotionTemp": "Temperatura Emocional",
     "socialBattery": "Batería Social",
     "burnoutTest": "Test de Burnout",
-    "stressResponse": "Respuesta al Estrés"
+    "stressResponse": "Respuesta al Estrés",
+    "anxietyType": "Tipo de Ansiedad"
   },
   "about": {
     "toggle": "Aprende más sobre HSP",
