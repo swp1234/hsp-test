@@ -269,7 +269,8 @@
     "socialBattery": "Bateria Social",
     "burnoutTest": "Teste de Burnout",
     "stressResponse": "Resposta ao Estresse",
-    "anxietyType": "Tipo de Ansiedade"
+    "anxietyType": "Tipo de Ansiedade",
+    "eqTest": "Teste EQ"
   },
   "about": {
     "toggle": "Saiba mais sobre HSP",
