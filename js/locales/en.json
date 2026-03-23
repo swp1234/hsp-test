@@ -264,7 +264,8 @@
     "burnoutTest": "Burnout Test",
     "stressResponse": "Stress Response",
     "anxietyType": "Anxiety Type",
-    "eqTest": "EQ Test"
+    "eqTest": "EQ Test",
+    "attachmentStyle": "Attachment Style"
   },
   "about": {
     "toggle": "Learn More About HSP",

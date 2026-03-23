@@ -264,7 +264,8 @@
     "burnoutTest": "번아웃 테스트",
     "stressResponse": "스트레스 반응",
     "anxietyType": "불안 유형",
-    "eqTest": "EQ 테스트"
+    "eqTest": "EQ 테스트",
+    "attachmentStyle": "애착 유형"
   },
   "about": {
     "toggle": "HSP에 대해 더 알아보기",
