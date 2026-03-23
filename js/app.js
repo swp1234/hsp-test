@@ -311,6 +311,34 @@ function drawRadar() {
     svg.innerHTML = html;
 }
 
+// Save result card
+document.getElementById('btn-save')?.addEventListener('click', () => {
+    if (typeof ResultCard === 'undefined') return;
+    const total = catScores.reduce((a, b) => a + b, 0);
+    const percent = Math.round((total / (CATEGORIES.length * LEVELS_PER_CAT)) * 100);
+    let resultKey = 'rock';
+    for (const cfg of RESULT_CONFIG) {
+        if (percent >= cfg.min && percent <= cfg.max) { resultKey = cfg.key; break; }
+    }
+    const typeData = i18n?.t(`types.${resultKey}`) || {};
+    const typeName = typeData.name || resultKey;
+    const categoryLabels = ['Sound', 'Visual', 'Touch', 'Emotion', 'Social'];
+    const dimensions = catScores.map((score, idx) => ({
+        label: categoryLabels[idx],
+        pct: Math.round((score / LEVELS_PER_CAT) * 100),
+        color: RESULT_CONFIG.find(c => c.key === resultKey)?.color || '#7c3aed'
+    }));
+    ResultCard.download({
+        appName: 'HSP Test',
+        typeName: typeName,
+        typeEmoji: '🧠',
+        dimensions: dimensions,
+        primaryColor: '#7c3aed',
+        tagline: 'dopabrain.com/hsp-test'
+    });
+    if (typeof gtag === 'function') gtag('event', 'share', { method: 'download', app_name: 'hsp-test' });
+});
+
 // Share
 document.getElementById('btn-twitter')?.addEventListener('click', () => {
     const total = catScores.reduce((a, b) => a + b, 0);
