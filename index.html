@@ -29,18 +29,32 @@
 
     <!-- hreflang -->
     <link rel="alternate" hreflang="ko" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="en" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="zh" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="hi" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="ru" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="ja" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="es" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="pt" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="id" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="tr" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="de" href="https://dopabrain.com/hsp-test/">
-    <link rel="alternate" hreflang="fr" href="https://dopabrain.com/hsp-test/">
+    <link rel="alternate" hreflang="en" href="https://dopabrain.com/hsp-test/?lang=en">
+    <link rel="alternate" hreflang="zh" href="https://dopabrain.com/hsp-test/?lang=zh">
+    <link rel="alternate" hreflang="hi" href="https://dopabrain.com/hsp-test/?lang=hi">
+    <link rel="alternate" hreflang="ru" href="https://dopabrain.com/hsp-test/?lang=ru">
+    <link rel="alternate" hreflang="ja" href="https://dopabrain.com/hsp-test/?lang=ja">
+    <link rel="alternate" hreflang="es" href="https://dopabrain.com/hsp-test/?lang=es">
+    <link rel="alternate" hreflang="pt" href="https://dopabrain.com/hsp-test/?lang=pt">
+    <link rel="alternate" hreflang="id" href="https://dopabrain.com/hsp-test/?lang=id">
+    <link rel="alternate" hreflang="tr" href="https://dopabrain.com/hsp-test/?lang=tr">
+    <link rel="alternate" hreflang="de" href="https://dopabrain.com/hsp-test/?lang=de">
+    <link rel="alternate" hreflang="fr" href="https://dopabrain.com/hsp-test/?lang=fr">
     <link rel="alternate" hreflang="x-default" href="https://dopabrain.com/hsp-test/">
+    <script>
+    (function () {
+        var lang = new URLSearchParams(window.location.search).get('lang');
+        if (!lang) return;
+        var target = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+        if (!target) return;
+        var targetHref = target.href;
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.href = targetHref;
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.content = targetHref;
+        document.documentElement.lang = lang;
+    })();
+    </script>
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -317,20 +331,36 @@
                 <p id="result-compatible"></p>
             </div>
 
+            <div class="quick-actions-card" id="next-step-card">
+                <div class="quick-actions-summary">
+                    <div class="quick-actions-icon" id="primary-related-emoji" aria-hidden="true">&#127752;</div>
+                    <div class="quick-actions-copy">
+                        <p class="quick-actions-label" data-i18n="result.nextStepLabel">Best Next Test</p>
+                        <h3 class="quick-actions-title" id="primary-related-title">Stress Response</h3>
+                        <p class="quick-actions-desc" id="primary-related-desc" data-i18n="result.nextStepDesc">Open the follow-up that best matches your current sensitivity pattern and keep the momentum going.</p>
+                    </div>
+                </div>
+                <div class="quick-actions-buttons">
+                    <a id="primary-related-cta" class="quick-action-link" href="/stress-response/">
+                        <span id="primary-related-cta-text" data-i18n="result.nextStepCta">Open Follow-up</span>
+                    </a>
+                    <button id="related-jump-btn" class="share-btn quick-action-jump" data-i18n="result.jumpToMore">See All Follow-ups</button>
+                </div>
+            </div>
+
             <div class="share-buttons">
-                <button id="btn-save" class="share-btn" data-i18n="share.saveResult">💾 Save Result</button>
-                <button id="btn-twitter" class="share-btn" data-i18n="share.twitter">𝕏 Share</button>
-                <button id="btn-copy" class="share-btn" data-i18n="share.copyUrl">📋 Copy Link</button>
+                <button id="btn-save" class="share-btn" data-i18n="share.saveResult">&#128229; Save Result</button>
+                <button id="btn-twitter" class="share-btn" data-i18n="share.twitter">&#128279; Share</button>
+                <button id="btn-copy" class="share-btn" data-i18n="share.copyUrl">&#128203; Copy Link</button>
             </div>
             <!-- In-article ad between actions and more tests -->
-            <div class="ad-container" style="margin: 24px auto; text-align: center; min-height: 100px;">
+            <div class="result-ad-slot" id="result-inline-ad" style="margin: 24px auto; text-align: center; min-height: 100px;">
               <ins class="adsbygoogle"
                    style="display:block"
                    data-ad-client="ca-pub-3600813755953882"
                    data-ad-slot="auto"
                    data-ad-format="auto"
                    data-full-width-responsive="true"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
 
             <button id="btn-retake" class="btn-retake" data-i18n="result.retake">🧠 Retake Test</button>
@@ -339,49 +369,55 @@
 
             <div class="related-tests">
               <h3 data-i18n="result.moreTests">Explore More Tests</h3>
-              <div class="related-grid">
-                <a href="/attachment-style/" class="related-card" style="--card-color: #e879a0">
+              <div class="related-grid" id="related-grid">
+                <a href="/attachment-style/" class="related-card" data-related-key="attachment-style" style="--card-color: #e879a0">
                   <span class="related-emoji">&#128149;</span>
                   <span class="related-name" data-i18n="related.attachmentStyle">Attachment Style</span>
                 </a>
-                <a href="/emotion-iceberg/" class="related-card" style="--card-color: #2E86AB">
-                  <span class="related-emoji">🧊</span>
+                <a href="/emotion-iceberg/" class="related-card" data-related-key="emotion-iceberg" style="--card-color: #2E86AB">
+                  <span class="related-emoji">&#129504;</span>
                   <span class="related-name" data-i18n="related.emotionIceberg">Emotion Iceberg</span>
                 </a>
-                <a href="/eq-test/" class="related-card" style="--card-color: #00bcd4"><span class="related-emoji">🧠</span><span class="related-name" data-i18n="related.eqTest">EQ Test</span></a>
-                <a href="/emotion-temp/" class="related-card" style="--card-color: #e74c3c">
-                  <span class="related-emoji">🌡️</span>
+                <a href="/eq-test/" class="related-card" data-related-key="eq-test" style="--card-color: #00bcd4">
+                  <span class="related-emoji">&#129504;</span>
+                  <span class="related-name" data-i18n="related.eqTest">EQ Test</span>
+                </a>
+                <a href="/emotion-temp/" class="related-card" data-related-key="emotion-temp" style="--card-color: #e74c3c">
+                  <span class="related-emoji">&#127777;</span>
                   <span class="related-name" data-i18n="related.emotionTemp">Emotion Temperature</span>
                 </a>
-                <a href="/social-battery/" class="related-card" style="--card-color: #2ecc71">
-                  <span class="related-emoji">🔋</span>
+                <a href="/social-battery/" class="related-card" data-related-key="social-battery" style="--card-color: #2ecc71">
+                  <span class="related-emoji">&#128267;</span>
                   <span class="related-name" data-i18n="related.socialBattery">Social Battery</span>
                 </a>
-                <a href="/dopamine-type/" class="related-card" style="--card-color: #f59e0b">
+                <a href="/dopamine-type/" class="related-card" data-related-key="dopamine-type" style="--card-color: #f59e0b">
                   <span class="related-emoji">&#9889;</span>
-                  <span class="related-name">Dopamine Type</span>
+                  <span class="related-name" data-i18n="related.dopamineType">Dopamine Type</span>
                 </a>
-                <a href="/burnout-test/" class="related-card" style="--card-color: #ef4444">
+                <a href="/burnout-test/" class="related-card" data-related-key="burnout-test" style="--card-color: #ef4444">
                   <span class="related-emoji">&#128293;</span>
                   <span class="related-name" data-i18n="related.burnoutTest">Burnout Test</span>
                 </a>
-                <a href="/stress-response/" class="related-card" style="--card-color: #6366f1">
+                <a href="/stress-response/" class="related-card" data-related-key="stress-response" style="--card-color: #6366f1">
                   <span class="related-emoji">&#9889;</span>
                   <span class="related-name" data-i18n="related.stressResponse">Stress Response</span>
                 </a>
-                <a href="/anxiety-type/" class="related-card" style="--card-color: #10b981"><span class="related-emoji">&#127744;</span><span class="related-name" data-i18n="related.anxietyType">Anxiety Type</span></a>
-          <a href="/shadow-work/" class="related-card" style="--card-color: #7c3aed">
-            <span class="related-emoji">&#x1F311;</span>
-            <span class="related-name" data-i18n="related.shadowWork">Shadow Work Quiz</span>
-          </a>
-          <a href="/inner-child-test/" class="related-card" style="--card-color: #e8913a">
-            <span class="related-emoji">&#x1F9F8;</span>
-            <span class="related-name" data-i18n="related.innerChild">Inner Child Test</span>
-          </a>
-          <a href="/trauma-response/" class="related-card" style="--card-color: #e11d48">
-            <span class="related-emoji">&#x1F6A8;</span>
-            <span class="related-name" data-i18n="related.traumaResponse">Trauma Response</span>
-          </a>
+                <a href="/anxiety-type/" class="related-card" data-related-key="anxiety-type" style="--card-color: #10b981">
+                  <span class="related-emoji">&#127744;</span>
+                  <span class="related-name" data-i18n="related.anxietyType">Anxiety Type</span>
+                </a>
+                <a href="/shadow-work/" class="related-card" data-related-key="shadow-work" style="--card-color: #7c3aed">
+                  <span class="related-emoji">&#x1F311;</span>
+                  <span class="related-name" data-i18n="related.shadowWork">Shadow Work Quiz</span>
+                </a>
+                <a href="/inner-child-test/" class="related-card" data-related-key="inner-child" style="--card-color: #e8913a">
+                  <span class="related-emoji">&#x1F9F8;</span>
+                  <span class="related-name" data-i18n="related.innerChild">Inner Child Test</span>
+                </a>
+                <a href="/trauma-response/" class="related-card" data-related-key="trauma-response" style="--card-color: #e11d48">
+                  <span class="related-emoji">&#x1F6A8;</span>
+                  <span class="related-name" data-i18n="related.traumaResponse">Trauma Response</span>
+                </a>
               </div>
             </div>
 

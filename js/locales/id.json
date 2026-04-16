@@ -254,13 +254,18 @@
     "compatible": "Tipe Paling Cocok",
     "retake": "🧠 Ulangi Tes",
     "moreTests": "Jelajahi tes lainnya",
-    "percentileStat": "Hanya <strong>{percent}%</strong> peserta memiliki tipe sensitivitas yang sama"
+    "percentileStat": "Hanya <strong>{percent}%</strong> peserta memiliki tipe sensitivitas yang sama",
+    "nextStepLabel": "Tes berikutnya",
+    "nextStepDesc": "Buka follow-up yang paling cocok untuk hasil kamu sekarang dan lanjutkan momentumnya.",
+    "nextStepCta": "Buka tes lanjutan",
+    "jumpToMore": "Lihat rekomendasi lain"
   },
   "share": {
     "twitter": "𝕏 Bagikan",
     "copyUrl": "📋 Salin Link",
     "copied": "Tersalin!",
-    "twitterText": "Sensitivitas HSP-ku: {percent}%! Tipe: {type} 🧠 Seberapa sensitif kamu?"
+    "twitterText": "Sensitivitas HSP-ku: {percent}%! Tipe: {type} 🧠 Seberapa sensitif kamu?",
+    "saveResult": "Simpan hasil"
   },
   "related": {
     "stressCheck": "Cek Stres",
@@ -270,7 +275,12 @@
     "burnoutTest": "Tes Burnout",
     "stressResponse": "Respons Stres",
     "anxietyType": "Tipe Kecemasan",
-    "eqTest": "Tes EQ"
+    "eqTest": "Tes EQ",
+    "dopamineType": "Tipe Dopamin",
+    "shadowWork": "Kuis shadow work",
+    "traumaResponse": "Respons trauma",
+    "innerChild": "Tes inner child",
+    "attachmentStyle": "Gaya Kelekatan"
   },
   "about": {
     "toggle": "Pelajari lebih lanjut tentang HSP",

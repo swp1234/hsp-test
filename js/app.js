@@ -1,371 +1,584 @@
 // HSP Sensory Overload Simulator
+(async function initApp() {
+    const CATEGORIES = ['sound', 'visual', 'touch', 'emotion', 'social'];
+    const LEVELS_PER_CAT = 4;
+    const RESULT_CONFIG = [
+        { key: 'rock', min: 0, max: 20, color: '#4a90d9' },
+        { key: 'breeze', min: 21, max: 40, color: '#2ecc71' },
+        { key: 'wave', min: 41, max: 60, color: '#3498db' },
+        { key: 'butterfly', min: 61, max: 80, color: '#9b59b6' },
+        { key: 'antenna', min: 81, max: 100, color: '#e74c3c' }
+    ];
 
-// i18n init
-(async function initI18n() {
-    try {
-        await i18n.loadTranslations(i18n.getCurrentLanguage());
-        i18n.updateUI();
-        const langToggle = document.getElementById('lang-toggle');
-        const langMenu = document.getElementById('lang-menu');
-        const langOptions = document.querySelectorAll('.lang-option');
-        document.querySelector(`[data-lang="${i18n.getCurrentLanguage()}"]`)?.classList.add('active');
-        langToggle?.addEventListener('click', () => langMenu.classList.toggle('hidden'));
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.language-selector')) langMenu?.classList.add('hidden');
-        });
-        langOptions.forEach(opt => {
-            opt.addEventListener('click', async () => {
-                await i18n.setLanguage(opt.getAttribute('data-lang'));
-                langOptions.forEach(o => o.classList.remove('active'));
-                opt.classList.add('active');
-                langMenu.classList.add('hidden');
-            });
-        });
-    } catch (e) {
-        console.warn('i18n init failed:', e);
-    } finally {
-        const loader = document.getElementById('app-loader');
-        if (loader) { loader.classList.add('hidden'); setTimeout(() => loader.remove(), 300); }
+    const RECOMMENDATION_MAP = {
+        rock: ['eq-test', 'social-battery', 'emotion-iceberg', 'attachment-style', 'dopamine-type', 'emotion-temp', 'stress-response', 'burnout-test', 'anxiety-type', 'shadow-work', 'inner-child', 'trauma-response'],
+        breeze: ['emotion-iceberg', 'attachment-style', 'social-battery', 'eq-test', 'emotion-temp', 'dopamine-type', 'stress-response', 'burnout-test', 'anxiety-type', 'shadow-work', 'inner-child', 'trauma-response'],
+        wave: ['attachment-style', 'emotion-iceberg', 'stress-response', 'eq-test', 'social-battery', 'emotion-temp', 'dopamine-type', 'burnout-test', 'anxiety-type', 'shadow-work', 'inner-child', 'trauma-response'],
+        butterfly: ['stress-response', 'burnout-test', 'anxiety-type', 'attachment-style', 'emotion-iceberg', 'shadow-work', 'inner-child', 'trauma-response', 'eq-test', 'social-battery', 'emotion-temp', 'dopamine-type'],
+        antenna: ['burnout-test', 'stress-response', 'anxiety-type', 'shadow-work', 'inner-child', 'trauma-response', 'attachment-style', 'emotion-iceberg', 'eq-test', 'social-battery', 'emotion-temp', 'dopamine-type']
+    };
+
+    let currentCat = 0;
+    let currentLevel = 0;
+    let catScores = [0, 0, 0, 0, 0];
+    let isAnimating = false;
+    let currentResultKey = null;
+    let currentPercent = 0;
+    let resultInlineAdLoaded = false;
+
+    const screens = {
+        intro: document.getElementById('screen-intro'),
+        test: document.getElementById('screen-test'),
+        result: document.getElementById('screen-result')
+    };
+
+    const startBtn = document.getElementById('btn-start');
+    const handleBtn = document.getElementById('btn-handle');
+    const limitBtn = document.getElementById('btn-limit');
+    const saveBtn = document.getElementById('btn-save');
+    const twitterBtn = document.getElementById('btn-twitter');
+    const copyBtn = document.getElementById('btn-copy');
+    const retakeBtn = document.getElementById('btn-retake');
+    const relatedGrid = document.getElementById('related-grid');
+    const nextStepCard = document.getElementById('next-step-card');
+    const primaryRelatedEmoji = document.getElementById('primary-related-emoji');
+    const primaryRelatedTitle = document.getElementById('primary-related-title');
+    const primaryRelatedDesc = document.getElementById('primary-related-desc');
+    const primaryRelatedCta = document.getElementById('primary-related-cta');
+    const primaryRelatedCtaText = document.getElementById('primary-related-cta-text');
+    const relatedJumpBtn = document.getElementById('related-jump-btn');
+    const resultInlineAd = document.getElementById('result-inline-ad');
+    const langToggle = document.getElementById('lang-toggle');
+    const langMenu = document.getElementById('lang-menu');
+    const langOptions = document.querySelectorAll('.lang-option');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    function t(key) {
+        if (!window.i18n) return key;
+        const value = window.i18n.t(key);
+        return value !== key ? value : key;
     }
-})();
 
-// Theme toggle
-const themeToggle = document.getElementById('theme-toggle');
-if (themeToggle) {
-    const savedTheme = localStorage.getItem('app-theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    themeToggle.textContent = savedTheme === 'light' ? '\u{1F319}' : '\u{2600}\u{FE0F}';
-    themeToggle.addEventListener('click', () => {
-        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
-        const next = cur === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('app-theme', next);
-        themeToggle.textContent = next === 'light' ? '\u{1F319}' : '\u{2600}\u{FE0F}';
-    });
-}
-
-// Constants
-const CATEGORIES = ['sound', 'visual', 'touch', 'emotion', 'social'];
-const LEVELS_PER_CAT = 4;
-const RESULT_CONFIG = [
-    { key: 'rock', min: 0, max: 20, color: '#4a90d9' },
-    { key: 'breeze', min: 21, max: 40, color: '#2ecc71' },
-    { key: 'wave', min: 41, max: 60, color: '#3498db' },
-    { key: 'butterfly', min: 61, max: 80, color: '#9b59b6' },
-    { key: 'antenna', min: 81, max: 100, color: '#e74c3c' }
-];
-
-// State
-let currentCat = 0;
-let currentLevel = 0;
-let catScores = [0, 0, 0, 0, 0];
-let isAnimating = false;
-
-// DOM
-const screens = {
-    intro: document.getElementById('screen-intro'),
-    test: document.getElementById('screen-test'),
-    result: document.getElementById('screen-result')
-};
-
-function showScreen(name) {
-    Object.values(screens).forEach(s => s.classList.remove('active'));
-    screens[name].classList.add('active');
-    window.scrollTo(0, 0);
-}
-
-// Start test
-document.getElementById('btn-start').addEventListener('click', () => {
-    currentCat = 0;
-    currentLevel = 0;
-    catScores = [0, 0, 0, 0, 0];
-    showScreen('test');
-    renderCategory();
-    if (typeof gtag === 'function') {
-        gtag('event', 'test_start', { app_name: 'hsp-test', content_type: 'overload_simulator' });
+    function trackEvent(name, params = {}) {
+        if (typeof gtag !== 'function') return;
+        gtag('event', name, params);
     }
-});
 
-function renderCategory() {
-    const cat = CATEGORIES[currentCat];
-    const catEmoji = i18n?.t(`categories.${cat}.emoji`) || '';
-    const catName = i18n?.t(`categories.${cat}.name`) || cat;
-
-    document.getElementById('cat-emoji').textContent = catEmoji;
-    document.getElementById('cat-name').textContent = catName;
-    document.getElementById('cat-progress').textContent = `${currentCat + 1} / ${CATEGORIES.length}`;
-
-    // Category enter animation
-    const testScreen = screens.test;
-    testScreen.classList.remove('category-enter');
-    void testScreen.offsetHeight;
-    testScreen.classList.add('category-enter');
-
-    renderLevel();
-}
-
-function renderLevel() {
-    if (isAnimating) return;
-
-    const cat = CATEGORIES[currentCat];
-    const levelKey = `l${currentLevel + 1}`;
-    const levelTitle = i18n?.t(`categories.${cat}.${levelKey}.title`) || '';
-    const levelDesc = i18n?.t(`categories.${cat}.${levelKey}.desc`) || '';
-    const levelLabels = i18n?.t('test.levels');
-    const levelLabel = Array.isArray(levelLabels) ? levelLabels[currentLevel] : `Level ${currentLevel + 1}`;
-
-    // Stimulus card
-    document.getElementById('stim-title').textContent = levelTitle;
-    document.getElementById('stim-desc').textContent = levelDesc;
-
-    // Meter
-    document.getElementById('meter-level').textContent = currentLevel + 1;
-    document.getElementById('meter-label').textContent = levelLabel;
-
-    const fillDeg = ((currentLevel + 1) / LEVELS_PER_CAT) * 360;
-    const meterFill = document.getElementById('meter-fill');
-    // Color shifts from primary to red as intensity increases
-    const colors = ['var(--primary)', 'var(--primary)', '#f59e0b', '#ef4444'];
-    const fillColor = colors[currentLevel] || 'var(--primary)';
-    meterFill.style.background = `conic-gradient(${fillColor} 0deg, ${fillColor} ${fillDeg}deg, rgba(255,255,255,0.08) ${fillDeg}deg)`;
-
-    // Level dots
-    const dots = document.querySelectorAll('#level-dots .dot');
-    dots.forEach((d, i) => {
-        d.classList.toggle('active', i <= currentLevel);
-        d.classList.toggle('current', i === currentLevel);
-    });
-
-    // Intensity class for visual effects
-    screens.test.className = `screen active intensity-${currentLevel + 1}`;
-
-    // Card animation
-    const card = document.getElementById('stimulus-card');
-    card.style.animation = 'none';
-    void card.offsetHeight;
-    card.style.animation = 'cardSlideIn 0.4s ease';
-}
-
-function handleChoice(canHandle) {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    // Visual feedback
-    const btnId = canHandle ? 'btn-handle' : 'btn-limit';
-    const btn = document.getElementById(btnId);
-    btn.classList.add('pressed');
-    setTimeout(() => btn.classList.remove('pressed'), 200);
-
-    if (canHandle) {
-        if (currentLevel < LEVELS_PER_CAT - 1) {
-            // Next intensity level
-            currentLevel++;
-            setTimeout(() => {
-                isAnimating = false;
-                renderLevel();
-            }, 350);
-        } else {
-            // Handled all 4 levels — not sensitive (score 0)
-            catScores[currentCat] = 0;
-            setTimeout(() => {
-                isAnimating = false;
-                advanceCategory();
-            }, 350);
+    function getSeoAwareUrl() {
+        if (window.i18n && typeof window.i18n.getSeoHref === 'function') {
+            return window.i18n.getSeoHref(window.i18n.getCurrentLanguage());
         }
-    } else {
-        // Hit limit — sensitivity = 4 - currentLevel
-        catScores[currentCat] = LEVELS_PER_CAT - currentLevel;
+
+        const url = new URL(window.location.origin + window.location.pathname);
+        const lang = window.i18n ? window.i18n.getCurrentLanguage() : 'en';
+        if (lang && lang !== 'ko') url.searchParams.set('lang', lang);
+        return url.toString();
+    }
+
+    function showScreen(name) {
+        Object.entries(screens).forEach(([screenName, screen]) => {
+            if (!screen) return;
+            if (screenName === 'test') {
+                screen.className = 'screen' + (screenName === name ? ' active' : '');
+            } else {
+                screen.classList.toggle('active', screenName === name);
+            }
+        });
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+
+    function getResultConfig(percent) {
+        return RESULT_CONFIG.find((config) => percent >= config.min && percent <= config.max) || RESULT_CONFIG[RESULT_CONFIG.length - 1];
+    }
+
+    function renderCategory() {
+        const category = CATEGORIES[currentCat];
+        document.getElementById('cat-emoji').textContent = t(`categories.${category}.emoji`);
+        document.getElementById('cat-name').textContent = t(`categories.${category}.name`);
+        document.getElementById('cat-progress').textContent = `${currentCat + 1} / ${CATEGORIES.length}`;
+
+        const testScreen = screens.test;
+        testScreen.classList.remove('category-enter');
+        void testScreen.offsetHeight;
+        testScreen.classList.add('category-enter');
+
+        renderLevel();
+    }
+
+    function renderLevel() {
+        if (isAnimating) return;
+
+        const category = CATEGORIES[currentCat];
+        const levelKey = `l${currentLevel + 1}`;
+        const levelLabels = t('test.levels');
+        const levelLabel = Array.isArray(levelLabels) ? levelLabels[currentLevel] : `Level ${currentLevel + 1}`;
+
+        document.getElementById('stim-title').textContent = t(`categories.${category}.${levelKey}.title`);
+        document.getElementById('stim-desc').textContent = t(`categories.${category}.${levelKey}.desc`);
+        document.getElementById('meter-level').textContent = String(currentLevel + 1);
+        document.getElementById('meter-label').textContent = levelLabel;
+
+        const fillDeg = ((currentLevel + 1) / LEVELS_PER_CAT) * 360;
+        const meterFill = document.getElementById('meter-fill');
+        const colors = ['var(--primary)', 'var(--primary)', '#f59e0b', '#ef4444'];
+        const fillColor = colors[currentLevel] || 'var(--primary)';
+        meterFill.style.background = `conic-gradient(${fillColor} 0deg, ${fillColor} ${fillDeg}deg, rgba(255,255,255,0.08) ${fillDeg}deg)`;
+
+        const dots = document.querySelectorAll('#level-dots .dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index <= currentLevel);
+            dot.classList.toggle('current', index === currentLevel);
+        });
+
+        screens.test.className = `screen active intensity-${currentLevel + 1}`;
+
+        const card = document.getElementById('stimulus-card');
+        card.style.animation = 'none';
+        void card.offsetHeight;
+        card.style.animation = 'cardSlideIn 0.4s ease';
+    }
+
+    function advanceCategory() {
+        currentCat += 1;
+        if (currentCat < CATEGORIES.length) {
+            currentLevel = 0;
+            renderCategory();
+            return;
+        }
+        showResult();
+    }
+
+    function handleChoice(canHandle) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        const category = CATEGORIES[currentCat];
+        const level = currentLevel + 1;
+        const button = canHandle ? handleBtn : limitBtn;
+        button.classList.add('pressed');
+        setTimeout(() => button.classList.remove('pressed'), 200);
+
+        trackEvent(canHandle ? 'hsp_handle_click' : 'hsp_limit_click', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            category,
+            level,
+            step_index: currentCat + 1
+        });
+
+        if (canHandle) {
+            if (currentLevel < LEVELS_PER_CAT - 1) {
+                currentLevel += 1;
+                setTimeout(() => {
+                    isAnimating = false;
+                    renderLevel();
+                }, 350);
+                return;
+            }
+
+            catScores[currentCat] = 0;
+        } else {
+            catScores[currentCat] = LEVELS_PER_CAT - currentLevel;
+        }
+
         setTimeout(() => {
             isAnimating = false;
             advanceCategory();
         }, 350);
     }
-}
 
-function advanceCategory() {
-    currentCat++;
-    if (currentCat < CATEGORIES.length) {
-        currentLevel = 0;
-        renderCategory();
-    } else {
-        showResult();
-    }
-}
+    function prioritizeRelatedCards(resultKey) {
+        if (!relatedGrid) return;
 
-// Button listeners
-document.getElementById('btn-handle').addEventListener('click', () => handleChoice(true));
-document.getElementById('btn-limit').addEventListener('click', () => handleChoice(false));
+        const cards = Array.from(relatedGrid.querySelectorAll('.related-card'));
+        const rankMap = {};
+        (RECOMMENDATION_MAP[resultKey] || RECOMMENDATION_MAP.wave).forEach((key, index) => {
+            rankMap[key] = index;
+        });
 
-function showResult() {
-    const total = catScores.reduce((a, b) => a + b, 0);
-    const percent = Math.round((total / (CATEGORIES.length * LEVELS_PER_CAT)) * 100);
+        cards.sort((a, b) => {
+            const aKey = a.getAttribute('data-related-key') || '';
+            const bKey = b.getAttribute('data-related-key') || '';
+            const aRank = Object.prototype.hasOwnProperty.call(rankMap, aKey) ? rankMap[aKey] : 999;
+            const bRank = Object.prototype.hasOwnProperty.call(rankMap, bKey) ? rankMap[bKey] : 999;
+            return aRank - bRank;
+        });
 
-    // Find result type
-    let resultCfg = RESULT_CONFIG[RESULT_CONFIG.length - 1];
-    for (const cfg of RESULT_CONFIG) {
-        if (percent >= cfg.min && percent <= cfg.max) { resultCfg = cfg; break; }
-    }
-
-    const typeData = i18n?.t(`types.${resultCfg.key}`) || {};
-
-    // Gauge animation
-    const gauge = document.getElementById('result-gauge-fill');
-    const gaugeText = document.getElementById('result-percent');
-    gauge.style.background = `conic-gradient(${resultCfg.color} 0deg, ${resultCfg.color} 0deg, rgba(255,255,255,0.08) 0deg)`;
-    gaugeText.textContent = '0%';
-
-    setTimeout(() => {
-        const deg = (percent / 100) * 360;
-        gauge.style.background = `conic-gradient(${resultCfg.color} 0deg, ${resultCfg.color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
-        gaugeText.textContent = percent + '%';
-    }, 400);
-
-    // Type info
-    document.getElementById('result-name').textContent = typeData.name || resultCfg.key;
-    document.getElementById('result-desc').textContent = typeData.desc || '';
-    document.getElementById('result-ratio').textContent = typeData.ratio || '';
-
-    // Traits
-    const traitsList = document.getElementById('result-traits');
-    traitsList.innerHTML = (typeData.traits || []).map(t => `<li>${t}</li>`).join('');
-
-    // Tips
-    const tipsList = document.getElementById('result-tips');
-    tipsList.innerHTML = (typeData.tips || []).map(t => `<li>${t}</li>`).join('');
-
-    // Compatible
-    document.getElementById('result-compatible').textContent = (typeData.compatible || []).join(' & ');
-
-    // Percentile stat
-    const pStat = document.getElementById('percentile-stat');
-    if (pStat) {
-        const pctPool = { rock: 8, breeze: 22, wave: 35, butterfly: 25, antenna: 10 };
-        const pctVal = pctPool[resultCfg.key] || 15;
-        const template = i18n?.t('result.percentileStat') || 'Only <strong>{percent}%</strong> of participants share your sensitivity type';
-        pStat.innerHTML = template.replace('{percent}', pctVal);
-    }
-
-    // Radar chart
-    drawRadar();
-
-    showScreen('result');
-
-    if (typeof gtag === 'function') {
-        gtag('event', 'test_complete', {
-            app_name: 'hsp-test',
-            event_category: 'hsp_test',
-            result_type: resultCfg.key,
-            result_value: percent
+        cards.forEach((card, index) => {
+            card.classList.toggle('is-featured', index < 2);
+            card.setAttribute('data-rank', String(index + 1));
+            relatedGrid.appendChild(card);
         });
     }
-}
 
-function drawRadar() {
-    const svg = document.getElementById('radar-chart');
-    const cx = 150, cy = 150, maxR = 110;
-    const angleStep = (2 * Math.PI) / CATEGORIES.length;
-    const offset = -Math.PI / 2;
+    function updatePrimaryRecommendation() {
+        if (!relatedGrid || !primaryRelatedTitle || !primaryRelatedDesc || !primaryRelatedCta || !primaryRelatedCtaText || !primaryRelatedEmoji) {
+            return;
+        }
 
-    // Sensitivity percent per category (score 0-4 → 0-100%)
-    const values = catScores.map(s => (s / LEVELS_PER_CAT) * 100);
+        const firstCard = relatedGrid.querySelector('.related-card');
+        if (!firstCard) return;
 
-    function getPoint(index, radius) {
-        const angle = offset + index * angleStep;
-        return { x: cx + radius * Math.cos(angle), y: cy + radius * Math.sin(angle) };
+        const title = firstCard.querySelector('.related-name')?.textContent?.trim() || 'Stress Response';
+        const emoji = firstCard.querySelector('.related-emoji')?.textContent?.trim() || '🌈';
+        const href = firstCard.getAttribute('href') || '#';
+        const cardColor = firstCard.style.getPropertyValue('--card-color') || '#7c3aed';
+        const relatedKey = firstCard.getAttribute('data-related-key') || '';
+        const relatedRank = firstCard.getAttribute('data-rank') || '1';
+
+        primaryRelatedEmoji.textContent = emoji;
+        primaryRelatedTitle.textContent = title;
+        primaryRelatedDesc.textContent = t('result.nextStepDesc');
+        primaryRelatedCtaText.textContent = t('result.nextStepCta');
+        primaryRelatedCta.href = href;
+        primaryRelatedCta.setAttribute('data-related-key', relatedKey);
+        primaryRelatedCta.setAttribute('data-related-rank', relatedRank);
+
+        nextStepCard?.style.setProperty('--cta-color', cardColor);
+        primaryRelatedCta.style.setProperty('--cta-color', cardColor);
+        primaryRelatedTitle.style.setProperty('--cta-color', cardColor);
     }
 
-    let html = '';
+    function ensureResultAdLoaded() {
+        if (resultInlineAdLoaded || !resultInlineAd) return;
+        const adNode = resultInlineAd.querySelector('.adsbygoogle');
+        if (!adNode) return;
 
-    // Background rings
-    for (let r = 0.25; r <= 1; r += 0.25) {
-        const pts = CATEGORIES.map((_, i) => getPoint(i, maxR * r));
-        html += `<polygon points="${pts.map(p => `${p.x},${p.y}`).join(' ')}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>`;
+        try {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            resultInlineAdLoaded = true;
+            trackEvent('hsp_result_ad_impression', {
+                app_name: 'hsp-test',
+                event_category: 'hsp_test',
+                result_type: currentResultKey || 'unknown'
+            });
+        } catch (error) {
+            // Ad blockers or delayed AdSense init are safe to ignore.
+        }
     }
 
-    // Axis lines
-    CATEGORIES.forEach((_, i) => {
-        const p = getPoint(i, maxR);
-        html += `<line x1="${cx}" y1="${cy}" x2="${p.x}" y2="${p.y}" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>`;
-    });
+    function drawRadar() {
+        const svg = document.getElementById('radar-chart');
+        if (!svg) return;
 
-    // Data polygon
-    const dataPts = values.map((v, i) => getPoint(i, maxR * Math.max(v, 5) / 100));
-    html += `<polygon points="${dataPts.map(p => `${p.x},${p.y}`).join(' ')}" fill="rgba(124,58,237,0.2)" stroke="var(--primary)" stroke-width="2.5" class="radar-data"/>`;
+        const cx = 150;
+        const cy = 150;
+        const maxR = 110;
+        const angleStep = (2 * Math.PI) / CATEGORIES.length;
+        const offset = -Math.PI / 2;
+        const values = catScores.map((score) => (score / LEVELS_PER_CAT) * 100);
 
-    // Data points
-    dataPts.forEach(p => {
-        html += `<circle cx="${p.x}" cy="${p.y}" r="5" fill="var(--primary)" stroke="var(--bg)" stroke-width="2"/>`;
-    });
+        function getPoint(index, radius) {
+            const angle = offset + index * angleStep;
+            return {
+                x: cx + radius * Math.cos(angle),
+                y: cy + radius * Math.sin(angle)
+            };
+        }
 
-    // Labels
-    CATEGORIES.forEach((cat, i) => {
-        const p = getPoint(i, maxR + 30);
-        const emoji = i18n?.t(`categories.${cat}.emoji`) || '';
-        const name = i18n?.t(`categories.${cat}.name`) || cat;
-        const val = Math.round(values[i]);
-        const anchor = p.x < cx - 10 ? 'end' : p.x > cx + 10 ? 'start' : 'middle';
-        html += `<text x="${p.x}" y="${p.y - 6}" text-anchor="${anchor}" font-size="12" font-weight="600" dominant-baseline="middle">${emoji}</text>`;
-        html += `<text x="${p.x}" y="${p.y + 10}" text-anchor="${anchor}" font-size="10" dominant-baseline="middle">${name} ${val}%</text>`;
-    });
+        let html = '';
 
-    svg.innerHTML = html;
-}
+        for (let ring = 0.25; ring <= 1; ring += 0.25) {
+            const points = CATEGORIES.map((_, index) => getPoint(index, maxR * ring));
+            html += `<polygon points="${points.map((point) => `${point.x},${point.y}`).join(' ')}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>`;
+        }
 
-// Save result card
-document.getElementById('btn-save')?.addEventListener('click', () => {
-    if (typeof ResultCard === 'undefined') return;
-    const total = catScores.reduce((a, b) => a + b, 0);
-    const percent = Math.round((total / (CATEGORIES.length * LEVELS_PER_CAT)) * 100);
-    let resultKey = 'rock';
-    for (const cfg of RESULT_CONFIG) {
-        if (percent >= cfg.min && percent <= cfg.max) { resultKey = cfg.key; break; }
+        CATEGORIES.forEach((_, index) => {
+            const point = getPoint(index, maxR);
+            html += `<line x1="${cx}" y1="${cy}" x2="${point.x}" y2="${point.y}" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>`;
+        });
+
+        const dataPoints = values.map((value, index) => getPoint(index, maxR * Math.max(value, 5) / 100));
+        html += `<polygon points="${dataPoints.map((point) => `${point.x},${point.y}`).join(' ')}" fill="rgba(124,58,237,0.2)" stroke="var(--primary)" stroke-width="2.5" class="radar-data"/>`;
+
+        dataPoints.forEach((point) => {
+            html += `<circle cx="${point.x}" cy="${point.y}" r="5" fill="var(--primary)" stroke="var(--bg)" stroke-width="2"/>`;
+        });
+
+        CATEGORIES.forEach((category, index) => {
+            const point = getPoint(index, maxR + 30);
+            const emoji = t(`categories.${category}.emoji`);
+            const name = t(`categories.${category}.name`);
+            const value = Math.round(values[index]);
+            const anchor = point.x < cx - 10 ? 'end' : point.x > cx + 10 ? 'start' : 'middle';
+            html += `<text x="${point.x}" y="${point.y - 6}" text-anchor="${anchor}" font-size="12" font-weight="600" dominant-baseline="middle">${emoji}</text>`;
+            html += `<text x="${point.x}" y="${point.y + 10}" text-anchor="${anchor}" font-size="10" dominant-baseline="middle">${name} ${value}%</text>`;
+        });
+
+        svg.innerHTML = html;
     }
-    const typeData = i18n?.t(`types.${resultKey}`) || {};
-    const typeName = typeData.name || resultKey;
-    const categoryLabels = ['Sound', 'Visual', 'Touch', 'Emotion', 'Social'];
-    const dimensions = catScores.map((score, idx) => ({
-        label: categoryLabels[idx],
-        pct: Math.round((score / LEVELS_PER_CAT) * 100),
-        color: RESULT_CONFIG.find(c => c.key === resultKey)?.color || '#7c3aed'
-    }));
-    ResultCard.download({
-        appName: 'HSP Test',
-        typeName: typeName,
-        typeEmoji: '🧠',
-        dimensions: dimensions,
-        primaryColor: '#7c3aed',
-        tagline: 'dopabrain.com/hsp-test'
-    });
-    if (typeof gtag === 'function') gtag('event', 'share', { method: 'download', app_name: 'hsp-test' });
-});
 
-// Share
-document.getElementById('btn-twitter')?.addEventListener('click', () => {
-    const total = catScores.reduce((a, b) => a + b, 0);
-    const percent = Math.round((total / (CATEGORIES.length * LEVELS_PER_CAT)) * 100);
-    let resultKey = 'rock';
-    for (const cfg of RESULT_CONFIG) {
-        if (percent >= cfg.min && percent <= cfg.max) { resultKey = cfg.key; break; }
+    function updatePercentileStat(resultKey) {
+        const percentileStat = document.getElementById('percentile-stat');
+        if (!percentileStat) return;
+
+        const percentilePool = {
+            rock: 8,
+            breeze: 22,
+            wave: 35,
+            butterfly: 25,
+            antenna: 10
+        };
+
+        percentileStat.innerHTML = t('result.percentileStat').replace('{percent}', percentilePool[resultKey] || 15);
     }
-    const typeName = i18n?.t(`types.${resultKey}.name`) || resultKey;
-    let text = i18n?.t('share.twitterText') || 'My HSP sensitivity: {percent}%! Type: {type}';
-    text = text.replace('{percent}', percent).replace('{type}', typeName);
-    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://dopabrain.com/hsp-test/')}`;
-    window.open(url, '_blank');
-    if (typeof gtag === 'function') gtag('event', 'share', { method: 'twitter', app_name: 'hsp-test' });
-});
 
-document.getElementById('btn-copy')?.addEventListener('click', () => {
-    navigator.clipboard.writeText('https://dopabrain.com/hsp-test/').then(() => {
-        const btn = document.getElementById('btn-copy');
-        const orig = btn.textContent;
-        btn.textContent = i18n?.t('share.copied') || 'Copied!';
-        setTimeout(() => { btn.textContent = orig; }, 2000);
+    function showResult(shouldTrack = true) {
+        const total = catScores.reduce((sum, score) => sum + score, 0);
+        const percent = Math.round((total / (CATEGORIES.length * LEVELS_PER_CAT)) * 100);
+        const resultConfig = getResultConfig(percent);
+        const typeData = t(`types.${resultConfig.key}`);
+
+        currentResultKey = resultConfig.key;
+        currentPercent = percent;
+
+        const gauge = document.getElementById('result-gauge-fill');
+        const gaugeText = document.getElementById('result-percent');
+        gauge.style.background = `conic-gradient(${resultConfig.color} 0deg, ${resultConfig.color} 0deg, rgba(255,255,255,0.08) 0deg)`;
+        gaugeText.textContent = '0%';
+
+        setTimeout(() => {
+            const degrees = (percent / 100) * 360;
+            gauge.style.background = `conic-gradient(${resultConfig.color} 0deg, ${resultConfig.color} ${degrees}deg, rgba(255,255,255,0.08) ${degrees}deg)`;
+            gaugeText.textContent = `${percent}%`;
+        }, 400);
+
+        document.getElementById('result-name').textContent = typeData.name || resultConfig.key;
+        document.getElementById('result-desc').textContent = typeData.desc || '';
+        document.getElementById('result-ratio').textContent = typeData.ratio || '';
+        document.getElementById('result-compatible').textContent = Array.isArray(typeData.compatible) ? typeData.compatible.join(' · ') : '';
+
+        const traitsList = document.getElementById('result-traits');
+        traitsList.innerHTML = Array.isArray(typeData.traits) ? typeData.traits.map((trait) => `<li>${trait}</li>`).join('') : '';
+
+        const tipsList = document.getElementById('result-tips');
+        tipsList.innerHTML = Array.isArray(typeData.tips) ? typeData.tips.map((tip) => `<li>${tip}</li>`).join('') : '';
+
+        updatePercentileStat(resultConfig.key);
+        drawRadar();
+        prioritizeRelatedCards(resultConfig.key);
+        updatePrimaryRecommendation();
+        ensureResultAdLoaded();
+        showScreen('result');
+
+        if (shouldTrack) {
+            trackEvent('result_view', {
+                app_name: 'hsp-test',
+                event_category: 'hsp_test',
+                result_type: resultConfig.key,
+                result_value: percent
+            });
+            trackEvent('quiz_complete', {
+                app_name: 'hsp-test',
+                event_category: 'hsp_test',
+                result_type: resultConfig.key,
+                result_value: percent
+            });
+        }
+    }
+
+    function saveCurrentResultCard() {
+        if (typeof ResultCard === 'undefined') return;
+
+        const resultConfig = getResultConfig(currentPercent);
+        const typeData = t(`types.${currentResultKey}`);
+        const dimensions = CATEGORIES.map((category, index) => ({
+            label: t(`categories.${category}.name`),
+            pct: Math.round((catScores[index] / LEVELS_PER_CAT) * 100),
+            color: resultConfig.color
+        }));
+
+        ResultCard.download({
+            appName: 'HSP Test',
+            typeName: typeData.name || currentResultKey,
+            typeEmoji: '🌿',
+            dimensions,
+            primaryColor: '#7c3aed',
+            tagline: 'dopabrain.com/hsp-test'
+        });
+
+        trackEvent('hsp_save_click', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            result_type: currentResultKey || 'unknown',
+            result_value: currentPercent
+        });
+    }
+
+    function shareToTwitter() {
+        const typeName = t(`types.${currentResultKey}.name`);
+        const rawText = t('share.twitterText').replace('{percent}', currentPercent).replace('{type}', typeName);
+        const shareUrl = getSeoAwareUrl();
+        const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(rawText)}&url=${encodeURIComponent(shareUrl)}`;
+        window.open(url, '_blank', 'noopener');
+
+        trackEvent('hsp_share_click', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            method: 'twitter',
+            result_type: currentResultKey || 'unknown',
+            result_value: currentPercent
+        });
+    }
+
+    async function copyShareUrl() {
+        const shareUrl = getSeoAwareUrl();
+        try {
+            await navigator.clipboard.writeText(shareUrl);
+            const original = t('share.copyUrl');
+            copyBtn.textContent = t('share.copied');
+            setTimeout(() => {
+                copyBtn.textContent = original;
+            }, 1800);
+        } catch (error) {
+            window.prompt('Copy this URL', shareUrl);
+        }
+
+        trackEvent('hsp_share_click', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            method: 'copy',
+            result_type: currentResultKey || 'unknown',
+            result_value: currentPercent
+        });
+    }
+
+    function resetToIntro() {
+        showScreen('intro');
+        currentCat = 0;
+        currentLevel = 0;
+        catScores = [0, 0, 0, 0, 0];
+        currentResultKey = null;
+        currentPercent = 0;
+        isAnimating = false;
+
+        trackEvent('hsp_retry_click', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test'
+        });
+    }
+
+    function initTheme() {
+        if (!themeToggle) return;
+        const savedTheme = localStorage.getItem('app-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('app-theme', nextTheme);
+            themeToggle.textContent = nextTheme === 'light' ? '🌙' : '☀️';
+        });
+    }
+
+    function initLanguageMenu() {
+        document.querySelector(`[data-lang="${window.i18n.getCurrentLanguage()}"]`)?.classList.add('active');
+
+        langToggle?.addEventListener('click', () => {
+            langMenu?.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.language-selector')) {
+                langMenu?.classList.add('hidden');
+            }
+        });
+
+        langOptions.forEach((option) => {
+            option.addEventListener('click', async () => {
+                const nextLang = option.getAttribute('data-lang');
+                await window.i18n.setLanguage(nextLang);
+                langOptions.forEach((item) => item.classList.remove('active'));
+                option.classList.add('active');
+                langMenu?.classList.add('hidden');
+
+                if (screens.test.classList.contains('active')) {
+                    renderCategory();
+                } else if (screens.result.classList.contains('active') && currentResultKey) {
+                    showResult(false);
+                }
+            });
+        });
+    }
+
+    startBtn?.addEventListener('click', () => {
+        currentCat = 0;
+        currentLevel = 0;
+        catScores = [0, 0, 0, 0, 0];
+        currentResultKey = null;
+        currentPercent = 0;
+        isAnimating = false;
+        showScreen('test');
+        renderCategory();
+
+        trackEvent('quiz_start', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            content_type: 'overload_simulator'
+        });
+        trackEvent('test_start', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            content_type: 'overload_simulator'
+        });
     });
-    if (typeof gtag === 'function') gtag('event', 'share', { method: 'clipboard', app_name: 'hsp-test' });
-});
 
-// Retake
-document.getElementById('btn-retake')?.addEventListener('click', () => {
-    showScreen('intro');
-});
+    handleBtn?.addEventListener('click', () => handleChoice(true));
+    limitBtn?.addEventListener('click', () => handleChoice(false));
+    saveBtn?.addEventListener('click', saveCurrentResultCard);
+    twitterBtn?.addEventListener('click', shareToTwitter);
+    copyBtn?.addEventListener('click', copyShareUrl);
+    retakeBtn?.addEventListener('click', resetToIntro);
+
+    primaryRelatedCta?.addEventListener('click', () => {
+        trackEvent('hsp_primary_cta_click', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            result_type: currentResultKey || 'unknown',
+            result_value: currentPercent,
+            related_key: primaryRelatedCta.getAttribute('data-related-key') || '',
+            related_rank: Number(primaryRelatedCta.getAttribute('data-related-rank') || '1')
+        });
+    });
+
+    relatedJumpBtn?.addEventListener('click', () => {
+        document.querySelector('.related-tests')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        trackEvent('hsp_related_jump_click', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            result_type: currentResultKey || 'unknown',
+            result_value: currentPercent
+        });
+    });
+
+    relatedGrid?.querySelectorAll('.related-card').forEach((card) => {
+        card.addEventListener('click', () => {
+            trackEvent('hsp_related_click', {
+                app_name: 'hsp-test',
+                event_category: 'hsp_test',
+                result_type: currentResultKey || 'unknown',
+                result_value: currentPercent,
+                related_key: card.getAttribute('data-related-key') || '',
+                related_rank: Number(card.getAttribute('data-rank') || '0')
+            });
+        });
+    });
+
+    try {
+        await window.i18n.loadTranslations(window.i18n.getCurrentLanguage());
+        window.i18n.updateUI();
+        initTheme();
+        initLanguageMenu();
+    } catch (error) {
+        console.warn('i18n init failed:', error);
+        initTheme();
+        initLanguageMenu();
+    } finally {
+        const loader = document.getElementById('app-loader');
+        if (loader) {
+            loader.classList.add('hidden');
+            setTimeout(() => loader.remove(), 300);
+        }
+    }
+})();

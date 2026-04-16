@@ -254,13 +254,18 @@
     "compatible": "सर्वोत्तम मेल प्रकार",
     "retake": "🧠 दोबारा परीक्षण लें",
     "moreTests": "और टेस्ट देखें",
-    "percentileStat": "केवल <strong>{percent}%</strong> प्रतिभागियों का आपके जैसा संवेदनशीलता प्रकार है"
+    "percentileStat": "केवल <strong>{percent}%</strong> प्रतिभागियों का आपके जैसा संवेदनशीलता प्रकार है",
+    "nextStepLabel": "Agla recommended test",
+    "nextStepDesc": "Apne current result ke liye sabse sahi follow-up test kholo aur momentum banaye rakho.",
+    "nextStepCta": "Follow-up test kholo",
+    "jumpToMore": "Aur recommendations dekho"
   },
   "share": {
     "twitter": "𝕏 शेयर करें",
     "copyUrl": "📋 लिंक कॉपी करें",
     "copied": "कॉपी हो गया!",
-    "twitterText": "मेरी HSP संवेदनशीलता: {percent}%! प्रकार: {type} 🧠 आप कितने संवेदनशील हैं?"
+    "twitterText": "मेरी HSP संवेदनशीलता: {percent}%! प्रकार: {type} 🧠 आप कितने संवेदनशील हैं?",
+    "saveResult": "?????? ??????"
   },
   "related": {
     "stressCheck": "तनाव जांच",
@@ -270,7 +275,12 @@
     "burnoutTest": "बर्नआउट टेस्ट",
     "stressResponse": "तनाव प्रतिक्रिया",
     "anxietyType": "चिंता प्रकार",
-    "eqTest": "EQ टेस्ट"
+    "eqTest": "EQ टेस्ट",
+    "dopamineType": "डोपामाइन टाइप",
+    "shadowWork": "???? ???? ??????",
+    "traumaResponse": "?????? ???????????",
+    "innerChild": "??? ?????? ?????",
+    "attachmentStyle": "लगाव शैली"
   },
   "about": {
     "toggle": "HSP के बारे में और जानें",

@@ -254,13 +254,18 @@
     "compatible": "相性の良いタイプ",
     "retake": "🧠 もう一度テストする",
     "moreTests": "もっとテストを見る",
-    "percentileStat": "参加者の<strong>{percent}%</strong>だけがあなたと同じ感受性タイプです"
+    "percentileStat": "参加者の<strong>{percent}%</strong>だけがあなたと同じ感受性タイプです",
+    "nextStepLabel": "??????????",
+    "nextStepDesc": "?????????????????????????????????????",
+    "nextStepCta": "????????",
+    "jumpToMore": "??????????"
   },
   "share": {
     "twitter": "𝕏 シェア",
     "copyUrl": "📋 リンクをコピー",
     "copied": "コピーしました！",
-    "twitterText": "私のHSP感受性：{percent}%！タイプ：{type} 🧠 あなたはどれくらい敏感？"
+    "twitterText": "私のHSP感受性：{percent}%！タイプ：{type} 🧠 あなたはどれくらい敏感？",
+    "saveResult": "?????"
   },
   "related": {
     "stressCheck": "ストレスチェック",
@@ -270,7 +275,12 @@
     "burnoutTest": "バーンアウトテスト",
     "stressResponse": "ストレス反応",
     "anxietyType": "不安タイプ",
-    "eqTest": "EQテスト"
+    "eqTest": "EQテスト",
+    "dopamineType": "ドーパミンタイプ",
+    "shadowWork": "?????????",
+    "traumaResponse": "??????",
+    "innerChild": "????????????",
+    "attachmentStyle": "アタッチメントスタイル"
   },
   "about": {
     "toggle": "HSPについてもっと知る",

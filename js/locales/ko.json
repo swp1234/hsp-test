@@ -254,7 +254,11 @@
     "compatible": "최고 궁합 유형",
     "retake": "🧠 다시 테스트하기",
     "moreTests": "더 많은 테스트",
-    "percentileStat": "참가자의 <strong>{percent}%</strong>만이 당신과 같은 민감도 유형입니다"
+    "percentileStat": "참가자의 <strong>{percent}%</strong>만이 당신과 같은 민감도 유형입니다",
+    "nextStepLabel": "?? ?? ???",
+    "nextStepDesc": "?? ??? ?? ? ?? ?? ???? ?? ???? ??? ?????.",
+    "nextStepCta": "?? ??? ??",
+    "jumpToMore": "?? ?? ??"
   },
   "related": {
     "stressCheck": "스트레스 체크",
@@ -265,7 +269,11 @@
     "stressResponse": "스트레스 반응",
     "anxietyType": "불안 유형",
     "eqTest": "EQ 테스트",
-    "attachmentStyle": "애착 유형"
+    "attachmentStyle": "애착 유형",
+    "dopamineType": "도파민 유형",
+    "shadowWork": "??? ?? ??",
+    "traumaResponse": "???? ??",
+    "innerChild": "?? ??? ???"
   },
   "about": {
     "toggle": "HSP에 대해 더 알아보기",
@@ -284,6 +292,7 @@
     "twitter": "𝕏 공유하기",
     "copyUrl": "📋 링크 복사",
     "copied": "복사되었습니다!",
-    "twitterText": "나의 HSP 민감도: {percent}%! 유형: {type} 🧠 당신의 민감도는?"
+    "twitterText": "나의 HSP 민감도: {percent}%! 유형: {type} 🧠 당신의 민감도는?",
+    "saveResult": "?? ??"
   }
 }

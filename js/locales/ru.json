@@ -254,13 +254,18 @@
     "compatible": "Лучшие совместимые типы",
     "retake": "🧠 Пройти тест снова",
     "moreTests": "Ещё тесты",
-    "percentileStat": "Только <strong>{percent}%</strong> участников имеют такой же тип чувствительности"
+    "percentileStat": "Только <strong>{percent}%</strong> участников имеют такой же тип чувствительности",
+    "nextStepLabel": "Luchshiy sleduyushchiy test",
+    "nextStepDesc": "Otkroy luchshiy follow-up dlya tvoego tekushchego rezultata i prodolzhi impuls.",
+    "nextStepCta": "Otkryt sleduyushchiy test",
+    "jumpToMore": "Posmotret eshche"
   },
   "share": {
     "twitter": "𝕏 Поделиться",
     "copyUrl": "📋 Копировать ссылку",
     "copied": "Скопировано!",
-    "twitterText": "Моя чувствительность HSP: {percent}%! Тип: {type} 🧠 Насколько вы чувствительны?"
+    "twitterText": "Моя чувствительность HSP: {percent}%! Тип: {type} 🧠 Насколько вы чувствительны?",
+    "saveResult": "????????? ?????????"
   },
   "related": {
     "stressCheck": "Проверка стресса",
@@ -270,7 +275,12 @@
     "burnoutTest": "Тест на выгорание",
     "stressResponse": "Стресс-реакция",
     "anxietyType": "Тип тревожности",
-    "eqTest": "Тест EQ"
+    "eqTest": "Тест EQ",
+    "dopamineType": "Тип дофамина",
+    "shadowWork": "???? ?? ??????? ??????",
+    "traumaResponse": "?????????????? ???????",
+    "innerChild": "???? ??????????? ???????",
+    "attachmentStyle": "Стиль привязанности"
   },
   "about": {
     "toggle": "Узнать больше о HSP",

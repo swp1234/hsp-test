@@ -254,13 +254,18 @@
     "compatible": "En Uyumlu Tipler",
     "retake": "🧠 Testi Tekrarla",
     "moreTests": "Daha fazla test keşfet",
-    "percentileStat": "Katılımcıların sadece <strong>{percent}%</strong>'i senin hassasiyet tipine sahip"
+    "percentileStat": "Katılımcıların sadece <strong>{percent}%</strong>'i senin hassasiyet tipine sahip",
+    "nextStepLabel": "Sonraki test onerisi",
+    "nextStepDesc": "Su anki sonucun icin en guclu devam testini ac ve akisi surdur.",
+    "nextStepCta": "Devam testini ac",
+    "jumpToMore": "Daha fazla oneriyi gor"
   },
   "share": {
     "twitter": "𝕏 Paylaş",
     "copyUrl": "📋 Link Kopyala",
     "copied": "Kopyalandı!",
-    "twitterText": "HSP hassasiyetim: {percent}%! Tip: {type} 🧠 Sen ne kadar hassassın?"
+    "twitterText": "HSP hassasiyetim: {percent}%! Tip: {type} 🧠 Sen ne kadar hassassın?",
+    "saveResult": "Sonucu kaydet"
   },
   "related": {
     "stressCheck": "Stres Kontrolü",
@@ -270,7 +275,12 @@
     "burnoutTest": "Tükenmişlik Testi",
     "stressResponse": "Stres Tepkisi",
     "anxietyType": "Kaygı Tipi",
-    "eqTest": "EQ Testi"
+    "eqTest": "EQ Testi",
+    "dopamineType": "Dopamin Tipi",
+    "shadowWork": "G?lge ?al??ma testi",
+    "traumaResponse": "Travma tepkisi",
+    "innerChild": "?? ?ocuk testi",
+    "attachmentStyle": "Bağlanma Stili"
   },
   "about": {
     "toggle": "HSP hakkında daha fazla bilgi",

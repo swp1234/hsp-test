@@ -254,7 +254,11 @@
     "compatible": "Best Match Types",
     "retake": "🧠 Retake Test",
     "moreTests": "Explore More Tests",
-    "percentileStat": "Only <strong>{percent}%</strong> of participants share your sensitivity type"
+    "percentileStat": "Only <strong>{percent}%</strong> of participants share your sensitivity type",
+    "nextStepLabel": "Best Next Test",
+    "nextStepDesc": "Open the strongest follow-up for your current score and keep the momentum going.",
+    "nextStepCta": "Open Follow-up",
+    "jumpToMore": "See All Follow-ups"
   },
   "related": {
     "stressCheck": "Stress Check",
@@ -265,7 +269,11 @@
     "stressResponse": "Stress Response",
     "anxietyType": "Anxiety Type",
     "eqTest": "EQ Test",
-    "attachmentStyle": "Attachment Style"
+    "attachmentStyle": "Attachment Style",
+    "dopamineType": "Dopamine Type",
+    "shadowWork": "Shadow Work Quiz",
+    "traumaResponse": "Trauma Response",
+    "innerChild": "Inner Child Test"
   },
   "about": {
     "toggle": "Learn More About HSP",
@@ -284,6 +292,7 @@
     "twitter": "𝕏 Share",
     "copyUrl": "📋 Copy Link",
     "copied": "Copied!",
-    "twitterText": "My HSP sensitivity: {percent}%! Type: {type} 🧠 How sensitive are you?"
+    "twitterText": "My HSP sensitivity: {percent}%! Type: {type} 🧠 How sensitive are you?",
+    "saveResult": "Save Result"
   }
 }

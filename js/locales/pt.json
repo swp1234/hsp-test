@@ -254,13 +254,18 @@
     "compatible": "Tipos Mais Compatíveis",
     "retake": "🧠 Refazer Teste",
     "moreTests": "Explorar mais testes",
-    "percentileStat": "Apenas <strong>{percent}%</strong> dos participantes compartilham seu tipo de sensibilidade"
+    "percentileStat": "Apenas <strong>{percent}%</strong> dos participantes compartilham seu tipo de sensibilidade",
+    "nextStepLabel": "Proximo teste recomendado",
+    "nextStepDesc": "Abra o melhor follow-up para o seu resultado atual e continue o fluxo.",
+    "nextStepCta": "Abrir proximo teste",
+    "jumpToMore": "Ver mais opcoes"
   },
   "share": {
     "twitter": "𝕏 Compartilhar",
     "copyUrl": "📋 Copiar Link",
     "copied": "Copiado!",
-    "twitterText": "Minha sensibilidade HSP: {percent}%! Tipo: {type} 🧠 Quão sensível você é?"
+    "twitterText": "Minha sensibilidade HSP: {percent}%! Tipo: {type} 🧠 Quão sensível você é?",
+    "saveResult": "Salvar resultado"
   },
   "related": {
     "stressCheck": "Verificação de Estresse",
@@ -270,7 +275,12 @@
     "burnoutTest": "Teste de Burnout",
     "stressResponse": "Resposta ao Estresse",
     "anxietyType": "Tipo de Ansiedade",
-    "eqTest": "Teste EQ"
+    "eqTest": "Teste EQ",
+    "dopamineType": "Tipo de Dopamina",
+    "shadowWork": "Quiz de sombra",
+    "traumaResponse": "Resposta ao trauma",
+    "innerChild": "Teste da crian?a interior",
+    "attachmentStyle": "Estilo de Apego"
   },
   "about": {
     "toggle": "Saiba mais sobre HSP",

@@ -254,13 +254,18 @@
     "compatible": "最佳匹配类型",
     "retake": "🧠 重新测试",
     "moreTests": "探索更多测试",
-    "percentileStat": "仅 <strong>{percent}%</strong> 的参与者拥有与你相同的敏感类型"
+    "percentileStat": "仅 <strong>{percent}%</strong> 的参与者拥有与你相同的敏感类型",
+    "nextStepLabel": "???????",
+    "nextStepDesc": "??????????????????????????",
+    "nextStepCta": "??????",
+    "jumpToMore": "??????"
   },
   "share": {
     "twitter": "𝕏 分享",
     "copyUrl": "📋 复制链接",
     "copied": "已复制！",
-    "twitterText": "我的HSP敏感度：{percent}%！类型：{type} 🧠 你有多敏感？"
+    "twitterText": "我的HSP敏感度：{percent}%！类型：{type} 🧠 你有多敏感？",
+    "saveResult": "????"
   },
   "related": {
     "stressCheck": "压力检测",
@@ -270,7 +275,12 @@
     "burnoutTest": "职业倦怠测试",
     "stressResponse": "压力反应",
     "anxietyType": "焦虑类型",
-    "eqTest": "EQ测试"
+    "eqTest": "EQ测试",
+    "dopamineType": "多巴胺类型",
+    "shadowWork": "??????",
+    "traumaResponse": "????",
+    "innerChild": "??????",
+    "attachmentStyle": "依恋类型"
   },
   "about": {
     "toggle": "了解更多关于HSP",
