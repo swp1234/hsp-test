@@ -82,7 +82,7 @@
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
         "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "850", "bestRating": "5", "worstRating": "1" },
         "datePublished": "2024-06-01",
-        "dateModified": "2026-03-14"
+        "dateModified": "2026-04-24"
     }
     </script>
 
@@ -237,14 +237,18 @@
                 <span class="type-chip" data-i18n="intro.typeButterfly">Delicate Butterfly</span>
                 <span class="type-chip" data-i18n="intro.typeAntenna">Ultra Antenna</span>
             </div>
-            <div class="about-test-section" style="max-width:520px;margin:24px auto;padding:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;text-align:left;">
-                <h2 style="font-size:18px;margin:0 0 12px;color:var(--text,#e0e0e8);">About the HSP Self-Assessment</h2>
-                <p style="font-size:14px;line-height:1.7;color:var(--text-secondary,#a0a0b8);margin:0 0 12px;">This free HSP test measures your sensitivity across 5 key dimensions: sensory processing, emotional reactivity, social sensitivity, environmental awareness, and cognitive depth. Based on research by Dr. Elaine Aron, approximately 15-20% of the population has the Highly Sensitive Person trait. Our 20-question assessment helps you understand your unique sensitivity profile and provides personalized insights. You will face escalating stimuli in each category — tap out when you reach your limit. Your threshold pattern reveals which HSP type you match, from "Rock Solid" to "Ultra Antenna." The test takes about 3 minutes, requires no sign-up, and your results are displayed instantly with a detailed radar chart breakdown.</p>
-                <p style="font-size:13px;line-height:1.6;color:var(--text-secondary,#a0a0b8);margin:0;opacity:0.8;">This is a self-discovery tool, not a clinical diagnosis. If you have concerns about sensory processing or emotional sensitivity, please consult a mental health professional.</p>
+            <div class="intro-cta-panel" data-cta-surface="intro_primary">
+                <button id="btn-start" class="btn-start btn-pulse" data-cta-surface="intro_primary" data-i18n="app.start">🧠 Start Sensitivity Test</button>
+                <p class="disclaimer" data-i18n="app.disclaimer">For entertainment only. Not a clinical diagnosis.</p>
             </div>
 
-            <button id="btn-start" class="btn-start btn-pulse" data-i18n="app.start">🧠 Start Sensitivity Test</button>
-            <p class="disclaimer" data-i18n="app.disclaimer">For entertainment only. Not a clinical diagnosis.</p>
+            <details class="about-test-section">
+                <summary>About the HSP Self-Assessment</summary>
+                <div class="about-test-body">
+                    <p>This free HSP test measures your sensitivity across 5 key dimensions: sensory processing, emotional reactivity, social sensitivity, environmental awareness, and cognitive depth. Based on research by Dr. Elaine Aron, approximately 15-20% of the population has the Highly Sensitive Person trait. Our 20-question assessment helps you understand your unique sensitivity profile and provides personalized insights. You will face escalating stimuli in each category — tap out when you reach your limit. Your threshold pattern reveals which HSP type you match, from "Rock Solid" to "Ultra Antenna." The test takes about 3 minutes, requires no sign-up, and your results are displayed instantly with a detailed radar chart breakdown.</p>
+                    <p class="about-test-note">This is a self-discovery tool, not a clinical diagnosis. If you have concerns about sensory processing or emotional sensitivity, please consult a mental health professional.</p>
+                </div>
+            </details>
         </div>
 
         <!-- Test Screen -->

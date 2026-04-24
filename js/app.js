@@ -25,6 +25,7 @@
     let currentResultKey = null;
     let currentPercent = 0;
     let resultInlineAdLoaded = false;
+    let introCtaViewSent = false;
 
     const screens = {
         intro: document.getElementById('screen-intro'),
@@ -33,6 +34,8 @@
     };
 
     const startBtn = document.getElementById('btn-start');
+    const introCtaPanel = document.querySelector('.intro-cta-panel');
+    const aboutTestSection = document.querySelector('.about-test-section');
     const handleBtn = document.getElementById('btn-handle');
     const limitBtn = document.getElementById('btn-limit');
     const saveBtn = document.getElementById('btn-save');
@@ -62,6 +65,16 @@
     function trackEvent(name, params = {}) {
         if (typeof gtag !== 'function') return;
         gtag('event', name, params);
+    }
+
+    function trackIntroCtaView() {
+        if (introCtaViewSent) return;
+        introCtaViewSent = true;
+        trackEvent('hsp_intro_cta_view', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            cta_surface: introCtaPanel?.getAttribute('data-cta-surface') || 'intro_primary'
+        });
     }
 
     function getSeoAwareUrl() {
@@ -512,6 +525,11 @@
         showScreen('test');
         renderCategory();
 
+        trackEvent('hsp_intro_start_click', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            cta_surface: startBtn.getAttribute('data-cta-surface') || 'intro_primary'
+        });
         trackEvent('quiz_start', {
             app_name: 'hsp-test',
             event_category: 'hsp_test',
@@ -530,6 +548,26 @@
     twitterBtn?.addEventListener('click', shareToTwitter);
     copyBtn?.addEventListener('click', copyShareUrl);
     retakeBtn?.addEventListener('click', resetToIntro);
+
+    if (introCtaPanel && 'IntersectionObserver' in window) {
+        const introCtaObserver = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+                trackIntroCtaView();
+                introCtaObserver.disconnect();
+            }
+        }, { threshold: 0.55 });
+        introCtaObserver.observe(introCtaPanel);
+    } else {
+        setTimeout(trackIntroCtaView, 800);
+    }
+
+    aboutTestSection?.addEventListener('toggle', () => {
+        trackEvent('hsp_about_toggle', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            is_open: aboutTestSection.open
+        });
+    });
 
     primaryRelatedCta?.addEventListener('click', () => {
         trackEvent('hsp_primary_cta_click', {
