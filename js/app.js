@@ -26,6 +26,8 @@
     let currentPercent = 0;
     let resultInlineAdLoaded = false;
     let introCtaViewSent = false;
+    let introStickyViewSent = false;
+    let introStickyMountTimer = null;
     let autoStartConsumed = false;
 
     const screens = {
@@ -112,6 +114,68 @@
             }
         });
         window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        if (name === 'intro') {
+            scheduleIntroStickyStart();
+        } else {
+            removeIntroStickyStart();
+        }
+    }
+
+    function shouldShowIntroStickyStart() {
+        if (getAutoStartSurface()) return false;
+        if (!screens.intro?.classList.contains('active')) return false;
+        try {
+            return window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 720;
+        } catch (error) {
+            return window.innerWidth < 720;
+        }
+    }
+
+    function updateIntroStickyLabel() {
+        const sticky = document.querySelector('.hsp-intro-sticky-start');
+        const label = sticky?.querySelector('.hsp-intro-sticky-label');
+        if (label) label.textContent = t('app.start');
+    }
+
+    function trackIntroStickyView() {
+        if (introStickyViewSent) return;
+        introStickyViewSent = true;
+        trackEvent('hsp_intro_sticky_view', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            cta_surface: 'intro_sticky'
+        });
+    }
+
+    function removeIntroStickyStart() {
+        if (introStickyMountTimer) {
+            clearTimeout(introStickyMountTimer);
+            introStickyMountTimer = null;
+        }
+        document.querySelector('.hsp-intro-sticky-start')?.remove();
+        document.body.classList.remove('has-hsp-intro-sticky-start');
+    }
+
+    function mountIntroStickyStart() {
+        if (!shouldShowIntroStickyStart() || document.querySelector('.hsp-intro-sticky-start')) return;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'hsp-intro-sticky-start';
+        button.setAttribute('data-cta-surface', 'intro_sticky');
+        button.innerHTML = '<span class="hsp-intro-sticky-label"></span>';
+        button.addEventListener('click', () => startTest('intro_sticky'));
+        document.body.appendChild(button);
+        document.body.classList.add('has-hsp-intro-sticky-start');
+        updateIntroStickyLabel();
+        trackIntroStickyView();
+    }
+
+    function scheduleIntroStickyStart() {
+        if (introStickyMountTimer) clearTimeout(introStickyMountTimer);
+        introStickyMountTimer = setTimeout(() => {
+            introStickyMountTimer = null;
+            mountIntroStickyStart();
+        }, 700);
     }
 
     function getResultConfig(percent) {
@@ -524,6 +588,8 @@
                     renderCategory();
                 } else if (screens.result.classList.contains('active') && currentResultKey) {
                     showResult(false);
+                } else {
+                    updateIntroStickyLabel();
                 }
             });
         });
@@ -642,6 +708,8 @@
         if (autoStartSurface && !autoStartConsumed && screens.intro?.classList.contains('active')) {
             autoStartConsumed = true;
             setTimeout(() => startTest(autoStartSurface), 80);
+        } else {
+            scheduleIntroStickyStart();
         }
     }
 })();
