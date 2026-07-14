@@ -26,6 +26,7 @@
     let currentPercent = 0;
     let resultInlineAdLoaded = false;
     let introCtaViewSent = false;
+    let autoStartConsumed = false;
 
     const screens = {
         intro: document.getElementById('screen-intro'),
@@ -75,6 +76,19 @@
             event_category: 'hsp_test',
             cta_surface: introCtaPanel?.getAttribute('data-cta-surface') || 'intro_primary'
         });
+    }
+
+    function getUrlParam(name) {
+        try {
+            return new URLSearchParams(window.location.search || '').get(name) || '';
+        } catch (error) {
+            return '';
+        }
+    }
+
+    function getAutoStartSurface() {
+        if (getUrlParam('start') !== '1') return '';
+        return getUrlParam('surface') || getUrlParam('utm_content') || 'url_start';
     }
 
     function getSeoAwareUrl() {
@@ -515,7 +529,7 @@
         });
     }
 
-    startBtn?.addEventListener('click', () => {
+    function startTest(ctaSurface = 'intro_primary') {
         currentCat = 0;
         currentLevel = 0;
         catScores = [0, 0, 0, 0, 0];
@@ -528,18 +542,24 @@
         trackEvent('hsp_intro_start_click', {
             app_name: 'hsp-test',
             event_category: 'hsp_test',
-            cta_surface: startBtn.getAttribute('data-cta-surface') || 'intro_primary'
+            cta_surface: ctaSurface
         });
         trackEvent('quiz_start', {
             app_name: 'hsp-test',
             event_category: 'hsp_test',
-            content_type: 'overload_simulator'
+            content_type: 'overload_simulator',
+            cta_surface: ctaSurface
         });
         trackEvent('test_start', {
             app_name: 'hsp-test',
             event_category: 'hsp_test',
-            content_type: 'overload_simulator'
+            content_type: 'overload_simulator',
+            cta_surface: ctaSurface
         });
+    }
+
+    startBtn?.addEventListener('click', () => {
+        startTest(startBtn.getAttribute('data-cta-surface') || 'intro_primary');
     });
 
     handleBtn?.addEventListener('click', () => handleChoice(true));
@@ -617,6 +637,11 @@
         if (loader) {
             loader.classList.add('hidden');
             setTimeout(() => loader.remove(), 300);
+        }
+        const autoStartSurface = getAutoStartSurface();
+        if (autoStartSurface && !autoStartConsumed && screens.intro?.classList.contains('active')) {
+            autoStartConsumed = true;
+            setTimeout(() => startTest(autoStartSurface), 80);
         }
     }
 })();
