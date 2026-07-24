@@ -17,6 +17,20 @@
         butterfly: ['stress-response', 'burnout-test', 'anxiety-type', 'attachment-style', 'emotion-iceberg', 'shadow-work', 'inner-child', 'trauma-response', 'eq-test', 'social-battery', 'emotion-temp', 'dopamine-type'],
         antenna: ['burnout-test', 'stress-response', 'anxiety-type', 'shadow-work', 'inner-child', 'trauma-response', 'attachment-style', 'emotion-iceberg', 'eq-test', 'social-battery', 'emotion-temp', 'dopamine-type']
     };
+    const RESET_CTA_COPY = {
+        en: { kicker: 'USE THIS RESULT NOW', title: 'Build a 5-minute sensory reset card', desc: 'Choose the input that feels strongest and get one small, timed plan without taking another test.', action: 'Open reset card' },
+        ko: { kicker: '결과를 지금 활용하세요', title: '5분 감각 리셋 카드 만들기', desc: '가장 강한 자극을 고르고, 다른 테스트 없이 작은 시간별 계획을 받으세요.', action: '리셋 카드 열기' },
+        zh: { kicker: '立即使用这个结果', title: '制作5分钟感官重置卡', desc: '选择最强的刺激，不用再做测试，获得一个简短的计时计划。', action: '打开重置卡' },
+        hi: { kicker: 'इस नतीजे का अभी उपयोग करें', title: '5-मिनट सेंसरी रीसेट कार्ड बनाएँ', desc: 'सबसे तेज़ इनपुट चुनें और बिना दूसरा टेस्ट लिए छोटा समयबद्ध प्लान पाएँ।', action: 'रीसेट कार्ड खोलें' },
+        ru: { kicker: 'ИСПОЛЬЗУЙТЕ РЕЗУЛЬТАТ СЕЙЧАС', title: 'Создайте 5-минутную сенсорную карточку', desc: 'Выберите самый сильный стимул и получите короткий план без нового теста.', action: 'Открыть карточку' },
+        ja: { kicker: '結果を今すぐ活用', title: '5分間の感覚リセットカードを作る', desc: '最も強い刺激を選び、別のテストなしで小さな時間別プランを作ります。', action: 'リセットカードを開く' },
+        es: { kicker: 'USA ESTE RESULTADO AHORA', title: 'Crea una tarjeta de reinicio sensorial de 5 minutos', desc: 'Elige el estímulo más intenso y recibe un plan breve sin hacer otro test.', action: 'Abrir tarjeta' },
+        pt: { kicker: 'USE ESTE RESULTADO AGORA', title: 'Crie um cartão de reset sensorial de 5 minutos', desc: 'Escolha o estímulo mais intenso e receba um plano curto sem outro teste.', action: 'Abrir cartão' },
+        id: { kicker: 'GUNAKAN HASIL INI SEKARANG', title: 'Buat kartu reset sensorik 5 menit', desc: 'Pilih input terkuat dan dapatkan rencana singkat tanpa tes lain.', action: 'Buka kartu reset' },
+        tr: { kicker: 'BU SONUCU ŞİMDİ KULLAN', title: '5 dakikalık duyusal sıfırlama kartı oluştur', desc: 'En güçlü uyaranı seçin ve başka test yapmadan kısa bir plan alın.', action: 'Kartı aç' },
+        de: { kicker: 'ERGEBNIS JETZT NUTZEN', title: '5-Minuten-Karte bei Reizüberflutung erstellen', desc: 'Wähle den stärksten Reiz und erhalte ohne weiteren Test einen kleinen Zeitplan.', action: 'Reset-Karte öffnen' },
+        fr: { kicker: 'UTILISEZ CE RÉSULTAT MAINTENANT', title: 'Créez une carte sensorielle de 5 minutes', desc: 'Choisissez le stimulus le plus fort et obtenez un petit plan sans autre test.', action: 'Ouvrir la carte' }
+    };
 
     let currentCat = 0;
     let currentLevel = 0;
@@ -54,6 +68,8 @@
     const primaryRelatedCtaText = document.getElementById('primary-related-cta-text');
     const relatedJumpBtn = document.getElementById('related-jump-btn');
     const resultInlineAd = document.getElementById('result-inline-ad');
+    const sensoryResetCta = document.getElementById('sensory-reset-cta');
+    const sensoryResetLink = document.getElementById('sensory-reset-link');
     const langToggle = document.getElementById('lang-toggle');
     const langMenu = document.getElementById('lang-menu');
     const langOptions = document.querySelectorAll('.lang-option');
@@ -330,6 +346,27 @@
         primaryRelatedTitle.style.setProperty('--cta-color', cardColor);
     }
 
+    function updateSensoryResetCta(shouldTrack = false) {
+        if (!sensoryResetCta || !sensoryResetLink) return;
+        const lang = window.i18n?.getCurrentLanguage?.() || 'en';
+        const copy = RESET_CTA_COPY[lang] || RESET_CTA_COPY.en;
+        document.getElementById('sensory-reset-kicker').textContent = copy.kicker;
+        document.getElementById('sensory-reset-title').textContent = copy.title;
+        document.getElementById('sensory-reset-desc').textContent = copy.desc;
+        sensoryResetLink.textContent = copy.action;
+        sensoryResetLink.href = `reset.html?lang=${encodeURIComponent(lang)}&profile=${encodeURIComponent(currentResultKey || 'unknown')}&source=hsp_result`;
+        if (shouldTrack) {
+            trackEvent('sensory_reset_cta_view', {
+                app_name: 'hsp-test',
+                event_category: 'hsp_test',
+                cta_surface: 'hsp_result_reset',
+                result_type: currentResultKey || 'unknown',
+                result_value: currentPercent,
+                revenue_goal: 'daily_0_10'
+            });
+        }
+    }
+
     function ensureResultAdLoaded() {
         if (resultInlineAdLoaded || !resultInlineAd) return;
         const adNode = resultInlineAd.querySelector('.adsbygoogle');
@@ -449,6 +486,7 @@
         drawRadar();
         prioritizeRelatedCards(resultConfig.key);
         updatePrimaryRecommendation();
+        updateSensoryResetCta(shouldTrack);
         ensureResultAdLoaded();
         showScreen('result');
 
@@ -663,6 +701,18 @@
             result_value: currentPercent,
             related_key: primaryRelatedCta.getAttribute('data-related-key') || '',
             related_rank: Number(primaryRelatedCta.getAttribute('data-related-rank') || '1')
+        });
+    });
+
+    sensoryResetLink?.addEventListener('click', () => {
+        trackEvent('sensory_reset_cta_click', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            cta_surface: 'hsp_result_reset',
+            result_type: currentResultKey || 'unknown',
+            result_value: currentPercent,
+            destination_path: sensoryResetLink.getAttribute('href') || '',
+            revenue_goal: 'daily_0_10'
         });
     });
 
