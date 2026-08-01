@@ -31,6 +31,15 @@
         de: { kicker: 'ERGEBNIS JETZT NUTZEN', title: '5-Minuten-Karte bei Reizüberflutung erstellen', desc: 'Wähle den stärksten Reiz und erhalte ohne weiteren Test einen kleinen Zeitplan.', action: 'Reset-Karte öffnen' },
         fr: { kicker: 'UTILISEZ CE RÉSULTAT MAINTENANT', title: 'Créez une carte sensorielle de 5 minutes', desc: 'Choisissez le stimulus le plus fort et obtenez un petit plan sans autre test.', action: 'Ouvrir la carte' }
     };
+    const MAP_CTA_COPY = {
+        en:{kicker:'PLAN REPEATED INPUT',title:'Map your sensory load',desc:'Compare five inputs and build an environment request card without another test.',action:'Open sensory map'},
+        ko:{kicker:'반복되는 자극을 미리 계획하세요',title:'감각 부하 지도 만들기',desc:'다섯 가지 입력을 비교하고 다른 테스트 없이 환경 요청 카드를 만드세요.',action:'감각 지도 열기'},
+        zh:{kicker:'提前规划反复出现的刺激',title:'创建感官负荷地图',desc:'比较五类输入，不再做测试，生成环境请求卡。',action:'打开感官地图'},
+        ja:{kicker:'繰り返す刺激を事前に計画',title:'感覚負荷マップを作る',desc:'5種類の入力を比べ、別のテストなしで環境カードを作ります。',action:'感覚マップを開く'},
+        es:{kicker:'PLANIFICA ESTÍMULOS REPETIDOS',title:'Crea tu mapa de carga sensorial',desc:'Compara cinco estímulos y crea una tarjeta ambiental sin otro test.',action:'Abrir mapa'},
+        pt:{kicker:'PLANEJE ESTÍMULOS REPETIDOS',title:'Crie seu mapa de carga sensorial',desc:'Compare cinco estímulos e crie um cartão ambiental sem outro teste.',action:'Abrir mapa'},
+        id:{kicker:'RENCANAKAN INPUT BERULANG',title:'Buat peta beban sensorik',desc:'Bandingkan lima input dan buat kartu lingkungan tanpa tes lain.',action:'Buka peta'}
+    };
 
     let currentCat = 0;
     let currentLevel = 0;
@@ -70,6 +79,8 @@
     const resultInlineAd = document.getElementById('result-inline-ad');
     const sensoryResetCta = document.getElementById('sensory-reset-cta');
     const sensoryResetLink = document.getElementById('sensory-reset-link');
+    const sensoryMapCta = document.getElementById('sensory-map-cta');
+    const sensoryMapLink = document.getElementById('sensory-map-link');
     const langToggle = document.getElementById('lang-toggle');
     const langMenu = document.getElementById('lang-menu');
     const langOptions = document.querySelectorAll('.lang-option');
@@ -355,6 +366,10 @@
         document.getElementById('sensory-reset-desc').textContent = copy.desc;
         sensoryResetLink.textContent = copy.action;
         sensoryResetLink.href = `reset.html?lang=${encodeURIComponent(lang)}&profile=${encodeURIComponent(currentResultKey || 'unknown')}&source=hsp_result`;
+        if (sensoryMapCta && sensoryMapLink) {
+            const mapCopy = MAP_CTA_COPY[lang] || MAP_CTA_COPY.en;
+            document.getElementById('sensory-map-kicker').textContent=mapCopy.kicker;document.getElementById('sensory-map-title').textContent=mapCopy.title;document.getElementById('sensory-map-desc').textContent=mapCopy.desc;sensoryMapLink.textContent=mapCopy.action;sensoryMapLink.href=`map.html?lang=${encodeURIComponent(lang)}&profile=${encodeURIComponent(currentResultKey||'unknown')}&source=hsp_result`;
+        }
         if (shouldTrack) {
             trackEvent('sensory_reset_cta_view', {
                 app_name: 'hsp-test',
@@ -364,6 +379,7 @@
                 result_value: currentPercent,
                 revenue_goal: 'daily_0_10'
             });
+            trackEvent('sensory_map_cta_view',{app_name:'hsp-test',event_category:'hsp_test',cta_surface:'hsp_result_map',result_type:currentResultKey||'unknown',revenue_goal:'daily_0_10'});
         }
     }
 
@@ -715,6 +731,7 @@
             revenue_goal: 'daily_0_10'
         });
     });
+    sensoryMapLink?.addEventListener('click',()=>{trackEvent('sensory_map_cta_click',{app_name:'hsp-test',event_category:'hsp_test',cta_surface:'hsp_result_map',result_type:currentResultKey||'unknown',destination_path:sensoryMapLink.getAttribute('href')||'',revenue_goal:'daily_0_10'});});
 
     relatedJumpBtn?.addEventListener('click', () => {
         document.querySelector('.related-tests')?.scrollIntoView({ behavior: 'smooth', block: 'start' });

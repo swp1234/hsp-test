@@ -423,6 +423,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .sensory-reset-link:focus-visible { outline: 3px solid var(--primary-light); outline-offset: 3px; }
 [data-theme="light"] .sensory-reset-cta { background: linear-gradient(135deg, rgba(22,163,74,0.08), rgba(99,102,241,0.05)); }
 [data-theme="light"] .sensory-reset-kicker { color: #15803d; }
+.sensory-map-cta{background:linear-gradient(135deg,rgba(56,189,248,.1),rgba(139,92,246,.08));border-color:rgba(56,189,248,.25)}.sensory-map-cta .sensory-reset-icon{background:rgba(56,189,248,.12)}.sensory-map-cta .sensory-reset-kicker{color:#7dd3fc}.sensory-map-cta .sensory-reset-link{background:linear-gradient(135deg,#0284c7,#7c3aed)}[data-theme="light"] .sensory-map-cta{background:linear-gradient(135deg,rgba(2,132,199,.08),rgba(124,58,237,.05))}[data-theme="light"] .sensory-map-cta .sensory-reset-kicker{color:#0369a1}
 
 /* Percentile stat */
 .percentile-stat {
