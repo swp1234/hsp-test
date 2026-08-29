@@ -1,53 +1,35 @@
-// HSP Sensory Overload Simulator
+// HSP Sensory Preferences Check
 (async function initApp() {
     const CATEGORIES = ['sound', 'visual', 'touch', 'emotion', 'social'];
     const LEVELS_PER_CAT = 4;
     const RESULT_CONFIG = [
-        { key: 'rock', min: 0, max: 20, color: '#4a90d9' },
-        { key: 'breeze', min: 21, max: 40, color: '#2ecc71' },
-        { key: 'wave', min: 41, max: 60, color: '#3498db' },
-        { key: 'butterfly', min: 61, max: 80, color: '#9b59b6' },
-        { key: 'antenna', min: 81, max: 100, color: '#e74c3c' }
+        { min: 0, max: 20, color: '#4a90d9' },
+        { min: 21, max: 40, color: '#2ecc71' },
+        { min: 41, max: 60, color: '#3498db' },
+        { min: 61, max: 80, color: '#9b59b6' },
+        { min: 81, max: 100, color: '#e74c3c' }
     ];
-
-    const RECOMMENDATION_MAP = {
-        rock: ['eq-test', 'social-battery', 'emotion-iceberg', 'attachment-style', 'dopamine-type', 'emotion-temp', 'stress-response', 'burnout-test', 'anxiety-type', 'shadow-work', 'inner-child', 'trauma-response'],
-        breeze: ['emotion-iceberg', 'attachment-style', 'social-battery', 'eq-test', 'emotion-temp', 'dopamine-type', 'stress-response', 'burnout-test', 'anxiety-type', 'shadow-work', 'inner-child', 'trauma-response'],
-        wave: ['attachment-style', 'emotion-iceberg', 'stress-response', 'eq-test', 'social-battery', 'emotion-temp', 'dopamine-type', 'burnout-test', 'anxiety-type', 'shadow-work', 'inner-child', 'trauma-response'],
-        butterfly: ['stress-response', 'burnout-test', 'anxiety-type', 'attachment-style', 'emotion-iceberg', 'shadow-work', 'inner-child', 'trauma-response', 'eq-test', 'social-battery', 'emotion-temp', 'dopamine-type'],
-        antenna: ['burnout-test', 'stress-response', 'anxiety-type', 'shadow-work', 'inner-child', 'trauma-response', 'attachment-style', 'emotion-iceberg', 'eq-test', 'social-battery', 'emotion-temp', 'dopamine-type']
-    };
     const RESET_CTA_COPY = {
-        en: { kicker: 'USE THIS RESULT NOW', title: 'Build a 5-minute sensory reset card', desc: 'Choose the input that feels strongest and get one small, timed plan without taking another test.', action: 'Open reset card' },
-        ko: { kicker: '결과를 지금 활용하세요', title: '5분 감각 리셋 카드 만들기', desc: '가장 강한 자극을 고르고, 다른 테스트 없이 작은 시간별 계획을 받으세요.', action: '리셋 카드 열기' },
-        zh: { kicker: '立即使用这个结果', title: '制作5分钟感官重置卡', desc: '选择最强的刺激，不用再做测试，获得一个简短的计时计划。', action: '打开重置卡' },
-        hi: { kicker: 'इस नतीजे का अभी उपयोग करें', title: '5-मिनट सेंसरी रीसेट कार्ड बनाएँ', desc: 'सबसे तेज़ इनपुट चुनें और बिना दूसरा टेस्ट लिए छोटा समयबद्ध प्लान पाएँ।', action: 'रीसेट कार्ड खोलें' },
-        ru: { kicker: 'ИСПОЛЬЗУЙТЕ РЕЗУЛЬТАТ СЕЙЧАС', title: 'Создайте 5-минутную сенсорную карточку', desc: 'Выберите самый сильный стимул и получите короткий план без нового теста.', action: 'Открыть карточку' },
-        ja: { kicker: '結果を今すぐ活用', title: '5分間の感覚リセットカードを作る', desc: '最も強い刺激を選び、別のテストなしで小さな時間別プランを作ります。', action: 'リセットカードを開く' },
-        es: { kicker: 'USA ESTE RESULTADO AHORA', title: 'Crea una tarjeta de reinicio sensorial de 5 minutos', desc: 'Elige el estímulo más intenso y recibe un plan breve sin hacer otro test.', action: 'Abrir tarjeta' },
-        pt: { kicker: 'USE ESTE RESULTADO AGORA', title: 'Crie um cartão de reset sensorial de 5 minutos', desc: 'Escolha o estímulo mais intenso e receba um plano curto sem outro teste.', action: 'Abrir cartão' },
-        id: { kicker: 'GUNAKAN HASIL INI SEKARANG', title: 'Buat kartu reset sensorik 5 menit', desc: 'Pilih input terkuat dan dapatkan rencana singkat tanpa tes lain.', action: 'Buka kartu reset' },
-        tr: { kicker: 'BU SONUCU ŞİMDİ KULLAN', title: '5 dakikalık duyusal sıfırlama kartı oluştur', desc: 'En güçlü uyaranı seçin ve başka test yapmadan kısa bir plan alın.', action: 'Kartı aç' },
-        de: { kicker: 'ERGEBNIS JETZT NUTZEN', title: '5-Minuten-Karte bei Reizüberflutung erstellen', desc: 'Wähle den stärksten Reiz und erhalte ohne weiteren Test einen kleinen Zeitplan.', action: 'Reset-Karte öffnen' },
-        fr: { kicker: 'UTILISEZ CE RÉSULTAT MAINTENANT', title: 'Créez une carte sensorielle de 5 minutes', desc: 'Choisissez le stimulus le plus fort et obtenez un petit plan sans autre test.', action: 'Ouvrir la carte' }
+        en: { kicker: 'TRY ONE SMALL STEP', title: 'Build a private 5-minute reset card', desc: 'Choose what feels strongest right now and get a small timed plan. Your selections stay in this browser.', action: 'Open 5-minute reset' },
+        ko: { kicker: '작은 행동 하나 시작하기', title: '비공개 5분 감각 리셋 카드 만들기', desc: '지금 가장 강한 자극을 고르고 짧은 시간별 계획을 받으세요. 선택값은 이 브라우저에만 남습니다.', action: '5분 리셋 열기' },
+        zh: { kicker: '先尝试一个小步骤', title: '制作私密的5分钟感官重置卡', desc: '选择此刻最强的刺激，获得简短计时计划。你的选择只保留在此浏览器。', action: '打开5分钟重置' },
+        hi: { kicker: 'एक छोटा कदम आज़माएँ', title: 'निजी 5-मिनट सेंसरी रीसेट कार्ड बनाएँ', desc: 'अभी सबसे तेज़ इनपुट चुनें और छोटा समयबद्ध प्लान पाएँ। चुनाव इसी ब्राउज़र में रहते हैं।', action: '5-मिनट रीसेट खोलें' },
+        ru: { kicker: 'ПОПРОБУЙТЕ ОДИН МАЛЕНЬКИЙ ШАГ', title: 'Создайте личную 5-минутную карточку', desc: 'Выберите самый сильный стимул и получите короткий план. Выбор остаётся в этом браузере.', action: 'Открыть 5-минутный план' },
+        ja: { kicker: '小さな一歩を試す', title: '非公開の5分間リセットカードを作る', desc: '今最も強い刺激を選び、短い時間別プランを作ります。選択はこのブラウザだけに残ります。', action: '5分リセットを開く' },
+        es: { kicker: 'PRUEBA UN PASO PEQUEÑO', title: 'Crea una tarjeta privada de reinicio de 5 minutos', desc: 'Elige lo más intenso ahora y recibe un plan breve. Tus elecciones quedan en este navegador.', action: 'Abrir reinicio de 5 minutos' },
+        pt: { kicker: 'TENTE UM PEQUENO PASSO', title: 'Crie um cartão privado de reset de 5 minutos', desc: 'Escolha o estímulo mais forte agora e receba um plano curto. Suas escolhas ficam neste navegador.', action: 'Abrir reset de 5 minutos' },
+        id: { kicker: 'COBA SATU LANGKAH KECIL', title: 'Buat kartu reset privat 5 menit', desc: 'Pilih input terkuat saat ini dan dapatkan rencana singkat. Pilihan tetap di browser ini.', action: 'Buka reset 5 menit' },
+        tr: { kicker: 'KÜÇÜK BİR ADIM DENEYİN', title: 'Özel bir 5 dakikalık sıfırlama kartı oluşturun', desc: 'Şu an en güçlü uyaranı seçin ve kısa bir plan alın. Seçimler bu tarayıcıda kalır.', action: '5 dakikalık sıfırlamayı aç' },
+        de: { kicker: 'EINEN KLEINEN SCHRITT TESTEN', title: 'Private 5-Minuten-Reset-Karte erstellen', desc: 'Wähle den stärksten Reiz und erhalte einen kurzen Plan. Deine Auswahl bleibt in diesem Browser.', action: '5-Minuten-Reset öffnen' },
+        fr: { kicker: 'ESSAYEZ UNE PETITE ÉTAPE', title: 'Créez une carte privée de 5 minutes', desc: 'Choisissez le stimulus le plus fort et obtenez un court plan. Vos choix restent dans ce navigateur.', action: 'Ouvrir le reset de 5 minutes' }
     };
-    const MAP_CTA_COPY = {
-        en:{kicker:'PLAN REPEATED INPUT',title:'Map your sensory load',desc:'Compare five inputs and build an environment request card without another test.',action:'Open sensory map'},
-        ko:{kicker:'반복되는 자극을 미리 계획하세요',title:'감각 부하 지도 만들기',desc:'다섯 가지 입력을 비교하고 다른 테스트 없이 환경 요청 카드를 만드세요.',action:'감각 지도 열기'},
-        zh:{kicker:'提前规划反复出现的刺激',title:'创建感官负荷地图',desc:'比较五类输入，不再做测试，生成环境请求卡。',action:'打开感官地图'},
-        ja:{kicker:'繰り返す刺激を事前に計画',title:'感覚負荷マップを作る',desc:'5種類の入力を比べ、別のテストなしで環境カードを作ります。',action:'感覚マップを開く'},
-        es:{kicker:'PLANIFICA ESTÍMULOS REPETIDOS',title:'Crea tu mapa de carga sensorial',desc:'Compara cinco estímulos y crea una tarjeta ambiental sin otro test.',action:'Abrir mapa'},
-        pt:{kicker:'PLANEJE ESTÍMULOS REPETIDOS',title:'Crie seu mapa de carga sensorial',desc:'Compare cinco estímulos e crie um cartão ambiental sem outro teste.',action:'Abrir mapa'},
-        id:{kicker:'RENCANAKAN INPUT BERULANG',title:'Buat peta beban sensorik',desc:'Bandingkan lima input dan buat kartu lingkungan tanpa tes lain.',action:'Buka peta'}
-    };
-
     let currentCat = 0;
     let currentLevel = 0;
     let catScores = [0, 0, 0, 0, 0];
     let isAnimating = false;
-    let currentResultKey = null;
-    let currentPercent = 0;
-    let resultInlineAdLoaded = false;
+    let hasCurrentResult = false;
+    let sensoryResetViewSent = false;
+    let sensoryResetObserver = null;
     let introCtaViewSent = false;
     let introStickyViewSent = false;
     let introStickyMountTimer = null;
@@ -64,23 +46,11 @@
     const aboutTestSection = document.querySelector('.about-test-section');
     const handleBtn = document.getElementById('btn-handle');
     const limitBtn = document.getElementById('btn-limit');
-    const saveBtn = document.getElementById('btn-save');
-    const twitterBtn = document.getElementById('btn-twitter');
     const copyBtn = document.getElementById('btn-copy');
     const retakeBtn = document.getElementById('btn-retake');
     const relatedGrid = document.getElementById('related-grid');
-    const nextStepCard = document.getElementById('next-step-card');
-    const primaryRelatedEmoji = document.getElementById('primary-related-emoji');
-    const primaryRelatedTitle = document.getElementById('primary-related-title');
-    const primaryRelatedDesc = document.getElementById('primary-related-desc');
-    const primaryRelatedCta = document.getElementById('primary-related-cta');
-    const primaryRelatedCtaText = document.getElementById('primary-related-cta-text');
-    const relatedJumpBtn = document.getElementById('related-jump-btn');
-    const resultInlineAd = document.getElementById('result-inline-ad');
     const sensoryResetCta = document.getElementById('sensory-reset-cta');
     const sensoryResetLink = document.getElementById('sensory-reset-link');
-    const sensoryMapCta = document.getElementById('sensory-map-cta');
-    const sensoryMapLink = document.getElementById('sensory-map-link');
     const langToggle = document.getElementById('lang-toggle');
     const langMenu = document.getElementById('lang-menu');
     const langOptions = document.querySelectorAll('.lang-option');
@@ -270,19 +240,9 @@
         if (isAnimating) return;
         isAnimating = true;
 
-        const category = CATEGORIES[currentCat];
-        const level = currentLevel + 1;
         const button = canHandle ? handleBtn : limitBtn;
         button.classList.add('pressed');
         setTimeout(() => button.classList.remove('pressed'), 200);
-
-        trackEvent(canHandle ? 'hsp_handle_click' : 'hsp_limit_click', {
-            app_name: 'hsp-test',
-            event_category: 'hsp_test',
-            category,
-            level,
-            step_index: currentCat + 1
-        });
 
         if (canHandle) {
             if (currentLevel < LEVELS_PER_CAT - 1) {
@@ -305,59 +265,7 @@
         }, 350);
     }
 
-    function prioritizeRelatedCards(resultKey) {
-        if (!relatedGrid) return;
-
-        const cards = Array.from(relatedGrid.querySelectorAll('.related-card'));
-        const rankMap = {};
-        (RECOMMENDATION_MAP[resultKey] || RECOMMENDATION_MAP.wave).forEach((key, index) => {
-            rankMap[key] = index;
-        });
-
-        cards.sort((a, b) => {
-            const aKey = a.getAttribute('data-related-key') || '';
-            const bKey = b.getAttribute('data-related-key') || '';
-            const aRank = Object.prototype.hasOwnProperty.call(rankMap, aKey) ? rankMap[aKey] : 999;
-            const bRank = Object.prototype.hasOwnProperty.call(rankMap, bKey) ? rankMap[bKey] : 999;
-            return aRank - bRank;
-        });
-
-        cards.forEach((card, index) => {
-            card.classList.toggle('is-featured', index < 2);
-            card.setAttribute('data-rank', String(index + 1));
-            relatedGrid.appendChild(card);
-        });
-    }
-
-    function updatePrimaryRecommendation() {
-        if (!relatedGrid || !primaryRelatedTitle || !primaryRelatedDesc || !primaryRelatedCta || !primaryRelatedCtaText || !primaryRelatedEmoji) {
-            return;
-        }
-
-        const firstCard = relatedGrid.querySelector('.related-card');
-        if (!firstCard) return;
-
-        const title = firstCard.querySelector('.related-name')?.textContent?.trim() || 'Stress Response';
-        const emoji = firstCard.querySelector('.related-emoji')?.textContent?.trim() || '🌈';
-        const href = firstCard.getAttribute('href') || '#';
-        const cardColor = firstCard.style.getPropertyValue('--card-color') || '#7c3aed';
-        const relatedKey = firstCard.getAttribute('data-related-key') || '';
-        const relatedRank = firstCard.getAttribute('data-rank') || '1';
-
-        primaryRelatedEmoji.textContent = emoji;
-        primaryRelatedTitle.textContent = title;
-        primaryRelatedDesc.textContent = t('result.nextStepDesc');
-        primaryRelatedCtaText.textContent = t('result.nextStepCta');
-        primaryRelatedCta.href = href;
-        primaryRelatedCta.setAttribute('data-related-key', relatedKey);
-        primaryRelatedCta.setAttribute('data-related-rank', relatedRank);
-
-        nextStepCard?.style.setProperty('--cta-color', cardColor);
-        primaryRelatedCta.style.setProperty('--cta-color', cardColor);
-        primaryRelatedTitle.style.setProperty('--cta-color', cardColor);
-    }
-
-    function updateSensoryResetCta(shouldTrack = false) {
+    function updateSensoryResetCta() {
         if (!sensoryResetCta || !sensoryResetLink) return;
         const lang = window.i18n?.getCurrentLanguage?.() || 'en';
         const copy = RESET_CTA_COPY[lang] || RESET_CTA_COPY.en;
@@ -365,40 +273,60 @@
         document.getElementById('sensory-reset-title').textContent = copy.title;
         document.getElementById('sensory-reset-desc').textContent = copy.desc;
         sensoryResetLink.textContent = copy.action;
-        sensoryResetLink.href = `reset.html?lang=${encodeURIComponent(lang)}&profile=${encodeURIComponent(currentResultKey || 'unknown')}&source=hsp_result`;
-        if (sensoryMapCta && sensoryMapLink) {
-            const mapCopy = MAP_CTA_COPY[lang] || MAP_CTA_COPY.en;
-            document.getElementById('sensory-map-kicker').textContent=mapCopy.kicker;document.getElementById('sensory-map-title').textContent=mapCopy.title;document.getElementById('sensory-map-desc').textContent=mapCopy.desc;sensoryMapLink.textContent=mapCopy.action;sensoryMapLink.href=`map.html?lang=${encodeURIComponent(lang)}&profile=${encodeURIComponent(currentResultKey||'unknown')}&source=hsp_result`;
-        }
-        if (shouldTrack) {
-            trackEvent('sensory_reset_cta_view', {
-                app_name: 'hsp-test',
-                event_category: 'hsp_test',
-                cta_surface: 'hsp_result_reset',
-                result_type: currentResultKey || 'unknown',
-                result_value: currentPercent,
-                revenue_goal: 'daily_0_10'
-            });
-            trackEvent('sensory_map_cta_view',{app_name:'hsp-test',event_category:'hsp_test',cta_surface:'hsp_result_map',result_type:currentResultKey||'unknown',revenue_goal:'daily_0_10'});
-        }
+        sensoryResetLink.href = `reset.html?lang=${encodeURIComponent(lang)}&source=hsp_result`;
     }
 
-    function ensureResultAdLoaded() {
-        if (resultInlineAdLoaded || !resultInlineAd) return;
-        const adNode = resultInlineAd.querySelector('.adsbygoogle');
-        if (!adNode) return;
+    function trackSensoryResetView() {
+        if (sensoryResetViewSent) return;
+        sensoryResetViewSent = true;
+        trackEvent('sensory_reset_cta_view', {
+            app_name: 'hsp-test',
+            event_category: 'hsp_test',
+            cta_surface: 'hsp_result_reset',
+            target_slug: 'sensory-reset',
+            destination_path: '/hsp-test/reset.html',
+            content_locale: window.i18n?.getCurrentLanguage?.() || 'en',
+            experiment_variant: 'reset_primary_v1',
+            revenue_goal: 'daily_0_10'
+        });
+    }
 
-        try {
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            resultInlineAdLoaded = true;
-            trackEvent('hsp_result_ad_impression', {
-                app_name: 'hsp-test',
-                event_category: 'hsp_test',
-                result_type: currentResultKey || 'unknown'
-            });
-        } catch (error) {
-            // Ad blockers or delayed AdSense init are safe to ignore.
+    function observeSensoryResetCta() {
+        sensoryResetObserver?.disconnect();
+        sensoryResetObserver = null;
+        if (!sensoryResetCta || sensoryResetViewSent) return;
+
+        if ('IntersectionObserver' in window) {
+            sensoryResetObserver = new IntersectionObserver((entries) => {
+                if (!entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.5)) return;
+                trackSensoryResetView();
+                sensoryResetObserver?.disconnect();
+                sensoryResetObserver = null;
+            }, { threshold: [0.5] });
+            sensoryResetObserver.observe(sensoryResetCta);
+            return;
         }
+
+        const checkVisibility = () => {
+            const rect = sensoryResetCta.getBoundingClientRect();
+            const visible = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+            if (visible < rect.height * 0.5) return;
+            trackSensoryResetView();
+            window.removeEventListener('scroll', checkVisibility);
+            window.removeEventListener('resize', checkVisibility);
+        };
+        window.addEventListener('scroll', checkVisibility, { passive: true });
+        window.addEventListener('resize', checkVisibility);
+        requestAnimationFrame(checkVisibility);
+    }
+
+    function focusResultHeading() {
+        const heading = document.getElementById('result-heading');
+        if (!heading) return;
+        requestAnimationFrame(() => {
+            heading.focus({ preventScroll: true });
+            observeSensoryResetCta();
+        });
     }
 
     function drawRadar() {
@@ -452,29 +380,12 @@
         svg.innerHTML = html;
     }
 
-    function updatePercentileStat(resultKey) {
-        const percentileStat = document.getElementById('percentile-stat');
-        if (!percentileStat) return;
-
-        const percentilePool = {
-            rock: 8,
-            breeze: 22,
-            wave: 35,
-            butterfly: 25,
-            antenna: 10
-        };
-
-        percentileStat.innerHTML = t('result.percentileStat').replace('{percent}', percentilePool[resultKey] || 15);
-    }
-
     function showResult(shouldTrack = true) {
         const total = catScores.reduce((sum, score) => sum + score, 0);
         const percent = Math.round((total / (CATEGORIES.length * LEVELS_PER_CAT)) * 100);
         const resultConfig = getResultConfig(percent);
-        const typeData = t(`types.${resultConfig.key}`);
 
-        currentResultKey = resultConfig.key;
-        currentPercent = percent;
+        hasCurrentResult = true;
 
         const gauge = document.getElementById('result-gauge-fill');
         const gaugeText = document.getElementById('result-percent');
@@ -487,83 +398,21 @@
             gaugeText.textContent = `${percent}%`;
         }, 400);
 
-        document.getElementById('result-name').textContent = typeData.name || resultConfig.key;
-        document.getElementById('result-desc').textContent = typeData.desc || '';
-        document.getElementById('result-ratio').textContent = typeData.ratio || '';
-        document.getElementById('result-compatible').textContent = Array.isArray(typeData.compatible) ? typeData.compatible.join(' · ') : '';
-
-        const traitsList = document.getElementById('result-traits');
-        traitsList.innerHTML = Array.isArray(typeData.traits) ? typeData.traits.map((trait) => `<li>${trait}</li>`).join('') : '';
-
-        const tipsList = document.getElementById('result-tips');
-        tipsList.innerHTML = Array.isArray(typeData.tips) ? typeData.tips.map((tip) => `<li>${tip}</li>`).join('') : '';
-
-        updatePercentileStat(resultConfig.key);
         drawRadar();
-        prioritizeRelatedCards(resultConfig.key);
-        updatePrimaryRecommendation();
-        updateSensoryResetCta(shouldTrack);
-        ensureResultAdLoaded();
+        updateSensoryResetCta();
         showScreen('result');
+        focusResultHeading();
 
         if (shouldTrack) {
             trackEvent('result_view', {
                 app_name: 'hsp-test',
-                event_category: 'hsp_test',
-                result_type: resultConfig.key,
-                result_value: percent
+                event_category: 'hsp_test'
             });
             trackEvent('quiz_complete', {
                 app_name: 'hsp-test',
-                event_category: 'hsp_test',
-                result_type: resultConfig.key,
-                result_value: percent
+                event_category: 'hsp_test'
             });
         }
-    }
-
-    function saveCurrentResultCard() {
-        if (typeof ResultCard === 'undefined') return;
-
-        const resultConfig = getResultConfig(currentPercent);
-        const typeData = t(`types.${currentResultKey}`);
-        const dimensions = CATEGORIES.map((category, index) => ({
-            label: t(`categories.${category}.name`),
-            pct: Math.round((catScores[index] / LEVELS_PER_CAT) * 100),
-            color: resultConfig.color
-        }));
-
-        ResultCard.download({
-            appName: 'HSP Test',
-            typeName: typeData.name || currentResultKey,
-            typeEmoji: '🌿',
-            dimensions,
-            primaryColor: '#7c3aed',
-            tagline: 'dopabrain.com/hsp-test'
-        });
-
-        trackEvent('hsp_save_click', {
-            app_name: 'hsp-test',
-            event_category: 'hsp_test',
-            result_type: currentResultKey || 'unknown',
-            result_value: currentPercent
-        });
-    }
-
-    function shareToTwitter() {
-        const typeName = t(`types.${currentResultKey}.name`);
-        const rawText = t('share.twitterText').replace('{percent}', currentPercent).replace('{type}', typeName);
-        const shareUrl = getSeoAwareUrl();
-        const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(rawText)}&url=${encodeURIComponent(shareUrl)}`;
-        window.open(url, '_blank', 'noopener');
-
-        trackEvent('hsp_share_click', {
-            app_name: 'hsp-test',
-            event_category: 'hsp_test',
-            method: 'twitter',
-            result_type: currentResultKey || 'unknown',
-            result_value: currentPercent
-        });
     }
 
     async function copyShareUrl() {
@@ -582,19 +431,19 @@
         trackEvent('hsp_share_click', {
             app_name: 'hsp-test',
             event_category: 'hsp_test',
-            method: 'copy',
-            result_type: currentResultKey || 'unknown',
-            result_value: currentPercent
+            method: 'copy'
         });
     }
 
     function resetToIntro() {
+        sensoryResetObserver?.disconnect();
+        sensoryResetObserver = null;
+        sensoryResetViewSent = false;
         showScreen('intro');
         currentCat = 0;
         currentLevel = 0;
         catScores = [0, 0, 0, 0, 0];
-        currentResultKey = null;
-        currentPercent = 0;
+        hasCurrentResult = false;
         isAnimating = false;
 
         trackEvent('hsp_retry_click', {
@@ -622,12 +471,21 @@
 
         langToggle?.addEventListener('click', () => {
             langMenu?.classList.toggle('hidden');
+            langToggle.setAttribute('aria-expanded', String(!langMenu?.classList.contains('hidden')));
         });
 
         document.addEventListener('click', (event) => {
             if (!event.target.closest('.language-selector')) {
                 langMenu?.classList.add('hidden');
+                langToggle?.setAttribute('aria-expanded', 'false');
             }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key !== 'Escape' || langMenu?.classList.contains('hidden')) return;
+            langMenu.classList.add('hidden');
+            langToggle?.setAttribute('aria-expanded', 'false');
+            langToggle?.focus();
         });
 
         langOptions.forEach((option) => {
@@ -637,10 +495,11 @@
                 langOptions.forEach((item) => item.classList.remove('active'));
                 option.classList.add('active');
                 langMenu?.classList.add('hidden');
+                langToggle?.setAttribute('aria-expanded', 'false');
 
                 if (screens.test.classList.contains('active')) {
                     renderCategory();
-                } else if (screens.result.classList.contains('active') && currentResultKey) {
+                } else if (screens.result.classList.contains('active') && hasCurrentResult) {
                     showResult(false);
                 } else {
                     updateIntroStickyLabel();
@@ -650,11 +509,13 @@
     }
 
     function startTest(ctaSurface = 'intro_primary') {
+        sensoryResetObserver?.disconnect();
+        sensoryResetObserver = null;
+        sensoryResetViewSent = false;
         currentCat = 0;
         currentLevel = 0;
         catScores = [0, 0, 0, 0, 0];
-        currentResultKey = null;
-        currentPercent = 0;
+        hasCurrentResult = false;
         isAnimating = false;
         showScreen('test');
         renderCategory();
@@ -684,8 +545,6 @@
 
     handleBtn?.addEventListener('click', () => handleChoice(true));
     limitBtn?.addEventListener('click', () => handleChoice(false));
-    saveBtn?.addEventListener('click', saveCurrentResultCard);
-    twitterBtn?.addEventListener('click', shareToTwitter);
     copyBtn?.addEventListener('click', copyShareUrl);
     retakeBtn?.addEventListener('click', resetToIntro);
 
@@ -709,37 +568,16 @@
         });
     });
 
-    primaryRelatedCta?.addEventListener('click', () => {
-        trackEvent('hsp_primary_cta_click', {
-            app_name: 'hsp-test',
-            event_category: 'hsp_test',
-            result_type: currentResultKey || 'unknown',
-            result_value: currentPercent,
-            related_key: primaryRelatedCta.getAttribute('data-related-key') || '',
-            related_rank: Number(primaryRelatedCta.getAttribute('data-related-rank') || '1')
-        });
-    });
-
     sensoryResetLink?.addEventListener('click', () => {
         trackEvent('sensory_reset_cta_click', {
             app_name: 'hsp-test',
             event_category: 'hsp_test',
             cta_surface: 'hsp_result_reset',
-            result_type: currentResultKey || 'unknown',
-            result_value: currentPercent,
-            destination_path: sensoryResetLink.getAttribute('href') || '',
+            target_slug: 'sensory-reset',
+            destination_path: '/hsp-test/reset.html',
+            content_locale: window.i18n?.getCurrentLanguage?.() || 'en',
+            experiment_variant: 'reset_primary_v1',
             revenue_goal: 'daily_0_10'
-        });
-    });
-    sensoryMapLink?.addEventListener('click',()=>{trackEvent('sensory_map_cta_click',{app_name:'hsp-test',event_category:'hsp_test',cta_surface:'hsp_result_map',result_type:currentResultKey||'unknown',destination_path:sensoryMapLink.getAttribute('href')||'',revenue_goal:'daily_0_10'});});
-
-    relatedJumpBtn?.addEventListener('click', () => {
-        document.querySelector('.related-tests')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        trackEvent('hsp_related_jump_click', {
-            app_name: 'hsp-test',
-            event_category: 'hsp_test',
-            result_type: currentResultKey || 'unknown',
-            result_value: currentPercent
         });
     });
 
@@ -748,10 +586,7 @@
             trackEvent('hsp_related_click', {
                 app_name: 'hsp-test',
                 event_category: 'hsp_test',
-                result_type: currentResultKey || 'unknown',
-                result_value: currentPercent,
-                related_key: card.getAttribute('data-related-key') || '',
-                related_rank: Number(card.getAttribute('data-rank') || '0')
+                related_key: card.getAttribute('data-related-key') || ''
             });
         });
     });

@@ -28,6 +28,24 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="icon-192.svg">
     <link rel="stylesheet" href="css/reset.css">
+    <script>
+        (() => {
+            const languages = ['ko', 'en', 'zh', 'hi', 'ru', 'ja', 'es', 'pt', 'id', 'tr', 'de', 'fr'];
+            const sources = ['hsp_result', 'sensory_map', 'emotion_action', 'portal_tools_catalog', 'blog_sensory_bridge'];
+            const incoming = new URL(location.href);
+            let saved = '';
+            try { saved = localStorage.getItem('app_language') || ''; } catch (_) {}
+            const browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+            const language = languages.includes(incoming.searchParams.get('lang')) ? incoming.searchParams.get('lang')
+                : languages.includes(saved) ? saved
+                : languages.includes(browser) ? browser : 'en';
+            const source = sources.includes(incoming.searchParams.get('source')) ? incoming.searchParams.get('source') : 'direct';
+            const clean = new URL(location.pathname, location.origin);
+            clean.searchParams.set('lang', language);
+            if (source !== 'direct') clean.searchParams.set('source', source);
+            history.replaceState({}, '', `${clean.pathname}${clean.search}${location.hash}`);
+        })();
+    </script>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3600813755953882" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8GSWM40TV"></script>
@@ -48,7 +66,7 @@
       "isAccessibleForFree": true,
       "inLanguage": ["en","ko","zh","hi","ru","ja","es","pt","id","tr","de","fr"],
       "description": "A private interactive card for organizing five minutes of lower sensory input and one next action.",
-      "dateModified": "2026-07-25"
+      "dateModified": "2026-08-29"
     }
     </script>
 </head>
@@ -75,7 +93,7 @@
         </label>
     </header>
 
-    <main id="reset-main">
+    <main id="reset-main" tabindex="-1">
         <section class="hero">
             <p class="eyebrow" data-t="eyebrow">PRIVATE IN-THE-MOMENT TOOL</p>
             <h1 data-t="title">5-Minute Sensory Reset Card</h1>
@@ -103,30 +121,15 @@
             <button class="primary-button" id="generate-button" type="button" data-t="generate">Build my 5-minute card</button>
         </section>
 
-        <aside class="ad-card" data-ad-surface="sensory_reset_mid">
-            <span class="ad-label" data-t="ad">Advertisement</span>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-3600813755953882"
-                 data-ad-slot="3295820393"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                try {
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                } catch (_) {}
-            </script>
-        </aside>
-
         <section class="result-card card" id="result-card" hidden aria-labelledby="result-title">
             <div class="result-heading">
                 <div>
                     <p class="eyebrow" data-t="resultEyebrow">YOUR RESET CARD</p>
-                    <h2 id="result-title" data-t="resultTitle">Five minutes, one step at a time</h2>
+                    <h2 id="result-title" tabindex="-1" data-t="resultTitle">Five minutes, one step at a time</h2>
                 </div>
-                <div class="timer" aria-live="polite">
+                <div class="timer" role="timer" aria-labelledby="timer-label">
                     <span id="timer-display">05:00</span>
-                    <span class="timer-label" data-t="timerLabel">remaining</span>
+                    <span class="timer-label" id="timer-label" data-t="timerLabel">remaining</span>
                 </div>
             </div>
             <ol class="step-list" id="step-list"></ol>

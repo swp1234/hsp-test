@@ -3,6 +3,7 @@
 
     var KEY = 'sensory_load_map_v1';
     var LANGS = ['en', 'ko', 'zh', 'hi', 'ru', 'ja', 'es', 'pt', 'id', 'tr', 'de', 'fr'];
+    var SOURCES = ['hsp_result', 'sensory_reset', 'portal_tools_catalog', 'blog_sensory_bridge'];
     var DOMAINS = ['noise', 'light', 'touch', 'social', 'demands'];
     var LEVELS = { high: 2, medium: 1, low: 0 };
     var ICONS = ['🔊', '☀️', '🧣', '👥', '🔀'];
@@ -53,12 +54,20 @@
 
     var params = new URLSearchParams(location.search);
     var lang = normalizeLanguage(params.get('lang') || navigator.language || 'en');
+    var source = normalizeSource(params.get('source'));
     var state = loadState();
     var toastTimer;
 
     function normalizeLanguage(value) {
         value = String(value).toLowerCase().split('-')[0];
         return LANGS.includes(value) ? value : 'en';
+    }
+    function normalizeSource(value) { return SOURCES.includes(value) ? value : 'direct'; }
+    function updateUrl() {
+        var url = new URL(location.pathname, location.origin);
+        url.searchParams.set('lang', lang);
+        if (source !== 'direct') url.searchParams.set('source', source);
+        history.replaceState({}, '', url.pathname + url.search + location.hash);
     }
     function strings() { return Object.assign({}, EN, L[lang] || {}); }
     function text(key, values) {
@@ -76,7 +85,8 @@
         try { return normalizeState(JSON.parse(localStorage.getItem(KEY) || '{}')); }
         catch (error) { return normalizeState({}); }
     }
-    function saveState() { localStorage.setItem(KEY, JSON.stringify({ levels: state.levels, context: state.context, used: !!state.used })); }
+    function saveState() { try { localStorage.setItem(KEY, JSON.stringify({ levels: state.levels, context: state.context, used: !!state.used })); } catch (error) {} }
+    function hasSavedState() { try { return !!localStorage.getItem(KEY); } catch (error) { return false; } }
     function track(name, data) {
         if (typeof gtag === 'function') gtag('event', name, Object.assign({ event_category: 'engagement', surface_name: 'sensory_load_map', content_locale: lang, revenue_goal: 'daily_0_10' }, data || {}));
     }
@@ -97,9 +107,11 @@
             var desc = document.createElement('small'); desc.textContent = text(id + 'Desc');
             copy.append(name, desc);
             var levels = document.createElement('div'); levels.className = 'levels';
+            levels.setAttribute('role', 'group'); levels.setAttribute('aria-label', text(id));
             ['low', 'medium', 'high'].forEach(function (level) {
                 var button = document.createElement('button');
                 button.type = 'button'; button.dataset.domain = id; button.dataset.level = level; button.textContent = text(level);
+                button.setAttribute('aria-label', text(id) + ': ' + text(level));
                 button.setAttribute('aria-pressed', String(state.levels[id] === level));
                 levels.append(button);
             });
@@ -131,6 +143,8 @@
         document.querySelectorAll('[data-t]').forEach(function (element) { element.textContent = text(element.dataset.t); });
         document.getElementById('language').value = lang;
         document.querySelector('link[rel=canonical]').href = 'https://dopabrain.com/hsp-test/map.html' + (lang === 'en' ? '' : '?lang=' + lang);
+        document.getElementById('reset-card-link').href = 'reset.html?lang=' + encodeURIComponent(lang) + '&source=sensory_map';
+        document.getElementById('hsp-check-link').href = './?lang=' + encodeURIComponent(lang) + '&source=sensory_map';
         renderDomains(); if (state.context) renderResult();
     }
 
@@ -140,31 +154,29 @@
     });
     document.getElementById('build').addEventListener('click', function () {
         state.context = document.getElementById('context').value; state.used = false; saveState(); renderResult();
-        track('sensory_map_generate', { domain_count: 5 }); showToast(text('built')); document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+        track('sensory_map_generate', { domain_count: 5 }); showToast(text('built'));
+        requestAnimationFrame(function () {
+            document.getElementById('resultTitle').focus({ preventScroll: true });
+            document.getElementById('result').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+        });
     });
     document.getElementById('reset').addEventListener('click', function () {
-        state = normalizeState({}); localStorage.removeItem(KEY); document.getElementById('context').value = 'work'; document.getElementById('result').hidden = true; renderDomains();
+        state = normalizeState({}); try { localStorage.removeItem(KEY); } catch (error) {} document.getElementById('context').value = 'work'; document.getElementById('result').hidden = true; renderDomains();
         track('sensory_map_reset'); showToast(text('resetDone'));
     });
     document.getElementById('used').addEventListener('click', function () {
-        state.used = !state.used; saveState(); renderResult(); track(state.used ? 'sensory_map_used' : 'sensory_map_reopen'); showToast(text(state.used ? 'marked' : 'unmarked'));
+        state.used = !state.used; saveState(); renderResult(); track(state.used ? 'sensory_map_mark_used' : 'sensory_map_mark_reopened'); showToast(text(state.used ? 'marked' : 'unmarked'));
     });
     document.getElementById('copy').addEventListener('click', function () {
         var value = [document.getElementById('resultTitle').textContent].concat(Array.from(document.querySelectorAll('.priority')).map(function (item) { return item.textContent; }), [text('requestTitle') + ': ' + document.getElementById('requestText').textContent]).join('\n');
         navigator.clipboard.writeText(value).then(function () { track('sensory_map_copy'); showToast(text('copied')); }).catch(function () { showToast(text('copyFail')); });
     });
     document.getElementById('language').addEventListener('change', function (event) {
-        lang = normalizeLanguage(event.target.value); var url = new URL(location.href); url.searchParams.set('lang', lang); history.replaceState({}, '', url.pathname + url.search); applyLanguage(); track('sensory_map_language_change', { selected_language: lang });
+        lang = normalizeLanguage(event.target.value); try { localStorage.setItem('app_language', lang); } catch (error) {} updateUrl(); applyLanguage(); track('sensory_map_language_change', { selected_language: lang });
     });
 
     if (state.context) document.getElementById('context').value = state.context;
+    updateUrl();
     applyLanguage();
-    var ad = document.querySelector('[data-ad-surface]'); var adTracked = false;
-    var observer = new IntersectionObserver(function (entries) {
-        if (!adTracked && entries.some(function (entry) { return entry.isIntersecting && entry.intersectionRatio >= 0.25; })) {
-            adTracked = true; try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch (error) {} track('sensory_map_ad_impression'); observer.disconnect();
-        }
-    }, { threshold: [0.25] });
-    observer.observe(ad);
-    track('sensory_map_view', { has_saved_map: !!localStorage.getItem(KEY), source: params.get('source') || 'direct' });
+    track('sensory_map_view', { has_saved_map: hasSavedState(), source: source });
 })();

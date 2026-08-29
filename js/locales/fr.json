@@ -1,36 +1,24 @@
 {
   "meta": {
-    "title": "Test HSP - Êtes-vous Hautement Sensible? Gratuit",
-    "description": "Faites le test HSP gratuit pour savoir si vous êtes une personne hautement sensible. 20 questions sur 5 sens pour découvrir votre profil de sensibilité."
+    "title": "Préférences sensorielles HSP - réflexion privée",
+    "description": "Réfléchissez à cinq catégories sensorielles imaginées et choisissez une prochaine étape pratique. Ce n'est ni un diagnostic ni une échelle validée."
   },
   "a11y": {
     "skip": "Aller au contenu principal"
   },
   "app": {
-    "title": "Test HSP",
-    "h1": "Test HSP - Auto-évaluation Personne Hautement Sensible",
-    "subtitle": "Simulateur de Surcharge Sensorielle",
-    "heroTitle": "Combien tes sens peuvent-ils supporter ?",
-    "heroDesc": "Traverse 5 catégories sensorielles avec une intensité croissante. Abandonne quand tu atteins ta limite — ton seuil révèle ton type.",
-    "badge": "Test de Surcharge",
-    "info1": "5 Sens",
+    "h1": "Préférences sensorielles HSP",
+    "subtitle": "Réflexion privée · pas un diagnostic",
+    "heroDesc": "Choisissez où vous vous arrêteriez dans cinq catégories sensorielles imaginées. Le résumé décrit seulement ces choix et ne détermine pas un statut HSP.",
+    "badge": "5 catégories imaginées",
+    "info1": "5 Catégories",
     "info2": "~3 Min",
-    "info3": "Temps Réel",
-    "disclaimer": "À titre de divertissement uniquement. Pas un diagnostic clinique.",
-    "start": "🧠 Commencer le Test de Sensibilité",
+    "info3": "Résultat Local",
+    "disclaimer": "Sans diagnostic, percentile, comparaison de population ni compte.",
+    "start": "Commencer la réflexion privée",
     "loading": "Chargement..."
   },
-  "intro": {
-    "typesTitle": "5 Types de Sensibilité",
-    "typeRock": "Roc Solide",
-    "typeBreeze": "Brise Légère",
-    "typeWave": "Vague Fluide",
-    "typeButterfly": "Papillon Délicat",
-    "typeAntenna": "Ultra Antenne"
-  },
   "test": {
-    "sense": "Sens",
-    "intensity": "Intensité",
     "canHandle": "✓ Je gère",
     "myLimit": "✗ C'est ma limite",
     "levels": [
@@ -142,130 +130,17 @@
       }
     }
   },
-  "types": {
-    "rock": {
-      "name": "🪨 Roc Solide",
-      "desc": "Presque rien ne te déstabilise ! Tu possèdes un système nerveux remarquablement résistant qui s'épanouit sous la stimulation.",
-      "ratio": "Stimulation 80% : Calme 20%",
-      "traits": [
-        "Inébranlable sous la pression",
-        "S'épanouit dans les environnements énergiques",
-        "Solides limites émotionnelles",
-        "Champion du multitâche"
-      ],
-      "tips": [
-        "Cultive l'empathie envers les personnes sensibles",
-        "Essaie la pleine conscience pour percevoir les subtilités",
-        "Ne minimise pas le mal-être des autres"
-      ],
-      "compatible": [
-        "Vague Fluide",
-        "Papillon Délicat"
-      ]
-    },
-    "breeze": {
-      "name": "🌿 Brise Légère",
-      "desc": "Tu équilibres merveilleusement résilience et perception. Tu remarques les détails sans être submergé(e).",
-      "ratio": "Stimulation 60% : Calme 40%",
-      "traits": [
-        "Adaptable à tout environnement",
-        "Bonne régulation émotionnelle",
-        "Perçoit naturellement les signaux subtils",
-        "Réponse au stress flexible"
-      ],
-      "tips": [
-        "Accorde-toi des moments de calme réguliers",
-        "Utilise ta perception comme un super-pouvoir social",
-        "Fais confiance à ton intuition grandissante"
-      ],
-      "compatible": [
-        "Roc Solide",
-        "Vague Fluide"
-      ]
-    },
-    "wave": {
-      "name": "🌊 Vague Fluide",
-      "desc": "Ta sensibilité est ton super-pouvoir ! Tu lis les ambiances, ressens la musique profondément et te connectes aux autres à un niveau rare.",
-      "ratio": "Stimulation 40% : Calme 60%",
-      "traits": [
-        "Grande intelligence émotionnelle",
-        "Profonde appréciation de l'art et de la beauté",
-        "Intuition excellente",
-        "Monde intérieur riche"
-      ],
-      "tips": [
-        "Planifie du temps seul(e) chaque jour",
-        "Apprends des techniques d'ancrage",
-        "Canalise ta sensibilité dans la créativité"
-      ],
-      "compatible": [
-        "Brise Légère",
-        "Papillon Délicat"
-      ]
-    },
-    "butterfly": {
-      "name": "🦋 Papillon Délicat",
-      "desc": "Tu vis le monde en 4K ! Tes sens aiguisés détectent ce que les autres manquent — c'est un don, pas un défaut.",
-      "ratio": "Stimulation 25% : Calme 75%",
-      "traits": [
-        "Détecte les micro-expressions",
-        "Traitement émotionnel profond",
-        "Très créatif(ve) et imaginatif(ve)",
-        "A besoin de se ressourcer consciemment"
-      ],
-      "tips": [
-        "Garde des écouteurs antibruit sur toi",
-        "Crée un havre de paix chez toi",
-        "Utilise la technique d'ancrage 5-4-3-2-1"
-      ],
-      "compatible": [
-        "Vague Fluide",
-        "Ultra Antenne"
-      ]
-    },
-    "antenna": {
-      "name": "🧠 Ultra Antenne",
-      "desc": "Tu es un(e) vrai(e) HSP — tu captes chaque signal. Ton cerveau traite TOUS les stimuli en profondeur, te donnant une perception extraordinaire.",
-      "ratio": "Stimulation 15% : Calme 85%",
-      "traits": [
-        "Ultra-réceptif(ve) à tous les sens",
-        "Absorbe profondément les émotions des autres",
-        "A besoin de beaucoup de temps seul(e)",
-        "Profondeur de pensée exceptionnelle"
-      ],
-      "tips": [
-        "2h+ de temps seul(e) par jour (indispensable !)",
-        "Crée des zones sans stimulation",
-        "Apprends à dire 'non' — la protection de soi d'abord"
-      ],
-      "compatible": [
-        "Papillon Délicat",
-        "Ultra Antenne"
-      ]
-    }
-  },
   "result": {
-    "profileTitle": "Ton Profil de Sensibilité",
-    "radarTitle": "Analyse Sens par Sens",
-    "overallLevel": "Sensibilité Globale",
-    "stimRatio": "Ratio de Stimulation Idéal",
-    "traits": "Traits Clés",
-    "tips": "Actions Recommandées",
-    "compatible": "Types les Plus Compatibles",
-    "retake": "🧠 Refaire le Test",
-    "moreTests": "Explorer plus de tests",
-    "percentileStat": "Seulement <strong>{percent}%</strong> des participants partagent votre type de sensibilité",
-    "nextStepLabel": "Test suivant recommande",
-    "nextStepDesc": "Ouvrez le meilleur suivi pour votre resultat actuel et gardez l elan.",
-    "nextStepCta": "Ouvrir le test suivant",
-    "jumpToMore": "Voir plus de suites"
+    "profileTitle": "Résumé de vos réponses",
+    "radarTitle": "Revoir les choix par catégorie",
+    "overallLevel": "Situations poursuivies",
+    "boundary": "Ce résumé local reflète uniquement vos choix dans des situations imaginées. Il ne détermine pas un statut HSP et ne vous compare pas aux autres.",
+    "retake": "Refaire la réflexion privée",
+    "moreTests": "Facultatif : autres activités"
   },
   "share": {
-    "twitter": "𝕏 Partager",
     "copyUrl": "📋 Copier le Lien",
-    "copied": "Copié !",
-    "twitterText": "Ma sensibilité HSP : {percent}% ! Type : {type} 🧠 Et toi, tu es sensible à quel point ?",
-    "saveResult": "Enregistrer le r?sultat"
+    "copied": "Copié !"
   },
   "related": {
     "stressCheck": "Bilan de Stress",
@@ -281,18 +156,5 @@
     "traumaResponse": "R?ponse au traumatisme",
     "innerChild": "Test de l?enfant int?rieur",
     "attachmentStyle": "Style d'Attachement"
-  },
-  "about": {
-    "toggle": "En savoir plus sur les HSP",
-    "whatIsTitle": "Qu'est-ce qu'une Personne Hautement Sensible ?",
-    "whatIsDesc": "Une Personne Hautement Sensible (PHS/HSP) possède une sensibilité accrue du système nerveux central aux stimuli. Conceptualisé par la Dre Elaine Aron dans les années 90, ce trait touche 15-20% de la population et se retrouve chez plus de 100 espèces.",
-    "whatIs1": "Les HSP traitent les informations plus en profondeur",
-    "whatIs2": "La sensibilité est un trait inné, pas un trouble",
-    "whatIs3": "Elle est aussi fréquente chez les hommes que chez les femmes",
-    "signsTitle": "Signes que vous pourriez être HSP",
-    "sign1": "Vous vous sentez submergé(e) par les bruits forts, les lumières vives ou les odeurs fortes",
-    "sign2": "Vous avez besoin de temps seul(e) pour vous ressourcer après des événements sociaux",
-    "sign3": "Vous êtes profondément touché(e) par l'art, la musique ou la nature",
-    "sign4": "Vous remarquez des changements subtils que les autres manquent"
   }
 }

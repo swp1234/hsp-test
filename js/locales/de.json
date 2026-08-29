@@ -1,36 +1,24 @@
 {
   "meta": {
-    "title": "HSP Test - Bist du hochsensibel? Kostenloser Test",
-    "description": "Mache den kostenlosen HSP Test und finde heraus, ob du eine hochsensible Person bist. 20 Fragen zu 5 Sinnen ergeben dein Sensibilitätsprofil."
+    "title": "HSP-Sinnespräferenzen - private Selbstreflexion",
+    "description": "Reflektiere fünf vorgestellte Reizkategorien und wähle einen praktischen nächsten Schritt. Dies ist keine Diagnose oder validierte Skala."
   },
   "a11y": {
     "skip": "Zum Hauptinhalt springen"
   },
   "app": {
-    "title": "HSP Test",
-    "h1": "HSP Test - Selbsteinschätzung für Hochsensible",
-    "subtitle": "Reizüberflutungs-Simulator",
-    "heroTitle": "Wie viel halten deine Sinne aus?",
-    "heroDesc": "Durchlaufe 5 Sinneskategorien mit steigender Intensität. Gib auf, wenn du deine Grenze erreichst — deine Schwelle verrät deinen Typ.",
-    "badge": "Überlastungstest",
-    "info1": "5 Sinne",
+    "h1": "HSP-Sinnespräferenzen prüfen",
+    "subtitle": "Private Selbstreflexion · keine Diagnose",
+    "heroDesc": "Wähle in fünf vorgestellten Reizkategorien, wo du stoppen würdest. Die Zusammenfassung beschreibt nur diese Auswahl und bestimmt keinen HSP-Status.",
+    "badge": "5 vorgestellte Kategorien",
+    "info1": "5 Kategorien",
     "info2": "~3 Min",
-    "info3": "Echtzeit",
-    "disclaimer": "Nur zur Unterhaltung. Keine klinische Diagnose.",
-    "start": "🧠 Sensibilitätstest starten",
+    "info3": "Lokales Ergebnis",
+    "disclaimer": "Keine Diagnose, Perzentile, Bevölkerungsvergleiche oder Anmeldung.",
+    "start": "Private Reflexion starten",
     "loading": "Wird geladen..."
   },
-  "intro": {
-    "typesTitle": "5 Sensibilitätstypen",
-    "typeRock": "Fels in der Brandung",
-    "typeBreeze": "Sanfte Brise",
-    "typeWave": "Fließende Welle",
-    "typeButterfly": "Zarter Schmetterling",
-    "typeAntenna": "Ultra-Antenne"
-  },
   "test": {
-    "sense": "Sinn",
-    "intensity": "Intensität",
     "canHandle": "✓ Das halte ich aus",
     "myLimit": "✗ Das ist meine Grenze",
     "levels": [
@@ -142,130 +130,17 @@
       }
     }
   },
-  "types": {
-    "rock": {
-      "name": "🪨 Fels in der Brandung",
-      "desc": "Dich bringt kaum etwas aus der Ruhe! Du hast ein bemerkenswert belastbares Nervensystem, das unter Stimulation aufblüht.",
-      "ratio": "Stimulation 80% : Ruhe 20%",
-      "traits": [
-        "Unerschütterlich unter Druck",
-        "Blüht in energiegeladenen Umgebungen auf",
-        "Starke emotionale Grenzen",
-        "Multitasking-Champion"
-      ],
-      "tips": [
-        "Übe Empathie für sensible Menschen",
-        "Versuche Achtsamkeit, um Feinheiten wahrzunehmen",
-        "Weise die Überforderung anderer nicht ab"
-      ],
-      "compatible": [
-        "Fließende Welle",
-        "Zarter Schmetterling"
-      ]
-    },
-    "breeze": {
-      "name": "🌿 Sanfte Brise",
-      "desc": "Du balancierst Belastbarkeit und Wahrnehmung wunderbar. Du bemerkst die Details, ohne überwältigt zu werden.",
-      "ratio": "Stimulation 60% : Ruhe 40%",
-      "traits": [
-        "Anpassungsfähig an jede Umgebung",
-        "Gute Emotionsregulation",
-        "Bemerkt subtile Signale natürlich",
-        "Flexible Stressreaktion"
-      ],
-      "tips": [
-        "Plane gelegentlich ruhige Zeiten ein",
-        "Nutze deine Wahrnehmung als soziale Superkraft",
-        "Vertraue deiner wachsenden Intuition"
-      ],
-      "compatible": [
-        "Fels in der Brandung",
-        "Fließende Welle"
-      ]
-    },
-    "wave": {
-      "name": "🌊 Fließende Welle",
-      "desc": "Deine Sensibilität ist deine Superkraft! Du liest Räume, fühlst Musik tief und verbindest dich auf einer tiefgreifenden Ebene mit anderen.",
-      "ratio": "Stimulation 40% : Ruhe 60%",
-      "traits": [
-        "Hohe emotionale Intelligenz",
-        "Tiefe Wertschätzung für Kunst & Schönheit",
-        "Ausgezeichnete Intuition",
-        "Reiche Innenwelt"
-      ],
-      "tips": [
-        "Plane tägliche Alleinzeit ein",
-        "Lerne Erdungstechniken",
-        "Kanalisiere Sensibilität in Kreativität"
-      ],
-      "compatible": [
-        "Sanfte Brise",
-        "Zarter Schmetterling"
-      ]
-    },
-    "butterfly": {
-      "name": "🦋 Zarter Schmetterling",
-      "desc": "Du erlebst die Welt in 4K! Deine feinfühligen Sinne erkennen, was andere übersehen — das ist eine Gabe, kein Makel.",
-      "ratio": "Stimulation 25% : Ruhe 75%",
-      "traits": [
-        "Erkennt Mikroausdrücke",
-        "Tiefe emotionale Verarbeitung",
-        "Hochkreativ & fantasievoll",
-        "Braucht bewusstes Aufladen"
-      ],
-      "tips": [
-        "Trage geräuschunterdrückende Kopfhörer bei dir",
-        "Schaffe eine ruhige Zuflucht zu Hause",
-        "Nutze die 5-4-3-2-1-Erdungstechnik"
-      ],
-      "compatible": [
-        "Fließende Welle",
-        "Ultra-Antenne"
-      ]
-    },
-    "antenna": {
-      "name": "🧠 Ultra-Antenne",
-      "desc": "Du bist ein echter HSP — du empfängst jedes Signal. Dein Gehirn verarbeitet ALLE Reize gründlich und verleiht dir außergewöhnliche Wahrnehmung.",
-      "ratio": "Stimulation 15% : Ruhe 85%",
-      "traits": [
-        "Ultrasensibel für alle Sinne",
-        "Absorbiert Emotionen anderer tief",
-        "Braucht viel Alleinzeit",
-        "Außergewöhnliche Gedankentiefe"
-      ],
-      "tips": [
-        "Täglich 2+ Stunden Alleinzeit (unverzichtbar!)",
-        "Schaffe reizfreie Zonen",
-        "Übe, 'Nein' zu sagen — Selbstschutz geht vor"
-      ],
-      "compatible": [
-        "Zarter Schmetterling",
-        "Ultra-Antenne"
-      ]
-    }
-  },
   "result": {
-    "profileTitle": "Dein Sensibilitätsprofil",
-    "radarTitle": "Aufschlüsselung nach Sinnen",
-    "overallLevel": "Gesamte Sensibilität",
-    "stimRatio": "Ideales Stimulationsverhältnis",
-    "traits": "Wichtige Eigenschaften",
-    "tips": "Empfohlene Maßnahmen",
-    "compatible": "Am besten passende Typen",
-    "retake": "🧠 Test wiederholen",
-    "moreTests": "Mehr Tests entdecken",
-    "percentileStat": "Nur <strong>{percent}%</strong> der Teilnehmer teilen deinen Sensibilitätstyp",
-    "nextStepLabel": "Empfohlener naechster Test",
-    "nextStepDesc": "Oeffne den besten Folgetest fuer dein aktuelles Ergebnis und halte den Flow am Laufen.",
-    "nextStepCta": "Folgetest oeffnen",
-    "jumpToMore": "Mehr Empfehlungen"
+    "profileTitle": "Zusammenfassung deiner Reaktionen",
+    "radarTitle": "Auswahl nach Reizkategorie ansehen",
+    "overallLevel": "Fortgesetzte Situationen",
+    "boundary": "Diese lokale Zusammenfassung zeigt nur deine Auswahl in vorgestellten Situationen. Sie bestimmt keinen HSP-Status und vergleicht dich nicht mit anderen.",
+    "retake": "Private Reflexion wiederholen",
+    "moreTests": "Optional: weitere Aktivitäten"
   },
   "share": {
-    "twitter": "𝕏 Teilen",
     "copyUrl": "📋 Link kopieren",
-    "copied": "Kopiert!",
-    "twitterText": "Meine HSP-Sensibilität: {percent}%! Typ: {type} 🧠 Wie sensibel bist du?",
-    "saveResult": "Ergebnis speichern"
+    "copied": "Kopiert!"
   },
   "related": {
     "stressCheck": "Stress-Check",
@@ -281,18 +156,5 @@
     "traumaResponse": "Trauma-Reaktion",
     "innerChild": "Inneres-Kind-Test",
     "attachmentStyle": "Bindungsstil"
-  },
-  "about": {
-    "toggle": "Mehr über HSP erfahren",
-    "whatIsTitle": "Was ist eine hochsensible Person?",
-    "whatIsDesc": "Eine hochsensible Person (HSP) besitzt eine erhöhte Empfindlichkeit des zentralen Nervensystems gegenüber Reizen. Der Begriff wurde in den 1990er Jahren von Dr. Elaine Aron geprägt. Diese Eigenschaft betrifft 15-20% der Bevölkerung und wurde bei über 100 Tierarten beobachtet.",
-    "whatIs1": "HSPs verarbeiten Informationen tiefer als andere",
-    "whatIs2": "Sensibilität ist eine angeborene Eigenschaft, keine Störung",
-    "whatIs3": "Sie kommt bei Männern und Frauen gleich häufig vor",
-    "signsTitle": "Anzeichen, dass du hochsensibel sein könntest",
-    "sign1": "Du fühlst dich von lauten Geräuschen, hellem Licht oder starken Gerüchen überwältigt",
-    "sign2": "Du brauchst Alleinzeit, um dich nach sozialen Veranstaltungen zu erholen",
-    "sign3": "Du wirst von Kunst, Musik oder Natur tief berührt",
-    "sign4": "Du bemerkst subtile Veränderungen, die andere übersehen"
   }
 }

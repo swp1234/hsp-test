@@ -1,13 +1,13 @@
 {
-  "name": "HSP 민감성 테스트",
-  "short_name": "HSP테스트",
-  "description": "나는 고감수성자(HSP)일까? 20문항 자가진단 심리테스트",
+  "name": "HSP Sensory Preferences Check",
+  "short_name": "Sensory Check",
+  "description": "A private, non-diagnostic reflection using five categories of imagined sensory prompts.",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0a0a1e",
   "theme_color": "#7c3aed",
   "orientation": "portrait",
-  "lang": "ko",
+  "lang": "en",
   "dir": "ltr",
   "icons": [
     {
@@ -24,8 +24,6 @@
     }
   ],
   "categories": [
-    "entertainment",
-    "lifestyle",
-    "health"
+    "lifestyle"
   ]
 }

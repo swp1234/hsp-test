@@ -1,36 +1,24 @@
 {
   "meta": {
-    "title": "Tes HSP - Apakah Kamu Orang Sangat Sensitif? Gratis",
-    "description": "Ikuti tes HSP gratis untuk mengetahui apakah kamu orang yang sangat sensitif. Jawab 20 pertanyaan di 5 indera dan dapatkan profil sensitivitasmu."
+    "title": "Cek preferensi sensorik HSP - refleksi privat",
+    "description": "Renungkan lima kategori sensorik yang dibayangkan dan pilih langkah praktis berikutnya. Ini bukan diagnosis atau skala tervalidasi."
   },
   "a11y": {
     "skip": "Langsung ke konten utama"
   },
   "app": {
-    "title": "Tes HSP",
-    "h1": "Tes HSP - Penilaian Diri Orang Sangat Sensitif",
-    "subtitle": "Simulator Kelebihan Sensorik",
-    "heroTitle": "Seberapa Kuat Inderamu Bertahan?",
-    "heroDesc": "Hadapi 5 kategori sensorik dengan intensitas yang meningkat. Menyerahlah saat mencapai batasmu — ambang batasmu mengungkap tipemu.",
-    "badge": "Tes Kelebihan",
-    "info1": "5 Indera",
+    "h1": "Cek preferensi sensorik HSP",
+    "subtitle": "Refleksi privat · bukan diagnosis",
+    "heroDesc": "Pilih titik berhenti dalam lima kategori sensorik yang dibayangkan. Ringkasan hanya menjelaskan pilihan ini dan tidak menentukan status HSP.",
+    "badge": "5 kategori bayangan",
+    "info1": "5 Kategori",
     "info2": "~3 Menit",
-    "info3": "Real-Time",
-    "disclaimer": "Hanya untuk hiburan. Bukan diagnosis klinis.",
-    "start": "🧠 Mulai Tes Sensitivitas",
+    "info3": "Hasil Lokal",
+    "disclaimer": "Tanpa diagnosis, persentil, perbandingan populasi, atau akun.",
+    "start": "Mulai cek privat",
     "loading": "Memuat..."
   },
-  "intro": {
-    "typesTitle": "5 Tipe Sensitivitas",
-    "typeRock": "Batu Karang",
-    "typeBreeze": "Angin Sepoi",
-    "typeWave": "Ombak Mengalir",
-    "typeButterfly": "Kupu-Kupu Lembut",
-    "typeAntenna": "Antena Ultra"
-  },
   "test": {
-    "sense": "Indera",
-    "intensity": "Intensitas",
     "canHandle": "✓ Aku Masih Kuat",
     "myLimit": "✗ Itu Batasku",
     "levels": [
@@ -142,130 +130,17 @@
       }
     }
   },
-  "types": {
-    "rock": {
-      "name": "🪨 Batu Karang",
-      "desc": "Hampir tidak ada yang bisa menggoyahkanmu! Kamu punya sistem saraf yang sangat tangguh dan berkembang di bawah stimulasi.",
-      "ratio": "Stimulasi 80% : Tenang 20%",
-      "traits": [
-        "Tak tergoyahkan di bawah tekanan",
-        "Berkembang di lingkungan energi tinggi",
-        "Batasan emosional yang kuat",
-        "Juara multitasking"
-      ],
-      "tips": [
-        "Latih empati terhadap orang yang sensitif",
-        "Coba mindfulness untuk menangkap hal-hal halus",
-        "Jangan remehkan kewalahan orang lain"
-      ],
-      "compatible": [
-        "Ombak Mengalir",
-        "Kupu-Kupu Lembut"
-      ]
-    },
-    "breeze": {
-      "name": "🌿 Angin Sepoi",
-      "desc": "Kamu menyeimbangkan ketangguhan dan kesadaran dengan indah. Kamu memperhatikan detail tanpa kewalahan.",
-      "ratio": "Stimulasi 60% : Tenang 40%",
-      "traits": [
-        "Mudah beradaptasi di lingkungan apapun",
-        "Regulasi emosi yang baik",
-        "Menangkap isyarat halus secara alami",
-        "Respons stres yang fleksibel"
-      ],
-      "tips": [
-        "Sisihkan waktu tenang sesekali",
-        "Gunakan kesadaranmu sebagai kekuatan sosial",
-        "Percayai intuisimu yang berkembang"
-      ],
-      "compatible": [
-        "Batu Karang",
-        "Ombak Mengalir"
-      ]
-    },
-    "wave": {
-      "name": "🌊 Ombak Mengalir",
-      "desc": "Sensitivitasmu adalah kekuatan supermu! Kamu membaca suasana ruangan, merasakan musik secara mendalam, dan terhubung dengan orang lain di level yang dalam.",
-      "ratio": "Stimulasi 40% : Tenang 60%",
-      "traits": [
-        "Kecerdasan emosional tinggi",
-        "Apresiasi mendalam terhadap seni & keindahan",
-        "Intuisi yang luar biasa",
-        "Dunia batin yang kaya"
-      ],
-      "tips": [
-        "Jadwalkan waktu sendirian setiap hari",
-        "Pelajari teknik grounding",
-        "Salurkan sensitivitas ke kreativitas"
-      ],
-      "compatible": [
-        "Angin Sepoi",
-        "Kupu-Kupu Lembut"
-      ]
-    },
-    "butterfly": {
-      "name": "🦋 Kupu-Kupu Lembut",
-      "desc": "Kamu merasakan dunia dalam resolusi 4K! Inderamu yang tajam menangkap apa yang orang lain lewatkan — ini anugerah, bukan kelemahan.",
-      "ratio": "Stimulasi 25% : Tenang 75%",
-      "traits": [
-        "Mendeteksi ekspresi mikro",
-        "Pemrosesan emosi yang mendalam",
-        "Sangat kreatif & imajinatif",
-        "Butuh pengisian ulang yang disengaja"
-      ],
-      "tips": [
-        "Bawa earphone peredam bising",
-        "Ciptakan tempat perlindungan tenang di rumah",
-        "Gunakan teknik grounding 5-4-3-2-1"
-      ],
-      "compatible": [
-        "Ombak Mengalir",
-        "Antena Ultra"
-      ]
-    },
-    "antenna": {
-      "name": "🧠 Antena Ultra",
-      "desc": "Kamu HSP sejati — menangkap setiap sinyal. Otakmu memproses SEMUA stimuli secara mendalam, memberimu persepsi yang luar biasa.",
-      "ratio": "Stimulasi 15% : Tenang 85%",
-      "traits": [
-        "Ultra-perseptif terhadap semua indera",
-        "Menyerap emosi orang lain secara mendalam",
-        "Membutuhkan waktu sendiri yang signifikan",
-        "Kedalaman pikiran yang luar biasa"
-      ],
-      "tips": [
-        "2+ jam waktu sendiri setiap hari (wajib!)",
-        "Ciptakan zona bebas stimulus",
-        "Berlatih berkata 'tidak' — perlindungan diri yang utama"
-      ],
-      "compatible": [
-        "Kupu-Kupu Lembut",
-        "Antena Ultra"
-      ]
-    }
-  },
   "result": {
-    "profileTitle": "Profil Sensitivitasmu",
-    "radarTitle": "Analisis Per Indera",
-    "overallLevel": "Sensitivitas Keseluruhan",
-    "stimRatio": "Rasio Stimulasi Ideal",
-    "traits": "Ciri Utama",
-    "tips": "Aksi yang Disarankan",
-    "compatible": "Tipe Paling Cocok",
-    "retake": "🧠 Ulangi Tes",
-    "moreTests": "Jelajahi tes lainnya",
-    "percentileStat": "Hanya <strong>{percent}%</strong> peserta memiliki tipe sensitivitas yang sama",
-    "nextStepLabel": "Tes berikutnya",
-    "nextStepDesc": "Buka follow-up yang paling cocok untuk hasil kamu sekarang dan lanjutkan momentumnya.",
-    "nextStepCta": "Buka tes lanjutan",
-    "jumpToMore": "Lihat rekomendasi lain"
+    "profileTitle": "Ringkasan responsmu",
+    "radarTitle": "Tinjau pilihan per kategori",
+    "overallLevel": "Situasi yang dilanjutkan",
+    "boundary": "Ringkasan lokal ini hanya mencerminkan pilihanmu dalam situasi bayangan. Ini tidak menentukan status HSP atau membandingkanmu dengan orang lain.",
+    "retake": "Ulangi cek privat",
+    "moreTests": "Opsional: aktivitas lain"
   },
   "share": {
-    "twitter": "𝕏 Bagikan",
     "copyUrl": "📋 Salin Link",
-    "copied": "Tersalin!",
-    "twitterText": "Sensitivitas HSP-ku: {percent}%! Tipe: {type} 🧠 Seberapa sensitif kamu?",
-    "saveResult": "Simpan hasil"
+    "copied": "Tersalin!"
   },
   "related": {
     "stressCheck": "Cek Stres",
@@ -281,18 +156,5 @@
     "traumaResponse": "Respons trauma",
     "innerChild": "Tes inner child",
     "attachmentStyle": "Gaya Kelekatan"
-  },
-  "about": {
-    "toggle": "Pelajari lebih lanjut tentang HSP",
-    "whatIsTitle": "Apa itu Orang Sangat Sensitif?",
-    "whatIsDesc": "Orang Sangat Sensitif (HSP) memiliki sensitivitas sistem saraf pusat yang meningkat terhadap rangsangan. Dicetuskan oleh Dr. Elaine Aron pada 1990-an, sifat ini memengaruhi 15-20% populasi dan ditemukan pada lebih dari 100 spesies.",
-    "whatIs1": "HSP memproses informasi lebih dalam daripada orang lain",
-    "whatIs2": "Sensitivitas adalah sifat bawaan, bukan gangguan",
-    "whatIs3": "Sama umumnya pada pria dan wanita",
-    "signsTitle": "Tanda-tanda kamu mungkin HSP",
-    "sign1": "Kamu mudah kewalahan oleh suara keras, cahaya terang, atau bau menyengat",
-    "sign2": "Kamu butuh waktu sendiri untuk mengisi ulang setelah acara sosial",
-    "sign3": "Kamu sangat tersentuh oleh seni, musik, atau alam",
-    "sign4": "Kamu memperhatikan perubahan halus yang orang lain lewatkan"
   }
 }

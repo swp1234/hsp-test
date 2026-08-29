@@ -5,17 +5,18 @@
     const triggerKeys = ['sound', 'light', 'social', 'touch', 'demands'];
     const placeKeys = ['work', 'school', 'public', 'home'];
     const capacityKeys = ['steady', 'strained', 'exit'];
+    const sourceKeys = ['hsp_result', 'sensory_map', 'emotion_action', 'portal_tools_catalog', 'blog_sensory_bridge'];
     const query = new URLSearchParams(location.search);
-    const savedLanguage = localStorage.getItem('app_language');
+    let savedLanguage = '';
+    try { savedLanguage = localStorage.getItem('app_language') || ''; } catch (_) {}
     const browserLanguage = (navigator.language || 'en').slice(0, 2).toLowerCase();
     let language = supported.includes(query.get('lang')) ? query.get('lang')
         : supported.includes(savedLanguage) ? savedLanguage
         : supported.includes(browserLanguage) ? browserLanguage : 'en';
-    let trigger = triggerKeys.includes(query.get('trigger')) ? query.get('trigger') : 'sound';
-    let place = placeKeys.includes(query.get('place')) ? query.get('place') : 'work';
-    let capacity = capacityKeys.includes(query.get('capacity')) ? query.get('capacity') : 'strained';
-    const source = (query.get('source') || 'direct').slice(0, 80);
-    const profile = (query.get('profile') || 'unknown').slice(0, 40);
+    let trigger = 'sound';
+    let place = 'work';
+    let capacity = 'strained';
+    const source = sourceKeys.includes(query.get('source')) ? query.get('source') : 'direct';
 
     const translations = {
         en: {
@@ -149,10 +150,12 @@
         steps: document.getElementById('step-list'),
         timerDisplay: document.getElementById('timer-display'),
         timerToggle: document.getElementById('timer-toggle'),
+        resultTitle: document.getElementById('result-title'),
         status: document.getElementById('status')
     };
     const times = ['0:00–0:30', '0:30–1:30', '1:30–3:00', '3:00–4:00', '4:00–5:00', '5:00'];
     let remaining = 300;
+    let deadline = 0;
     let interval = 0;
     let running = false;
     let generated = false;
@@ -163,12 +166,8 @@
         gtag('event', eventName, Object.assign({
             app_name: 'hsp-test',
             content_group: 'sensory_reset',
-            reset_language: language,
-            reset_trigger: trigger,
-            reset_place: place,
-            reset_capacity: capacity,
+            content_locale: language,
             entry_source: source,
-            hsp_profile: profile,
             revenue_goal: 'daily_0_10'
         }, params));
     };
@@ -217,26 +216,23 @@
         elements.trigger.value = trigger;
         elements.place.value = place;
         elements.capacity.value = capacity;
-        elements.timerToggle.textContent = running ? t('pauseTimer') : remaining < 300 ? t('resumeTimer') : t('startTimer');
+        elements.timerToggle.textContent = running ? t('pauseTimer') : remaining > 0 && remaining < 300 ? t('resumeTimer') : t('startTimer');
         setLinks();
         if (generated) renderPlan(false);
     }
 
     function updateUrl() {
-        const next = new URL(location.href);
+        const next = new URL(location.pathname, location.origin);
         next.searchParams.set('lang', language);
-        next.searchParams.set('trigger', trigger);
-        next.searchParams.set('place', place);
-        next.searchParams.set('capacity', capacity);
-        history.replaceState({}, '', next);
+        if (source !== 'direct') next.searchParams.set('source', source);
+        history.replaceState({}, '', `${next.pathname}${next.search}${location.hash}`);
     }
 
     function persist() {
-        localStorage.setItem('sensory-reset-settings', JSON.stringify({ trigger, place, capacity }));
+        try { localStorage.setItem('sensory-reset-settings', JSON.stringify({ trigger, place, capacity })); } catch (_) {}
     }
 
     function loadSaved() {
-        if (query.has('trigger') || query.has('place') || query.has('capacity')) return;
         try {
             const saved = JSON.parse(localStorage.getItem('sensory-reset-settings') || 'null');
             if (!saved) return;
@@ -265,46 +261,70 @@
         persist();
         updateUrl();
         if (shouldTrack) track('sensory_reset_generate');
-        if (shouldTrack) elements.result.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+        if (shouldTrack) requestAnimationFrame(() => {
+            elements.resultTitle.focus({ preventScroll: true });
+            elements.result.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+        });
     }
 
     function updateTimer() {
         const minutes = Math.floor(remaining / 60);
         const seconds = remaining % 60;
         elements.timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        elements.timerToggle.textContent = running ? t('pauseTimer') : remaining < 300 ? t('resumeTimer') : t('startTimer');
+        elements.timerToggle.textContent = running ? t('pauseTimer') : remaining > 0 && remaining < 300 ? t('resumeTimer') : t('startTimer');
     }
 
-    function stopTimer() {
+    function clearTimerInterval() {
         window.clearInterval(interval);
         interval = 0;
+    }
+
+    function stopTimer({ sync = true } = {}) {
+        if (sync && running && deadline) {
+            remaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+        }
+        clearTimerInterval();
         running = false;
+        deadline = 0;
         updateTimer();
+    }
+
+    function completeTimer() {
+        if (!running) return;
+        remaining = 0;
+        stopTimer({ sync: false });
+        elements.status.textContent = t('completed');
+        track('sensory_reset_timer_complete');
+    }
+
+    function syncTimerToClock() {
+        if (!running || !deadline) return;
+        const now = Date.now();
+        remaining = Math.max(0, Math.ceil((deadline - now) / 1000));
+        updateTimer();
+        if (now >= deadline) completeTimer();
     }
 
     function toggleTimer() {
         if (running) {
-            stopTimer();
+            syncTimerToClock();
+            if (!running) return;
+            stopTimer({ sync: false });
             track('sensory_reset_timer_pause', { seconds_remaining: remaining });
             return;
         }
         if (!generated) renderPlan();
+        if (remaining <= 0) remaining = 300;
         running = true;
+        deadline = Date.now() + remaining * 1000;
         elements.status.textContent = '';
         updateTimer();
         track(remaining === 300 ? 'sensory_reset_timer_start' : 'sensory_reset_timer_resume', { seconds_remaining: remaining });
-        interval = window.setInterval(() => {
-            remaining -= 1;
-            updateTimer();
-            if (remaining > 0) return;
-            stopTimer();
-            elements.status.textContent = t('completed');
-            track('sensory_reset_timer_complete');
-        }, 1000);
+        interval = window.setInterval(syncTimerToClock, 250);
     }
 
     function resetTimer() {
-        stopTimer();
+        stopTimer({ sync: false });
         remaining = 300;
         elements.status.textContent = '';
         updateTimer();
@@ -347,7 +367,7 @@
     function bind() {
         elements.language.addEventListener('change', event => {
             language = supported.includes(event.target.value) ? event.target.value : 'en';
-            localStorage.setItem('app_language', language);
+            try { localStorage.setItem('app_language', language); } catch (_) {}
             translatePage();
             updateUrl();
             track('sensory_reset_language_change');
@@ -363,7 +383,7 @@
             if (generated) renderPlan(false);
             persist();
             updateUrl();
-            track('sensory_reset_customize', { customize_field: field });
+            track('sensory_reset_customize');
         }));
         document.getElementById('generate-button').addEventListener('click', () => renderPlan());
         elements.timerToggle.addEventListener('click', toggleTimer);
@@ -377,15 +397,10 @@
             link.addEventListener('click', () => track('sensory_reset_hsp_click', { link_surface: index ? 'footer' : 'header' }));
         });
         document.getElementById('guide-link').addEventListener('click', () => track('sensory_reset_guide_click'));
-        const ad = document.querySelector('[data-ad-surface]');
-        if (ad && 'IntersectionObserver' in window) {
-            const observer = new IntersectionObserver(entries => {
-                if (!entries.some(entry => entry.isIntersecting)) return;
-                track('sensory_reset_ad_impression', { ad_surface: ad.dataset.adSurface });
-                observer.disconnect();
-            }, { threshold: 0.2 });
-            observer.observe(ad);
-        }
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) syncTimerToClock();
+        });
+        window.addEventListener('pageshow', syncTimerToClock);
     }
 
     function init() {

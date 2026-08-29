@@ -1,36 +1,24 @@
 {
   "meta": {
-    "title": "Teste HSP - Você é Altamente Sensível? Grátis",
-    "description": "Faça o teste HSP grátis e descubra se você é uma pessoa altamente sensível. Responda 20 perguntas em 5 sentidos e veja seu perfil de sensibilidade."
+    "title": "Preferências sensoriais HSP - reflexão privada",
+    "description": "Reflita sobre cinco categorias sensoriais imaginadas e escolha um próximo passo prático. Não é diagnóstico nem escala validada."
   },
   "a11y": {
     "skip": "Pular para o conteúdo principal"
   },
   "app": {
-    "title": "Teste HSP",
-    "h1": "Teste HSP - Autoavaliação de Pessoa Altamente Sensível",
-    "subtitle": "Simulador de Sobrecarga Sensorial",
-    "heroTitle": "Quanto seus sentidos conseguem aguentar?",
-    "heroDesc": "Avance por 5 categorias sensoriais com intensidade crescente. Desista quando chegar ao seu limite — seu limiar revela seu tipo.",
-    "badge": "Teste de Sobrecarga",
-    "info1": "5 Sentidos",
+    "h1": "Preferências sensoriais HSP",
+    "subtitle": "Reflexão privada · não é diagnóstico",
+    "heroDesc": "Escolha onde pararia em cinco categorias sensoriais imaginadas. O resumo descreve apenas essas escolhas e não determina se você é HSP.",
+    "badge": "5 categorias imaginadas",
+    "info1": "5 Categorias",
     "info2": "~3 Min",
-    "info3": "Tempo Real",
-    "disclaimer": "Apenas para entretenimento. Não é um diagnóstico clínico.",
-    "start": "🧠 Iniciar Teste de Sensibilidade",
+    "info3": "Resultado Local",
+    "disclaimer": "Sem diagnóstico, percentil, comparação populacional ou conta.",
+    "start": "Iniciar reflexão privada",
     "loading": "Carregando..."
   },
-  "intro": {
-    "typesTitle": "5 Tipos de Sensibilidade",
-    "typeRock": "Rocha Firme",
-    "typeBreeze": "Brisa Suave",
-    "typeWave": "Onda Fluente",
-    "typeButterfly": "Borboleta Delicada",
-    "typeAntenna": "Ultra Antena"
-  },
   "test": {
-    "sense": "Sentido",
-    "intensity": "Intensidade",
     "canHandle": "✓ Consigo lidar com isso",
     "myLimit": "✗ Esse é meu limite",
     "levels": [
@@ -142,130 +130,17 @@
       }
     }
   },
-  "types": {
-    "rock": {
-      "name": "🪨 Rocha Firme",
-      "desc": "Quase nada te abala! Você tem um sistema nervoso extraordinariamente resiliente que prospera sob estimulação.",
-      "ratio": "Estimulação 80% : Calma 20%",
-      "traits": [
-        "Inabalável sob pressão",
-        "Prospera em ambientes de alta energia",
-        "Limites emocionais fortes",
-        "Campeão de multitarefas"
-      ],
-      "tips": [
-        "Pratique empatia com pessoas sensíveis",
-        "Experimente mindfulness para captar sutilezas",
-        "Não minimize a sobrecarga dos outros"
-      ],
-      "compatible": [
-        "Onda Fluente",
-        "Borboleta Delicada"
-      ]
-    },
-    "breeze": {
-      "name": "🌿 Brisa Suave",
-      "desc": "Você equilibra resiliência e percepção com perfeição. Nota os detalhes sem ficar sobrecarregado.",
-      "ratio": "Estimulação 60% : Calma 40%",
-      "traits": [
-        "Adapta-se a qualquer ambiente",
-        "Boa regulação emocional",
-        "Capta sinais sutis naturalmente",
-        "Resposta flexível ao estresse"
-      ],
-      "tips": [
-        "Reserve momentos de tranquilidade de vez em quando",
-        "Use sua percepção como um superpoder social",
-        "Confie na sua intuição crescente"
-      ],
-      "compatible": [
-        "Rocha Firme",
-        "Onda Fluente"
-      ]
-    },
-    "wave": {
-      "name": "🌊 Onda Fluente",
-      "desc": "Sua sensibilidade é seu superpoder! Você lê ambientes, sente a música profundamente e se conecta com os outros em um nível profundo.",
-      "ratio": "Estimulação 40% : Calma 60%",
-      "traits": [
-        "Alta inteligência emocional",
-        "Profunda apreciação pela arte e beleza",
-        "Excelente intuição",
-        "Rico mundo interior"
-      ],
-      "tips": [
-        "Reserve tempo sozinho todos os dias",
-        "Aprenda técnicas de ancoragem",
-        "Canalize sua sensibilidade em criatividade"
-      ],
-      "compatible": [
-        "Brisa Suave",
-        "Borboleta Delicada"
-      ]
-    },
-    "butterfly": {
-      "name": "🦋 Borboleta Delicada",
-      "desc": "Você experimenta o mundo em 4K! Seus sentidos finamente calibrados detectam o que outros perdem — isso é um dom, não um defeito.",
-      "ratio": "Estimulação 25% : Calma 75%",
-      "traits": [
-        "Detecta microexpressões",
-        "Processamento emocional profundo",
-        "Altamente criativo e imaginativo",
-        "Precisa de recarga intencional"
-      ],
-      "tips": [
-        "Sempre carregue fones com cancelamento de ruído",
-        "Crie um refúgio de calma na sua casa",
-        "Use a técnica de ancoragem 5-4-3-2-1"
-      ],
-      "compatible": [
-        "Onda Fluente",
-        "Ultra Antena"
-      ]
-    },
-    "antenna": {
-      "name": "🧠 Ultra Antena",
-      "desc": "Você é um verdadeiro HSP — captando cada sinal. Seu cérebro processa TODOS os estímulos profundamente, te dando uma percepção extraordinária.",
-      "ratio": "Estimulação 15% : Calma 85%",
-      "traits": [
-        "Ultra perceptivo a todos os sentidos",
-        "Absorve as emoções alheias profundamente",
-        "Requer muito tempo sozinho",
-        "Profundidade de pensamento excepcional"
-      ],
-      "tips": [
-        "2+ horas sozinho diariamente (essencial!)",
-        "Crie zonas livres de estímulos",
-        "Pratique dizer 'não' — autoproteção vem primeiro"
-      ],
-      "compatible": [
-        "Borboleta Delicada",
-        "Ultra Antena"
-      ]
-    }
-  },
   "result": {
-    "profileTitle": "Seu Perfil de Sensibilidade",
-    "radarTitle": "Análise Sentido por Sentido",
-    "overallLevel": "Sensibilidade Geral",
-    "stimRatio": "Proporção Ideal de Estimulação",
-    "traits": "Traços Principais",
-    "tips": "Ações Recomendadas",
-    "compatible": "Tipos Mais Compatíveis",
-    "retake": "🧠 Refazer Teste",
-    "moreTests": "Explorar mais testes",
-    "percentileStat": "Apenas <strong>{percent}%</strong> dos participantes compartilham seu tipo de sensibilidade",
-    "nextStepLabel": "Proximo teste recomendado",
-    "nextStepDesc": "Abra o melhor follow-up para o seu resultado atual e continue o fluxo.",
-    "nextStepCta": "Abrir proximo teste",
-    "jumpToMore": "Ver mais opcoes"
+    "profileTitle": "Resumo das suas respostas",
+    "radarTitle": "Rever escolhas por categoria",
+    "overallLevel": "Situações continuadas",
+    "boundary": "Este resumo local reflete apenas suas escolhas em situações imaginadas. Não determina HSP nem compara você com outras pessoas.",
+    "retake": "Refazer reflexão privada",
+    "moreTests": "Opcional: outras atividades"
   },
   "share": {
-    "twitter": "𝕏 Compartilhar",
     "copyUrl": "📋 Copiar Link",
-    "copied": "Copiado!",
-    "twitterText": "Minha sensibilidade HSP: {percent}%! Tipo: {type} 🧠 Quão sensível você é?",
-    "saveResult": "Salvar resultado"
+    "copied": "Copiado!"
   },
   "related": {
     "stressCheck": "Verificação de Estresse",
@@ -281,18 +156,5 @@
     "traumaResponse": "Resposta ao trauma",
     "innerChild": "Teste da crian?a interior",
     "attachmentStyle": "Estilo de Apego"
-  },
-  "about": {
-    "toggle": "Saiba mais sobre HSP",
-    "whatIsTitle": "O que é uma Pessoa Altamente Sensível?",
-    "whatIsDesc": "Uma Pessoa Altamente Sensível (PAS/HSP) possui uma sensibilidade elevada do sistema nervoso central a estímulos. Cunhado pela Dra. Elaine Aron nos anos 90, esse traço afeta 15-20% da população e é encontrado em mais de 100 espécies.",
-    "whatIs1": "HSPs processam informações com mais profundidade",
-    "whatIs2": "A sensibilidade é um traço inato, não um transtorno",
-    "whatIs3": "É igualmente comum em homens e mulheres",
-    "signsTitle": "Sinais de que você pode ser HSP",
-    "sign1": "Você se sente sobrecarregado por barulhos altos, luzes fortes ou cheiros intensos",
-    "sign2": "Você precisa de tempo sozinho para recarregar após eventos sociais",
-    "sign3": "Você é profundamente tocado pela arte, música ou natureza",
-    "sign4": "Você nota mudanças sutis que outros não percebem"
   }
 }

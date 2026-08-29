@@ -31,6 +31,9 @@ button, select { font: inherit; }
     top: 8px;
     left: 8px;
     z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     padding: 10px 14px;
     color: #111827;
     background: #fff;
@@ -60,6 +63,9 @@ button, select { font: inherit; }
     padding: 18px clamp(16px, 4vw, 28px);
 }
 .back-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     color: #c4b5fd;
     font-weight: 800;
     text-decoration: none;
@@ -119,8 +125,7 @@ main {
     font-weight: 800;
 }
 
-.card,
-.ad-card {
+.card {
     min-width: 0;
     padding: clamp(19px, 5vw, 30px);
     background: linear-gradient(145deg, rgba(32,45,71,0.94), rgba(24,34,56,0.96));
@@ -187,21 +192,6 @@ a:focus-visible {
     border: 1px solid rgba(196,181,253,0.25);
 }
 .setup-card > .primary-button { width: 100%; }
-
-.ad-card {
-    min-height: 120px;
-    overflow: hidden;
-    text-align: center;
-}
-.ad-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #7f8ca3;
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-.ad-card ins { max-width: 100%; overflow: hidden; }
 
 .result-card { border-color: rgba(74,222,128,0.32); }
 .result-heading {
@@ -273,6 +263,13 @@ footer {
     color: var(--muted);
     font-size: 0.84rem;
 }
+footer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+}
 [hidden] { display: none !important; }
 
 @media (max-width: 640px) {
@@ -291,7 +288,7 @@ footer {
 
 @media print {
     body { color: #111; background: #fff; }
-    .topbar, .hero, .setup-card, .ad-card, .boundary, .next-card, footer, .timer-actions, .output-actions { display: none !important; }
+    .topbar, .hero, .setup-card, .boundary, .next-card, footer, .timer-actions, .output-actions { display: none !important; }
     main { width: 100%; padding: 0; }
     .result-card { display: block !important; color: #111; background: #fff; border: 1px solid #999; box-shadow: none; }
     .step-copy, .result-card h2 { color: #111; }

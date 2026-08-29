@@ -1,36 +1,24 @@
 {
   "meta": {
-    "title": "HSP Testi - Yüksek Hassasiyetli misin? Ücretsiz",
-    "description": "Ücretsiz HSP testini çöz ve yüksek hassasiyetli bir kişi olup olmadığını öğren. 5 duyuda 20 soruya cevap ver, hassasiyet profilini hemen gör."
+    "title": "HSP duyusal tercih kontrolü - özel öz değerlendirme",
+    "description": "Beş hayali duyusal kategori üzerinde düşünün ve pratik bir sonraki adım seçin. Bu bir tanı veya doğrulanmış ölçek değildir."
   },
   "a11y": {
     "skip": "Ana içeriğe geç"
   },
   "app": {
-    "title": "HSP Testi",
-    "h1": "HSP Testi - Yüksek Hassasiyetli Kişi Öz Değerlendirme",
-    "subtitle": "Duyusal Aşırı Yüklenme Simülatörü",
-    "heroTitle": "Duyuların Ne Kadarını Kaldırabilir?",
-    "heroDesc": "Artan yoğunlukla 5 duyusal kategoriden geç. Sınırına ulaştığında pes et — eşiğin tipini ortaya çıkarır.",
-    "badge": "Aşırı Yüklenme Testi",
-    "info1": "5 Duyu",
+    "h1": "HSP duyusal tercih kontrolü",
+    "subtitle": "Özel öz değerlendirme · tanı değildir",
+    "heroDesc": "Beş hayali duyusal kategoride duracağınız noktayı seçin. Özet yalnızca bu seçimleri açıklar ve HSP durumunu belirlemez.",
+    "badge": "5 hayali kategori",
+    "info1": "5 Kategori",
     "info2": "~3 Dk",
-    "info3": "Gerçek Zamanlı",
-    "disclaimer": "Sadece eğlence amaçlıdır. Klinik teşhis değildir.",
-    "start": "🧠 Hassasiyet Testini Başlat",
+    "info3": "Yerel Sonuç",
+    "disclaimer": "Tanı, yüzdelik, nüfus karşılaştırması veya hesap yoktur.",
+    "start": "Özel kontrolü başlat",
     "loading": "Yükleniyor..."
   },
-  "intro": {
-    "typesTitle": "5 Hassasiyet Tipi",
-    "typeRock": "Kaya Gibi Sağlam",
-    "typeBreeze": "Hafif Esinti",
-    "typeWave": "Akan Dalga",
-    "typeButterfly": "Zarif Kelebek",
-    "typeAntenna": "Ultra Anten"
-  },
   "test": {
-    "sense": "Duyu",
-    "intensity": "Yoğunluk",
     "canHandle": "✓ Bunu Kaldırabilirim",
     "myLimit": "✗ Bu Benim Sınırım",
     "levels": [
@@ -142,130 +130,17 @@
       }
     }
   },
-  "types": {
-    "rock": {
-      "name": "🪨 Kaya Gibi Sağlam",
-      "desc": "Neredeyse hiçbir şey seni sarsamaz! Uyarılarla gelişen olağanüstü dayanıklı bir sinir sistemine sahipsin.",
-      "ratio": "Uyarım 80% : Sakinlik 20%",
-      "traits": [
-        "Baskı altında sarsılmaz",
-        "Yüksek enerjili ortamlarda gelişir",
-        "Güçlü duygusal sınırlar",
-        "Çoklu görev şampiyonu"
-      ],
-      "tips": [
-        "Hassas insanlara karşı empati pratiği yap",
-        "İncelikleri fark etmek için mindfulness dene",
-        "Başkalarının bunalımını küçümseme"
-      ],
-      "compatible": [
-        "Akan Dalga",
-        "Zarif Kelebek"
-      ]
-    },
-    "breeze": {
-      "name": "🌿 Hafif Esinti",
-      "desc": "Dayanıklılık ve farkındalığı mükemmel dengeliyorsun. Detayları fark edip bunalmadan yaşıyorsun.",
-      "ratio": "Uyarım 60% : Sakinlik 40%",
-      "traits": [
-        "Her ortama uyum sağlar",
-        "İyi duygu düzenlemesi",
-        "İnce ipuçlarını doğal olarak fark eder",
-        "Esnek stres tepkisi"
-      ],
-      "tips": [
-        "Ara sıra sessiz vakit ayır",
-        "Farkındalığını sosyal bir süper güç olarak kullan",
-        "Gelişen sezgilerine güven"
-      ],
-      "compatible": [
-        "Kaya Gibi Sağlam",
-        "Akan Dalga"
-      ]
-    },
-    "wave": {
-      "name": "🌊 Akan Dalga",
-      "desc": "Hassasiyetin senin süper gücün! Ortamı okur, müziği derinden hisseder ve insanlarla derin bir seviyede bağ kurarsın.",
-      "ratio": "Uyarım 40% : Sakinlik 60%",
-      "traits": [
-        "Yüksek duygusal zekâ",
-        "Sanat ve güzelliğe derin takdir",
-        "Mükemmel sezgi",
-        "Zengin iç dünya"
-      ],
-      "tips": [
-        "Her gün yalnız vakit planla",
-        "Topraklama teknikleri öğren",
-        "Hassasiyetini yaratıcılığa yönlendir"
-      ],
-      "compatible": [
-        "Hafif Esinti",
-        "Zarif Kelebek"
-      ]
-    },
-    "butterfly": {
-      "name": "🦋 Zarif Kelebek",
-      "desc": "Dünyayı 4K çözünürlükte deneyimliyorsun! İnce ayarlı duyuların başkalarının kaçırdığını yakalar — bu bir armağan, kusur değil.",
-      "ratio": "Uyarım 25% : Sakinlik 75%",
-      "traits": [
-        "Mikro ifadeleri algılar",
-        "Derin duygusal işleme",
-        "Son derece yaratıcı ve hayal gücü yüksek",
-        "Bilinçli şarj olma ihtiyacı"
-      ],
-      "tips": [
-        "Gürültü önleyici kulaklık taşı",
-        "Evde sakin bir sığınak oluştur",
-        "5-4-3-2-1 topraklama tekniğini kullan"
-      ],
-      "compatible": [
-        "Akan Dalga",
-        "Ultra Anten"
-      ]
-    },
-    "antenna": {
-      "name": "🧠 Ultra Anten",
-      "desc": "Gerçek bir HSP'sin — her sinyali yakalıyorsun. Beynin TÜM uyaranları derinden işler ve sana olağanüstü bir algı verir.",
-      "ratio": "Uyarım 15% : Sakinlik 85%",
-      "traits": [
-        "Tüm duyulara ultra duyarlı",
-        "Başkalarının duygularını derinden emer",
-        "Önemli ölçüde yalnız zaman gerektirir",
-        "Olağanüstü düşünce derinliği"
-      ],
-      "tips": [
-        "Günde 2+ saat yalnız vakit (zorunlu!)",
-        "Uyarımsız alanlar oluştur",
-        "'Hayır' demeyi pratik et — önce kendini koru"
-      ],
-      "compatible": [
-        "Zarif Kelebek",
-        "Ultra Anten"
-      ]
-    }
-  },
   "result": {
-    "profileTitle": "Hassasiyet Profilin",
-    "radarTitle": "Duyu Bazlı Dağılım",
-    "overallLevel": "Genel Hassasiyet",
-    "stimRatio": "İdeal Uyarım Oranı",
-    "traits": "Temel Özellikler",
-    "tips": "Önerilen Adımlar",
-    "compatible": "En Uyumlu Tipler",
-    "retake": "🧠 Testi Tekrarla",
-    "moreTests": "Daha fazla test keşfet",
-    "percentileStat": "Katılımcıların sadece <strong>{percent}%</strong>'i senin hassasiyet tipine sahip",
-    "nextStepLabel": "Sonraki test onerisi",
-    "nextStepDesc": "Su anki sonucun icin en guclu devam testini ac ve akisi surdur.",
-    "nextStepCta": "Devam testini ac",
-    "jumpToMore": "Daha fazla oneriyi gor"
+    "profileTitle": "Yanıt özeti",
+    "radarTitle": "Seçimleri kategoriye göre incele",
+    "overallLevel": "Devam edilen durumlar",
+    "boundary": "Bu yerel özet yalnızca hayali durumlardaki seçimlerinizi yansıtır. HSP durumunu belirlemez ve sizi başkalarıyla karşılaştırmaz.",
+    "retake": "Özel kontrolü tekrarla",
+    "moreTests": "İsteğe bağlı: diğer etkinlikler"
   },
   "share": {
-    "twitter": "𝕏 Paylaş",
     "copyUrl": "📋 Link Kopyala",
-    "copied": "Kopyalandı!",
-    "twitterText": "HSP hassasiyetim: {percent}%! Tip: {type} 🧠 Sen ne kadar hassassın?",
-    "saveResult": "Sonucu kaydet"
+    "copied": "Kopyalandı!"
   },
   "related": {
     "stressCheck": "Stres Kontrolü",
@@ -281,18 +156,5 @@
     "traumaResponse": "Travma tepkisi",
     "innerChild": "?? ?ocuk testi",
     "attachmentStyle": "Bağlanma Stili"
-  },
-  "about": {
-    "toggle": "HSP hakkında daha fazla bilgi",
-    "whatIsTitle": "Yüksek Hassasiyetli Kişi nedir?",
-    "whatIsDesc": "Yüksek Hassasiyetli Kişi (HSP), uyaranlara karşı yüksek merkezi sinir sistemi duyarlılığına sahip kişidir. 1990'larda Dr. Elaine Aron tarafından tanımlanan bu özellik nüfusun %15-20'sini etkiler ve 100'den fazla türde gözlemlenmiştir.",
-    "whatIs1": "HSP'ler bilgiyi diğerlerinden daha derin işler",
-    "whatIs2": "Hassasiyet doğuştan gelen bir özelliktir, bir bozukluk değildir",
-    "whatIs3": "Erkek ve kadınlarda eşit oranda görülür",
-    "signsTitle": "HSP olabileceğinin işaretleri",
-    "sign1": "Yüksek sesler, parlak ışıklar veya güçlü kokular seni bunaltır",
-    "sign2": "Sosyal etkinliklerden sonra yalnız kalma zamanına ihtiyaç duyarsın",
-    "sign3": "Sanat, müzik veya doğa seni derinden etkiler",
-    "sign4": "Başkalarının kaçırdığı ince değişiklikleri fark edersin"
   }
 }

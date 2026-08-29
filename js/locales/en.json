@@ -1,36 +1,24 @@
 {
   "meta": {
-    "title": "HSP Test - Free Highly Sensitive Person Self-Assessment Online",
-    "description": "Take the free online HSP test to discover if you are a highly sensitive person. Answer 20 questions across 5 senses and get your sensitivity profile instantly."
+    "title": "HSP Sensory Preferences Check - Private Self-Reflection",
+    "description": "Reflect on five imagined sensory prompt categories and choose a practical next step. This HSP-themed check is not a diagnosis or validated scale."
   },
   "a11y": {
     "skip": "Skip to main content"
   },
   "app": {
-    "title": "HSP Test",
-    "h1": "HSP Test - Highly Sensitive Person Self-Assessment",
-    "subtitle": "Sensory Overload Simulator",
-    "heroTitle": "How Much Can Your Senses Handle?",
-    "heroDesc": "Push through 5 sensory categories with escalating intensity. Tap out when you hit your limit — your threshold reveals your type.",
-    "badge": "Overload Test",
-    "info1": "5 Senses",
+    "h1": "HSP Sensory Preferences Check",
+    "subtitle": "Private self-reflection · not a diagnosis",
+    "heroDesc": "Choose where you would stop in five imagined sensory categories. The summary describes only these choices and does not determine whether you are an HSP.",
+    "badge": "5 imagined prompt categories",
+    "info1": "5 Categories",
     "info2": "~3 Min",
-    "info3": "Real-Time",
-    "disclaimer": "For entertainment only. Not a clinical diagnosis.",
-    "start": "🧠 Start Sensitivity Test",
+    "info3": "Local Result",
+    "disclaimer": "No diagnosis, percentile, population comparison, or account.",
+    "start": "Start private check",
     "loading": "Loading..."
   },
-  "intro": {
-    "typesTitle": "5 Sensitivity Types",
-    "typeRock": "Rock Solid",
-    "typeBreeze": "Gentle Breeze",
-    "typeWave": "Flowing Wave",
-    "typeButterfly": "Delicate Butterfly",
-    "typeAntenna": "Ultra Antenna"
-  },
   "test": {
-    "sense": "Sense",
-    "intensity": "Intensity",
     "canHandle": "✓ I Can Handle This",
     "myLimit": "✗ That's My Limit",
     "levels": [
@@ -142,123 +130,13 @@
       }
     }
   },
-  "types": {
-    "rock": {
-      "name": "🪨 Rock Solid",
-      "desc": "Barely anything rattles you! You have a remarkably resilient nervous system that thrives under stimulation.",
-      "ratio": "Stimulation 80% : Calm 20%",
-      "traits": [
-        "Unshakable under pressure",
-        "Thrives in high-energy environments",
-        "Strong emotional boundaries",
-        "Multitasking champion"
-      ],
-      "tips": [
-        "Practice empathy for sensitive people",
-        "Try mindfulness to tune into subtleties",
-        "Don't dismiss others' overwhelm"
-      ],
-      "compatible": [
-        "Flowing Wave",
-        "Delicate Butterfly"
-      ]
-    },
-    "breeze": {
-      "name": "🌿 Gentle Breeze",
-      "desc": "You balance resilience and awareness beautifully. You notice the details without getting overwhelmed.",
-      "ratio": "Stimulation 60% : Calm 40%",
-      "traits": [
-        "Adaptable to any environment",
-        "Good emotional regulation",
-        "Notices subtle cues naturally",
-        "Flexible stress response"
-      ],
-      "tips": [
-        "Build in occasional quiet time",
-        "Use your awareness as a social superpower",
-        "Trust your growing intuition"
-      ],
-      "compatible": [
-        "Rock Solid",
-        "Flowing Wave"
-      ]
-    },
-    "wave": {
-      "name": "🌊 Flowing Wave",
-      "desc": "Your sensitivity is your superpower! You read rooms, feel music deeply, and connect with others on a profound level.",
-      "ratio": "Stimulation 40% : Calm 60%",
-      "traits": [
-        "High emotional intelligence",
-        "Deep appreciation for art & beauty",
-        "Excellent intuition",
-        "Rich inner world"
-      ],
-      "tips": [
-        "Schedule daily alone time",
-        "Learn grounding techniques",
-        "Channel sensitivity into creativity"
-      ],
-      "compatible": [
-        "Gentle Breeze",
-        "Delicate Butterfly"
-      ]
-    },
-    "butterfly": {
-      "name": "🦋 Delicate Butterfly",
-      "desc": "You experience the world in 4K! Your finely tuned senses detect what others miss — this is a gift, not a flaw.",
-      "ratio": "Stimulation 25% : Calm 75%",
-      "traits": [
-        "Detects micro-expressions",
-        "Deep emotional processing",
-        "Highly creative & imaginative",
-        "Needs intentional recharging"
-      ],
-      "tips": [
-        "Carry noise-canceling earphones",
-        "Create a calm home sanctuary",
-        "Use 5-4-3-2-1 grounding technique"
-      ],
-      "compatible": [
-        "Flowing Wave",
-        "Ultra Antenna"
-      ]
-    },
-    "antenna": {
-      "name": "🧠 Ultra Antenna",
-      "desc": "You're a true HSP — picking up every signal. Your brain processes ALL stimuli deeply, giving you extraordinary perception.",
-      "ratio": "Stimulation 15% : Calm 85%",
-      "traits": [
-        "Ultra-perceptive to all senses",
-        "Absorbs others' emotions deeply",
-        "Requires significant alone time",
-        "Exceptional depth of thought"
-      ],
-      "tips": [
-        "2+ hours alone time daily (essential!)",
-        "Create stimulus-free zones",
-        "Practice saying 'no' — self-protection first"
-      ],
-      "compatible": [
-        "Delicate Butterfly",
-        "Ultra Antenna"
-      ]
-    }
-  },
   "result": {
-    "profileTitle": "Your Sensitivity Profile",
-    "radarTitle": "Sense-by-Sense Breakdown",
-    "overallLevel": "Overall Sensitivity",
-    "stimRatio": "Ideal Stimulation Ratio",
-    "traits": "Key Traits",
-    "tips": "Recommended Actions",
-    "compatible": "Best Match Types",
-    "retake": "🧠 Retake Test",
-    "moreTests": "Explore More Tests",
-    "percentileStat": "Only <strong>{percent}%</strong> of participants share your sensitivity type",
-    "nextStepLabel": "Best Next Test",
-    "nextStepDesc": "Open the strongest follow-up for your current score and keep the momentum going.",
-    "nextStepCta": "Open Follow-up",
-    "jumpToMore": "See All Follow-ups"
+    "profileTitle": "Your prompt response summary",
+    "radarTitle": "Review choices by prompt category",
+    "overallLevel": "Prompts continued",
+    "boundary": "This local summary reflects only your choices in these imagined prompts. It is not an HSP determination or a comparison with other people.",
+    "retake": "Repeat private check",
+    "moreTests": "Optional: explore other activities"
   },
   "related": {
     "stressCheck": "Stress Check",
@@ -275,24 +153,8 @@
     "traumaResponse": "Trauma Response",
     "innerChild": "Inner Child Test"
   },
-  "about": {
-    "toggle": "Learn More About HSP",
-    "whatIsTitle": "What is a Highly Sensitive Person?",
-    "whatIsDesc": "A Highly Sensitive Person (HSP) has a heightened central nervous system sensitivity to stimuli. Coined by Dr. Elaine Aron in the 1990s, this trait affects 15-20% of the population and is found in over 100 species.",
-    "whatIs1": "HSPs process information more deeply than others",
-    "whatIs2": "Sensitivity is an innate trait, not a disorder",
-    "whatIs3": "It is equally common in men and women",
-    "signsTitle": "Signs You Might Be an HSP",
-    "sign1": "You feel overwhelmed by loud noises, bright lights, or strong smells",
-    "sign2": "You need alone time to recharge after social events",
-    "sign3": "You are deeply moved by art, music, or nature",
-    "sign4": "You notice subtle changes that others miss"
-  },
   "share": {
-    "twitter": "𝕏 Share",
     "copyUrl": "📋 Copy Link",
-    "copied": "Copied!",
-    "twitterText": "My HSP sensitivity: {percent}%! Type: {type} 🧠 How sensitive are you?",
-    "saveResult": "Save Result"
+    "copied": "Copied!"
   }
 }

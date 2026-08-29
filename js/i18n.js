@@ -3,6 +3,7 @@ class I18n {
         this.translations = {};
         this.supportedLanguages = ['ko', 'en', 'ja', 'es', 'pt', 'zh', 'id', 'tr', 'de', 'fr', 'hi', 'ru'];
         this.currentLang = this.detectLanguage();
+        this.languageRequestId = 0;
     }
 
     detectLanguage() {
@@ -26,24 +27,26 @@ class I18n {
             this.translations[lang] = await response.json();
             return true;
         } catch (error) {
-            if (lang !== 'en') return this.loadTranslations('en');
+            if (lang !== 'en') {
+                if (!this.translations.en) await this.loadTranslations('en');
+                if (this.translations.en) this.translations[lang] = this.translations.en;
+                return false;
+            }
             return false;
         }
     }
 
     t(key) {
         const keys = key.split('.');
-        let value = this.translations[this.currentLang];
-
-        for (const segment of keys) {
-            if (value && value[segment] !== undefined) {
+        const resolve = (bundle) => {
+            let value = bundle;
+            for (const segment of keys) {
+                if (!value || value[segment] === undefined) return undefined;
                 value = value[segment];
-            } else {
-                return key;
             }
-        }
-
-        return value;
+            return value;
+        };
+        return resolve(this.translations[this.currentLang]) ?? resolve(this.translations.en) ?? key;
     }
 
     getSeoHref(lang) {
@@ -85,7 +88,9 @@ class I18n {
 
     async setLanguage(lang) {
         if (!this.supportedLanguages.includes(lang)) return false;
+        const requestId = ++this.languageRequestId;
         if (!this.translations[lang]) await this.loadTranslations(lang);
+        if (requestId !== this.languageRequestId) return false;
 
         this.currentLang = lang;
         localStorage.setItem('app_language', lang);
