@@ -582,12 +582,19 @@
     });
 
     relatedGrid?.querySelectorAll('.related-card').forEach((card) => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            const relatedKey = card.getAttribute('data-related-key') || '';
             trackEvent('hsp_related_click', {
                 app_name: 'hsp-test',
                 event_category: 'hsp_test',
-                related_key: card.getAttribute('data-related-key') || ''
+                related_key: relatedKey
             });
+            const href = card.getAttribute('href');
+            if (href && !href.startsWith('http') && !href.includes('?')) {
+                const currentLang = window.i18n?.getCurrentLanguage?.() || 'en';
+                e.preventDefault();
+                location.href = `${href}?lang=${encodeURIComponent(currentLang)}&source=hsp_related`;
+            }
         });
     });
 
