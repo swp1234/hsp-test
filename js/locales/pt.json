@@ -155,6 +155,8 @@
     "shadowWork": "Quiz de sombra",
     "traumaResponse": "Resposta ao trauma",
     "innerChild": "Teste da crian?a interior",
-    "attachmentStyle": "Estilo de Apego"
+    "attachmentStyle": "Estilo de Apego",
+    "futureSelf": "Teste do Eu Futuro",
+    "brainType": "Teste de tipo cerebral"
   }
 }

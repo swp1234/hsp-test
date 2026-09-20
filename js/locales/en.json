@@ -151,7 +151,9 @@
     "dopamineType": "Dopamine Type",
     "shadowWork": "Shadow Work Quiz",
     "traumaResponse": "Trauma Response",
-    "innerChild": "Inner Child Test"
+    "innerChild": "Inner Child Test",
+    "futureSelf": "Future Self",
+    "brainType": "Brain Type Test"
   },
   "share": {
     "copyUrl": "📋 Copy Link",

@@ -155,6 +155,8 @@
     "shadowWork": "Shadow-Work-Quiz",
     "traumaResponse": "Trauma-Reaktion",
     "innerChild": "Inneres-Kind-Test",
-    "attachmentStyle": "Bindungsstil"
+    "attachmentStyle": "Bindungsstil",
+    "futureSelf": "Zukunfts-Ich Test",
+    "brainType": "Gehirntyp-Test"
   }
 }

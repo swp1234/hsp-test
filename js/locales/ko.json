@@ -151,7 +151,9 @@
     "dopamineType": "도파민 유형",
     "shadowWork": "??? ?? ??",
     "traumaResponse": "???? ??",
-    "innerChild": "?? ??? ???"
+    "innerChild": "?? ??? ???",
+    "futureSelf": "미래의 나 테스트",
+    "brainType": "뇌 유형 테스트"
   },
   "share": {
     "copyUrl": "📋 링크 복사",
