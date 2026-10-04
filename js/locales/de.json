@@ -158,5 +158,33 @@
     "attachmentStyle": "Bindungsstil",
     "futureSelf": "Zukunfts-Ich Test",
     "brainType": "Gehirntyp-Test"
+  },
+  "guide": {
+    "summaryTitle": "About the HSP Self-Assessment & Sensory Sensitivity",
+    "introP1": "This activity presents staged, imagined prompts in five categories. Your summary reflects where you chose to stop in this session; it is not a validated questionnaire, diagnosis, percentile, or estimate of how you compare with other people.",
+    "introNote": "No category choice, score, or result band is sent to analytics. If sensory experiences are severe, sudden, persistent, unusual, or unsafe, seek appropriate professional or urgent help.",
+    "methodologyTitle": "Sensory Processing Sensitivity (SPS) Framework",
+    "methodologyDesc": "Sensory-Processing Sensitivity (SPS) is an innate behavioral trait characterized by greater depth of information processing, increased emotional reactivity, high sensory awareness, and ease of overstimulation (the DOES model: Depth of processing, Overstimulation, Emotional reactivity/empathy, Sensing subtleties). This self-reflection explores sensory tolerance across 5 common domains: Auditory, Visual, Tactile, Emotional, and Social load.",
+    "bandsTitle": "Understanding Sensory Processing Bands",
+    "bandLowTitle": "Moderate / Low Sensitivity:",
+    "bandLowDesc": "Higher sensory tolerance threshold. Able to filter background distractions and bustling environments with lower autonomic fatigue.",
+    "bandMediumTitle": "Medium Sensitivity:",
+    "bandMediumDesc": "Balanced sensory reception. Functions well in typical environments, but benefits from intentional quiet zones during intense visual or emotional stimuli.",
+    "bandHighTitle": "High Sensory Sensitivity:",
+    "bandHighDesc": "Heightened nervous system responsiveness. Deeply attuned to subtle environmental shifts, with an earlier threshold for sensory saturation and overload.",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1Q": "Q: What is a Highly Sensitive Person (HSP)?",
+    "faq1A": "A: An individual possessing the trait of Sensory-Processing Sensitivity (SPS), estimated in research to represent roughly 15–20% of the population across many animal species.",
+    "faq2Q": "Q: Is being an HSP a medical disorder or diagnosis?",
+    "faq2A": "A: No. It is a normal personality and neurobiological variation, not a medical condition, pathology, or disorder listed in the DSM or ICD.",
+    "faq3Q": "Q: How does sensory overload affect daily focus?",
+    "faq3A": "A: Prolonged exposure to intense stimuli (loud noises, fluorescent lighting, emotional conflict) taxes working memory and energy reserves, necessitating quiet downtime to recalibrate.",
+    "faq4Q": "Q: How can I quickly decompress when overwhelmed?",
+    "faq4A": "A: Use our 5-minute sensory reset card, step into a dimly lit quiet space, put on noise-canceling headphones, and practice slow diaphragmatic breathing.",
+    "faq5Q": "Q: Are my responses stored or tracked?",
+    "faq5A": "A: No. All answers are processed exclusively in your local browser runtime. Zero responses, sensory limits, or personal identifiers are stored or transmitted.",
+    "referencesTitle": "References & Scientific Research",
+    "reviewDate": "Editorial Review: October 2026",
+    "reviewTeam": "DopaBrain Behavioral Science & Health Team"
   }
 }
