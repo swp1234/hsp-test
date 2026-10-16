@@ -153,7 +153,8 @@
     "traumaResponse": "Trauma Response",
     "innerChild": "Inner Child Test",
     "futureSelf": "Future Self",
-    "brainType": "Brain Type Test"
+    "brainType": "Brain Type Test",
+    "animalPersonality": "Animal Personality"
   },
   "share": {
     "copyUrl": "📋 Copy Link",
