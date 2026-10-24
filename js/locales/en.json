@@ -136,7 +136,8 @@
     "overallLevel": "Prompts continued",
     "boundary": "This local summary reflects only your choices in these imagined prompts. It is not an HSP determination or a comparison with other people.",
     "retake": "Repeat private check",
-    "moreTests": "Optional: explore other activities"
+    "moreTests": "Optional: explore other activities",
+    "recommendedNext": "Recommended Next Step"
   },
   "related": {
     "stressCheck": "Stress Check",

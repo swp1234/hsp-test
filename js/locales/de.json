@@ -136,7 +136,8 @@
     "overallLevel": "Fortgesetzte Situationen",
     "boundary": "Diese lokale Zusammenfassung zeigt nur deine Auswahl in vorgestellten Situationen. Sie bestimmt keinen HSP-Status und vergleicht dich nicht mit anderen.",
     "retake": "Private Reflexion wiederholen",
-    "moreTests": "Optional: weitere Aktivitäten"
+    "moreTests": "Optional: weitere Aktivitäten",
+    "recommendedNext": "Empfohlener nächster Schritt"
   },
   "share": {
     "copyUrl": "📋 Link kopieren",

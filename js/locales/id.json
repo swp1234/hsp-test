@@ -136,7 +136,8 @@
     "overallLevel": "Situasi yang dilanjutkan",
     "boundary": "Ringkasan lokal ini hanya mencerminkan pilihanmu dalam situasi bayangan. Ini tidak menentukan status HSP atau membandingkanmu dengan orang lain.",
     "retake": "Ulangi cek privat",
-    "moreTests": "Opsional: aktivitas lain"
+    "moreTests": "Opsional: aktivitas lain",
+    "recommendedNext": "Langkah Selanjutnya yang Disarankan"
   },
   "share": {
     "copyUrl": "📋 Salin Link",

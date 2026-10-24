@@ -136,7 +136,8 @@
     "overallLevel": "続けた場面",
     "boundary": "この端末内の要約は想像場面での選択だけを反映します。HSPの判定や他人との比較ではありません。",
     "retake": "非公開チェックをやり直す",
-    "moreTests": "任意：他の活動を見る"
+    "moreTests": "任意：他の活動を見る",
+    "recommendedNext": "おすすめの次のステップ"
   },
   "share": {
     "copyUrl": "📋 リンクをコピー",

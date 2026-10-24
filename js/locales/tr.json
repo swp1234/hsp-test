@@ -136,7 +136,8 @@
     "overallLevel": "Devam edilen durumlar",
     "boundary": "Bu yerel özet yalnızca hayali durumlardaki seçimlerinizi yansıtır. HSP durumunu belirlemez ve sizi başkalarıyla karşılaştırmaz.",
     "retake": "Özel kontrolü tekrarla",
-    "moreTests": "İsteğe bağlı: diğer etkinlikler"
+    "moreTests": "İsteğe bağlı: diğer etkinlikler",
+    "recommendedNext": "Önerilen Sonraki Adım"
   },
   "share": {
     "copyUrl": "📋 Link Kopyala",

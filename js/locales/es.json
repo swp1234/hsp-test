@@ -136,7 +136,8 @@
     "overallLevel": "Situaciones continuadas",
     "boundary": "Este resumen local refleja solo tus elecciones en situaciones imaginadas. No determina si eres HSP ni te compara con otras personas.",
     "retake": "Repetir chequeo privado",
-    "moreTests": "Opcional: otras actividades"
+    "moreTests": "Opcional: otras actividades",
+    "recommendedNext": "Siguiente paso recomendado"
   },
   "share": {
     "copyUrl": "📋 Copiar Enlace",

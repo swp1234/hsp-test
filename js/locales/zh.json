@@ -136,7 +136,8 @@
     "overallLevel": "继续进行的情境",
     "boundary": "此本地摘要只反映你在想象情境中的选择，不判断HSP身份，也不与他人比较。",
     "retake": "重新进行私密检查",
-    "moreTests": "可选：查看其他活动"
+    "moreTests": "可选：查看其他活动",
+    "recommendedNext": "推荐下一步"
   },
   "share": {
     "copyUrl": "📋 复制链接",

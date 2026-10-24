@@ -136,7 +136,8 @@
     "overallLevel": "Situations poursuivies",
     "boundary": "Ce résumé local reflète uniquement vos choix dans des situations imaginées. Il ne détermine pas un statut HSP et ne vous compare pas aux autres.",
     "retake": "Refaire la réflexion privée",
-    "moreTests": "Facultatif : autres activités"
+    "moreTests": "Facultatif : autres activités",
+    "recommendedNext": "Étape suivante recommandée"
   },
   "share": {
     "copyUrl": "📋 Copier le Lien",

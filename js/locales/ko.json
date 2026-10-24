@@ -136,7 +136,8 @@
     "overallLevel": "계속 진행한 상황",
     "boundary": "이 기기 내 요약은 가상 상황에서 고른 선택만 보여 줍니다. HSP 여부나 다른 사람과의 비교를 뜻하지 않습니다.",
     "retake": "비공개 확인 다시 하기",
-    "moreTests": "선택 사항: 다른 활동 보기"
+    "moreTests": "선택 사항: 다른 활동 보기",
+    "recommendedNext": "추천 다음 단계"
   },
   "related": {
     "stressCheck": "스트레스 체크",
