@@ -400,7 +400,6 @@
 
         drawRadar();
         updateSensoryResetCta();
-        updateNextStepCard(percent);
         showScreen('result');
         focusResultHeading();
 
@@ -502,9 +501,11 @@
                     renderCategory();
                 } else if (screens.result.classList.contains('active') && hasCurrentResult) {
                     showResult(false);
+                    updateRelatedLinks(nextLang);
                 } else {
                     updateIntroStickyLabel();
                 }
+                updateRelatedLinks(nextLang);
             });
         });
     }
@@ -582,6 +583,14 @@
         });
     });
 
+    function updateRelatedLinks(lang) {
+        const safeLang = encodeURIComponent(lang || 'en');
+        relatedGrid?.querySelectorAll('.related-card').forEach((card) => {
+            const baseHref = card.getAttribute('data-base-href') || card.getAttribute('href').split('?')[0];
+            card.href = `${baseHref}?lang=${safeLang}&start=1&source=hsp_related`;
+        });
+    }
+
     relatedGrid?.querySelectorAll('.related-card').forEach((card) => {
         card.addEventListener('click', (e) => {
             const relatedKey = card.getAttribute('data-related-key') || '';
@@ -591,10 +600,11 @@
                 related_key: relatedKey
             });
             const href = card.getAttribute('href');
-            if (href && !href.startsWith('http') && !href.includes('?')) {
+            if (href && !href.startsWith('http')) {
                 const currentLang = window.i18n?.getCurrentLanguage?.() || 'en';
+                const baseHref = card.getAttribute('data-base-href') || href.split('?')[0];
                 e.preventDefault();
-                location.href = `${href}?lang=${encodeURIComponent(currentLang)}&source=hsp_related`;
+                location.href = `${baseHref}?lang=${encodeURIComponent(currentLang)}&start=1&source=hsp_related`;
             }
         });
     });
@@ -602,6 +612,7 @@
     try {
         await window.i18n.loadTranslations(window.i18n.getCurrentLanguage());
         window.i18n.updateUI();
+        updateRelatedLinks(window.i18n.getCurrentLanguage());
         initTheme();
         initLanguageMenu();
     } catch (error) {
@@ -622,96 +633,4 @@
             scheduleIntroStickyStart();
         }
     }
-
-    function getRecommendedNextStep(percent) {
-        const lang = window.i18n?.getCurrentLanguage?.() || 'en';
-        const isHighlySensitive = percent < 50;
-
-        if (isHighlySensitive) {
-            const descs = {
-                ko: '높은 감각 민감성은 일상적인 긴장과 번아웃 위험을 높입니다. 현재의 전반적 스트레스 부하를 측정해보세요.',
-                ja: '高い感覚敏感さは日常の緊張やバーンアウトにつながりやすいです。現在の全体的なストレス負荷を測定しましょう。',
-                zh: '较高的感官敏感度极易导致日常身心疲惫。立即测试您当前的整体身心压力负荷。',
-                es: 'Una alta sensibilidad sensorial aumenta el riesgo de agotamiento. Mide tu nivel actual de estrés.',
-                fr: 'Une sensibilité sensorielle élevée augmente le risque de surmenage. Mesurez votre niveau de stress actuel.',
-                de: 'Hohe sensorische Sensibilität begünstigt Erschöpfung. Messen Sie Ihre aktuelle Stressbelastung.'
-            };
-            const ctas = {
-                ko: '스트레스 테스트 시작하기 →',
-                ja: 'ストレス診断を始める →',
-                zh: '开始压力自测 →',
-                es: 'Realizar test de estrés →',
-                fr: 'Commencer le test de stress →',
-                de: 'Stresstest starten →'
-            };
-            return {
-                key: 'stress-check',
-                path: '/stress-check/',
-                source: 'hsp_sensitive',
-                emoji: '🔴',
-                title: t('related.stressCheck') || 'Stress Check',
-                desc: descs[lang] || 'Sensory sensitivity increases vulnerability to burnout. Measure your current systemic stress load.',
-                ctaText: ctas[lang] || 'Take Stress Check →'
-            };
-        } else {
-            const descs = {
-                ko: '안정된 감각 조절력을 바탕으로, 일상의 선택과 장기적 목표를 정렬하는 미래 자아 진단입니다.',
-                ja: '安定した感覚調整力を活かし、日常の選択と長期目標を合わせる未来の自分診断です。',
-                zh: '基于稳定的感官调节力，探索日常选择与长远目标对齐的未来自我诊断。',
-                es: 'Con una base sensorial equilibrada, alinea tus decisiones diarias con tu visión de futuro.',
-                fr: 'Avec un équilibre sensoriel stable, alignez vos choix quotidiens avec votre moi futur.',
-                de: 'Richten Sie auf Basis stabiler Reizfilterung Ihre täglichen Entscheidungen zukunftssicher aus.'
-            };
-            const ctas = {
-                ko: '미래의 나 테스트 시작하기 →',
-                ja: '未来の自分診断を始める →',
-                zh: '开始未来自画像测试 →',
-                es: 'Explorar Yo Futuro →',
-                fr: 'Explorer mon Moi Futur →',
-                de: 'Zukunfts-Ich Test starten →'
-            };
-            return {
-                key: 'future-self',
-                path: '/future-self/',
-                source: 'hsp_resilient',
-                emoji: '🔮',
-                title: t('related.futureSelf') || 'Future Self',
-                desc: descs[lang] || 'With a steady sensory baseline, align your daily decisions with your long-term future self.',
-                ctaText: ctas[lang] || 'Explore Future Self →'
-            };
-        }
-    }
-
-    function updateNextStepCard(percent) {
-        const nextCard = document.getElementById('next-step-card');
-        const nextTitle = document.getElementById('next-step-title');
-        const nextDesc = document.getElementById('next-step-desc');
-        const nextEmoji = document.getElementById('next-step-emoji');
-        const nextCta = document.getElementById('next-step-cta');
-        const nextCtaText = document.getElementById('next-step-cta-text');
-        if (!nextCard || !nextTitle || !nextDesc || !nextEmoji || !nextCta || !nextCtaText) return;
-
-        const rec = getRecommendedNextStep(percent);
-        const lang = window.i18n?.getCurrentLanguage?.() || 'en';
-        nextTitle.textContent = rec.title;
-        nextDesc.textContent = rec.desc;
-        nextEmoji.textContent = rec.emoji;
-        nextCta.href = `${rec.path}?lang=${encodeURIComponent(lang)}&source=${rec.source}`;
-        nextCta.setAttribute('data-related-key', rec.key);
-        nextCtaText.textContent = rec.ctaText;
-
-        if (!nextCta.dataset.clickBound) {
-            nextCta.dataset.clickBound = '1';
-            nextCta.addEventListener('click', () => {
-                trackEvent('hsp_hero_cta_click', {
-                    app_name: 'hsp-test',
-                    event_category: 'hsp_test',
-                    target_key: rec.key,
-                    hsp_percent: percent,
-                    surface: 'result_hero_funnel'
-                });
-            });
-        }
-    }
-
 })();
