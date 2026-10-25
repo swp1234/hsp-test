@@ -159,7 +159,10 @@
     "attachmentStyle": "Style d'Attachement",
     "futureSelf": "Test du Moi Futur",
     "brainType": "Test de type cérébral",
-    "animalPersonality": "Animal Totem"
+    "animalPersonality": "Animal Totem",
+    "groundingTool": "Ancrage 5-4-3-2-1",
+    "cognitiveLoad": "Charge Cognitive",
+    "sensoryMap": "Carte de Charge Sensorielle"
   },
   "guide": {
     "summaryTitle": "About the HSP Self-Assessment & Sensory Sensitivity",

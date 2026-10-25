@@ -159,7 +159,10 @@
     "attachmentStyle": "लगाव शैली",
     "futureSelf": "भविष्य के मैं परीक्षा",
     "brainType": "मस्तिष्क प्रकार परीक्षण",
-    "animalPersonality": "पशु व्यक्तित्व परीक्षण"
+    "animalPersonality": "पशु व्यक्तित्व परीक्षण",
+    "groundingTool": "5-4-3-2-1 ग्राउंडिंग",
+    "cognitiveLoad": "संज्ञानात्मक भार",
+    "sensoryMap": "संवेदी भार मानचित्र"
   },
   "guide": {
     "summaryTitle": "About the HSP Self-Assessment & Sensory Sensitivity",

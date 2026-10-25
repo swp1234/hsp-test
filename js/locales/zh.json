@@ -159,7 +159,10 @@
     "attachmentStyle": "依恋类型",
     "futureSelf": "未来自我测试",
     "brainType": "大脑类型测试",
-    "animalPersonality": "动物性格测试"
+    "animalPersonality": "动物性格测试",
+    "groundingTool": "5-4-3-2-1 感官着陆",
+    "cognitiveLoad": "认知负荷计算器",
+    "sensoryMap": "感官负荷地图"
   },
   "guide": {
     "summaryTitle": "About the HSP Self-Assessment & Sensory Sensitivity",

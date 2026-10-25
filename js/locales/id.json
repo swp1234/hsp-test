@@ -159,7 +159,10 @@
     "attachmentStyle": "Gaya Kelekatan",
     "futureSelf": "Tes Diri Masa Depan",
     "brainType": "Tes Tipe Otak",
-    "animalPersonality": "Kepribadian Hewan"
+    "animalPersonality": "Kepribadian Hewan",
+    "groundingTool": "Grounding 5-4-3-2-1",
+    "cognitiveLoad": "Beban Kognitif",
+    "sensoryMap": "Peta Beban Sensorik"
   },
   "guide": {
     "summaryTitle": "About the HSP Self-Assessment & Sensory Sensitivity",

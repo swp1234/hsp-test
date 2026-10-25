@@ -159,7 +159,10 @@
     "attachmentStyle": "アタッチメントスタイル",
     "futureSelf": "未来の自分テスト",
     "brainType": "脳タイプ診断",
-    "animalPersonality": "動物性格診断"
+    "animalPersonality": "動物性格診断",
+    "groundingTool": "5-4-3-2-1 グラウンディング",
+    "cognitiveLoad": "認知負荷計算機",
+    "sensoryMap": "感覚負荷マップ"
   },
   "guide": {
     "summaryTitle": "About the HSP Self-Assessment & Sensory Sensitivity",

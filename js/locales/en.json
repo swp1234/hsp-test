@@ -155,7 +155,10 @@
     "innerChild": "Inner Child Test",
     "futureSelf": "Future Self",
     "brainType": "Brain Type Test",
-    "animalPersonality": "Animal Personality"
+    "animalPersonality": "Animal Personality",
+    "groundingTool": "5-4-3-2-1 Grounding",
+    "cognitiveLoad": "Cognitive Load Calc",
+    "sensoryMap": "Sensory Load Map"
   },
   "share": {
     "copyUrl": "📋 Copy Link",

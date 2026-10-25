@@ -159,7 +159,10 @@
     "attachmentStyle": "Стиль привязанности",
     "futureSelf": "Тест будущего я",
     "brainType": "Тест типа мозга",
-    "animalPersonality": "Тотемное животное"
+    "animalPersonality": "Тотемное животное",
+    "groundingTool": "Заземление 5-4-3-2-1",
+    "cognitiveLoad": "Когнитивная нагрузка",
+    "sensoryMap": "Карта сенсорной нагрузки"
   },
   "guide": {
     "summaryTitle": "About the HSP Self-Assessment & Sensory Sensitivity",

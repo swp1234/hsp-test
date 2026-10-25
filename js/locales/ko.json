@@ -155,7 +155,10 @@
     "innerChild": "?? ??? ???",
     "futureSelf": "미래의 나 테스트",
     "brainType": "뇌 유형 테스트",
-    "animalPersonality": "동물 성격 테스트"
+    "animalPersonality": "동물 성격 테스트",
+    "groundingTool": "5-4-3-2-1 그라운딩",
+    "cognitiveLoad": "인지 부하 계산기",
+    "sensoryMap": "감각 부하 지도"
   },
   "share": {
     "copyUrl": "📋 링크 복사",

@@ -159,7 +159,10 @@
     "attachmentStyle": "Estilo de Apego",
     "futureSelf": "Test del Yo Futuro",
     "brainType": "Test de tipo cerebral",
-    "animalPersonality": "Animal Interior"
+    "animalPersonality": "Animal Interior",
+    "groundingTool": "Conexión 5-4-3-2-1",
+    "cognitiveLoad": "Carga Cognitiva",
+    "sensoryMap": "Mapa de Carga Sensorial"
   },
   "guide": {
     "summaryTitle": "About the HSP Self-Assessment & Sensory Sensitivity",
