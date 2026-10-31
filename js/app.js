@@ -599,6 +599,12 @@
                 event_category: 'hsp_test',
                 related_key: relatedKey
             });
+            trackEvent('content_cta_click', {
+                event_category: 'engagement',
+                page_path: location.pathname,
+                target_url: card.href,
+                link_id: 'hsp_related_' + relatedKey
+            });
             const href = card.getAttribute('href');
             if (href && !href.startsWith('http')) {
                 const currentLang = window.i18n?.getCurrentLanguage?.() || 'en';
