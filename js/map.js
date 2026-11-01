@@ -174,6 +174,34 @@
     document.getElementById('language').addEventListener('change', function (event) {
         lang = normalizeLanguage(event.target.value); try { localStorage.setItem('app_language', lang); } catch (error) {} updateUrl(); applyLanguage(); track('sensory_map_language_change', { selected_language: lang });
     });
+    var resetCardEl = document.getElementById('reset-card-link');
+    if (resetCardEl) {
+        resetCardEl.addEventListener('click', function () {
+            track('sensory_map_reset_click');
+            if (typeof gtag === 'function') {
+                gtag('event', 'content_cta_click', {
+                    event_category: 'engagement',
+                    page_path: location.pathname,
+                    target_url: resetCardEl.href,
+                    link_id: 'sensory_map_reset_card'
+                });
+            }
+        });
+    }
+    var hspCheckEl = document.getElementById('hsp-check-link');
+    if (hspCheckEl) {
+        hspCheckEl.addEventListener('click', function () {
+            track('sensory_map_hsp_click');
+            if (typeof gtag === 'function') {
+                gtag('event', 'content_cta_click', {
+                    event_category: 'engagement',
+                    page_path: location.pathname,
+                    target_url: hspCheckEl.href,
+                    link_id: 'sensory_map_hsp_check'
+                });
+            }
+        });
+    }
 
     if (state.context) document.getElementById('context').value = state.context;
     updateUrl();

@@ -394,9 +394,29 @@
             window.print();
         });
         [document.getElementById('test-link-top'), document.getElementById('test-link-bottom')].forEach((link, index) => {
-            link.addEventListener('click', () => track('sensory_reset_hsp_click', { link_surface: index ? 'footer' : 'header' }));
+            link.addEventListener('click', () => {
+                track('sensory_reset_hsp_click', { link_surface: index ? 'footer' : 'header' });
+                if (typeof gtag === 'function') {
+                    gtag('event', 'content_cta_click', {
+                        event_category: 'engagement',
+                        page_path: location.pathname,
+                        target_url: link.href,
+                        link_id: index ? 'hsp_reset_test_bottom' : 'hsp_reset_test_top'
+                    });
+                }
+            });
         });
-        document.getElementById('guide-link').addEventListener('click', () => track('sensory_reset_guide_click'));
+        document.getElementById('guide-link').addEventListener('click', () => {
+            track('sensory_reset_guide_click');
+            if (typeof gtag === 'function') {
+                gtag('event', 'content_cta_click', {
+                    event_category: 'engagement',
+                    page_path: location.pathname,
+                    target_url: document.getElementById('guide-link').href,
+                    link_id: 'hsp_reset_guide'
+                });
+            }
+        });
         document.addEventListener('visibilitychange', () => {
             if (!document.hidden) syncTimerToClock();
         });
