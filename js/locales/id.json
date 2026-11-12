@@ -191,5 +191,18 @@
     "referencesTitle": "References & Scientific Research",
     "reviewDate": "Editorial Review: October 2026",
     "reviewTeam": "DopaBrain Behavioral Science & Health Team"
+  },
+  "button": {
+    "storyCard": "✨ Simpan Kartu Profil Sensori"
+  },
+  "curated": {
+    "badge": "BACAAN BERBASIS BUKTI",
+    "title": "Literatur Pilihan tentang Sensitivitas Sensorik",
+    "book1Title": "The Highly Sensitive Person (Elaine N. Aron)",
+    "book1Desc": "Oleh Dr. Elaine N. Aron • Karya dasar tentang sensitivitas pemrosesan sensori.",
+    "book2Title": "Sensitive: Kekuatan Tersembunyi Pribadi Sangat Sensitif",
+    "book2Desc": "Oleh Jenn Granneman & Andre Sólo • Mengembangkan empati dan intuisi dalam dunia yang serba cepat.",
+    "readPill": "Lihat Sumber ↗",
+    "disclosure": "Catatan editorial: Dikurasi berdasarkan relevansi klinis. Tautan mendukung penelitian independen."
   }
 }

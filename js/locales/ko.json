@@ -191,5 +191,18 @@
     "referencesTitle": "참고 문헌 및 학술 연구",
     "reviewDate": "콘텐츠 감수: 2026년 10월",
     "reviewTeam": "DopaBrain 행동과학 및 헬스케어 팀"
+  },
+  "button": {
+    "storyCard": "✨ 감각 프로필 카드 저장"
+  },
+  "curated": {
+    "badge": "근거 기반 추천 도서",
+    "title": "고감각 & 신경계 안정을 위한 추천 도서",
+    "book1Title": "타인보다 민감한 사람 (The Highly Sensitive Person)",
+    "book1Desc": "일레인 N. 아론 박사 저 • 감각 처리 민감성(SPS) 연구의 결정판이자 생물학적 기질 안내서.",
+    "book2Title": "센서티브 (Sensitive: The Hidden Power)",
+    "book2Desc": "젠 그란네만 & 앙드레 솔로 저 • 소음과 과부하의 현대 사회에서 직관과 공감을 무기로 전환하는 법.",
+    "readPill": "자료 보기 ↗",
+    "disclosure": "편집자 안내: 학술적 타당성에 따라 선별된 자료입니다. 링크를 통한 구매는 독립적인 연구 지원에 기여할 수 있습니다."
   }
 }

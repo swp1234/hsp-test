@@ -191,5 +191,18 @@
     "referencesTitle": "Wissenschaftliche Referenzen & Studien",
     "reviewDate": "Redaktionelle Überprüfung: November 2026",
     "reviewTeam": "DopaBrain Verhaltenswissenschaft & Health Team"
+  },
+  "button": {
+    "storyCard": "✨ Sensorik-Profilkarte speichern"
+  },
+  "curated": {
+    "badge": "EVIDENZBASIERTE LEKTÜRE",
+    "title": "Ausgewählte Literatur zu Hochsensibilität",
+    "book1Title": "Sind Sie hochsensibel? Wie Sie Ihre Stärken nutzen",
+    "book1Desc": "Von Dr. Elaine N. Aron • Das Grundlagenwerk zur sensorischen Verarbeitungssensibilität.",
+    "book2Title": "Sensibel: Die verborgene Superkraft",
+    "book2Desc": "Von Jenn Granneman & Andre Sólo • Empathie und Tiefenverarbeitung in einer lauten Welt nutzen.",
+    "readPill": "Ressource ansehen ↗",
+    "disclosure": "Redaktioneller Hinweis: Auf Basis klinischer Relevanz ausgewählt. Links unterstützen unabhängige Forschung."
   }
 }

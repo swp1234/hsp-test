@@ -191,5 +191,18 @@
     "referencesTitle": "References & Scientific Research",
     "reviewDate": "Editorial Review: October 2026",
     "reviewTeam": "DopaBrain Behavioral Science & Health Team"
+  },
+  "button": {
+    "storyCard": "✨ 感覚プロファイルカードを保存"
+  },
+  "curated": {
+    "badge": "エビデンスに基づく推薦書籍",
+    "title": "高感受性と神経系調整のための厳選書籍",
+    "book1Title": "ささいなことにもすぐに「動揺」してしまうあなたへ",
+    "book1Desc": "エレイン・N・アーロン博士 著 • 感覚処理感受性（SPS）の基礎となる世界的名著。",
+    "book2Title": "センシティブ：過敏な世界を生き抜く力",
+    "book2Desc": "ジェン・グラネマン＆アンドレ・ソロ 著 • 慌ただしい現代で共感力と深い思考を強みに変えるガイド。",
+    "readPill": "詳細を見る ↗",
+    "disclosure": "編集注記: 学術的妥当性に基づき選定されています。リンク経由の閲覧は独立した研究活動を支援します。"
   }
 }

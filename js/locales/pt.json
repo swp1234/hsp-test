@@ -191,5 +191,18 @@
     "referencesTitle": "References & Scientific Research",
     "reviewDate": "Editorial Review: October 2026",
     "reviewTeam": "DopaBrain Behavioral Science & Health Team"
+  },
+  "button": {
+    "storyCard": "✨ Salvar cartão de perfil sensorial"
+  },
+  "curated": {
+    "badge": "LEITURA BASEADA EM EVIDÊNCIAS",
+    "title": "Literatura selecionada sobre sensibilidade sensorial",
+    "book1Title": "Pessoas Altamente Sensíveis",
+    "book1Desc": "Pela Dra. Elaine N. Aron • A obra fundamental sobre sensibilidade de processamento sensorial.",
+    "book2Title": "Sensível: O poder oculto da alta sensibilidade",
+    "book2Desc": "Por Jenn Granneman e Andre Sólo • Como transformar empatia e intuição em força num mundo acelerado.",
+    "readPill": "Ver recurso ↗",
+    "disclosure": "Nota editorial: Selecionado com base na relevância clínica. Os links apoiam pesquisas independentes."
   }
 }

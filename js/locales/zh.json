@@ -191,5 +191,18 @@
     "referencesTitle": "References & Scientific Research",
     "reviewDate": "Editorial Review: October 2026",
     "reviewTeam": "DopaBrain Behavioral Science & Health Team"
+  },
+  "button": {
+    "storyCard": "✨ 保存感官档案卡片"
+  },
+  "curated": {
+    "badge": "实证推荐读物",
+    "title": "高敏感与神经系统调节精选读物",
+    "book1Title": "高敏感是种天赋 (The Highly Sensitive Person)",
+    "book1Desc": "伊莱恩·阿伦博士 著 • 感官处理敏感性（SPS）的奠基之作。",
+    "book2Title": "高敏感的力量 (Sensitive: The Hidden Power)",
+    "book2Desc": "珍·格兰曼 & 安德烈·索洛 著 • 在快节奏世界中将共情力与深层思考转化为天赋。",
+    "readPill": "查看详情 ↗",
+    "disclosure": "编辑注记：基于学术相关性精选。链接支持独立研究与内容建设。"
   }
 }

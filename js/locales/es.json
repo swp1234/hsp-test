@@ -191,5 +191,18 @@
     "referencesTitle": "Referencias e investigación científica",
     "reviewDate": "Revisión editorial: Noviembre 2026",
     "reviewTeam": "Equipo de Ciencias del Comportamiento y Salud de DopaBrain"
+  },
+  "button": {
+    "storyCard": "✨ Guardar tarjeta de perfil sensorial"
+  },
+  "curated": {
+    "badge": "LECTURA BASADA EN EVIDENCIA",
+    "title": "Literatura recomendada sobre sensibilidad sensorial",
+    "book1Title": "El don de la alta sensibilidad",
+    "book1Desc": "Por la Dra. Elaine N. Aron • La obra fundamental sobre la sensibilidad de procesamiento sensorial.",
+    "book2Title": "Sensible: El poder oculto de las personas altamente sensibles",
+    "book2Desc": "Por Jenn Granneman y Andre Sólo • Abrazar la empatía y el procesamiento profundo en un mundo acelerado.",
+    "readPill": "Ver recurso ↗",
+    "disclosure": "Nota editorial: Seleccionado según relevancia clínica. Los enlaces apoyan la investigación independiente."
   }
 }

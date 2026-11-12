@@ -191,5 +191,18 @@
     "referencesTitle": "Références et recherche scientifique",
     "reviewDate": "Révision éditoriale : Novembre 2026",
     "reviewTeam": "Équipe Sciences du Comportement & Bien-être DopaBrain"
+  },
+  "button": {
+    "storyCard": "✨ Enregistrer la carte de profil sensoriel"
+  },
+  "curated": {
+    "badge": "LECTURE FONDÉE SUR DES PREUVES",
+    "title": "Littérature sélectionnée sur l'hypersensibilité",
+    "book1Title": "Ces gens qui ont peur d'avoir peur (L'hypersensibilité)",
+    "book1Desc": "Par le Dr Elaine N. Aron • L'ouvrage de référence sur la sensibilité du traitement sensoriel.",
+    "book2Title": "Sensible : La force cachée des personnes très sensibles",
+    "book2Desc": "Par Jenn Granneman & Andre Sólo • Développer l'empathie et l'intuition dans un monde rapide.",
+    "readPill": "Voir la ressource ↗",
+    "disclosure": "Note éditoriale : Sélectionné selon la pertinence clinique. Les liens soutiennent la recherche indépendante."
   }
 }

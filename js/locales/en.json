@@ -191,5 +191,18 @@
     "referencesTitle": "References & Scientific Research",
     "reviewDate": "Editorial Review: October 2026",
     "reviewTeam": "DopaBrain Behavioral Science & Health Team"
+  },
+  "button": {
+    "storyCard": "✨ Save Sensory Profile Card"
+  },
+  "curated": {
+    "badge": "EVIDENCE-BASED READING",
+    "title": "Curated Sensory Sensitivity Literature",
+    "book1Title": "The Highly Sensitive Person: How to Thrive",
+    "book1Desc": "By Elaine N. Aron, Ph.D. • The foundational work on sensory processing sensitivity.",
+    "book2Title": "Sensitive: The Hidden Power of the Highly Sensitive Person",
+    "book2Desc": "By Jenn Granneman & Andre Sólo • Embracing empathy, intuition, and deep processing in a fast world.",
+    "readPill": "View Resource ↗",
+    "disclosure": "Editorial note: Curated based on clinical relevance. Links support independent research."
   }
 }

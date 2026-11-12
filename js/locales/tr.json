@@ -191,5 +191,18 @@
     "referencesTitle": "References & Scientific Research",
     "reviewDate": "Editorial Review: October 2026",
     "reviewTeam": "DopaBrain Behavioral Science & Health Team"
+  },
+  "button": {
+    "storyCard": "✨ Duyusal Profil Kartını Kaydet"
+  },
+  "curated": {
+    "badge": "KANITA DAYALI OKUMA",
+    "title": "Duyusal Hassasiyet Üzerine Seçilmiş Kaynaklar",
+    "book1Title": "Aşırı Duyarlı İnsan (Elaine N. Aron)",
+    "book1Desc": "Dr. Elaine N. Aron • Duyusal işleme hassasiyeti üzerine temel başvuru eseri.",
+    "book2Title": "Duyarlı: Aşırı Hassas İnsanların Gizli Gücü",
+    "book2Desc": "Jenn Granneman ve Andre Sólo • Hızlı bir dünyada empati, sezgi ve derin işlemeyi güce dönüştürme.",
+    "readPill": "Kaynağı İncele ↗",
+    "disclosure": "Editör notu: Klinik öneme göre seçilmiştir. Bağlantılar bağımsız araştırmaları destekler."
   }
 }

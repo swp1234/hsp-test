@@ -47,6 +47,7 @@
     const handleBtn = document.getElementById('btn-handle');
     const limitBtn = document.getElementById('btn-limit');
     const copyBtn = document.getElementById('btn-copy');
+    const storyCardBtn = document.getElementById('btn-story-card');
     const retakeBtn = document.getElementById('btn-retake');
     const relatedGrid = document.getElementById('related-grid');
     const sensoryResetCta = document.getElementById('sensory-reset-cta');
@@ -435,6 +436,232 @@
         });
     }
 
+    function drawRoundRect(ctx, x, y, w, h, r) {
+        if (typeof ctx.roundRect === 'function') {
+            ctx.roundRect(x, y, w, h, r);
+        } else {
+            ctx.rect(x, y, w, h);
+        }
+    }
+
+    function generateAndShareCard() {
+        const btn = storyCardBtn;
+        const orig = btn ? btn.textContent : '';
+        if (btn) { btn.textContent = '⏳ Rendering...'; btn.disabled = true; }
+
+        try {
+            const canvas = renderStoryCardCanvas();
+            if (!canvas) throw new Error('Canvas rendering failed');
+
+            canvas.toBlob(async (blob) => {
+                if (!blob) throw new Error('Blob creation failed');
+                const file = new File([blob], 'sensory-profile-card.png', { type: 'image/png' });
+
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    try {
+                        await navigator.share({
+                            files: [file],
+                            title: 'My Sensory Processing Profile',
+                            text: 'Explore your sensory preferences on DopaBrain: https://dopabrain.com/hsp-test/'
+                        });
+                        trackEvent('hsp_share_click', {
+                            app_name: 'hsp-test',
+                            event_category: 'hsp_test',
+                            method: 'story_card_native'
+                        });
+                        if (btn) { btn.textContent = '✓ Shared!'; setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2500); }
+                        return;
+                    } catch (shareErr) {
+                        if (shareErr.name === 'AbortError') {
+                            if (btn) { btn.textContent = orig; btn.disabled = false; }
+                            return;
+                        }
+                    }
+                }
+
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'sensory-profile-card.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                setTimeout(() => URL.revokeObjectURL(url), 10000);
+
+                trackEvent('hsp_share_click', {
+                    app_name: 'hsp-test',
+                    event_category: 'hsp_test',
+                    method: 'story_card_download'
+                });
+                if (btn) { btn.textContent = '✓ Saved to Photos!'; setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2500); }
+            }, 'image/png');
+        } catch (err) {
+            console.warn('Sensory story card failed:', err);
+            if (btn) { btn.textContent = orig; btn.disabled = false; }
+        }
+    }
+
+    function renderStoryCardCanvas() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1080;
+        canvas.height = 1920;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return null;
+
+        const total = catScores.reduce((sum, score) => sum + score, 0);
+        const percent = Math.round((total / (CATEGORIES.length * LEVELS_PER_CAT)) * 100);
+        const resultConfig = getResultConfig(percent);
+        const themeColor = resultConfig.color || '#a855f7';
+
+        // Background
+        const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1920);
+        bgGrad.addColorStop(0, '#0a0618');
+        bgGrad.addColorStop(0.4, '#170b33');
+        bgGrad.addColorStop(1, '#0b0717');
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, 1080, 1920);
+
+        // Glowing orb
+        const glow = ctx.createRadialGradient(540, 560, 50, 540, 560, 460);
+        glow.addColorStop(0, themeColor + '55');
+        glow.addColorStop(0.6, themeColor + '15');
+        glow.addColorStop(1, 'transparent');
+        ctx.fillStyle = glow;
+        ctx.fillRect(60, 120, 960, 900);
+
+        // Inner frame
+        ctx.save();
+        ctx.strokeStyle = 'rgba(168, 85, 247, 0.22)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        drawRoundRect(ctx, 60, 60, 960, 1800, 40);
+        ctx.stroke();
+        ctx.restore();
+
+        // Top Brand Header
+        ctx.textAlign = 'center';
+        ctx.fillStyle = '#c084fc';
+        ctx.font = '800 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.letterSpacing = '6px';
+        ctx.fillText('D O P A B R A I N', 540, 140);
+        ctx.letterSpacing = '0px';
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '900 48px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText(t('result.profileTitle') || 'Sensory Processing Profile', 540, 210);
+
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '500 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText('Private Cognitive Reflection • DOES Framework', 540, 255);
+
+        // Central Meter Ring
+        const cx = 540;
+        const cy = 560;
+        const radius = 175;
+
+        // Outer ring track
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+        ctx.lineWidth = 26;
+        ctx.stroke();
+
+        // Progress arc
+        const startAngle = -Math.PI / 2;
+        const endAngle = startAngle + (Math.PI * 2 * (percent / 100));
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, startAngle, endAngle);
+        ctx.strokeStyle = themeColor;
+        ctx.lineWidth = 26;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        // Center Percent Text
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '900 86px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText(percent + '%', cx, cy + 18);
+
+        ctx.fillStyle = '#c084fc';
+        ctx.font = '700 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText(t('result.overallLevel') || 'Prompts Continued', cx, cy + 62);
+
+        // Section Title: Category Breakdown
+        ctx.textAlign = 'left';
+        ctx.fillStyle = '#e2e8f0';
+        ctx.font = '800 28px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText('SENSORY DOMAINS TOLERANCE', 130, 850);
+
+        // Categories list
+        CATEGORIES.forEach((cat, idx) => {
+            const y = 920 + idx * 110;
+            const score = catScores[idx] || 0;
+            const catPercent = Math.round((score / LEVELS_PER_CAT) * 100);
+            const emoji = t(`categories.${cat}.emoji`) || '';
+            const name = t(`categories.${cat}.name`) || cat;
+
+            // Emoji & Name
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '700 28px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+            ctx.fillText(`${emoji}  ${name}`, 130, y);
+
+            // Percent Text
+            ctx.textAlign = 'right';
+            ctx.fillStyle = '#cbd5e1';
+            ctx.font = '700 26px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+            ctx.fillText(`${catPercent}%`, 950, y);
+            ctx.textAlign = 'left';
+
+            // Bar background
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+            ctx.beginPath();
+            drawRoundRect(ctx, 130, y + 16, 820, 18, 9);
+            ctx.fill();
+
+            // Bar fill
+            if (catPercent > 0) {
+                const fillGrad = ctx.createLinearGradient(130, 0, 950, 0);
+                fillGrad.addColorStop(0, '#7c3aed');
+                fillGrad.addColorStop(1, '#c084fc');
+                ctx.fillStyle = fillGrad;
+                ctx.beginPath();
+                drawRoundRect(ctx, 130, y + 16, Math.max(20, (catPercent / 100) * 820), 18, 9);
+                ctx.fill();
+            }
+        });
+
+        // Sensory Regulation Box
+        ctx.save();
+        ctx.fillStyle = 'rgba(23, 11, 51, 0.85)';
+        ctx.strokeStyle = 'rgba(168, 85, 247, 0.3)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        drawRoundRect(ctx, 130, 1490, 820, 200, 24);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = '#e9d5ff';
+        ctx.font = '800 26px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText('🌿 Sensory Processing Insight', 160, 1545);
+
+        ctx.fillStyle = '#cbd5e1';
+        ctx.font = '500 23px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText('Sensory sensitivity reflects deep neural processing and subtlety detection.', 160, 1595);
+        ctx.fillText('Prioritize quiet decompression zones to preserve autonomic energy.', 160, 1635);
+        ctx.restore();
+
+        // Footer Brand & Privacy
+        ctx.textAlign = 'center';
+        ctx.fillStyle = '#a855f7';
+        ctx.font = '800 28px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText('dopabrain.com/hsp-test', 540, 1755);
+
+        ctx.fillStyle = '#64748b';
+        ctx.font = '500 21px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText('Private client-side reflection • 0 tracking of personal answers', 540, 1795);
+
+        return canvas;
+    }
+
     function resetToIntro() {
         sensoryResetObserver?.disconnect();
         sensoryResetObserver = null;
@@ -548,6 +775,7 @@
     handleBtn?.addEventListener('click', () => handleChoice(true));
     limitBtn?.addEventListener('click', () => handleChoice(false));
     copyBtn?.addEventListener('click', copyShareUrl);
+    storyCardBtn?.addEventListener('click', generateAndShareCard);
     retakeBtn?.addEventListener('click', resetToIntro);
 
     if (introCtaPanel && 'IntersectionObserver' in window) {
