@@ -811,13 +811,118 @@
         });
     });
 
+    function getCuratedHref(key, lang) {
+        const asins = {
+            hsp: '0553062182',
+            sensitive: '059323524X'
+        };
+        const koQueries = {
+            hsp: '타인보다 민감한 사람 일레인 아론',
+            sensitive: '센서티브 젠 그란네만'
+        };
+        const amazonDomains = {
+            en: { domain: 'amazon.com', tag: 'dopabrain-20' },
+            de: { domain: 'amazon.de', tag: '' },
+            fr: { domain: 'amazon.fr', tag: '' },
+            es: { domain: 'amazon.es', tag: '' },
+            pt: { domain: 'amazon.com', tag: 'dopabrain-20' },
+            ja: { domain: 'amazon.co.jp', tag: '' }
+        };
+        const asin = asins[key];
+        if (!asin) return '';
+        if (lang === 'ko') {
+            return 'https://search.kyobobook.co.kr/search?keyword=' + encodeURIComponent(koQueries[key] || key);
+        }
+        const market = amazonDomains[lang] || amazonDomains.en;
+        return 'https://www.' + market.domain + '/dp/' + asin + (market.tag ? ('?tag=' + market.tag) : '');
+    }
+
+    function updateCuratedLinks(lang) {
+        const items = document.querySelectorAll('#curated-resources-card .curated-item');
+        const keys = ['hsp', 'sensitive'];
+        items.forEach((item, index) => {
+            const key = item.dataset.curatedKey || keys[index] || ('resource_' + (index + 1));
+            item.dataset.curatedKey = key;
+            const nextHref = getCuratedHref(key, lang);
+            if (nextHref) item.href = nextHref;
+        });
+
+        // Dormant high-margin digital workbook slot: set Gumroad/Lemon Squeezy URL to activate
+        const workbookCheckoutUrl = '';
+        if (!/^https?:\/\//i.test(workbookCheckoutUrl)) return;
+        const list = document.querySelector('#curated-resources-card .curated-list');
+        if (!list) return;
+        let wbLink = list.querySelector('.curated-item[data-curated-key="workbook_pdf"]');
+        if (!wbLink) {
+            wbLink = document.createElement('a');
+            wbLink.className = 'curated-item';
+            wbLink.dataset.curatedKey = 'workbook_pdf';
+            wbLink.target = '_blank';
+            wbLink.rel = 'noopener noreferrer';
+            wbLink.addEventListener('click', () => {
+                const currentLang = window.i18n?.getCurrentLanguage?.() || 'en';
+                trackEvent('curated_resource_click', {
+                    app_name: 'hsp-test',
+                    event_category: 'hsp_test',
+                    resource_key: 'workbook_pdf',
+                    content_locale: currentLang,
+                    cta_surface: 'curated_resources'
+                });
+                trackEvent('content_cta_click', {
+                    event_category: 'engagement',
+                    page_path: location.pathname,
+                    target_url: wbLink.href,
+                    link_id: 'hsp_curated_workbook_pdf'
+                });
+            });
+            list.appendChild(wbLink);
+        }
+        wbLink.href = workbookCheckoutUrl;
+        wbLink.innerHTML = '';
+        const titleSpan = document.createElement('span');
+        titleSpan.className = 'curated-item-title';
+        titleSpan.textContent = lang === 'ko'
+            ? '30일 HSP & 자율신경 리셋 워크북 (PDF)'
+            : '30-Day Stress & HSP Reset Workbook (PDF)';
+        const metaSpan = document.createElement('span');
+        metaSpan.className = 'curated-item-meta';
+        metaSpan.textContent = lang === 'ko'
+            ? '감각 과부하 체크리스트 & 회복 루틴 · 즉시 다운로드 ($4.90)'
+            : 'Sensory overload tracker & worksheets · Instant PDF ($4.90)';
+        wbLink.appendChild(titleSpan);
+        wbLink.appendChild(metaSpan);
+    }
+
     function updateRelatedLinks(lang) {
+        updateCuratedLinks(lang);
         const safeLang = encodeURIComponent(lang || 'en');
         relatedGrid?.querySelectorAll('.related-card').forEach((card) => {
             const baseHref = card.getAttribute('data-base-href') || card.getAttribute('href').split('?')[0];
             card.href = `${baseHref}?lang=${safeLang}&start=1&source=hsp_related`;
         });
     }
+
+    document.querySelectorAll('#curated-resources-card .curated-item').forEach((item, index) => {
+        const keys = ['hsp', 'sensitive'];
+        const key = item.dataset.curatedKey || keys[index] || ('resource_' + (index + 1));
+        item.dataset.curatedKey = key;
+        item.addEventListener('click', () => {
+            const currentLang = window.i18n?.getCurrentLanguage?.() || 'en';
+            trackEvent('curated_resource_click', {
+                app_name: 'hsp-test',
+                event_category: 'hsp_test',
+                resource_key: key,
+                content_locale: currentLang,
+                cta_surface: 'curated_resources'
+            });
+            trackEvent('content_cta_click', {
+                event_category: 'engagement',
+                page_path: location.pathname,
+                target_url: item.href,
+                link_id: 'hsp_curated_' + key
+            });
+        });
+    });
 
     relatedGrid?.querySelectorAll('.related-card').forEach((card) => {
         card.addEventListener('click', (e) => {
